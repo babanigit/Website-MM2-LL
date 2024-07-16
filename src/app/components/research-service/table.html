@@ -1,0 +1,42 @@
+
+
+<table>
+  <tbody>
+
+    <!-- mapping -->
+    <tr
+      style="
+        display: flex;
+        place-content: center;
+        border: 1px solid black;
+        padding: 5px;
+        cursor: pointer; /* Add cursor pointer for hover effect */
+      "
+      *ngFor="let hero of data | filter : inputVal"
+      (click)="onResponseClick(hero.sname)"
+    >
+      <td
+        [innerHTML]="hero.Company"
+        (click)="trClicked(hero.Id)"
+      ></td>
+      <td>(</td>
+      <td
+        [innerHTML]="hero.ExchangeName | uppercase"
+        (click)="trClicked(hero.Id)"
+      ></td>
+      <td>-</td>
+      <td
+        [innerHTML]="hero.ScriptCode"
+        (click)="trClicked(hero.Id)"
+      ></td>
+      <td>|</td>
+      <td>NSE</td>
+      <td>-</td>
+      <td
+        [innerHTML]="hero.Symbol"
+        (click)="trClicked(hero.Id)"
+      ></td>
+      <td>)</td>
+    </tr>
+  </tbody>
+</table>

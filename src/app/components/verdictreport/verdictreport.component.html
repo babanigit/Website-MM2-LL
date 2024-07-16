@@ -1,0 +1,190 @@
+<div class="card text-center" style="min-height: 100vh">
+  <div style="text-align: end; padding-right: 20px; padding-top: 20px">
+    <button (click)="onClose()">x</button>
+  </div>
+  <div class="card-body">
+    <div style="font-weight: 600; padding: 40px">
+      <div style="font-weight: 700; font-size: x-large">
+        {{ reportData.data.stock_details.sname }} Verdict Report
+      </div>
+      <div>
+        This Real-Time Stock Analysis Report was generated on 15th July 2024 at
+        02:43 PM
+      </div>
+    </div>
+
+    <!-- background-color: lightcyan; -->
+    <div class="container" style="height: 72vh">
+      <div class="row" style="height: 100%">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <div
+            style="
+              height: 100%;
+              width: 65%;
+              background-color: rgb(59, 180, 59);
+              display: flex;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                height: 96%;
+                width: 90%;
+                color: aliceblue;
+                background-color: rgb(19, 35, 19);
+                display: grid;
+                grid-template-rows: 50% 50%;
+                border: 1px solid white;
+              "
+            >
+              <!-- Main Content Here -->
+              <div style="display: grid; grid-template-rows: 50% 50%">
+                <div style="display: flex; flex-direction: column; gap: 5px">
+                  <div style="margin: 0; padding: 0">mojo professional</div>
+                  <h1 style="font-weight: 300; font-size: 5em; margin: 0">
+                    VERDICT
+                  </h1>
+                  <div
+                    style="
+                      text-align: right;
+                      margin: 0;
+                      padding-right: 10px;
+                      font-size: small;
+                    "
+                  >
+                    Report as on 15 July 2024 at 12:01 PM
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                  "
+                >
+                  <div
+                    [innerHTML]="reportData.data.cover_page_data.cover_headline"
+                    style="
+                      color: rgb(59, 180, 59);
+                      font-weight: 800;
+                      font-size: x-large;
+                      text-align: left;
+                      padding: 10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 50% 50%;
+                  padding: 5px;
+                "
+              >
+                <!-- div1 -->
+
+                <div
+                  style="
+                    font-size: smaller;
+                    text-align: left;
+                    border-right: 1px solid #ccc;
+                  "
+                >
+                  <!-- map -->
+                  <div
+                    *ngFor="
+                      let summary of reportData.data.cover_page_data
+                        .cover_summary
+                    "
+                  >
+                    <div>
+                      <strong>{{ summary.big_txt }}</strong
+                      ><br />
+                      <span>{{ summary.small_txt }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- div2 -->
+                <div style="padding-left: 6px">
+                  <div style="text-align: left">
+                    <h5
+                      style="
+                        background: rgb(59, 180, 59);
+                        display: flex;
+                        width: max-content;
+                        padding: 6px;
+                      "
+                    >
+                      {{ reportData.data.score_text }}
+                    </h5>
+                    <div>
+                      <span>CMP: </span>
+                      <span>{{ reportData.data.price_info.cmp }}</span>
+                    </div>
+                  </div>
+
+                  <br />
+
+                  <div style="font-size: x-small; text-align: left">
+                    <div>STOCK INFO:-</div>
+                    <!-- bse/nse -->
+                    <div>
+                      <span>BSE - </span>
+                      <span>{{
+                        reportData.data.stock_details.jan31_high_2018.bse
+                      }}</span>
+                      <span> /</span>
+                      <span>NSE - </span>
+                      <span>{{
+                        reportData.data.stock_details.jan31_high_2018.nse
+                      }}</span>
+                    </div>
+
+                    <!-- mcap -->
+                    <div>
+                      <span>Market Cap - </span>
+                      <span>{{ reportData.data.price_info.mcap_class }}</span>
+                    </div>
+                    <!-- sector -->
+                    <div>
+                      <span>Sector - </span>
+                      <span>{{ reportData.data.stock_details.ind_name }}</span>
+                    </div>
+
+                    <!--  -->
+                    <div>
+                      <span>52 w H/L -</span>
+                      <span>(Rs.) 4262.5 / 2320.2</span>
+                    </div>
+
+                    <!-- div_yeild  -->
+                    <div>
+                      <span>Dividend Yield - </span>
+                      <span>{{ reportData.data.price_info.div_yeild }}</span>
+                    </div>
+
+                    <!-- deb_equity -->
+                    <div>
+                      <span>Return on Equity -</span>
+                      <span>{{ reportData.data.price_info.deb_equity }}</span>
+                    </div>
+
+                    <div>
+                      <span>Price to Book -</span>
+                      <span>{{
+                        reportData.data.price_info.price_to_book
+                      }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
