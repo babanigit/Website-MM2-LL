@@ -7,9 +7,8 @@ import { ReportResponse } from '../../assets/getRespone';
   styleUrl: './verdictpage.component.css'
 })
 export class VerdictpageComponent {
-  trail = "hello"
+  loadingState:boolean=true
 
-  title = 'website-mm';
   ReportResponse = ReportResponse;
   inputData: string = '';
   boxState = false;
@@ -24,5 +23,8 @@ export class VerdictpageComponent {
 
   recievedStateEvent(e: boolean) {
     this.boxState = e;
+  }
+  recievedLoadingStateEvent(e:boolean) {
+    this.loadingState= e;
   }
 }

@@ -15,6 +15,8 @@ export class ResearchServiceComponent {
   @Output() myEvent = new EventEmitter<string>();
   @Output() myEvent2 = new EventEmitter<boolean>();
 
+  @Output() myEvent3 = new EventEmitter<boolean>();
+
   filterState = false;
   inputVal = '';
   data: any[] = [];
@@ -24,13 +26,17 @@ export class ResearchServiceComponent {
     this.data = data;
   }
 
-
   onResponseClick(sname?: string) {
-    console.log('onResponseClicked : ', sname);
-    this.myEvent.emit(this.inputVal);
     this.myEvent2.emit(false);
+    this.myEvent3.emit(false);
     this.filterState = true;
-    this.inputVal = '';
+
+    setTimeout(() => {
+      this.myEvent3.emit(true);
+      console.log('onResponseClicked : ', sname);
+      this.myEvent.emit(this.inputVal);
+      this.inputVal = '';
+    }, 3000);
   }
 
   onInputClick() {

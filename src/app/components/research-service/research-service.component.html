@@ -50,21 +50,12 @@
                   *ngFor="let hero of data | filter : inputVal"
                   (click)="onResponseClick(hero.sname)"
                 >
-                  <span
-                    [innerHTML]="hero.Company"
-                  ></span>
-                  (<span
-                    [innerHTML]="hero.ExchangeName | uppercase"
-                  ></span>
+                  <span [innerHTML]="hero.Company"></span>
+                  (<span [innerHTML]="hero.ExchangeName | uppercase"></span>
                   -
-                  <span
-                    [innerHTML]="hero.ScriptCode"
-                  ></span>
+                  <span [innerHTML]="hero.ScriptCode"></span>
                   | NSE -
-                  <span
-                    [innerHTML]="hero.Symbol"
-                  ></span
-                  >)
+                  <span [innerHTML]="hero.Symbol"></span>)
                 </li>
               </ul>
 
@@ -73,9 +64,8 @@
                 *ngIf="data.length === 0"
                 style="list-style-type: none; padding: 0; text-align: center"
               >
-              <!-- [hidden]="data.length < 0 " -->
+                <!-- [hidden]="data.length < 0 " -->
                 <li
-
                   style="
                     display: flex;
                     justify-content: center;
