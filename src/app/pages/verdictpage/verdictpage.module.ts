@@ -10,7 +10,7 @@ import { Verdict3Component } from '../../components/verdict3/verdict3.component'
 import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfooter.component';
 import { VerdictloadingComponent } from '../../components/verdictloading/verdictloading.component';
 import { VerdictreportComponent } from '../../components/verdictreport/verdictreport.component';
-import { FilterReportPipe } from '../../pipe/filter-report.pipe';
+import { FilterReportPipe } from '../../pipes/filter-report.pipe';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IReport_Response } from '../../model/ReportResponse';
+import { IReport_Response } from '../../models/ReportResponse';
 import { CommonModule } from '@angular/common';
 
 @Component({

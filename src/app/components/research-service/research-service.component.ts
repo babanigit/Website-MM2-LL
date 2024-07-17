@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FilterPipe } from '../../pipe/filter.pipe';
+import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { data } from '../../assets/data';
 
