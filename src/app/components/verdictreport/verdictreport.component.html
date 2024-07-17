@@ -1,9 +1,23 @@
-<div class="card text-center" style="min-height: 100vh">
+<div class="card text-center" style="min-height: auto">
+
   <div style="text-align: end; padding-right: 20px; padding-top: 20px">
-    <button (click)="onClose()">x</button>
+    <button
+      style="
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: gray;
+        color: white;
+      "
+      (click)="onClose()"
+    >
+      X
+    </button>
   </div>
-  <div class="card-body">
-    <div style="font-weight: 600; padding: 40px">
+
+  <div class="card-body" style="display: grid">
+    <!-- head -->
+    <div style="font-weight: 600; padding: 0 40px; padding-bottom: 30px;">
       <div style="font-weight: 700; font-size: x-large">
         {{ reportData.data.stock_details.sname }} Verdict Report
       </div>
@@ -13,10 +27,10 @@
       </div>
     </div>
 
-    <!-- background-color: lightcyan; -->
+    <!-- body -->
     <div class="container" style="height: 72vh">
       <div class="row" style="height: 100%">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">DOWNLOAD</div>
         <div class="col-md-6">
           <div
             style="
