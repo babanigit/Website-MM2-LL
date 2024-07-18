@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
 export class VerdictreportComponent {
 
 
-  @Output() myEvent2 = new EventEmitter<boolean>();
+  @Output() myEvent = new EventEmitter<boolean>();
 
   @Input() reportData!: IReport_Response; //props
 
   onClose() {
-    this.myEvent2.emit(true);
+    this.myEvent.emit(true);
   }
 }

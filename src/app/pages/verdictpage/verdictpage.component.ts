@@ -4,27 +4,32 @@ import { ReportResponse } from '../../assets/getRespone';
 @Component({
   selector: 'app-verdictpage',
   templateUrl: './verdictpage.component.html',
-  styleUrl: './verdictpage.component.css'
+  styleUrl: './verdictpage.component.css',
 })
 export class VerdictpageComponent {
-  loadingState:boolean=true
+  loadingState: boolean = true;
 
   ReportResponse = ReportResponse;
   inputData: string = '';
   boxState = false;
 
+  //get input data
   recievedDataEvent(e: string) {
     this.inputData = e;
   }
 
-  recievedDataEvent2(e: boolean) {
+  //close box
+  recievedCloseBoxState(e: boolean) {
     this.boxState = e;
   }
 
+  //manipulate box
   recievedStateEvent(e: boolean) {
     this.boxState = e;
   }
-  recievedLoadingStateEvent(e:boolean) {
-    this.loadingState= e;
+
+  //
+  recievedLoadingStateEvent(e: boolean) {
+    this.loadingState = e;
   }
 }
