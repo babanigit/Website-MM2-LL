@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ReportResponse } from '../../assets/getRespone';
 import { sectionDataVerdict } from '../../assets/sectionData';
+import { verdict1ListData } from '../../assets/verdict1Data';
 
 @Component({
   selector: 'app-verdictpage',
@@ -10,10 +11,14 @@ import { sectionDataVerdict } from '../../assets/sectionData';
 export class VerdictpageComponent {
   sectionDataVerdict: any[] = [];
   ReportResponse: any[] = [];
+  verdict1ListData:any[]=[]
+
 
   constructor() {
     this.sectionDataVerdict = sectionDataVerdict;
     this.ReportResponse = ReportResponse;
+    this.verdict1ListData=verdict1ListData;
+
   }
 
   loadingState: boolean = true;

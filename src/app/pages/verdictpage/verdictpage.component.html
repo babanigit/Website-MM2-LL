@@ -17,10 +17,17 @@
   (myEvent_CloseBox)="recievedReportStateEvent($event)"
 />
 
-<app-verdict1 />
+<!-- verdict page 1 -->
+<app-verdict1
+  [verdictLists]="verdict1ListData"
+  [verdictListHeader]="'REAL TIME RESEARCH FOR ALL COMPANIES'"
+  [imgageUrl]="'https://i.marketsmojo.com/mojoprofessional/rtrr_image.png'"
+/>
+
+<!-- verdict page 2 -->
 <app-verdict2 />
 
-<!-- section -->
+<!-- section verdict page 3 -->
 <app-verdict3new
 [sectionData] = "sectionDataVerdict"
 />

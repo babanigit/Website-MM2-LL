@@ -1,9 +1,15 @@
 
 
-<!-- section -->
-<app-verdict3new
-[sectionData] = "sectionDataSwitcher"
+
+<!-- verdict 1 -->
+<app-verdict1
+  [verdictLists]="verdict1SwitcherListData"
+  [verdictListHeader]="'ASK US ABOUT ANY STOCK YOU HOLD'"
+  [imgageUrl]="'https://i.marketsmojo.com/switcher/switcher_thumb_new1.png'"
 />
+
+<!-- section -->
+<app-verdict3new [sectionData]="sectionDataSwitcher" />
 
 <!-- footer -->
 <app-verdictfooter />

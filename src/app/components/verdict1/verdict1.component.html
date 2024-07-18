@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <p class="mojohead2">REAL TIME RESEARCH FOR ALL COMPANIES</p>
+      <p class="mojohead2">{{verdictListHeader}}</p>
       <!--<p class="mojohead3">The world of stocks changes every second and so should research. You now don’t need to track anything as we track every second for every stock for you</p>-->
       <div class="bullet_cio2">
         <ul>
-          <li>
-            Check for stock advice and detailed research which updates real time
+          <li *ngFor="let ver of verdictLists" >
+            {{ver.text}}
           </li>
-          <li>
+          <!-- <li>
             If you want a detailed read you can either download the full report
             or see it online, your choice
           </li>
           <li>
             Save it in watchlist to track, or simply add it to your portfolio if
             you are holding that stock
-          </li>
+          </li> -->
         </ul>
       </div>
+
+
       <div class="col-md-4 no-web no-tab">
         <div class="anibanner" ng-cloak>
           <!-- <a href="javascript:void(0);"><img alt="img" src="{{ IMG_URL }}mojoprofessional/rtrr_image.png"></a> -->
@@ -39,7 +41,7 @@
           <img
             style="width: 500px"
             alt="imag"
-            src="https://i.marketsmojo.com/mojoprofessional/rtrr_image.png"
+            src="{{imgageUrl}}"
           />
 
           <!-- <img alt="Image" [src]="ver1" /> -->

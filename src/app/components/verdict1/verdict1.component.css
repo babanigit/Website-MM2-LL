@@ -2,12 +2,14 @@
 .mojohead2{
   /* font: bold; */
   font-weight: 700;
-  font-size:larger;
+  font-size:xx-large;
 }
 
 
 /* list */
 .bullet_cio2 ul {
+  /* font-weight: 600; */
+  font-size: large;
   list-style-type: none; /* Remove default list style (dots) */
   padding-left: 0; /* Remove default padding */
 }
