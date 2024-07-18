@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReportResponse } from '../../assets/getRespone';
+import { sectionDataVerdict } from '../../assets/sectionData';
 
 @Component({
   selector: 'app-verdictpage',
@@ -7,9 +8,15 @@ import { ReportResponse } from '../../assets/getRespone';
   styleUrl: './verdictpage.component.css',
 })
 export class VerdictpageComponent {
-  loadingState: boolean = true;
+  sectionDataVerdict: any[] = [];
+  ReportResponse: any[] = [];
 
-  ReportResponse = ReportResponse;
+  constructor() {
+    this.sectionDataVerdict = sectionDataVerdict;
+    this.ReportResponse = ReportResponse;
+  }
+
+  loadingState: boolean = true;
   inputData: string = '';
   boxState = false;
 

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SwitcherpageRoutingModule } from './switcherpage-routing.module';
 import { SwitcherpageComponent } from './switcherpage.component';
+import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfooter.component';
+import { Verdict3newComponent } from '../../components/verdict3new/verdict3new.component';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { SwitcherpageComponent } from './switcherpage.component';
   ],
   imports: [
     CommonModule,
-    SwitcherpageRoutingModule
+    SwitcherpageRoutingModule,
+    VerdictfooterComponent,
+    Verdict3newComponent
   ]
 })
 export class SwitcherpageModule { }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { sectionDataSwitcher } from '../../assets/sectionData';
 
 @Component({
   selector: 'app-switcherpage',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './switcherpage.component.css'
 })
 export class SwitcherpageComponent {
+  sectionDataSwitcher:any[]=[]
+
+
+  constructor(){
+    this.sectionDataSwitcher =sectionDataSwitcher;
+  }
 
 }
