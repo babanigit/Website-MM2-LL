@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VerdictpageComponent } from './verdictpage.component';
+import { SwitcherpageComponent } from './switcherpage.component';
 
 const routes: Routes = [
-  { path: '', component: VerdictpageComponent },
+  { path: '', component:SwitcherpageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class VerdictpageRoutingModule { }
+export class SwitcherpageRoutingModule { }

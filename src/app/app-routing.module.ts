@@ -6,6 +6,8 @@ const routes: Routes = [
   { path: 'feature2', loadChildren: () => import('./feature2/feature2.module').then(m => m.Feature2Module) },
 
   { path: 'verdict', loadChildren: () => import('./pages/verdictpage/verdictpage.module').then(m => m.VerdictpageModule) },
+  { path: 'switcher', loadChildren: () => import('./pages/switcherpage/switcherpage.module').then(m => m.SwitcherpageModule) },
+
 ];
 
 @NgModule({
