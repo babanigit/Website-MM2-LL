@@ -11,12 +11,11 @@ import { CommonModule } from '@angular/common';
 })
 export class VerdictreportComponent {
 
-
-  @Output() myEvent = new EventEmitter<boolean>();
+  @Output() myEvent_CloseBox = new EventEmitter<boolean>();
 
   @Input() reportData!: IReport_Response; //props
 
   onClose() {
-    this.myEvent.emit(true);
+    this.myEvent_CloseBox.emit(true);
   }
 }

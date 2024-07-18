@@ -1,7 +1,7 @@
 <!-- search -->
 <app-research-service
   (myEvent_InputValue)="recievedDataEvent($event)"
-  (myEvent2_Reportstate)="recievedStateEvent($event)"
+  (myEvent2_Reportstate)="recievedReportStateEvent($event)"
   (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
 />
 
@@ -14,7 +14,7 @@
   [hidden]="inputData.length < 1 || boxState"
   *ngFor="let item of ReportResponse | filterReport : inputData"
   [reportData]="item"
-  (myEvent)="recievedCloseBoxState($event)"
+  (myEvent_CloseBox)="recievedReportStateEvent($event)"
 />
 
 <app-verdict1 />

@@ -24,7 +24,7 @@ export class FilterPipe implements PipeTransform {
     //if there is no data
     if (getCompany.length === 0) {
       return [
-        { Company: 'Not found' },
+        { Company: 'Not Found' },
       ];
     }
 

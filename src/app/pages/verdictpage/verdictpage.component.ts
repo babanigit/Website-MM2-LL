@@ -18,17 +18,12 @@ export class VerdictpageComponent {
     this.inputData = e;
   }
 
-  //close box
-  recievedCloseBoxState(e: boolean) {
+  //manipulate reportBox State
+  recievedReportStateEvent(e: boolean) {
     this.boxState = e;
   }
 
-  //manipulate box
-  recievedStateEvent(e: boolean) {
-    this.boxState = e;
-  }
-
-  //
+  //loadingState
   recievedLoadingStateEvent(e: boolean) {
     this.loadingState = e;
   }

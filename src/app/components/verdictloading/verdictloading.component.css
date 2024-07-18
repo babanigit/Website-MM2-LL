@@ -1,0 +1,14 @@
+/* Add this CSS to your global stylesheet or component-specific styles */
+.loading-bar {
+  width: 100%;
+  height: 5px; /* Adjust height of loading bar */
+  background-color: aqua;
+  margin-top: 10px; /* Adjust spacing as needed */
+  animation: loading-animation 3s infinite ease-in-out; /* Adjust animation duration and timing */
+}
+
+@keyframes loading-animation {
+  0% { width: 0%; } /* Starting point */
+  50% { width: 50%; } /* Halfway point */
+  100% { width: 100%; } /* Fully loaded */
+}

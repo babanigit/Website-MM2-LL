@@ -48,31 +48,17 @@
                     cursor: pointer; /* Add cursor pointer for hover effect */
                   "
                   *ngFor="let hero of data | filter : inputVal"
-                  (click)="onResponseClick(hero.sname)"
+                  (click)="hero.Company !== 'Not Found' ? onResponseClick(hero.sname) : null"
                 >
-                  <span [innerHTML]="hero.Company"></span>
-                  (<span [innerHTML]="hero.ExchangeName | uppercase"></span>
-                  -
-                  <span [innerHTML]="hero.ScriptCode"></span>
-                  | NSE -
-                  <span [innerHTML]="hero.Symbol"></span>)
-                </li>
-              </ul>
+                  <span [innerHTML]="hero.Company" ></span>
 
-              <ul
-              *ngIf="data.length === 0"
-                style="list-style-type: none; padding: 0; text-align: center"
-              >
-                <li
-                  style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: 1px solid black;
-                    padding: 5px;
-                  "
-                >
-                  No results found
+                  <span *ngIf="hero.Company == 'Not Found' ? 0 : 1">
+                    (<span [innerHTML]="hero.ExchangeName | uppercase"></span>
+                    -
+                    <span [innerHTML]="hero.ScriptCode"></span>
+                    | NSE -
+                    <span [innerHTML]="hero.Symbol"></span>)
+                  </span>
                 </li>
               </ul>
 
