@@ -1,36 +1,20 @@
-<div class="" style="background-color: gray; margin-top: 50px; width: 100%">
-  <div class="">
-    <div
-      style="
-        display: flex;
-        place-content: center;
-        font-weight: 600;
-        font-size: large;
-        color: gainsboro;
-        padding-top: 10px;
-      "
-      class=""
-    >
-      <p class="mojohead4">
-        <strong>ALL IN ONE REPORT-</strong>STOCK ADVISE, QUANTITY, BETTER
-        STOCKS, PEERS, DETAILED RESEARCH
-      </p>
-    </div>
+<div class="banner-container">
+  <div class="inner-container">
+    <p class="mojohead4">
+      <strong>{{ headingTitle }}</strong
+      >{{ headingDesc }}
+    </p>
   </div>
-  <div class="">
-    <div class="">
+  <div>
+    <div style="text-align: center">
       <div class="banner-img">
-        <img
-          style="width: 100%; max-width: 100%"
-          alt="img"
-          src="https://i.marketsmojo.com/mojoprofessional/verdict_banner0906.png"
-        />
+        <img alt="img" src="{{ imgSrc }}" />
       </div>
 
       <!-- *ngIf="!data.ispaid && data.logged_in!" -->
-      <div class="mojobuttonbanner">
+      <!-- <div class="mojobuttonbanner">
         {{ home_button_html }}
-      </div>
+      </div> -->
 
       <!-- *ngIf="!data.logged_in!"  -->
       <!-- <div class="mojobuttonbanner">

@@ -1,0 +1,32 @@
+/* styles.css */
+
+.banner-container {
+  background-color: gray;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.inner-container {
+  display: flex;
+  place-content: center;
+  font-weight: 600;
+  font-size: large;
+  color: gainsboro;
+  padding-top: 10px;
+}
+
+.mojohead4 {
+  /* Add styles for mojohead4 if necessary */
+}
+
+.banner-img img {
+  width: 70%;
+}
+
+.mojobuttonbanner {
+  /* Style for the button container */
+}
+
+.paybuttonconetnt a {
+  /* Style for the anchor tag inside the button */
+}

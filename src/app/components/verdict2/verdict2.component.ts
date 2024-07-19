@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-verdict2',
@@ -9,12 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './verdict2.component.css'
 })
 export class Verdict2Component {
-
-
-
-
-home_button_html: any;
-IMG_URL: any;
-data: any;
+  @Input() headingTitle!: string; //props
+  @Input() headingDesc!: string; //props
+  @Input() imgSrc!: string; //props
 
 }
