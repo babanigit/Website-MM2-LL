@@ -4,6 +4,7 @@ import {
   verdict1SwitcherListData,
 } from '../../assets/verdict1Data';
 import { ReportResponse } from '../../assets/getRespone';
+import { switcherGetRespone } from '../../assets/switcherGetRespone';
 
 @Component({
   selector: 'app-switcherpage',
@@ -13,11 +14,14 @@ import { ReportResponse } from '../../assets/getRespone';
 export class SwitcherpageComponent {
   sectionDataSwitcher: any[] = [];
   verdict1SwitcherListData: any[] = [];
+
+  switcherGetRespone: any[] = [];
   ReportResponse: any[] = []; //will change this with new json data
 
   constructor() {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
+    this.switcherGetRespone = switcherGetRespone;
     this.ReportResponse = ReportResponse;
   }
 

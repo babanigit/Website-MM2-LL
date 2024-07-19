@@ -13,11 +13,11 @@ export class FilterReportPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     //filtering as per search text
-    let getCompany: any[] = items.filter((item) => {
+    let getReport: any[] = items.filter((item) => {
       return item.data.stock_details.sname.toLowerCase().includes(searchText);
       // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
     });
 
-    return getCompany;
+    return getReport;
   }
 }

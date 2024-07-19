@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { Verdict3newComponent } from './components/verdict3new/verdict3new.component';
+import { FilterSwitcherReportPipe } from './pipes/filter-switcher-report.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { Verdict3newComponent } from './components/verdict3new/verdict3new.compo
     BrowserModule,
     AppRoutingModule,
     NavbarComponent,
-    Verdict3newComponent
+    FilterSwitcherReportPipe,
+
   ],
   providers: [
     provideClientHydration()
