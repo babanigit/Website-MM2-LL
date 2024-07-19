@@ -16,42 +16,39 @@ export class ResearchServiceComponent {
   @Output() myEvent2_Reportstate = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
 
-
   filterState = false;
   inputVal = '';
   data: any[] = [];
-  hero: any;
 
   constructor() {
     this.data = data;
   }
 
-  get filteredHeroes() {
-       //filtered the data which haves tag="stock"
-       let onlyStock:any[] = data.filter(item => item.tag === 'Stock');
+  onResponseClick(sname: string) {
+    this.myEvent2_Reportstate.emit(true);
 
-       this.inputVal = this.inputVal.toLowerCase();
+    // this.myEvent3_LoadingState.emit(false); //on click unhidden loading
+    this.inputVal = sname;
+    this.filterState = true;
 
-       //filtering as per search text
-       let getCompany:any[] = onlyStock.filter(item => {
-         return item.Company.toLowerCase().includes(this.inputVal);
-       });
+    // setTimeout(() => {
+    //   this.myEvent2_Reportstate.emit(false);
+    //   console.log('onResponseClicked : ', sname);
 
-       console.log("the data is : ",getCompany)
-
-       return getCompany;
+    //   this.myEvent3_LoadingState.emit(true); //hide loading true
+    //   this.myEvent_InputValue.emit(this.inputVal);
+    //   this.inputVal = '';
+    // }, 3000);
   }
 
-  onResponseClick(sname?: string) {
-    this.myEvent2_Reportstate.emit(true);
+  //search box clicked
+  OnHandleClick() {
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
-    this.filterState = true;
+    console.log('hello there input value have sended', this.inputVal);
 
     setTimeout(() => {
       this.myEvent2_Reportstate.emit(false);
-
       this.myEvent3_LoadingState.emit(true); //hide loading true
-      console.log('onResponseClicked : ', sname);
       this.myEvent_InputValue.emit(this.inputVal);
       this.inputVal = '';
     }, 3000);
@@ -59,12 +56,7 @@ export class ResearchServiceComponent {
 
   onInputClick() {
     this.filterState = false;
-    this.myEvent2_Reportstate.emit(true);
-
+    // this.myEvent2_Reportstate.emit(true);
     // this.myEvent4.emit(true);
-  }
-
-  OnHandleClick() {
-    console.log('hello there input value have sended', this.inputVal);
   }
 }

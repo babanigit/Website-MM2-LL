@@ -7,6 +7,7 @@ import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfo
 import { Verdict3newComponent } from '../../components/verdict3new/verdict3new.component';
 import { Verdict1Component } from "../../components/verdict1/verdict1.component";
 import { Verdict2Component } from '../../components/verdict2/verdict2.component';
+import { ResearchServiceComponent } from '../../components/research-service/research-service.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Verdict2Component } from '../../components/verdict2/verdict2.component'
     Verdict3newComponent,
     Verdict1Component,
     Verdict1Component,
-    Verdict2Component
+    Verdict2Component,
+    ResearchServiceComponent
 ]
 })
 export class SwitcherpageModule { }

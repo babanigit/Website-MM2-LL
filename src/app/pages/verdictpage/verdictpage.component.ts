@@ -11,19 +11,17 @@ import { verdict1ListData } from '../../assets/verdict1Data';
 export class VerdictpageComponent {
   sectionDataVerdict: any[] = [];
   ReportResponse: any[] = [];
-  verdict1ListData:any[]=[]
-
+  verdict1ListData: any[] = [];
 
   constructor() {
     this.sectionDataVerdict = sectionDataVerdict;
     this.ReportResponse = ReportResponse;
-    this.verdict1ListData=verdict1ListData;
-
+    this.verdict1ListData = verdict1ListData;
   }
 
-  loadingState: boolean = true;
   inputData: string = '';
-  boxState = false;
+  loadingState: boolean = true;
+  ReportBoxState: boolean = false;
 
   //get input data
   recievedDataEvent(e: string) {
@@ -32,7 +30,7 @@ export class VerdictpageComponent {
 
   //manipulate reportBox State
   recievedReportStateEvent(e: boolean) {
-    this.boxState = e;
+    this.ReportBoxState = e;
   }
 
   //loadingState

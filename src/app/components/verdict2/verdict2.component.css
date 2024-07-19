@@ -1,4 +1,3 @@
-/* styles.css */
 
 .banner-container {
   background-color: gray;
@@ -15,18 +14,6 @@
   padding-top: 10px;
 }
 
-.mojohead4 {
-  /* Add styles for mojohead4 if necessary */
-}
-
 .banner-img img {
   width: 70%;
-}
-
-.mojobuttonbanner {
-  /* Style for the button container */
-}
-
-.paybuttonconetnt a {
-  /* Style for the anchor tag inside the button */
 }

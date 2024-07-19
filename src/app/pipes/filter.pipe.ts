@@ -16,16 +16,17 @@ export class FilterPipe implements PipeTransform {
     //filtering as per search text
     searchText = searchText.toLowerCase();
     let getCompany: any[] = onlyStock.filter((item) => {
-      return item.Company.toLowerCase().includes(searchText);
+      return (
+        item.Company.toLowerCase().includes(searchText)
+        // || item.sname.toLowerCase().includes(searchText)
+      );
     });
 
     console.log('the data is : ', getCompany);
 
     //if there is no data
     if (getCompany.length === 0) {
-      return [
-        { Company: 'Not Found' },
-      ];
+      return [{ Company: 'Not Found' }];
     }
 
     return getCompany;

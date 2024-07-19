@@ -11,7 +11,7 @@
 <!-- report -->
 <!-- inputData.length < 1 || boxState -->
 <app-verdictreport
-  [hidden]="inputData.length < 1 || boxState"
+  [hidden]="inputData.length < 1 || ReportBoxState"
   *ngFor="let item of ReportResponse | filterReport : inputData"
   [reportData]="item"
   (myEvent_CloseBox)="recievedReportStateEvent($event)"
