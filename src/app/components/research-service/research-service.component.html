@@ -12,13 +12,29 @@
                 padding-top: 100px;
               "
             >
-              <h3>Verdict is the World's 1st Real-Time Research Service​</h3>
+            <div *ngIf="imgSrc" style="text-align: center;">
+              <img
+              style="width: 270px; "
+              alt="imag"
+              src="{{imgSrc}}"
+            />
+            </div>
+              <h3 style="text-align: center">{{ title }} ​</h3>
               <div style="display: flex; place-content: center">
                 <input
                   style="width: 400px; border-color: aqua"
                   type="text"
+                  placeholder="Find your stock verdict"
                   [(ngModel)]="inputVal"
                   (click)="onInputClick()"
+                />
+
+                <input
+                  [hidden]="hideQuantityBox"
+                  style="width: 200px; border-color: aqua; margin: 0 50px"
+                  type="number"
+                  placeholder="Quantity (Optional)"
+                  [(ngModel)]="NumQuantity"
                 />
 
                 <button
@@ -27,7 +43,7 @@
                   style="background-color: aqua"
                   (click)="OnHandleClick()"
                 >
-                  Search
+                  {{ serachBoxText }}
                 </button>
               </div>
             </div>
@@ -48,9 +64,13 @@
                     cursor: pointer; /* Add cursor pointer for hover effect */
                   "
                   *ngFor="let hero of data | filter : inputVal"
-                  (click)="hero.Company !== 'Not Found' ? onResponseClick(hero.sname) : null"
+                  (click)="
+                    hero.Company !== 'Not Found'
+                      ? onResponseClick(hero.sname)
+                      : null
+                  "
                 >
-                  <span [innerHTML]="hero.Company" ></span>
+                  <span [innerHTML]="hero.Company"></span>
 
                   <span *ngIf="hero.Company == 'Not Found' ? 0 : 1">
                     (<span [innerHTML]="hero.ExchangeName | uppercase"></span>
@@ -61,7 +81,6 @@
                   </span>
                 </li>
               </ul>
-
             </div>
           </div>
         </div>

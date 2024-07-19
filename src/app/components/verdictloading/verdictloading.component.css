@@ -2,7 +2,7 @@
 .loading-bar {
   width: 100%;
   height: 5px; /* Adjust height of loading bar */
-  background-color: aqua;
+  /* background-color: aqua; */
   margin-top: 10px; /* Adjust spacing as needed */
   animation: loading-animation 3s infinite ease-in-out; /* Adjust animation duration and timing */
 }

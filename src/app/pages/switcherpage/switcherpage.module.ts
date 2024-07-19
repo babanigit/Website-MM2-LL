@@ -8,6 +8,9 @@ import { Verdict3newComponent } from '../../components/verdict3new/verdict3new.c
 import { Verdict1Component } from "../../components/verdict1/verdict1.component";
 import { Verdict2Component } from '../../components/verdict2/verdict2.component';
 import { ResearchServiceComponent } from '../../components/research-service/research-service.component';
+import { VerdictloadingComponent } from "../../components/verdictloading/verdictloading.component";
+import { FilterReportPipe } from "../../pipes/filter-report.pipe";
+import { VerdictreportComponent } from "../../components/verdictreport/verdictreport.component";
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { ResearchServiceComponent } from '../../components/research-service/rese
     Verdict1Component,
     Verdict1Component,
     Verdict2Component,
-    ResearchServiceComponent
+    ResearchServiceComponent,
+    VerdictloadingComponent,
+    FilterReportPipe,
+    VerdictreportComponent
 ]
 })
 export class SwitcherpageModule { }

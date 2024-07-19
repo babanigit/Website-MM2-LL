@@ -1,9 +1,38 @@
 
 
 <!-- search -->
- <app-research-service
+<app-research-service
+[imgSrc]="'https://i.marketsmojo.com/switcher/switcher-logo2_new.png'"
+[title]="'A quick guide on how to replace your current stocks with mojo recommended stocks​'"
+[serachBoxText]="'RUN SWITCHER'"
+[hideQuantityBox]="false"
 
+  (myEvent_InputValue)="recievedDataEvent($event)"
+  (myEvent2_Reportstate)="recievedReportStateEvent($event)"
+  (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
+/>
+
+
+<!-- loading -->
+<app-verdictloading
+ [hidden]="loadingState"
+
+ [barColor]="'rgb(102, 102, 233)'"
+ [text1]="'Loading Switcher Report'"
  />
+
+<!-- report -->
+<!-- inputData.length < 1 || boxState -->
+<app-verdictreport
+  [hidden]="inputData.length < 1 || ReportBoxState"
+
+  *ngFor="let item of ReportResponse | filterReport : inputData"
+  [reportData]="item"
+
+  (myEvent_CloseBox)="recievedReportStateEvent($event)"
+/>
+
+
 
 <!-- verdict 1 -->
 <app-verdict1
@@ -13,7 +42,6 @@
 />
 
 <app-verdict2
-
  [imgSrc]="'https://i.marketsmojo.com/switcher/switcher_thumb2.png'"
 />
 

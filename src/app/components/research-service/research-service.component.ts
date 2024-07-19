@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { data } from '../../assets/data';
@@ -12,13 +12,22 @@ import { data } from '../../assets/data';
   styleUrl: './research-service.component.css',
 })
 export class ResearchServiceComponent {
+  // props
+  @Input() title!: string; //props
+  @Input() serachBoxText!: string; //props
+  @Input() imgSrc!: string | undefined; //props
+  @Input() hideQuantityBox!: boolean; //props
+
+  // events
   @Output() myEvent_InputValue = new EventEmitter<string>(); //for input value
   @Output() myEvent2_Reportstate = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
 
-  filterState = false;
-  inputVal = '';
   data: any[] = [];
+  inputVal:string = '';
+  NumQuantity:undefined|number;
+
+  filterState = false;
 
   constructor() {
     this.data = data;

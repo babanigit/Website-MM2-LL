@@ -1,12 +1,22 @@
 <!-- search -->
 <app-research-service
+[title]="'Verdict is the Worlds 1st Real-Time Research Service​'"
+[serachBoxText]="'Search'"
+[hideQuantityBox]="true"
+
   (myEvent_InputValue)="recievedDataEvent($event)"
   (myEvent2_Reportstate)="recievedReportStateEvent($event)"
   (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
 />
 
 <!-- loading -->
-<app-verdictloading [hidden]="loadingState" />
+<app-verdictloading
+ [hidden]="loadingState"
+
+ [barColor]="'aqua'"
+ [text1]="'Loading Verdict Report'"
+ [text2]="'Analysing Price & Volume'"
+ />
 
 <!-- report -->
 <!-- inputData.length < 1 || boxState -->
