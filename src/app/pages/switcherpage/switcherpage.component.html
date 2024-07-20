@@ -19,19 +19,11 @@
 />
 
 <!-- report -->
-<!-- inputData.length < 1 || boxState -->
-<!-- <app-verdictreport
-  [hidden]="inputData.length < 1 || ReportBoxState"
-
-  *ngFor="let item of switcherGetRespone | filterReport : inputData"
-  [reportData]="item"
-
-  (myEvent_CloseBox)="recievedReportStateEvent($event)"
-/> -->
-
+<!-- inputData.length < 1 || ReportBoxState -->
 <app-switcher-report
 
-  [hidden]="inputData.length < 1 || ReportBoxState"
+  [hidden]="
+false  "
   *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData"
 
   [reportData]="item"

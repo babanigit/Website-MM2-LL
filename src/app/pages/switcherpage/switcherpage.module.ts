@@ -11,8 +11,11 @@ import { ResearchServiceComponent } from '../../components/research-service/rese
 import { VerdictloadingComponent } from "../../components/verdictloading/verdictloading.component";
 import { FilterReportPipe } from "../../pipes/filter-report.pipe";
 import { VerdictreportComponent } from "../../components/verdictreport/verdictreport.component";
-import { SwitcherReportComponent } from '../../components/switcher-report/switcher-report.component';
+import { SwitcherReportComponent } from '../../components/switcherReportsComponent/switcher-report/switcher-report.component';
 import { FilterSwitcherReportPipe } from '../../pipes/filter-switcher-report.pipe';
+import { SwitchResultComponent } from '../../components/switcherReportsComponent/switch-result/switch-result.component';
+import { SwitchOtherChoicesComponent } from '../../components/switcherReportsComponent/switch-other-choices/switch-other-choices.component';
+import { SwitchOptionsComponent } from '../../components/switcherReportsComponent/switch-options/switch-options.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { FilterSwitcherReportPipe } from '../../pipes/filter-switcher-report.pip
     FilterReportPipe,
     VerdictreportComponent,
     SwitcherReportComponent,
-    FilterSwitcherReportPipe
+    FilterSwitcherReportPipe,
+    SwitchResultComponent,
+    SwitchOtherChoicesComponent,
+    SwitchOptionsComponent
 ]
 })
 export class SwitcherpageModule { }

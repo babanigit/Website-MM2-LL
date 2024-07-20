@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ISwitcherResponse2 } from '../../assets/switcherGetRespone2';
+import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-switcher-report',
@@ -7,7 +8,7 @@ import { ISwitcherResponse2 } from '../../assets/switcherGetRespone2';
   styleUrl: './switcher-report.component.css',
   standalone:true,
   imports:[
-
+    CommonModule
   ]
 })
 export class SwitcherReportComponent {
