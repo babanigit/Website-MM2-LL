@@ -24,28 +24,43 @@
 
 the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
 
-<div>
+<div *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData">
   <!-- it will create multiple reports based on search input -->
   <app-switcher-report
-    [hidden]="inputData.length < 1 || ReportBoxState"
-    *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData"
+    [hidden]="
+      inputData.length < 1 ||
+      ReportBoxState ||
+      reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
+    "
     [reportData]="item"
     (myEvent_CloseBox)="recievedReportStateEvent($event)"
     (reportDataEvent)="recievedReportDataEvent($event)"
   />
+
+  <!-- reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
+  ReportBoxState -->
+
+  <!-- reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED' -->
+  <app-switch-options
+    (myEvent_CloseBox)="recievedReportStateEvent($event)"
+    [hidden]="
+    reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
+  ReportBoxState
+    "
+    *ngIf="
+    reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
+    "
+    [reportData]="reportDataEvent"
+  />
+
+  <app-switch-result *ngIf="false" />
+
+  <app-switch-other-choices *ngIf="false" />
 </div>
 
-<div *ngIf="reportDataEvent?.message; else elseBlock">
+the message is {{ reportDataEvent?.data?.ques?.switch_msg }}
 
-  <app-switch-options />
-
-  <app-switch-result />
-
-  <app-switch-other-choices />
-
-</div>
-
-<ng-template #elseBlock> </ng-template>
+<!-- *ngIf="reportDataEvent?.data?.ques?.switch_msg == 'YOU HAVE ENTERED'" -->
 
 <!-- verdict 1 -->
 <app-verdict1

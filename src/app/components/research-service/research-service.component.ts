@@ -24,7 +24,7 @@ export class ResearchServiceComponent {
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
 
   data: any[] = [];
-  inputVal:string = '';
+  inputVal:string = 'hdfc';
   NumQuantity:undefined|number;
 
   filterState = false;
@@ -73,6 +73,6 @@ export class ResearchServiceComponent {
     // Cast event.target to HTMLInputElement to access the value property
     console.log("oninputchange")
     this.inputVal = (event.target as HTMLInputElement).value;
-    this.myEvent_InputValue.emit(this.inputVal); // Emitting the updated input value
+    // this.myEvent_InputValue.emit(this.inputVal); // Emitting the updated input value
   }
 }

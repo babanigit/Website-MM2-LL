@@ -1,1 +1,79 @@
 <p>switch-options works!</p>
+<div class="card text-center" style="min-height: auto">
+  <div style="text-align: end; padding-right: 20px; padding-top: 20px">
+    <button
+      style="
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: gray;
+        color: white;
+      "
+      (click)="onClose()"
+    >
+      X
+    </button>
+  </div>
+
+  <div class="card-body" style="display: grid">
+    <!-- head -->
+    <div style="font-weight: 600; padding: 0 40px; padding-bottom: 30px">
+      <div>You Have Entered</div>
+      <div style="font-weight: 700; font-size: x-large">
+        Stock Name :- {{ reportData?.data?.sname }}
+      </div>
+      <div>
+        Sector: {{ reportData?.data?.ind_name }} | Market Cap:
+        {{ reportData?.data?.mcapclass }} (1,36,157 cr)
+      </div>
+    </div>
+
+    <div style="font-size: large">DO YOU WANT TO SWITCH TO</div>
+
+    <div style="text-align: center">
+      <div>
+        <input
+          type="radio"
+          id="financeNbfcRadio"
+          name="ratingGroup"
+          #financeNbfcRadio
+          value="financeNbfc"
+        />
+        <label for="financeNbfcRadio"
+          >Higher rated Stock in Finance/NBFC Sector</label
+        >
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          id="largeCapRadio"
+          name="ratingGroup"
+          #largeCapRadio
+          value="largeCap"
+        />
+        <label for="largeCapRadio">Higher rated Stock in Large Cap</label>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          id="acrossMarketRadio"
+          name="ratingGroup"
+          #acrossMarketRadio
+          value="acrossMarket"
+        />
+        <label for="acrossMarketRadio"
+          >Higher rated Stock across the Market</label
+        >
+      </div>
+
+      <button style="width: 300px" (click)="getSelectedValue()">
+        run switcher
+      </button>
+    </div>
+
+    <!-- body -->
+    <!-- copy paste from verdictreport -->
+  </div>
+</div>

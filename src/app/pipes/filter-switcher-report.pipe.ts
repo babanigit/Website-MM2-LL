@@ -20,6 +20,7 @@ export class FilterSwitcherReportPipe implements PipeTransform {
       });
 
       console.log('hello filterSwitcherReport is working...');
+      console.log(getSwitcherReport)
       return getSwitcherReport;
     }
      else {

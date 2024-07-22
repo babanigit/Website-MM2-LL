@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { sectionDataSwitcher } from '../../assets/sectionData';
 import { verdict1SwitcherListData } from '../../assets/verdict1Data';
 import { switcherGetRespone } from '../../assets/switcherGetRespone';
-import { ISwitcherResponse2 } from '../../assets/switcherGetRespone2';
+import { ISwitcherResponse2, switcherGetRespone2 } from '../../assets/switcherGetRespone2';
 
 @Component({
   selector: 'app-switcherpage',
@@ -18,7 +18,7 @@ export class SwitcherpageComponent {
   constructor() {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
-    this.switcherGetRespone = switcherGetRespone;
+    this.switcherGetRespone = switcherGetRespone2;
   }
 
   inputData: string = '';
