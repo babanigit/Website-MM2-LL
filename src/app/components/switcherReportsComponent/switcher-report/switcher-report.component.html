@@ -1,5 +1,4 @@
 <div class="card text-center" style="min-height: auto">
-
   <div style="text-align: end; padding-right: 20px; padding-top: 20px">
     <button
       style="
@@ -17,7 +16,7 @@
 
   <div class="card-body" style="display: grid">
     <!-- head -->
-    <div style="font-weight: 600; padding: 0 40px; padding-bottom: 30px;">
+    <div style="font-weight: 600; padding: 0 40px; padding-bottom: 30px">
       <div style="font-weight: 700; font-size: x-large">
         {{ reportData.data.sname }} Verdict Report
       </div>
@@ -27,9 +26,8 @@
       </div>
     </div>
 
-
-     <!-- body -->
-     <div class="container" style="height: 72vh">
+    <!-- body -->
+    <div class="container" style="height: 72vh">
       <div class="row" style="height: 100%">
         <div class="col-md-6">DOWNLOAD</div>
         <div class="col-md-6">
@@ -80,7 +78,9 @@
                   "
                 >
                   <div
-                    [innerHTML]="reportData.data.verdict?.cover_page_data?.cover_headline"
+                    [innerHTML]="
+                      reportData.data.verdict?.cover_page_data?.cover_headline
+                    "
                     style="
                       color: rgb(59, 180, 59);
                       font-weight: 800;
@@ -90,8 +90,6 @@
                     "
                   ></div>
                 </div>
-
-
               </div>
 
               <!-- two colms -->
@@ -113,7 +111,8 @@
                   <!-- map -->
                   <div
                     *ngFor="
-                      let summary of reportData.data.verdict?.cover_page_data?.cover_summary
+                      let summary of reportData.data.verdict?.cover_page_data
+                        ?.cover_summary
                     "
                   >
                     <div>
@@ -139,7 +138,9 @@
                     </h5>
                     <div>
                       <span>CMP: </span>
-                      <span>{{ reportData.data.verdict?.price_info?.cmp }}</span>
+                      <span>{{
+                        reportData.data.verdict?.price_info?.cmp
+                      }}</span>
                     </div>
                   </div>
 
@@ -151,12 +152,14 @@
                     <div>
                       <span>BSE - </span>
                       <span>{{
-                        reportData.data.verdict?.stock_details?.jan31_high_2018?.bse
+                        reportData.data.verdict?.stock_details?.jan31_high_2018
+                          ?.bse
                       }}</span>
                       <span> /</span>
                       <span>NSE - </span>
                       <span>{{
-                        reportData.data.verdict?.stock_details?.jan31_high_2018?.nse
+                        reportData.data.verdict?.stock_details?.jan31_high_2018
+                          ?.nse
                       }}</span>
                     </div>
 
@@ -171,30 +174,6 @@
                       <span>{{ reportData.data.ind_name }}</span>
                     </div>
 
-                    <!--  -->
-                    <!-- <div>
-                      <span>52 w H/L -</span>
-                      <span>(Rs.) 4262.5 / 2320.2</span>
-                    </div> -->
-
-                    <!-- div_yeild  -->
-                    <!-- <div>
-                      <span>Dividend Yield - </span>
-                      <span>{{ reportData.data.price_info.div_yeild }}</span>
-                    </div> -->
-
-                    <!-- deb_equity -->
-                    <!-- <div>
-                      <span>Return on Equity -</span>
-                      <span>{{ reportData.data.price_info.deb_equity }}</span>
-                    </div> -->
-
-                    <!-- <div>
-                      <span>Price to Book -</span>
-                      <span>{{
-                        reportData.data.price_info.price_to_book
-                      }}</span>
-                    </div> -->
                   </div>
                 </div>
               </div>
@@ -204,11 +183,9 @@
       </div>
     </div>
 
-
-
     <!-- body -->
-   <!-- copy paste from verdictreport -->
-
-
+    <!-- copy paste from verdictreport -->
   </div>
 </div>
+
+

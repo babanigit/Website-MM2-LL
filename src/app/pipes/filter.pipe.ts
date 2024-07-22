@@ -22,7 +22,7 @@ export class FilterPipe implements PipeTransform {
       );
     });
 
-    console.log('the data is : ', getCompany);
+    // console.log('the data is : ', getCompany);
 
     //if there is no data
     if (getCompany.length === 0) {

@@ -1,4 +1,5 @@
 <!-- search -->
+<!-- it will give you sname onclick -->
 <app-research-service
   [imgSrc]="'https://i.marketsmojo.com/switcher/switcher-logo2_new.png'"
   [title]="
@@ -18,19 +19,33 @@
   [text1]="'Loading Switcher Report'"
 />
 
-<!-- report -->
+<!-- reports, choices and options -->
 <!-- inputData.length < 1 || ReportBoxState -->
-<app-switcher-report
 
-  [hidden]="
-false  "
-  *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData"
+the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
 
-  [reportData]="item"
+<div>
+  <!-- it will create multiple reports based on search input -->
+  <app-switcher-report
+    [hidden]="inputData.length < 1 || ReportBoxState"
+    *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData"
+    [reportData]="item"
+    (myEvent_CloseBox)="recievedReportStateEvent($event)"
+    (reportDataEvent)="recievedReportDataEvent($event)"
+  />
+</div>
 
-  (myEvent_CloseBox)="recievedReportStateEvent($event)"
+<div *ngIf="reportDataEvent?.message; else elseBlock">
 
-/>
+  <app-switch-options />
+
+  <app-switch-result />
+
+  <app-switch-other-choices />
+
+</div>
+
+<ng-template #elseBlock> </ng-template>
 
 <!-- verdict 1 -->
 <app-verdict1

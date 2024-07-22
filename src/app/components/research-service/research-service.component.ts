@@ -55,17 +55,24 @@ export class ResearchServiceComponent {
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
     console.log('hello there input value have sended', this.inputVal);
 
-    setTimeout(() => {
+    // setTimeout(() => {
       this.myEvent2_Reportstate.emit(false);
       this.myEvent3_LoadingState.emit(true); //hide loading true
       this.myEvent_InputValue.emit(this.inputVal);
       this.inputVal = '';
-    }, 3000);
+    // }, 3000);
   }
 
   onInputClick() {
     this.filterState = false;
     // this.myEvent2_Reportstate.emit(true);
     // this.myEvent4.emit(true);
+  }
+
+  onInputChange(event: Event) {
+    // Cast event.target to HTMLInputElement to access the value property
+    console.log("oninputchange")
+    this.inputVal = (event.target as HTMLInputElement).value;
+    this.myEvent_InputValue.emit(this.inputVal); // Emitting the updated input value
   }
 }

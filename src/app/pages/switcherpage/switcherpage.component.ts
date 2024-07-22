@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { sectionDataSwitcher } from '../../assets/sectionData';
-import {
-  verdict1SwitcherListData,
-} from '../../assets/verdict1Data';
-import { ReportResponse } from '../../assets/getRespone';
+import { verdict1SwitcherListData } from '../../assets/verdict1Data';
 import { switcherGetRespone } from '../../assets/switcherGetRespone';
+import { ISwitcherResponse2 } from '../../assets/switcherGetRespone2';
 
 @Component({
   selector: 'app-switcherpage',
@@ -16,18 +14,18 @@ export class SwitcherpageComponent {
   verdict1SwitcherListData: any[] = [];
 
   switcherGetRespone: any[] = [];
-  ReportResponse: any[] = []; //will change this with new json data
 
   constructor() {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
     this.switcherGetRespone = switcherGetRespone;
-    this.ReportResponse = ReportResponse;
   }
 
   inputData: string = '';
   loadingState: boolean = true;
   ReportBoxState: boolean = false;
+
+  reportDataEvent: ISwitcherResponse2 | undefined;
 
   //get input data
   recievedDataEvent(e: string) {
@@ -42,5 +40,11 @@ export class SwitcherpageComponent {
   //loadingState
   recievedLoadingStateEvent(e: boolean) {
     this.loadingState = e;
+  }
+
+  recievedReportDataEvent(e: ISwitcherResponse2) {
+    this.reportDataEvent = e;
+    console.log('hey from the page');
+    console.log(e);
   }
 }
