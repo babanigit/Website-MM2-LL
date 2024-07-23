@@ -14,6 +14,9 @@ export class SwitchOptionsComponent {
   @Output() myEvent_CloseBox = new EventEmitter<boolean>();
   @Output() myEvent2_ChoiceValue = new EventEmitter<string>();
 
+  @Output() myEvent3_resultState = new EventEmitter<boolean>();
+
+
 
   @Input() reportData!: ISwitcherResponse2 | undefined; //props
 
@@ -25,8 +28,12 @@ export class SwitchOptionsComponent {
     this.myEvent2_ChoiceValue.emit(undefined);
   }
 
-  getSelectedValue(value: string) {
-    console.log(value);
+  // on switcher clicked // we sending string value
+  getValue(value: string) {
     this.myEvent2_ChoiceValue.emit(value);
+
+    this.myEvent_CloseBox.emit(true); //close box true
+    this.myEvent3_resultState.emit(false); //unhide result
+
   }
 }

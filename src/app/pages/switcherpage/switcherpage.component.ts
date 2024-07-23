@@ -32,6 +32,8 @@ export class SwitcherpageComponent {
 
   choiceValue: string |undefined;
 
+  SWITCHER_RESULT_STATE  : boolean = true;
+
   //get input data
   recievedDataEvent(e: string) {
     this.inputData = e;
@@ -40,6 +42,11 @@ export class SwitcherpageComponent {
   //manipulate reportBox State
   recievedReportStateEvent(e: boolean) {
     this.ReportBoxState = e;
+
+    console.log("the heheh event is : ",e )
+
+    this.choiceValue=undefined;
+    this.SWITCHER_RESULT_STATE=true;
   }
 
   //loadingState
@@ -56,7 +63,11 @@ export class SwitcherpageComponent {
   // getchoicevalue id
   recievedChooseValue(e: string |undefined) {
     this.choiceValue = e;
-    console.log('hey from the page chooseValue');
+  }
+
+  recievedResultstate(e:boolean){
+    this.SWITCHER_RESULT_STATE=e;
+    console.log('hey from the page resultstate is : ', e);
     console.log(e);
   }
 }

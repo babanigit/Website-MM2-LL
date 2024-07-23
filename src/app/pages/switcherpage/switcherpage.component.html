@@ -10,8 +10,8 @@
   (myEvent_InputValue)="recievedDataEvent($event)"
   (myEvent2_Reportstate)="recievedReportStateEvent($event)"
   (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
-  (myEvent4_ChooseValue)="recievedChooseValue($event)"
 
+  (myEvent4_ChooseValue)="recievedChooseValue($event)"
 />
 
 <!-- loading -->
@@ -45,9 +45,12 @@ the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
   <app-switch-options
     (myEvent_CloseBox)="recievedReportStateEvent($event)"
     (myEvent2_ChoiceValue)="recievedChooseValue($event)"
+    (myEvent3_resultState)="recievedResultstate($event)"
+
     [hidden]="
       reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
-      ReportBoxState || choiceValue
+      ReportBoxState ||
+      choiceValue
     "
     *ngIf="reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'"
     [reportData]="reportDataEvent"
@@ -55,12 +58,12 @@ the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
 
   <!-- switcher report -->
   <app-switch-result
-  [hidden]=""
-  *ngIf="choiceValue"
-  />
+  (myEvent_resultState)="recievedResultstate($event)"
+
+  [hidden]="SWITCHER_RESULT_STATE"
+   />
 
   <app-switch-other-choices *ngIf="false" />
-
 </div>
 
 the message is {{ reportDataEvent?.data?.ques?.switch_msg }}
