@@ -31,25 +31,26 @@
     <div style="font-size: large">DO YOU WANT TO SWITCH TO</div>
 
     <div style="text-align: center">
-      <div>
+
+      <div *ngFor="let hero of reportData!.data!.ques!.list[0].opt">
         <input
           type="radio"
-          id="financeNbfcRadio"
-          name="ratingGroup"
-          #financeNbfcRadio
-          value="financeNbfc"
+          id="{{hero.valsid}}"
+          name="{{hero.short_name}}"
+          [(ngModel)]="selectedValue"
+          value="{{hero.valsid}}"
         />
-        <label for="financeNbfcRadio"
-          >Higher rated Stock in Finance/NBFC Sector</label
+        <label for="{{hero.valsid}}"
+          > {{hero.txt}} </label
         >
       </div>
 
-      <div>
+      <!-- <div>
         <input
           type="radio"
           id="largeCapRadio"
           name="ratingGroup"
-          #largeCapRadio
+          [(ngModel)]="selectedValue"
           value="largeCap"
         />
         <label for="largeCapRadio">Higher rated Stock in Large Cap</label>
@@ -60,15 +61,15 @@
           type="radio"
           id="acrossMarketRadio"
           name="ratingGroup"
-          #acrossMarketRadio
+          [(ngModel)]="selectedValue"
           value="acrossMarket"
         />
         <label for="acrossMarketRadio"
           >Higher rated Stock across the Market</label
         >
-      </div>
+      </div> -->
 
-      <button style="width: 300px" (click)="getSelectedValue()">
+      <button style="width: 300px" (click)="getSelectedValue(selectedValue)">
         run switcher
       </button>
     </div>

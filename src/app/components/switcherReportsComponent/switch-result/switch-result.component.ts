@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './switch-result.component.css',
   standalone:true,
   imports:[
-
+    CommonModule,
   ]
 })
 export class SwitchResultComponent {

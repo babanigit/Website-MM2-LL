@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { sectionDataSwitcher } from '../../assets/sectionData';
 import { verdict1SwitcherListData } from '../../assets/verdict1Data';
 import { switcherGetRespone } from '../../assets/switcherGetRespone';
-import { ISwitcherResponse2, switcherGetRespone2 } from '../../assets/switcherGetRespone2';
+import {
+  ISwitcherResponse2,
+  switcherGetRespone2,
+} from '../../assets/switcherGetRespone2';
 
 @Component({
   selector: 'app-switcherpage',
@@ -27,6 +30,8 @@ export class SwitcherpageComponent {
 
   reportDataEvent: ISwitcherResponse2 | undefined;
 
+  choiceValue: string |undefined;
+
   //get input data
   recievedDataEvent(e: string) {
     this.inputData = e;
@@ -45,6 +50,13 @@ export class SwitcherpageComponent {
   recievedReportDataEvent(e: ISwitcherResponse2) {
     this.reportDataEvent = e;
     console.log('hey from the page');
+    console.log(e);
+  }
+
+  // getchoicevalue id
+  recievedChooseValue(e: string |undefined) {
+    this.choiceValue = e;
+    console.log('hey from the page chooseValue');
     console.log(e);
   }
 }

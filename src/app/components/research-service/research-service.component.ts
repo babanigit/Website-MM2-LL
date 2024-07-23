@@ -23,6 +23,8 @@ export class ResearchServiceComponent {
   @Output() myEvent2_Reportstate = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
 
+  @Output() myEvent4_ChooseValue= new EventEmitter<string | undefined>();
+
   data: any[] = [];
   inputVal:string = 'hdfc';
   NumQuantity:undefined|number;
@@ -65,7 +67,7 @@ export class ResearchServiceComponent {
 
   onInputClick() {
     this.filterState = false;
-    // this.myEvent2_Reportstate.emit(true);
+    this.myEvent4_ChooseValue.emit(undefined);
     // this.myEvent4.emit(true);
   }
 

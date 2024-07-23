@@ -133,6 +133,20 @@ interface SectType {
   reason: string;
 }
 
+// Interface for the stock properties
+interface Stock {
+  clr: string;
+  scoreText: string;
+  sname: string;
+  shares: string;
+  txt: string[];
+}
+
+// Interface for the stocklist object
+interface StockList {
+  [key: string]: Stock; // Index signature for dynamic keys (stock IDs)
+}
+
 interface Data {
   block_page: number;
   remaining_views: number;
@@ -140,6 +154,12 @@ interface Data {
   ispaid: number;
   islogin: boolean;
   sect_type: SectType;
+
+  stockids?: [string, string];
+  stockList?: StockList | undefined;
+  StockList?: StockList | undefined;
+  stocklist?: StockList | undefined;
+
   sname: string;
   qty: string;
   mcap: number;
@@ -164,6 +184,8 @@ export interface ISwitcherResponse2 {
 }
 
 export const switcherGetRespone2: ISwitcherResponse2[] = [
+
+  // hdfc normal verdict report
   {
     code: '200',
     message: 'Success',
@@ -290,6 +312,213 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         exch: 0,
       },
       show_fallstock: 'no',
+      stockList: undefined,
+    },
+  },
+
+  // hdfc LIC report
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: {
+        id: 1,
+        name: 'switcher',
+        reason: 'not buy and strong buy',
+      },
+      sname: 'HDFC Life Insur.',
+      qty: '',
+      mcap: 138114,
+      mcapclass: 'Large Cap',
+      ind_name: 'Finance/NBFC',
+      mcaptype: 1,
+      ind_code: 5,
+      ques: {
+        list: [
+          {
+            q: 'Do you want to Switch to',
+            opt: [
+              {
+                txt: 'Higher rated Stock in Finance/NBFC Sector',
+                val: 's-1002829',
+                valsid: 1002829,
+                details: {
+                  sid: 1002829,
+                  scoreText: 'Strong Buy',
+                  score: 81,
+                  type: 's',
+                  short_name: '',
+                  dw_url: '',
+                },
+                short_name: 'SBI Life Insuran',
+                type: 's',
+                other_choice: {
+                  '1003132': {
+                    sid: 1003132,
+                    scoreText: 'Strong Buy',
+                    score: 84,
+                    heading: 'Across Large Cap',
+                    type: 'm',
+                    short_name: 'KPIT Technologi.',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=1002829,478299&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '478299': {
+                    sid: 478299,
+                    scoreText: 'Strong Buy',
+                    score: 84,
+                    heading: 'Across the Market',
+                    type: 'a',
+                    short_name: 'ICICI Bank',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1002829,1003132&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=1003132,478299&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+              },
+              {
+                txt: 'Higher rated Stock in Large Cap',
+                val: 'm-1003132',
+                valsid: 1003132,
+                details: {
+                  sid: 1003132,
+                  scoreText: 'Strong Buy',
+                  score: 84,
+                  type: 's',
+                  short_name: '',
+                  dw_url: '',
+                },
+                short_name: 'KPIT Technologi.',
+                type: 'm',
+                other_choice: {
+                  '1002829': {
+                    sid: 1002829,
+                    scoreText: 'Strong Buy',
+                    score: 81,
+                    heading: 'Across Finance/NBFC sector',
+                    type: 's',
+                    short_name: 'SBI Life Insuran',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=1003132,478299&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '478299': {
+                    sid: 478299,
+                    scoreText: 'Strong Buy',
+                    score: 84,
+                    heading: 'Across the Market',
+                    type: 'a',
+                    short_name: 'ICICI Bank',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1003132,1002829&sh=m,s&scid=1,5&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=1002829,478299&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
+              },
+              {
+                txt: 'Higher rated Stock across the Market',
+                val: 'a-478299',
+                valsid: 478299,
+                details: {
+                  sid: 478299,
+                  scoreText: 'Strong Buy',
+                  score: 84,
+                  type: 's',
+                  short_name: '',
+                  dw_url: '',
+                },
+                short_name: 'ICICI Bank',
+                type: 'a',
+                other_choice: {
+                  '1002829': {
+                    sid: 1002829,
+                    scoreText: 'Strong Buy',
+                    score: 81,
+                    heading: 'Across Finance/NBFC sector',
+                    type: 's',
+                    short_name: 'SBI Life Insuran',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=478299,1003132&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '1003132': {
+                    sid: 1003132,
+                    scoreText: 'Strong Buy',
+                    score: 84,
+                    heading: 'Across Large Cap',
+                    type: 'm',
+                    short_name: 'KPIT Technologi.',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=478299,1002829&sh=a,s&scid=,5&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1002829,1003132&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
+              },
+            ],
+          },
+        ],
+        show: 1,
+        switch_chng: 0,
+        switch_msg: 'YOU HAVE ENTERED',
+      },
+      show_fallstock: 'no',
+      StockList: undefined,
+    },
+  },
+
+  // hdfc LIC main swither report
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: { id: 1, name: 'switcher', reason: 'not buy and strong buy' },
+      stockids: ['1002872', '1002829'],
+      stocklist: {
+        '1002872': {
+          clr: 'orange',
+          scoreText: 'Hold',
+          sname: 'HDFC Life Insur.',
+          shares: '',
+          txt: [
+            'Low Debt ',
+            '3 Consecutive Positive Results ',
+            'Sideways Technical Trend',
+            'Fair Valuation',
+          ],
+        },
+
+        '1002829': {
+          clr: 'green',
+          scoreText: 'Hold',
+          sname: 'SBI Life Insuran',
+          shares: '',
+          txt: [
+            '4 Consecutive Positive Results ',
+            'Bullish Technical Trend',
+            'Very Attractive Valuation',
+            'High (40.6%) Institutional Holding',
+          ],
+        },
+      },
+      show_fallstock: 'no',
+      sname: '',
+      qty: '',
+      mcap: 0,
+      mcapclass: '',
+      ind_name: '',
+      mcaptype: 0,
+      ind_code: 0,
     },
   },
 
@@ -566,160 +795,6 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
                 },
                 dw_url:
                   '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,972395&oth=234277,478299&sh=s,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1',
-              },
-            ],
-          },
-        ],
-        show: 1,
-        switch_chng: 0,
-        switch_msg: 'YOU HAVE ENTERED',
-      },
-      show_fallstock: 'no',
-    },
-  },
-  // hdfc
-  {
-    code: '200',
-    message: 'Success',
-    data: {
-      block_page: 0,
-      remaining_views: 0,
-      total_views: 0,
-      ispaid: 1,
-      islogin: true,
-      sect_type: {
-        id: 1,
-        name: 'switcher',
-        reason: 'not buy and strong buy',
-      },
-      sname: 'HDFC Life Insur.',
-      qty: '',
-      mcap: 138114,
-      mcapclass: 'Large Cap',
-      ind_name: 'Finance/NBFC',
-      mcaptype: 1,
-      ind_code: 5,
-      ques: {
-        list: [
-          {
-            q: 'Do you want to Switch to',
-            opt: [
-              {
-                txt: 'Higher rated Stock in Finance/NBFC Sector',
-                val: 's-1002829',
-                valsid: 1002829,
-                details: {
-                  sid: 1002829,
-                  scoreText: 'Strong Buy',
-                  score: 81,
-                  type: 's',
-                  short_name: '',
-                  dw_url: '',
-                },
-                short_name: 'SBI Life Insuran',
-                type: 's',
-                other_choice: {
-                  '1003132': {
-                    sid: 1003132,
-                    scoreText: 'Strong Buy',
-                    score: 84,
-                    heading: 'Across Large Cap',
-                    type: 'm',
-                    short_name: 'KPIT Technologi.',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=1002829,478299&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                  '478299': {
-                    sid: 478299,
-                    scoreText: 'Strong Buy',
-                    score: 84,
-                    heading: 'Across the Market',
-                    type: 'a',
-                    short_name: 'ICICI Bank',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1002829,1003132&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                },
-                dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=1003132,478299&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
-              },
-              {
-                txt: 'Higher rated Stock in Large Cap',
-                val: 'm-1003132',
-                valsid: 1003132,
-                details: {
-                  sid: 1003132,
-                  scoreText: 'Strong Buy',
-                  score: 84,
-                  type: 's',
-                  short_name: '',
-                  dw_url: '',
-                },
-                short_name: 'KPIT Technologi.',
-                type: 'm',
-                other_choice: {
-                  '1002829': {
-                    sid: 1002829,
-                    scoreText: 'Strong Buy',
-                    score: 81,
-                    heading: 'Across Finance/NBFC sector',
-                    type: 's',
-                    short_name: 'SBI Life Insuran',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=1003132,478299&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                  '478299': {
-                    sid: 478299,
-                    scoreText: 'Strong Buy',
-                    score: 84,
-                    heading: 'Across the Market',
-                    type: 'a',
-                    short_name: 'ICICI Bank',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1003132,1002829&sh=m,s&scid=1,5&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                },
-                dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=1002829,478299&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
-              },
-              {
-                txt: 'Higher rated Stock across the Market',
-                val: 'a-478299',
-                valsid: 478299,
-                details: {
-                  sid: 478299,
-                  scoreText: 'Strong Buy',
-                  score: 84,
-                  type: 's',
-                  short_name: '',
-                  dw_url: '',
-                },
-                short_name: 'ICICI Bank',
-                type: 'a',
-                other_choice: {
-                  '1002829': {
-                    sid: 1002829,
-                    scoreText: 'Strong Buy',
-                    score: 81,
-                    heading: 'Across Finance/NBFC sector',
-                    type: 's',
-                    short_name: 'SBI Life Insuran',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1002829&oth=478299,1003132&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                  '1003132': {
-                    sid: 1003132,
-                    scoreText: 'Strong Buy',
-                    score: 84,
-                    heading: 'Across Large Cap',
-                    type: 'm',
-                    short_name: 'KPIT Technologi.',
-                    dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,1003132&oth=478299,1002829&sh=a,s&scid=,5&nos=,&othnos=,&downloadswitcher=1',
-                  },
-                },
-                dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=1002829,1003132&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
               },
             ],
           },
