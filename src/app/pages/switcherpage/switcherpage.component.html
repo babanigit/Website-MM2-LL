@@ -7,10 +7,10 @@
   "
   [serachBoxText]="'RUN SWITCHER'"
   [hideQuantityBox]="false"
-  (myEvent_InputValue)="recievedDataEvent($event)"
-  (myEvent2_Reportstate)="recievedReportStateEvent($event)"
-  (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
-  (myEvent4_ChooseValue)="recievedChooseValue($event)"
+  (myEvent1_InputValue)="State_getInputStr($event)"
+  (myEvent2_Reportstate)="State_getReportBol($event)"
+  (myEvent3_LoadingState)="State_getLoadingBol($event)"
+  (myEvent4_ChooseValue)="State_getChoiceBol($event)"
 />
 
 <!-- loading -->
@@ -34,17 +34,17 @@
       reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
     "
     [reportData]="item"
-    (myEvent_CloseBox)="recievedReportStateEvent($event)"
-    (reportDataEvent)="recievedReportDataEvent($event)"
+    (myEvent_CloseBox)="State_getReportBol($event)"
+    (reportDataEvent)="State_getReportArr($event)"
   />
 
   <!-- reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
   REPORTB0X_STATE -->
   <!-- reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED' -->
   <app-switch-options
-    (myEvent_CloseBox)="recievedReportStateEvent($event)"
-    (myEvent2_ChoiceValue)="recievedChooseValue($event)"
-    (myEvent3_resultState)="recievedResultstate($event)"
+    (myEvent_CloseBox)="State_getReportBol($event)"
+    (myEvent2_ChoiceValue)="State_getChoiceBol($event)"
+    (myEvent3_resultState)="State_getResultBol($event)"
     [hidden]="
       reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
       REPORTB0X_STATE ||
@@ -56,10 +56,10 @@
 
   <!-- switcher report -->
 
-  <div  >
+  <div>
     <app-switch-result
-    [reportData]="reportDataEvent"
-      (myEvent_resultState)="recievedResultstate($event)"
+      [reportData]="reportDataEvent"
+      (myEvent_resultState)="State_getResultBol($event)"
       [hidden]="SWITCHER_RESULT_STATE"
     />
   </div>

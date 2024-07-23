@@ -19,10 +19,9 @@ export class ResearchServiceComponent {
   @Input() hideQuantityBox!: boolean; //props
 
   // events
-  @Output() myEvent_InputValue = new EventEmitter<string>(); //for input value
+  @Output() myEvent1_InputValue = new EventEmitter<string>(); //for input value
   @Output() myEvent2_Reportstate = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
-
   @Output() myEvent4_ChooseValue= new EventEmitter<string | undefined>();
 
   data: any[] = [];
@@ -47,7 +46,7 @@ export class ResearchServiceComponent {
     //   console.log('onResponseClicked : ', sname);
 
     //   this.myEvent3_LoadingState.emit(true); //hide loading true
-    //   this.myEvent_InputValue.emit(this.inputVal);
+    //   this.myEvent1_InputValue.emit(this.inputVal);
     //   this.inputVal = '';
     // }, 3000);
   }
@@ -60,7 +59,7 @@ export class ResearchServiceComponent {
     // setTimeout(() => {
       this.myEvent2_Reportstate.emit(false);
       this.myEvent3_LoadingState.emit(true); //hide loading true
-      this.myEvent_InputValue.emit(this.inputVal);
+      this.myEvent1_InputValue.emit(this.inputVal);
       this.inputVal = '';
     // }, 3000);
   }
@@ -75,6 +74,6 @@ export class ResearchServiceComponent {
     // Cast event.target to HTMLInputElement to access the value property
     console.log("oninputchange")
     this.inputVal = (event.target as HTMLInputElement).value;
-    // this.myEvent_InputValue.emit(this.inputVal); // Emitting the updated input value
+    // this.myEvent1_InputValue.emit(this.inputVal); // Emitting the updated input value
   }
 }
