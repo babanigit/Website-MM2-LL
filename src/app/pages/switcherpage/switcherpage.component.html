@@ -10,7 +10,6 @@
   (myEvent_InputValue)="recievedDataEvent($event)"
   (myEvent2_Reportstate)="recievedReportStateEvent($event)"
   (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
-
   (myEvent4_ChooseValue)="recievedChooseValue($event)"
 />
 
@@ -22,16 +21,16 @@
 />
 
 <!-- reports, choices and options -->
-<!-- inputData.length < 1 || ReportBoxState -->
+<!-- inputData.length < 1 || REPORTB0X_STATE -->
 
-the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
+<!-- the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }} -->
 
 <div *ngFor="let item of switcherGetRespone | filterSwitcherReport : inputData">
   <!-- it will create multiple reports based on search input -->
   <app-switcher-report
     [hidden]="
       inputData.length < 1 ||
-      ReportBoxState ||
+      REPORTB0X_STATE ||
       reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
     "
     [reportData]="item"
@@ -40,33 +39,35 @@ the report is {{ reportDataEvent?.data?.verdict?.stock_details?.sname }}
   />
 
   <!-- reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
-  ReportBoxState -->
+  REPORTB0X_STATE -->
   <!-- reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED' -->
   <app-switch-options
     (myEvent_CloseBox)="recievedReportStateEvent($event)"
     (myEvent2_ChoiceValue)="recievedChooseValue($event)"
     (myEvent3_resultState)="recievedResultstate($event)"
-
     [hidden]="
       reportDataEvent?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
-      ReportBoxState ||
-      choiceValue
+      REPORTB0X_STATE ||
+      CHOICE_VALUE
     "
     *ngIf="reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'"
     [reportData]="reportDataEvent"
   />
 
   <!-- switcher report -->
-  <app-switch-result
-  (myEvent_resultState)="recievedResultstate($event)"
 
-  [hidden]="SWITCHER_RESULT_STATE"
-   />
+  <div  >
+    <app-switch-result
+    [reportData]="reportDataEvent"
+      (myEvent_resultState)="recievedResultstate($event)"
+      [hidden]="SWITCHER_RESULT_STATE"
+    />
+  </div>
 
   <app-switch-other-choices *ngIf="false" />
 </div>
 
-the message is {{ reportDataEvent?.data?.ques?.switch_msg }}
+<!-- the message is {{ reportDataEvent?.data?.ques?.switch_msg }} -->
 
 <!-- *ngIf="reportDataEvent?.data?.ques?.switch_msg == 'YOU HAVE ENTERED'" -->
 

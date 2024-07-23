@@ -16,6 +16,7 @@ import { FilterSwitcherReportPipe } from '../../pipes/filter-switcher-report.pip
 import { SwitchResultComponent } from '../../components/switcherReportsComponent/switch-result/switch-result.component';
 import { SwitchOtherChoicesComponent } from '../../components/switcherReportsComponent/switch-other-choices/switch-other-choices.component';
 import { SwitchOptionsComponent } from '../../components/switcherReportsComponent/switch-options/switch-options.component';
+import { FilterChoiceResultPipe } from '../../pipes/filter-choice-result.pipe';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SwitchOptionsComponent } from '../../components/switcherReportsComponen
     FilterSwitcherReportPipe,
     SwitchResultComponent,
     SwitchOtherChoicesComponent,
-    SwitchOptionsComponent
+    SwitchOptionsComponent,
+    FilterChoiceResultPipe
 ]
 })
 export class SwitcherpageModule { }
