@@ -11,10 +11,10 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
 })
 export class SwitchOptionsComponent {
-  @Output() myEvent_CloseBox = new EventEmitter<boolean>();
+  @Output() myEvent1_CloseBox = new EventEmitter<boolean>();
   @Output() myEvent2_ChoiceValue = new EventEmitter<string>();
 
-  @Output() myEvent3_resultState = new EventEmitter<boolean>();
+  @Output() myEvent3_afterChoiceSubmitState = new EventEmitter<boolean>();
 
 
 
@@ -24,16 +24,15 @@ export class SwitchOptionsComponent {
 
 
   onClose() {
-    this.myEvent_CloseBox.emit(true);
+    this.myEvent1_CloseBox.emit(true);
     this.myEvent2_ChoiceValue.emit(undefined);
   }
 
   // on switcher clicked // we sending string value
-  getValue(value: string) {
+  getSubmitValue(value: string) {
+
+    this.myEvent1_CloseBox.emit(true); //close box true
     this.myEvent2_ChoiceValue.emit(value);
-
-    this.myEvent_CloseBox.emit(true); //close box true
-    this.myEvent3_resultState.emit(false); //unhide result
-
+    this.myEvent3_afterChoiceSubmitState.emit(false); //unhide result
   }
 }

@@ -11,8 +11,7 @@ import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
 })
 export class SwitchResultComponent {
   @Output() myEvent_resultState = new EventEmitter<boolean>();
-  @Input() reportData!: ISwitcherResponse2 |undefined |any; //props
-
+  @Input() reportData!: ISwitcherResponse2 | undefined | any; //props
 
   // onclose clicked
   onClose() {

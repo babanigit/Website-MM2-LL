@@ -15,23 +15,22 @@ import { FilterSwitcherReportPipe } from '../../../pipes/filter-switcher-report.
 ]
 })
 export class SwitcherReportComponent implements OnInit  {
-
-  @Output() myEvent_CloseBox = new EventEmitter<boolean>();
-
   @Input() reportData!: ISwitcherResponse2; //props
 
-  @Output() reportDataEvent = new EventEmitter<ISwitcherResponse2>();
+  // events
+  @Output() myEvent1_CloseBox = new EventEmitter<boolean>();
+  @Output() myEvent2_SendReportDataEvent = new EventEmitter<ISwitcherResponse2>();
 
   ngOnInit() {
     // Emit reportData if it's defined
     if (this.reportData) {
       console.log("the switcher report is: ",this.reportData)
-      this.reportDataEvent.emit(this.reportData);
+      this.myEvent2_SendReportDataEvent.emit(this.reportData);
     }
   }
 
   onClose() {
-    this.myEvent_CloseBox.emit(true);
+    this.myEvent1_CloseBox.emit(true);
   }
 
 }

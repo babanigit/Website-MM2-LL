@@ -12,22 +12,18 @@
                 padding-top: 100px;
               "
             >
-            <div *ngIf="imgSrc" style="text-align: center;">
-              <img
-              style="width: 270px; "
-              alt="imag"
-              src="{{imgSrc}}"
-            />
-            </div>
+              <div *ngIf="imgSrc" style="text-align: center">
+                <img style="width: 270px" alt="imag" src="{{ imgSrc }}" />
+              </div>
               <h3 style="text-align: center">{{ title }} ​</h3>
               <div style="display: flex; place-content: center">
                 <input
                   style="width: 400px; border-color: aqua"
                   type="text"
                   placeholder="Find your stock verdict"
-                  [(ngModel)]="inputVal"
-                  (click)="onInputClick()"
-                  (input)="onInputChange($event)"
+                  [(ngModel)]="INPUT_VALUE_SNAME"
+                  (click)="onInputBoxClick()"
+                  (input)="onInputValueChange($event)"
                 />
 
                 <input
@@ -42,7 +38,7 @@
                   type="submit"
                   class="btn"
                   style="background-color: aqua"
-                  (click)="OnHandleClick()"
+                  (click)="OnSubmitClick()"
                 >
                   {{ serachBoxText }}
                 </button>
@@ -51,7 +47,7 @@
 
             <!-- Filtering and displaying results -->
             <div
-              [hidden]="inputVal.length <= 1 || filterState"
+              [hidden]="INPUT_VALUE_SNAME.length <= 1 || FILTER_STATE"
               style="display: flex; place-content: center"
             >
               <ul class="data-ul" style="list-style-type: none; padding: 0">
@@ -64,11 +60,9 @@
                     padding: 5px;
                     cursor: pointer; /* Add cursor pointer for hover effect */
                   "
-                  *ngFor="let hero of data | filter : inputVal"
+                  *ngFor="let hero of data | filter : INPUT_VALUE_SNAME"
                   (click)="
-                    hero.Company !== 'Not Found'
-                      ? onResponseClick(hero.sname)
-                      : null
+                    hero.Company !== 'Not Found' ? onLiClick(hero.sname) : null
                   "
                 >
                   <span [innerHTML]="hero.Company"></span>

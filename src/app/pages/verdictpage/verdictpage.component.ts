@@ -19,13 +19,13 @@ export class VerdictpageComponent {
     this.verdict1ListData = verdict1ListData;
   }
 
-  inputData: string = '';
+  SNAME_INPUT_STRING: string = '';
   loadingState: boolean = true;
   ReportBoxState: boolean = false;
 
   //get input data
   recievedDataEvent(e: string) {
-    this.inputData = e;
+    this.SNAME_INPUT_STRING = e;
   }
 
   //manipulate reportBox State

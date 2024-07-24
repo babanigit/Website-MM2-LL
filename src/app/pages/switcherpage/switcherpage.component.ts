@@ -18,45 +18,55 @@ export class SwitcherpageComponent {
   verdict1SwitcherListData: any[] = [];
 
   switcherGetRespone: any[] = [];
-  swticherResultData: any[] = []
+  swticherResultData: any[] = [];
 
   constructor(private cdr: ChangeDetectorRef) {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
     this.switcherGetRespone = switcherGetRespone2;
-    this.swticherResultData = swticherResultData
-
+    this.swticherResultData = swticherResultData;
   }
 
-  inputData: string = '';
-  loadingState: boolean = true;
+  SNAME_INPUT_STRING: string = '';
+  LOADING_STATE: boolean = true;
 
   reportDataEvent: ISwitcherResponse2 | undefined | any;
 
   CHOICE_VALUE: string | undefined;
-  REPORTB0X_STATE: boolean = false;
+  CHOICE_VALUE_STATE: Boolean = false;
+
+  REPORTB0X_STATE: boolean = true;
   SWITCHER_RESULT_STATE: boolean = true;
 
   //get input data
   State_getInputStr(e: string) {
-    this.inputData = e;
+    this.SNAME_INPUT_STRING = e;
+    this.cdr.detectChanges();
   }
+
   //manipulate reportBox State
   State_getReportBol(e: boolean) {
     this.REPORTB0X_STATE = e;
 
+    this.CHOICE_VALUE_STATE =false
     this.CHOICE_VALUE = undefined;
+
     this.SWITCHER_RESULT_STATE = true;
   }
-  //loadingState
+  //get loading state
   State_getLoadingBol(e: boolean) {
-    this.loadingState = e;
+    this.LOADING_STATE = e;
   }
   // getchoicevalue id
   State_getChoiceBol(e: string | undefined) {
+
+    this.CHOICE_VALUE_STATE =true
     this.CHOICE_VALUE = e;
-    console.log("the id is : ", e)
-    this.cdr.detectChanges()
+    console.log('the id is : ', e);
+
+    this.SWITCHER_RESULT_STATE=false
+
+    this.cdr.detectChanges();
   }
   State_getReportArr(e: ISwitcherResponse2) {
     this.reportDataEvent = e;

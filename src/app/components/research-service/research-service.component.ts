@@ -20,60 +20,59 @@ export class ResearchServiceComponent {
 
   // events
   @Output() myEvent1_InputValue = new EventEmitter<string>(); //for input value
-  @Output() myEvent2_Reportstate = new EventEmitter<boolean>(); //for reportState
+  @Output() myEvent2_ReportBoxState = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
   @Output() myEvent4_ChooseValue= new EventEmitter<string | undefined>();
 
   data: any[] = [];
-  inputVal:string = 'hdfc';
+
+  INPUT_VALUE_SNAME:string = 'hdfc';
   NumQuantity:undefined|number;
 
-  filterState = false;
+  FILTER_STATE = false;
 
   constructor() {
     this.data = data;
   }
 
-  onResponseClick(sname: string) {
-    this.myEvent2_Reportstate.emit(true);
+  onLiClick(sname: string) {
+    this.myEvent2_ReportBoxState.emit(true);
 
     // this.myEvent3_LoadingState.emit(false); //on click unhidden loading
-    this.inputVal = sname;
-    this.filterState = true;
+    this.INPUT_VALUE_SNAME = sname;
+    this.FILTER_STATE = true;
 
     // setTimeout(() => {
     //   this.myEvent2_Reportstate.emit(false);
     //   console.log('onResponseClicked : ', sname);
 
     //   this.myEvent3_LoadingState.emit(true); //hide loading true
-    //   this.myEvent1_InputValue.emit(this.inputVal);
-    //   this.inputVal = '';
+    //   this.myEvent1_InputValue.emit(this.INPUT_VALUE_SNAME);
+    //   this.INPUT_VALUE_SNAME = '';
     // }, 3000);
   }
+
 
   //search box clicked
-  OnHandleClick() {
+  OnSubmitClick() {
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
-    console.log('hello there input value have sended', this.inputVal);
+    console.log('hello there input value have sended', this.INPUT_VALUE_SNAME);
 
     // setTimeout(() => {
-      this.myEvent2_Reportstate.emit(false);
+      this.myEvent2_ReportBoxState.emit(false);
       this.myEvent3_LoadingState.emit(true); //hide loading true
-      this.myEvent1_InputValue.emit(this.inputVal);
-      this.inputVal = '';
+      this.myEvent1_InputValue.emit(this.INPUT_VALUE_SNAME);
+
+      this.INPUT_VALUE_SNAME = '';
     // }, 3000);
   }
 
-  onInputClick() {
-    this.filterState = false;
+  onInputBoxClick() {
+    this.FILTER_STATE = false;
     this.myEvent4_ChooseValue.emit(undefined);
     // this.myEvent4.emit(true);
   }
 
-  onInputChange(event: Event) {
-    // Cast event.target to HTMLInputElement to access the value property
-    console.log("oninputchange")
-    this.inputVal = (event.target as HTMLInputElement).value;
-    // this.myEvent1_InputValue.emit(this.inputVal); // Emitting the updated input value
+  onInputValueChange(event: Event) {
   }
 }

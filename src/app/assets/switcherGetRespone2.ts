@@ -315,7 +315,7 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
     },
   },
 
-  // hdfc LIC report
+  // hdfc LIC report option
   {
     code: '200',
     message: 'Success',
@@ -563,17 +563,17 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         },
       },
       show_fallstock: 'no',
-      sname: "",
-      qty: "",
+      sname: '',
+      qty: '',
       mcap: 0,
-      mcapclass: "",
-      ind_name: "",
+      mcapclass: '',
+      ind_name: '',
       mcaptype: 0,
-      ind_code: 0
+      ind_code: 0,
     },
   },
 
-  // infosys
+  // infosys normal
   {
     code: '200',
     message: 'Success',
@@ -703,7 +703,7 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
     },
   },
 
-  // infosys
+  // infosys Eco Recyc with options
   {
     code: '200',
     message: 'Success',
@@ -718,7 +718,7 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         name: 'switcher',
         reason: 'not buy and strong buy',
       },
-      sname: 'Info Edg.(India)',
+      sname: 'Eco Recyc.)',
       qty: '',
       mcap: 87747.6632634,
       mcapclass: 'Large Cap',
@@ -855,6 +855,55 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         switch_msg: 'YOU HAVE ENTERED',
       },
       show_fallstock: 'no',
+    },
+  },
+
+  // infosys main switcher
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: { id: 1, name: 'switcher', reason: 'not buy and strong buy' },
+      stockids: ['925707', '234277'],
+      stocklist: {
+        '925707': {
+          clr: 'orange',
+          scoreText: 'Hold',
+          sname: 'Info Edg.(India)',
+          shares: '',
+          txt: [
+            'Low Debt ',
+            'Positive Results in Mar 24',
+            'Bullish Technical Trend',
+            'High (51.5%) Institutional Holding',
+          ],
+        },
+        '234277': {
+          clr: 'green',
+          scoreText: 'Hold',
+          sname: 'Persistent Sys',
+          shares: '',
+          txt: [
+            'Low Debt ',
+            'Positive Results in Jun 24',
+            'Bullish Technical Trend',
+            'High (50.79%) Institutional Holding',
+          ],
+        },
+      },
+      show_fallstock: 'no',
+      sname: "",
+      qty: "",
+      mcap: 0,
+      mcapclass: "",
+      ind_name: "",
+      mcaptype: 0,
+      ind_code: 0
     },
   },
 ];
