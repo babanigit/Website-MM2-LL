@@ -1,4 +1,4 @@
-export const ReportResponse = [
+export const verdictReportsData = [
   // 1. Indian Railway Finance Corporation -
 
   {

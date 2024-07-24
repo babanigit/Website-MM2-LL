@@ -1,41 +1,38 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ISwitcherReportData } from '../assets/switcherReportsData';
 
 @Pipe({
   name: 'filterChoiceResult',
   standalone: true,
 })
 export class FilterChoiceResultPipe implements PipeTransform {
-
-  transform(items: any[], searchText: string |undefined ): any[] {
+  transform(
+    items: ISwitcherReportData[],
+    searchText: string | undefined
+  ): ISwitcherReportData[] {
     //case
     if (!items) return [];
-    if (searchText == '') {
-      console.log("helloeeee")
-      return [];
+    if (searchText == undefined) {
+      console.log('serachtext is undefined, fro filter choice pipe');
+      return items;
     }
 
-    if(searchText==undefined)
-      {
-        console.log("serachtext is undefined")
-        return items
-      }
+    searchText = searchText.toString();
+    console.log('choice pipe searchText  ', searchText, typeof searchText);
 
-    searchText = searchText.toLowerCase().toString();
+    //filtering as per search text
+    let getSwitcherReport: any[] = items.filter((item) => {
+      console.log(
+        ' choice pipe all items item.data.stockids[1]  ',
+        item.data.stockids[1]
+      );
 
-    if (searchText.length >= 2) {
-      //filtering as per search text
-      let getSwitcherReport: any[] = items.filter((item) => {
-        return item.data.stockids[1].toLowerCase().includes(searchText);
-        // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
-      });
+      return item.data.stockids[1].includes(searchText);
+      // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
+    });
 
-      console.log('hello choice pipe is working...');
-      console.log(getSwitcherReport)
-      return getSwitcherReport;
-    }
-     else {
-      return [{ data: 'no' }];
-    }
+    console.log('choice pipe this is the return : ', getSwitcherReport);
+    // console.log(getSwitcherReport);
+    return getSwitcherReport;
   }
-
 }

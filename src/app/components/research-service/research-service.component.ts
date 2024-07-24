@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { data } from '../../assets/data';
+import { searchData } from '../../assets/searchData';
 
 @Component({
   selector: 'app-research-service',
@@ -24,7 +24,7 @@ export class ResearchServiceComponent {
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
   @Output() myEvent4_ChooseValue= new EventEmitter<string | undefined>();
 
-  data: any[] = [];
+  searchData: any[] = [];
 
   INPUT_VALUE_SNAME:string = 'hdfc';
   NumQuantity:undefined|number;
@@ -32,7 +32,7 @@ export class ResearchServiceComponent {
   FILTER_STATE = false;
 
   constructor() {
-    this.data = data;
+    this.searchData = searchData;
   }
 
   onLiClick(sname: string) {
@@ -56,7 +56,7 @@ export class ResearchServiceComponent {
   //search box clicked
   OnSubmitClick() {
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
-    console.log('hello there input value have sended', this.INPUT_VALUE_SNAME);
+    // console.log('hello there input value have sended', this.INPUT_VALUE_SNAME);
 
     // setTimeout(() => {
       this.myEvent2_ReportBoxState.emit(false);

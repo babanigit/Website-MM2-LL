@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReportResponse } from '../../assets/getRespone';
+import { verdictReportsData } from '../../assets/verdictReportsData';
 import { sectionDataVerdict } from '../../assets/sectionData';
 import { verdict1ListData } from '../../assets/verdict1Data';
 
@@ -10,12 +10,12 @@ import { verdict1ListData } from '../../assets/verdict1Data';
 })
 export class VerdictpageComponent {
   sectionDataVerdict: any[] = [];
-  ReportResponse: any[] = [];
+  verdictReportsData: any[] = [];
   verdict1ListData: any[] = [];
 
   constructor() {
     this.sectionDataVerdict = sectionDataVerdict;
-    this.ReportResponse = ReportResponse;
+    this.verdictReportsData = verdictReportsData;
     this.verdict1ListData = verdict1ListData;
   }
 

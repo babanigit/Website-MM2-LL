@@ -22,7 +22,7 @@
 <!-- SNAME_INPUT_STRING.length < 1 || boxState -->
 <app-verdictreport
   [hidden]="SNAME_INPUT_STRING.length < 1 || ReportBoxState"
-  *ngFor="let item of ReportResponse | filterReport : SNAME_INPUT_STRING"
+  *ngFor="let item of verdictReportsData | filterReport : SNAME_INPUT_STRING"
   [reportData]="item"
   (myEvent_CloseBox)="recievedReportStateEvent($event)"
 />

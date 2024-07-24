@@ -1,12 +1,11 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { sectionDataSwitcher } from '../../assets/sectionData';
 import { verdict1SwitcherListData } from '../../assets/verdict1Data';
-import { switcherGetRespone } from '../../assets/switcherGetRespone';
 import {
   ISwitcherResponse2,
   switcherGetRespone2,
 } from '../../assets/switcherGetRespone2';
-import { swticherResultData } from '../../assets/switcherResultData';
+import { SwitcherReportData } from '../../assets/switcherReportsData';
 
 @Component({
   selector: 'app-switcherpage',
@@ -17,14 +16,15 @@ export class SwitcherpageComponent {
   sectionDataSwitcher: any[] = [];
   verdict1SwitcherListData: any[] = [];
 
-  switcherGetRespone: any[] = [];
-  swticherResultData: any[] = [];
+  switcherGetRespone2: ISwitcherResponse2[] = [];
+  SwitcherReportData :any[]=[]
 
   constructor(private cdr: ChangeDetectorRef) {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
-    this.switcherGetRespone = switcherGetRespone2;
-    this.swticherResultData = swticherResultData;
+
+    this.switcherGetRespone2 = switcherGetRespone2;
+    this.SwitcherReportData= SwitcherReportData;
   }
 
   SNAME_INPUT_STRING: string = '';
@@ -41,6 +41,7 @@ export class SwitcherpageComponent {
   //get input data
   State_getInputStr(e: string) {
     this.SNAME_INPUT_STRING = e;
+    console.log("the sname input is: ",e )
     this.cdr.detectChanges();
   }
 
@@ -62,7 +63,7 @@ export class SwitcherpageComponent {
 
     this.CHOICE_VALUE_STATE =true
     this.CHOICE_VALUE = e;
-    console.log('the id is : ', e);
+    console.log('the choice value is the id is : ', e);
 
     this.SWITCHER_RESULT_STATE=false
 

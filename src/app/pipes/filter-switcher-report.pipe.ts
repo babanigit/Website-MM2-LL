@@ -1,11 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ISwitcherResponse2 } from '../assets/switcherGetRespone2';
 
 @Pipe({
   name: 'filterSwitcherReport',
   standalone: true,
 })
 export class FilterSwitcherReportPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any[] {
+  transform(items: ISwitcherResponse2[], searchText: string): ISwitcherResponse2[] {
     //case
     if (!items) return [];
     if (searchText == '') return [];
@@ -19,12 +20,11 @@ export class FilterSwitcherReportPipe implements PipeTransform {
         // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
       });
 
-      console.log('hello filterSwitcherReport is working...');
-      console.log(getSwitcherReport)
+      console.log('the filtered report is:', getSwitcherReport);
       return getSwitcherReport;
     }
      else {
-      return [{ data: 'no' }];
+      return [];
     }
   }
 }

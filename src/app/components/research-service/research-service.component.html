@@ -60,19 +60,19 @@
                     padding: 5px;
                     cursor: pointer; /* Add cursor pointer for hover effect */
                   "
-                  *ngFor="let hero of data | filter : INPUT_VALUE_SNAME"
+                  *ngFor="let data of searchData | filter : INPUT_VALUE_SNAME"
                   (click)="
-                    hero.Company !== 'Not Found' ? onLiClick(hero.sname) : null
+                    data.Company !== 'Not Found' ? onLiClick(data.sname) : null
                   "
                 >
-                  <span [innerHTML]="hero.Company"></span>
+                  <span [innerHTML]="data.Company"></span>
 
-                  <span *ngIf="hero.Company == 'Not Found' ? 0 : 1">
-                    (<span [innerHTML]="hero.ExchangeName | uppercase"></span>
+                  <span *ngIf="data.Company == 'Not Found' ? 0 : 1">
+                    (<span [innerHTML]="data.ExchangeName | uppercase"></span>
                     -
-                    <span [innerHTML]="hero.ScriptCode"></span>
+                    <span [innerHTML]="data.ScriptCode"></span>
                     | NSE -
-                    <span [innerHTML]="hero.Symbol"></span>)
+                    <span [innerHTML]="data.Symbol"></span>)
                   </span>
                 </li>
               </ul>

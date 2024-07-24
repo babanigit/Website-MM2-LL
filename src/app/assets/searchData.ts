@@ -1,4 +1,4 @@
-export const data = [
+export const searchData = [
   {
     Id: 1003455,
     Company: 'Indian <b>Rail</b>way Finance Corporation Ltd',

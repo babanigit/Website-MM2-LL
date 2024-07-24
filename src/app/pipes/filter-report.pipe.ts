@@ -17,6 +17,7 @@ export class FilterReportPipe implements PipeTransform {
       return item.data.stock_details.sname.toLowerCase().includes(searchText);
       // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
     });
+    console.log('the filtered report is:', getReport);
 
     return getReport;
   }
