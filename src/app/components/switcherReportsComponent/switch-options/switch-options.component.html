@@ -31,7 +31,7 @@
     <div style="font-size: large">DO YOU WANT TO SWITCH TO</div>
 
     <div style="text-align: center">
-
+      <div *ngIf="reportData!.data!.ques!.list[0].opt" >
       <div *ngFor="let hero of reportData!.data!.ques!.list[0].opt">
         <input
           type="radio"
@@ -44,6 +44,7 @@
           > {{hero.txt}} </label
         >
       </div>
+    </div>
 
       <!-- <div>
         <input

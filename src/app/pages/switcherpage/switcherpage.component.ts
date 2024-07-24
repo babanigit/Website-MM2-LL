@@ -41,7 +41,6 @@ export class SwitcherpageComponent {
   //get input data
   State_getInputStr(e: string) {
     this.SNAME_INPUT_STRING = e;
-    console.log("the sname input is: ",e )
     this.cdr.detectChanges();
   }
 
@@ -69,6 +68,7 @@ export class SwitcherpageComponent {
 
     this.cdr.detectChanges();
   }
+
   State_getReportArr(e: ISwitcherResponse2) {
     this.reportDataEvent = e;
     console.log('hey from the page');

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
+import { ISwitcherReportData } from '../../../assets/switcherReportsData';
 
 @Component({
   selector: 'app-switch-result',
@@ -11,7 +11,7 @@ import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
 })
 export class SwitchResultComponent {
   @Output() myEvent_resultState = new EventEmitter<boolean>();
-  @Input() reportData!: ISwitcherResponse2 | undefined | any; //props
+  @Input() reportData!: ISwitcherReportData ; //props
 
   // onclose clicked
   onClose() {

@@ -11,12 +11,10 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
 })
 export class SwitchOptionsComponent {
+  // events
   @Output() myEvent1_CloseBox = new EventEmitter<boolean>();
   @Output() myEvent2_ChoiceValue = new EventEmitter<string>();
-
   @Output() myEvent3_afterChoiceSubmitState = new EventEmitter<boolean>();
-
-
 
   @Input() reportData!: ISwitcherResponse2 | undefined; //props
 

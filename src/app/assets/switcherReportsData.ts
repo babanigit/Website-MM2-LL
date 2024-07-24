@@ -110,4 +110,45 @@ export const SwitcherReportData: ISwitcherReportData[] = [
       show_fallstock: 'no',
     },
   },
+
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: { id: 1, name: 'switcher', reason: 'not buy and strong buy' },
+      stockids: ['925707', '1002774'],
+      stocklist: {
+        '925707': {
+          clr: 'orange',
+          scoreText: 'Hold',
+          sname: 'Info Edg.(India)',
+          shares: '',
+          txt: [
+            'Low Debt ',
+            'Positive Results in Mar 24',
+            'Bullish Technical Trend',
+            'High (51.5%) Institutional Holding',
+          ],
+        },
+        '1002774': {
+          clr: 'green',
+          scoreText: 'Hold',
+          sname: 'C D S L',
+          shares: '',
+          txt: [
+            'Strong  Long Term Fundamentals ',
+            'Healthy Growth in Long Term Net Sales',
+            'Outstanding Results in Mar 24',
+            'High (34.53%) Institutional Holding',
+          ],
+        },
+      },
+      show_fallstock: 'no',
+    },
+  },
 ];

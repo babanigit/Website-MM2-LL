@@ -13,8 +13,8 @@ export class FilterChoiceResultPipe implements PipeTransform {
     //case
     if (!items) return [];
     if (searchText == undefined) {
-      console.log('serachtext is undefined, fro filter choice pipe');
-      return items;
+      console.log('serachtext is undefined, from filter choice pipe');
+      return [];
     }
 
     searchText = searchText.toString();
