@@ -1,13 +1,11 @@
-// filter the verdict report
-
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filterReport',
+  name: 'filterOtherSwitchers',
   standalone: true,
 })
-export class FilterReportPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any[] {
+export class FilterOtherSwitchersPipe implements PipeTransform {
+  transform(items: any[], searchText: string |undefined): any[] {
     //case
     if (!items) return [];
     if (!searchText) return items;
@@ -16,10 +14,13 @@ export class FilterReportPipe implements PipeTransform {
 
     //filtering as per search text
     let getReport: any[] = items.filter((item) => {
-      return item.data.stock_details.sname.toLowerCase().includes(searchText);
+      return item.valsid.toString().includes(searchText);
       // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
     });
 
+    console.log(" the other data is  ",  getReport)
+
     return getReport;
   }
+
 }

@@ -1,3 +1,5 @@
+// filter the dropdown list
+
 import { Pipe, PipeTransform } from '@angular/core';
 import { ISearchData } from '../assets/searchData';
 

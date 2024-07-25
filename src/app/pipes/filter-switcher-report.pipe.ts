@@ -1,3 +1,5 @@
+// filter the options and normal verdict report
+
 import { Pipe, PipeTransform } from '@angular/core';
 import { ISwitcherResponse2 } from '../assets/switcherGetRespone2';
 

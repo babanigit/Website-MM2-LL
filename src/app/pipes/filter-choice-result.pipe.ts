@@ -1,3 +1,5 @@
+// filter the main switcher report
+
 import { Pipe, PipeTransform } from '@angular/core';
 import { ISwitcherReportData } from '../assets/switcherReportsData';
 
@@ -32,7 +34,7 @@ export class FilterChoiceResultPipe implements PipeTransform {
       return item.data.stockids[0].includes(idstring);
     });
 
-    console.log('choice pipe this is the return : ', getSwitcherReport);
+    console.log('choice pipe this is the return : ', getSwitcherReport2);
     // console.log(getSwitcherReport);
     return getSwitcherReport2;
   }

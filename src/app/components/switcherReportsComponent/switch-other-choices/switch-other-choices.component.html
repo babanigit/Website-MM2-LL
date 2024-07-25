@@ -1,1 +1,15 @@
 <p>switch-other-choices works!</p>
+
+<div *ngIf="reportData.data?.ques?.list[0].opt">
+  <div
+    *ngFor="
+      let item of reportData.data?.ques?.list[0].opt
+        | filterOtherSwitchers : ID_CHOICE_VALUE
+    "
+  >
+    <!-- <div *ngIf="item.other_choice['112501'].sid">
+      {{ item.other_choice["112501"].scoreText }}
+    </div> -->
+
+  </div>
+</div>

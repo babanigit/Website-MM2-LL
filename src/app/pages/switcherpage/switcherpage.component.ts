@@ -38,9 +38,10 @@ export class SwitcherpageComponent {
 
   LOADING_STATE: boolean = true;
 
-  reportDataEvent: ISwitcherResponse2 | undefined | any;
+  switherReportData: ISwitcherResponse2 |undefined;
+  switherReportData_State:boolean=false
 
-  CHOICE_VALUE: string | undefined;
+  ID_CHOICE_VALUE: string | undefined;
   CHOICE_VALUE_STATE: Boolean = false;
 
   REPORTB0X_STATE: boolean = true;
@@ -60,7 +61,7 @@ export class SwitcherpageComponent {
     this.REPORTB0X_STATE = e;
 
     this.CHOICE_VALUE_STATE =false
-    this.CHOICE_VALUE = undefined;
+    this.ID_CHOICE_VALUE = undefined;
 
     this.SWITCHER_RESULT_STATE = true;
   }
@@ -72,7 +73,7 @@ export class SwitcherpageComponent {
   State_getChoiceBol(e: string | undefined) {
 
     this.CHOICE_VALUE_STATE =true
-    this.CHOICE_VALUE = e;
+    this.ID_CHOICE_VALUE = e;
     console.log('the choice value is the id is : ', e);
 
     this.SWITCHER_RESULT_STATE=false
@@ -81,7 +82,15 @@ export class SwitcherpageComponent {
   }
 
   State_getReportArr(e: ISwitcherResponse2) {
-    this.reportDataEvent = e;
+
+    this.switherReportData = e;
+
+    if (this.switherReportData!.data!.ques!.list[0]!.opt == undefined) {
+      this.switherReportData_State =false
+    }else {
+      this.switherReportData_State =true
+    }
+
     console.log('hey from the page');
     console.log(e);
   }
