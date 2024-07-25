@@ -1,205 +1,5 @@
 
-
-
-
-<!-- trail -->
-
-<div class="card text-center" style="min-height: auto">
-  <div style="text-align: end; padding-right: 20px; padding-top: 20px">
-    <button
-      style="
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        background-color: gray;
-        color: white;
-      "
-    >
-      X
-    </button>
-  </div>
-
-  <div class="card-body" style="display: grid">
-    <!-- head -->
-    <div style="font-weight: 600; padding: 0 40px; padding-bottom: 30px">
-      <div style="font-weight: 700; font-size: x-large">
-        hello9 Verdict Report
-      </div>
-      <div>
-        This Real-Time Stock Analysis Report was generated on 15th July 2024 at
-        02:43 PM
-      </div>
-    </div>
-
-    <!-- body -->
-    <div class="container" style="height: 72vh">
-
-
-      <div class="row" style="height: 100%">
-
-        <!-- col1 -->
-        <div class="col-md-6">DOWNLOAD</div>
-
-        <!-- col2 -->
-        <div class="col-md-6">
-          <div
-            style="
-              height: 100%;
-              width: 80%;
-              background-color: rgb(59, 180, 59);
-              display: flex;
-              justify-content: center;
-            "
-          >
-            <div
-              style="
-                height: 100%;
-                width: 90%;
-                color: aliceblue;
-                background-color: rgb(19, 35, 19);
-                display: grid;
-                grid-template-rows: 30% 70%;
-                border: 1px solid white;
-              "
-            >
-              <!-- Main Content Here -->
-              <div style="display: grid; grid-template-rows: 50% 50%">
-
-                <!-- upper -->
-                <div style="display: flex; flex-direction: column; gap: 5px; background-color: blueviolet; height: 100%;">
-                  <div style="margin: 0; padding: 0">mojo professional</div>
-                  <h1 style="font-weight: 300; font-size: 5em; margin: 0">
-                    VERDICT
-                  </h1>
-                  <div
-                    style="
-                      text-align: left;
-                      margin: 0;
-                      padding-right: 10px;
-                      font-size: small;
-                    "
-                  >
-                    Report as on 15 July 2024 at 12:01 PM
-                  </div>
-                </div>
-
-                <!-- lower -->
-                <div
-                  style="
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-end;
-                  "
-                >
-                  <!-- [innerHTML]="
-                      reportData.data.verdict?.cover_page_data?.cover_headline
-                    " -->
-
-                  <div
-                    style="
-                      color: rgb(59, 180, 59);
-                      font-weight: 800;
-                      font-size: x-large;
-                      text-align: left;
-                      padding: 10px;
-                    "
-                  > </div>
-                </div>
-              </div>
-
-              <!-- two colms -->
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: 50% 50%;
-                  padding: 5px;
-                  background-color: yellowgreen;
-                "
-              >
-                <!-- col1 -->
-                <div
-                  style="
-                    font-size: smaller;
-                    text-align: left;
-                    border-right: 1px solid #ccc;
-                    place-content: center;
-                  "
-                >
-                  <!-- map -->
-                  <!-- *ngFor="
-                  let summary of reportData.data.verdict?.cover_page_data
-                    ?.cover_summary
-                " -->
-                  <div>
-                    <div>
-                      <strong>hello8</strong><br />
-                      <span>hello7</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- col2 -->
-                <div style="padding-left: 6px;place-content: center; width: 100%; ">
-                  <div style="text-align: left">
-                    <h5
-                      style="
-                        background: rgb(59, 180, 59);
-                        display: flex;
-                        width: max-content;
-                        padding: 6px;
-                      "
-                    >
-                      hello6
-                    </h5>
-                    <div>
-                      <span>CMP: </span>
-                      <span>hello5</span>
-                    </div>
-                  </div>
-
-                  <br />
-
-                  <div style="font-size: x-small; text-align: left">
-                    <div>STOCK INFO:-</div>
-                    <!-- bse/nse -->
-                    <div>
-                      <span>BSE - </span>
-                      <span>hello4</span>
-                      <span> /</span>
-                      <span>NSE - </span>
-                      <span>hello3</span>
-                    </div>
-
-                    <!-- mcap -->
-                    <div>
-                      <span>Market Cap - </span>
-                      <span>hello2</span>
-                    </div>
-                    <!-- sector -->
-                    <div>
-                      <span>Sector - </span>
-                      <span>hello1</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-    <!-- body -->
-    <!-- copy paste from verdictreport -->
-  </div>
-</div>
-
-<!-- trail -->
+<app-demo />
 
 <hr />
 
@@ -212,10 +12,13 @@
   "
   [serachBoxText]="'RUN SWITCHER'"
   [hideQuantityBox]="false"
+
   (myEvent1_InputValue)="State_getInputStr($event)"
   (myEvent2_ReportBoxState)="State_getReportBol($event)"
   (myEvent3_LoadingState)="State_getLoadingBol($event)"
   (myEvent4_ChooseValue)="State_getChoiceBol($event)"
+
+  (myEvent5_InputId)="State_getInputIdStr($event)"
 />
 
 <!-- loading -->
@@ -260,6 +63,7 @@
     "
     *ngIf="reportDataEvent?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'"
     [reportData]="reportDataEvent"
+
     (myEvent1_CloseBox)="State_getReportBol($event)"
     (myEvent2_ChoiceValue)="State_getChoiceBol($event)"
     (myEvent3_afterChoiceSubmitState)="State_getResultBol($event)"
@@ -275,7 +79,7 @@
   <div *ngIf="CHOICE_VALUE">
     <app-switch-result
       *ngFor="
-        let item of SwitcherReportData | filterChoiceResult : CHOICE_VALUE
+        let item of SwitcherReportData | filterChoiceResult : CHOICE_VALUE : ID_INPUT_STRING
       "
       [reportData]="item"
       [hidden]="SWITCHER_RESULT_STATE"

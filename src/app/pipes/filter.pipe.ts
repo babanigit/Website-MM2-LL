@@ -1,11 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ISearchData } from '../assets/searchData';
 
 @Pipe({
   name: 'filter',
   standalone: true,
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any {
+  transform(items: ISearchData[], searchText: string): ISearchData[] | [{Company:string}] | any[] {
     //cases
     if (!items) return [];
     if (!searchText) return items;

@@ -1,4 +1,27 @@
-export const searchData = [
+// Interface for each item in the sub-array
+export interface ISearchData {
+  Id: number;
+  Company: string;
+  ScriptCode: number | string;
+  Symbol: string;
+  url: string;
+  price: number | null;
+  ExchangeName: string;
+  sname: string| null ;
+  tag: string;
+  stockprice: string;
+  chg: string;
+  chgp: string;
+  chgdir: number | string;
+  score: number | string;
+  scoretext: string;
+  stock_traded_status: string;
+  show_score: number;
+  recurl: string;
+}
+
+
+export const searchData: ISearchData[] = [
   {
     Id: 1003455,
     Company: 'Indian <b>Rail</b>way Finance Corporation Ltd',
@@ -676,6 +699,26 @@ export const searchData = [
     chgdir: 1,
     score: 70,
     scoretext: 'Buy',
+    stock_traded_status: 'Active',
+    show_score: 1,
+    recurl: '',
+  },
+  {
+    Id: 925707,
+    Company: '<b>Info</b> Edge (India) Ltd',
+    ScriptCode: 532777,
+    Symbol: 'NAUKRI',
+    url: 'https://www.marketsmojo.com/stocks-analysis/info-edge-india-925707-0',
+    price: null,
+    ExchangeName: 'bse',
+    sname: 'Info Edg.(India)',
+    tag: 'Stock',
+    stockprice: '6932.55',
+    chg: '31.55',
+    chgp: '0.46',
+    chgdir: 1,
+    score: 64,
+    scoretext: 'Hold',
     stock_traded_status: 'Active',
     show_score: 1,
     recurl: '',

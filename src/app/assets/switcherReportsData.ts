@@ -27,7 +27,9 @@ export interface ISwitcherReportData {
 }
 
 export const SwitcherReportData: ISwitcherReportData[] = [
-  // hdfc main
+
+  // hdfc
+  // hdfc Stock in Finance/NBFC Sector
   {
     code: '200',
     message: 'Success',
@@ -69,6 +71,81 @@ export const SwitcherReportData: ISwitcherReportData[] = [
     },
   },
 
+  // hdfc large
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: { id: 1, name: 'switcher', reason: 'not buy and strong buy' },
+      stockids: ['1002872', '112501'],
+      stocklist: {
+        '1002872': {
+          clr: 'red',
+          scoreText: 'Sell',
+          sname: 'HDFC Life Insur.',
+          shares: '',
+          txt: ['Expensive  Valuation ', 'Market Underperformance Last 1 Year'],
+        },
+        '112501': {
+          clr: 'green',
+          scoreText: 'Hold',
+          sname: 'Axis Bank',
+          shares: '',
+          txt: [
+            '5 Consecutive Positive Results ',
+            'Bullish Technical Trend',
+            'Fair Valuation',
+            'High (85.06%) Institutional Holding',
+          ],
+        },
+      },
+      show_fallstock: 'no',
+    },
+  },
+
+  // Stock across the Market
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: { id: 1, name: 'switcher', reason: 'not buy and strong buy' },
+      stockids: ['1002872', '264317'],
+      stocklist: {
+        '1002872': {
+          clr: 'red',
+          scoreText: 'Sell',
+          sname: 'HDFC Life Insur.',
+          shares: '',
+          txt: ['Expensive  Valuation ', 'Market Underperformance Last 1 Year'],
+        },
+        '264317': {
+          clr: 'green',
+          scoreText: 'Hold',
+          sname: 'BASF India',
+          shares: '',
+          txt: [
+            'Low Debt ',
+            'Healthy Growth in Long Term Operating Profits',
+            'Very Positive Results in Mar 24',
+            'Bullish Technical Trend',
+          ],
+        },
+      },
+      show_fallstock: 'no',
+    },
+  },
+
+  // infosys
   // infosys main
   {
     code: '200',

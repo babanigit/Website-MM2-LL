@@ -18,3 +18,9 @@ interface IData {
   show_score: number;
   recurl: string;
 }
+
+// Custom interface or tuple type for emitting multiple arguments
+ export interface InputValueEvent {
+  sname: string;
+  Id: string;
+}

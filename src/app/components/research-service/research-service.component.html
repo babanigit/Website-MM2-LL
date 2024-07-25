@@ -62,7 +62,7 @@
                   "
                   *ngFor="let data of searchData | filter : INPUT_VALUE_SNAME"
                   (click)="
-                    data.Company !== 'Not Found' ? onLiClick(data.sname) : null
+                    data.Company !== 'Not Found' ? onLiClick(data.sname,data.Id) : null
                   "
                 >
                   <span [innerHTML]="data.Company"></span>

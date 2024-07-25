@@ -332,7 +332,7 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
       },
       sname: 'HDFC Life Insur.',
       qty: '',
-      mcap: 141922,
+      mcap: 147256.04609562,
       mcapclass: 'Large Cap',
       ind_name: 'Finance/NBFC',
       mcaptype: 1,
@@ -357,43 +357,43 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
                 short_name: 'Manappuram Fin.',
                 type: 's',
                 other_choice: {
-                  '478299': {
-                    sid: 478299,
+                  '112501': {
+                    sid: 112501,
                     scoreText: 'Strong Buy',
-                    score: 84,
+                    score: 82,
                     heading: 'Across Large Cap',
                     type: 'm',
-                    short_name: 'ICICI Bank',
+                    short_name: 'Axis Bank',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=343801,156274&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=343801,264317&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
                   },
-                  '156274': {
-                    sid: 156274,
+                  '264317': {
+                    sid: 264317,
                     scoreText: 'Strong Buy',
                     score: 81,
                     heading: 'Across the Market',
                     type: 'a',
-                    short_name: 'Natco Pharma',
+                    short_name: 'BASF India',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,156274&oth=343801,478299&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=343801,112501&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
                   },
                 },
                 dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=478299,156274&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
               },
               {
                 txt: 'Higher rated Stock in Large Cap',
-                val: 'm-478299',
-                valsid: 478299,
+                val: 'm-112501',
+                valsid: 112501,
                 details: {
-                  sid: 478299,
+                  sid: 112501,
                   scoreText: 'Strong Buy',
-                  score: 84,
-                  type: 's',
+                  score: 82,
+                  type: 'a',
                   short_name: '',
                   dw_url: '',
                 },
-                short_name: 'ICICI Bank',
+                short_name: 'Axis Bank',
                 type: 'm',
                 other_choice: {
                   '343801': {
@@ -404,35 +404,35 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
                     type: 's',
                     short_name: 'Manappuram Fin.',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=478299,156274&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
                   },
-                  '156274': {
-                    sid: 156274,
+                  '264317': {
+                    sid: 264317,
                     scoreText: 'Strong Buy',
                     score: 81,
                     heading: 'Across the Market',
                     type: 'a',
-                    short_name: 'Natco Pharma',
+                    short_name: 'BASF India',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,156274&oth=478299,343801&sh=m,s&scid=1,5&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=112501,343801&sh=m,s&scid=1,5&nos=,&othnos=,&downloadswitcher=1',
                   },
                 },
                 dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=343801,156274&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=343801,264317&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1',
               },
               {
                 txt: 'Higher rated Stock across the Market',
-                val: 'a-156274',
-                valsid: 156274,
+                val: 'a-264317',
+                valsid: 264317,
                 details: {
-                  sid: 156274,
+                  sid: 264317,
                   scoreText: 'Strong Buy',
                   score: 81,
-                  type: 's',
+                  type: 'a',
                   short_name: '',
                   dw_url: '',
                 },
-                short_name: 'Natco Pharma',
+                short_name: 'BASF India',
                 type: 'a',
                 other_choice: {
                   '343801': {
@@ -443,21 +443,21 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
                     type: 's',
                     short_name: 'Manappuram Fin.',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=156274,478299&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=264317,112501&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1',
                   },
-                  '478299': {
-                    sid: 478299,
+                  '112501': {
+                    sid: 112501,
                     scoreText: 'Strong Buy',
-                    score: 84,
+                    score: 82,
                     heading: 'Across Large Cap',
                     type: 'm',
-                    short_name: 'ICICI Bank',
+                    short_name: 'Axis Bank',
                     dw_url:
-                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,478299&oth=156274,343801&sh=a,s&scid=,5&nos=,&othnos=,&downloadswitcher=1',
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=264317,343801&sh=a,s&scid=,5&nos=,&othnos=,&downloadswitcher=1',
                   },
                 },
                 dw_url:
-                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,156274&oth=343801,478299&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=343801,112501&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1',
               },
             ],
           },
@@ -467,58 +467,6 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         switch_msg: 'YOU HAVE ENTERED',
       },
       show_fallstock: 'no',
-    },
-  },
-
-  {
-    code: '200',
-    message: 'Success',
-    data: {
-      block_page: 0,
-      remaining_views: 0,
-      total_views: 0,
-      ispaid: 1,
-      islogin: true,
-      sect_type: {
-        id: 1,
-        name: 'switcher',
-        reason: 'not buy and strong buy',
-      },
-      stockids: ['1002872', '1002829'],
-      stocklist: {
-        '1002872': {
-          clr: 'orange',
-          scoreText: 'Hold',
-          sname: 'HDFC Life Insur.',
-          shares: '',
-          txt: [
-            'Low Debt ',
-            '3 Consecutive Positive Results ',
-            'Sideways Technical Trend',
-            'Fair Valuation',
-          ],
-        },
-        '1002829': {
-          clr: 'green',
-          scoreText: 'Hold',
-          sname: 'SBI Life Insuran',
-          shares: '',
-          txt: [
-            '4 Consecutive Positive Results ',
-            'Bullish Technical Trend',
-            'Very Attractive Valuation',
-            'High (40.6%) Institutional Holding',
-          ],
-        },
-      },
-      show_fallstock: 'no',
-      sname: '',
-      qty: '',
-      mcap: 0,
-      mcapclass: '',
-      ind_name: '',
-      mcaptype: 0,
-      ind_code: 0,
     },
   },
 
@@ -647,6 +595,161 @@ export const switcherGetRespone2: ISwitcherResponse2[] = [
         },
         link: null,
         exch: 0,
+      },
+      show_fallstock: 'no',
+    },
+  },
+
+  // infosys india
+  {
+    code: '200',
+    message: 'Success',
+    data: {
+      block_page: 0,
+      remaining_views: 0,
+      total_views: 0,
+      ispaid: 1,
+      islogin: true,
+      sect_type: {
+        id: 1,
+        name: 'switcher',
+        reason: 'not buy and strong buy',
+      },
+      sname: 'Info Edg.(India)',
+      qty: '',
+      mcap: 89696.1881106,
+      mcapclass: 'Large Cap',
+      ind_name: 'IT - Software ',
+      mcaptype: 1,
+      ind_code: 57,
+      ques: {
+        list: [
+          {
+            q: 'Do you want to Switch to',
+            opt: [
+              {
+                txt: 'Higher rated Stock in IT - Software  Sector',
+                val: 's-234277',
+                valsid: 234277,
+                details: {
+                  sid: 234277,
+                  scoreText: 'Buy',
+                  score: 78,
+                  type: "s",
+                  short_name: "",
+                  dw_url: ""
+                },
+                short_name: 'Persistent Sys',
+                type: 's',
+                other_choice: {
+                  '112501': {
+                    sid: 112501,
+                    scoreText: 'Strong Buy',
+                    score: 82,
+                    heading: 'Across Large Cap',
+                    type: 'm',
+                    short_name: 'Axis Bank',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=234277,264317&sh=s,a&scid=57,&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '264317': {
+                    sid: 264317,
+                    scoreText: 'Strong Buy',
+                    score: 81,
+                    heading: 'Across the Market',
+                    type: 'a',
+                    short_name: 'BASF India',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=234277,112501&sh=s,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+              },
+              {
+                txt: 'Higher rated Stock in Large Cap',
+                val: 'm-112501',
+                valsid: 112501,
+                details: {
+                  sid: 112501,
+                  scoreText: 'Strong Buy',
+                  score: 82,
+                  type: "m",
+                  short_name: "",
+                  dw_url: ""
+                },
+                short_name: 'Axis Bank',
+                type: 'm',
+                other_choice: {
+                  '234277': {
+                    sid: 234277,
+                    scoreText: 'Buy',
+                    score: 78,
+                    heading: 'Across IT - Software  sector',
+                    type: 's',
+                    short_name: 'Persistent Sys',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '264317': {
+                    sid: 264317,
+                    scoreText: 'Strong Buy',
+                    score: 81,
+                    heading: 'Across the Market',
+                    type: 'a',
+                    short_name: 'BASF India',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=112501,234277&sh=m,s&scid=1,57&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=234277,264317&sh=s,a&scid=57,&nos=,&othnos=,&downloadswitcher=1',
+              },
+              {
+                txt: 'Higher rated Stock across the Market',
+                val: 'a-264317',
+                valsid: 264317,
+                details: {
+                  sid: 264317,
+                  scoreText: 'Strong Buy',
+                  score: 81,
+                  type: "a",
+                  short_name: "",
+                  dw_url: ""
+                },
+                short_name: 'BASF India',
+                type: 'a',
+                other_choice: {
+                  '234277': {
+                    sid: 234277,
+                    scoreText: 'Buy',
+                    score: 78,
+                    heading: 'Across IT - Software  sector',
+                    type: 's',
+                    short_name: 'Persistent Sys',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=264317,112501&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                  '112501': {
+                    sid: 112501,
+                    scoreText: 'Strong Buy',
+                    score: 82,
+                    heading: 'Across Large Cap',
+                    type: 'm',
+                    short_name: 'Axis Bank',
+                    dw_url:
+                      '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=264317,234277&sh=a,s&scid=,57&nos=,&othnos=,&downloadswitcher=1',
+                  },
+                },
+                dw_url:
+                  '/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=234277,112501&sh=s,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1',
+              },
+            ],
+          },
+        ],
+        show: 1,
+        switch_chng: 0,
+        switch_msg: 'YOU HAVE ENTERED',
       },
       show_fallstock: 'no',
     },

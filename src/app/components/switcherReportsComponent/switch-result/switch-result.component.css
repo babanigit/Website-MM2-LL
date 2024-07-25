@@ -1,0 +1,27 @@
+
+
+
+/* list */
+.bullet_cio2 ul {
+  /* font-weight: 600; */
+  font-size: small;
+  list-style-type: none; /* Remove default list style (dots) */
+  padding-left: 0; /* Remove default padding */
+}
+
+.bullet_cio2 li {
+  position: relative; /* Position relative for arrow placement */
+  padding-left: 20px; /* Space for the arrow */
+  margin-bottom: 10px; /* Optional margin between list items */
+}
+
+.bullet_cio2 li:before {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Position absolutely relative to li */
+  top: 7px; /* Adjust top position for vertical alignment */
+  left: 0; /* Align with the left edge */
+  width: 10px; /* Arrow width */
+  height: 10px; /* Arrow height */
+  background-color: white; /* Blue color */
+  clip-path: polygon(100% 50%, 0 0, 0 100%); /* Arrow shape (right-facing triangle) */
+}

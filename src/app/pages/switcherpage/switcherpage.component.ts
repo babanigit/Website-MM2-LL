@@ -7,6 +7,8 @@ import {
 } from '../../assets/switcherGetRespone2';
 import { SwitcherReportData } from '../../assets/switcherReportsData';
 
+import { ISearchData2Switcher, searchData2Switcher } from '../../assets/searchData2Switcher';
+
 @Component({
   selector: 'app-switcherpage',
   templateUrl: './switcherpage.component.html',
@@ -19,15 +21,21 @@ export class SwitcherpageComponent {
   switcherGetRespone2: ISwitcherResponse2[] = [];
   SwitcherReportData :any[]=[]
 
+  searchData2Switcher: ISearchData2Switcher[]=[]
+
   constructor(private cdr: ChangeDetectorRef) {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
 
     this.switcherGetRespone2 = switcherGetRespone2;
     this.SwitcherReportData= SwitcherReportData;
+
+    this.searchData2Switcher=searchData2Switcher;
   }
 
   SNAME_INPUT_STRING: string = '';
+  ID_INPUT_STRING:string='';
+
   LOADING_STATE: boolean = true;
 
   reportDataEvent: ISwitcherResponse2 | undefined | any;
@@ -42,6 +50,9 @@ export class SwitcherpageComponent {
   State_getInputStr(e: string) {
     this.SNAME_INPUT_STRING = e;
     this.cdr.detectChanges();
+  }
+  State_getInputIdStr(e:string){
+    this.ID_INPUT_STRING = e;
   }
 
   //manipulate reportBox State
