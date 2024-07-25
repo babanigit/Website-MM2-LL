@@ -3,7 +3,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { ISearchData, searchData } from '../../assets/searchData';
-import { InputValueEvent } from '../../models/data';
+import { JsonDataService } from '../../services/json-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-research-service',
@@ -38,7 +39,10 @@ export class ResearchServiceComponent {
 
   FILTER_STATE = false;
 
-  constructor() {
+  loadingState = false;
+  private loadingSubscription: Subscription | undefined;
+
+  constructor(private serv:JsonDataService ) {
     this.searchData = searchData;
   }
 
