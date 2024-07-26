@@ -54,6 +54,7 @@ export class SwitcherpageComponent {
   }
   State_getInputIdStr(e:string){
     this.ID_INPUT_STRING = e;
+    console.log("the input id stirng is:", this.ID_INPUT_STRING);
   }
 
   //manipulate reportBox State

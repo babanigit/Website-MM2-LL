@@ -19,3 +19,30 @@ export interface IGetDropdown {
     show_score: number;
     recurl: string;
 }
+
+
+interface OtherChoice {
+  sid: string;
+  scoreText: string;
+  score: number;
+  heading: string;
+  type: string;
+  short_name: string;
+  dw_url: string;
+}
+
+export interface IOption {
+  other_choice: {
+    [key: string]: OtherChoice;
+  };
+}
+
+export interface IReportData {
+  data?: {
+    ques?: {
+      list?: Array<{
+        opt: IOption[];
+      }>;
+    };
+  };
+}

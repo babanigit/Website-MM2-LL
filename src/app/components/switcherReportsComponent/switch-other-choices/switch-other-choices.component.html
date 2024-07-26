@@ -14,7 +14,7 @@
         <div class="col-md-6">
           <div>test1</div>
 
-          <div *ngIf="ID_CHOICE_VALUE">
+          <!-- <div *ngIf="ID_CHOICE_VALUE">
             <div>the other choices are:</div>
 
             <div
@@ -22,22 +22,20 @@
             >
               <div>{{ shortName }}</div>
             </div>
-          </div>
+          </div> -->
 
-          <!-- <div>test2</div>
+          <div>test2</div>
           <div *ngIf="ID_CHOICE_VALUE">
             <div
               *ngFor="
-                let item of reportData.data?.ques.List[0]
-                  | filterOtherSwitchers : ID_CHOICE_VALUE
+                let item of reportData | filterOtherSwitchers : ID_CHOICE_VALUE
               "
             >
               <div>
                 {{ item }}
               </div>
             </div>
-          </div> -->
-
+          </div>
         </div>
       </div>
     </div>
