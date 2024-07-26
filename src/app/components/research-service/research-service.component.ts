@@ -42,7 +42,9 @@ export class ResearchServiceComponent {
   loadingState = false;
   private loadingSubscription: Subscription | undefined;
 
-  constructor(private serv:JsonDataService ) {
+  constructor(
+    // private serv:JsonDataService
+  ) {
     this.searchData = searchData;
   }
 
