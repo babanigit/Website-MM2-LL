@@ -59,7 +59,7 @@ export class ResearchServiceComponent {
 
 
     // setTimeout(() => {
-    //   this.myEvent2_Reportstate.emit(false);
+    //   this.myEvent2_ReportBoxState.emit(false);
     //   console.log('onResponseClicked : ', sname);
 
     //   this.myEvent3_LoadingState.emit(true); //hide loading true
@@ -74,16 +74,14 @@ export class ResearchServiceComponent {
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
     // console.log('hello there input value have sended', this.INPUT_VALUE_SNAME);
 
-    // setTimeout(() => {
+    setTimeout(() => {
       this.myEvent2_ReportBoxState.emit(false);
       this.myEvent3_LoadingState.emit(true); //hide loading true
       this.myEvent1_InputValue.emit(this.INPUT_VALUE_SNAME);
-
       this.myEvent5_InputId.emit(this.INPUT_VALUE_ID);
 
-
       this.INPUT_VALUE_SNAME = '';
-    // }, 3000);
+    }, 800);
   }
 
   onInputBoxClick() {

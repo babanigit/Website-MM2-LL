@@ -16,6 +16,9 @@ export class SwitchOptionsComponent {
   @Output() myEvent2_ChoiceValue = new EventEmitter<string>();
   @Output() myEvent3_afterChoiceSubmitState = new EventEmitter<boolean>();
 
+  @Output() myEvent4_LoadingState = new EventEmitter<boolean>(); //for loadingState
+
+
   @Input() reportData!: ISwitcherResponse2 | undefined; //props
 
   selectedValue: string = ''; // Variable to hold selected radio button value
@@ -28,9 +31,19 @@ export class SwitchOptionsComponent {
 
   // on switcher clicked // we sending string value
   getSubmitValue(value: string) {
+    this.myEvent4_LoadingState.emit(false); //on click unhidden loading
+
+    setTimeout(() => {
+      this.myEvent4_LoadingState.emit(true); //hide loading true
+
+      this.myEvent2_ChoiceValue.emit(value);
+
+    }, 800);
+
+
 
     this.myEvent1_CloseBox.emit(true); //close box true
-    this.myEvent2_ChoiceValue.emit(value);
+
     this.myEvent3_afterChoiceSubmitState.emit(false); //unhide result
   }
 }

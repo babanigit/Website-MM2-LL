@@ -1,4 +1,3 @@
-
 <app-demo />
 
 <hr />
@@ -12,12 +11,10 @@
   "
   [serachBoxText]="'RUN SWITCHER'"
   [hideQuantityBox]="false"
-
   (myEvent1_InputValue)="State_getInputStr($event)"
   (myEvent2_ReportBoxState)="State_getReportBol($event)"
   (myEvent3_LoadingState)="State_getLoadingBol($event)"
   (myEvent4_ChooseValue)="State_getChoiceBol($event)"
-
   (myEvent5_InputId)="State_getInputIdStr($event)"
 />
 
@@ -63,10 +60,10 @@
     "
     *ngIf="switherReportData?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'"
     [reportData]="switherReportData"
-
     (myEvent1_CloseBox)="State_getReportBol($event)"
     (myEvent2_ChoiceValue)="State_getChoiceBol($event)"
     (myEvent3_afterChoiceSubmitState)="State_getResultBol($event)"
+    (myEvent4_LoadingState)="State_getLoadingBol($event)"
   />
 
   <!-- switcher report -->
@@ -79,7 +76,8 @@
   <div *ngIf="ID_CHOICE_VALUE">
     <app-switch-result
       *ngFor="
-        let item of SwitcherReportData | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
+        let item of SwitcherReportData
+          | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
       "
       [reportData]="item"
       [hidden]="SWITCHER_RESULT_STATE"
@@ -88,16 +86,14 @@
   </div>
 
   <div
-   *ngIf="switherReportData_State"
+    *ngIf="switherReportData_State"
+    [hidden]="!ID_CHOICE_VALUE || SWITCHER_RESULT_STATE"
   >
     <app-switch-other-choices
-    [reportData]="switherReportData"
-    [ID_CHOICE_VALUE]="ID_CHOICE_VALUE"
-
+      [reportData]="switherReportData"
+      [ID_CHOICE_VALUE]="ID_CHOICE_VALUE"
     />
   </div>
-
-
 </div>
 
 <!-- the message is {{ switherReportData?.data?.ques?.switch_msg }} -->

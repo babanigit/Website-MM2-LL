@@ -11,6 +11,9 @@ import { ISwitcherReportData } from '../../../assets/switcherReportsData';
 })
 export class SwitchResultComponent {
   @Output() myEvent_resultState = new EventEmitter<boolean>();
+  @Output() myEvent4_LoadingState = new EventEmitter<boolean>(); //for loadingState
+
+
   @Input() reportData!: ISwitcherReportData ; //props
 
   // onclose clicked
