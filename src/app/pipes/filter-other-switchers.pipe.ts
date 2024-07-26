@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class FilterOtherSwitchersPipe implements PipeTransform {
-  transform(items: any[], searchText: string |undefined): any[] {
+  transform(items: any[], searchText: string | undefined): any[] {
+
     //case
     if (!items) return [];
     if (!searchText) return items;
@@ -15,12 +16,9 @@ export class FilterOtherSwitchersPipe implements PipeTransform {
     //filtering as per search text
     let getReport: any[] = items.filter((item) => {
       return item.valsid.toString().includes(searchText);
-      // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
     });
 
-    console.log(" the other data is  ",  getReport)
-
+    console.log(' the other data is  ', getReport);
     return getReport;
   }
-
 }

@@ -81,7 +81,7 @@ export class ResearchServiceComponent {
       this.myEvent5_InputId.emit(this.INPUT_VALUE_ID);
 
       this.INPUT_VALUE_SNAME = '';
-    }, 800);
+    }, 500);
   }
 
   onInputBoxClick() {

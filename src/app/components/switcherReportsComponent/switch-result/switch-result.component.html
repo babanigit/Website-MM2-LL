@@ -33,43 +33,71 @@
       <div class="row" style="height: 100%">
         <!-- col1 -->
         <div class="col-md-6">
+          <div class="" style="width: 100%">
+            <div
+              class="header"
+              style="font-stretch: extra-expanded; font-size: xx-large"
+            >
+              YOUR SWITCHER RESULT
+            </div>
 
-          <div
-          style="
-            width: 100%;
-            background-color: antiquewhite;
-            height: 300px;
-            text-align: center;
-            place-content: center;
-          "
-        >
-          <div style="font-size: larger; font-weight: 600">YOUR SWITCHER RESULT</div>
+            <div class="content">
+              <span
+              [ngStyle]="{
+                'background-color':
+                  reportData.data.stocklist[reportData.data.stockids[0]]
+                    .clr
+              }"
+              class="dash"></span>
+              <span>Q</span>
+              <span
+              [ngStyle]="{
+                'background-color':
+                  reportData.data.stocklist[reportData.data.stockids[0]]
+                    .clr
+              }"
+              class="dash"></span>
+            </div>
 
-          <div>
-            <span>-----</span>
-            <span>Q</span>
-            <span>-----</span>
+            <div class="content">
+              <div style="font-size: larger">
+                You Can Choose to <strong> Switch from </strong>
+                {{
+                  reportData.data.stocklist[reportData.data.stockids[0]].sname
+                }}
+              </div>
+              <div style="color: lightgreen; font-size: larger">To</div>
+              <div style="font-size: xx-large">
+                {{
+                  reportData.data.stocklist[reportData.data.stockids[1]].sname
+                }}
+              </div>
+            </div>
+
+            <div
+
+            class="content">
+              <span
+              [ngStyle]="{
+                'background-color':
+                  reportData.data.stocklist[reportData.data.stockids[1]]
+                    .clr
+              }"
+               class="dash"></span>
+              <span>Q</span>
+              <span
+              [ngStyle]="{
+                'background-color':
+                  reportData.data.stocklist[reportData.data.stockids[1]]
+                    .clr
+              }"
+              class="dash"></span>
+            </div>
+
+            <div
+            style="font-size: large; font-weight: 500;"
+            class="download-report">download report</div>
           </div>
-
-          <div>
-            <div>You Can Choose to Switch from HDFC Life Insur.</div>
-            <div>To</div>
-            <div>Manappuram Fin.</div>
-          </div>
-
-          <div>
-            <span>-----</span>
-            <span>Q</span>
-            <span>-----</span>
-          </div>
-
-
-          <div>
-            download report
-          </div>
-        </div>
-
-
         </div>
 
         <!-- col2 -->
