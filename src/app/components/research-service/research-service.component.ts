@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { ISearchData, searchData } from '../../assets/searchData';
 import { JsonDataService } from '../../services/json-data.service';
 import { Subscription } from 'rxjs';
+import { IGetDropdown } from '../../models/interfaces';
 
 @Component({
   selector: 'app-research-service',
@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 })
 
 
-export class ResearchServiceComponent {
+export class ResearchServiceComponent implements OnInit {
   // props
   @Input() title!: string; //props
   @Input() serachBoxText!: string; //props
@@ -26,34 +26,50 @@ export class ResearchServiceComponent {
   @Output() myEvent1_InputValue = new EventEmitter<string>(); //for input value
   @Output() myEvent2_ReportBoxState = new EventEmitter<boolean>(); //for reportState
   @Output() myEvent3_LoadingState = new EventEmitter<boolean>(); //for loadingState
-  @Output() myEvent4_ChooseValue= new EventEmitter<string | undefined>();
+  @Output() myEvent4_ChooseValue = new EventEmitter<string | undefined>();
 
   @Output() myEvent5_InputId = new EventEmitter<string>(); //for input value
 
-  searchData: ISearchData[]  = [];
+  searchData: IGetDropdown[] = [];
 
-  INPUT_VALUE_SNAME:string = 'hdfc';
-  INPUT_VALUE_ID:string="";
+  INPUT_VALUE_SNAME: string = 'hdfc';
+  INPUT_VALUE_ID: string = "";
 
-  NumQuantity:undefined|number;
+  NumQuantity: undefined | number;
 
   FILTER_STATE = false;
 
   loadingState = false;
+
   private loadingSubscription: Subscription | undefined;
 
   constructor(
-    // private serv:JsonDataService
+    private serv: JsonDataService
   ) {
-    this.searchData = searchData;
+    // this.searchData = searchData;
   }
 
-  onLiClick(sname: string, Id:number) {
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+
+    this.loadingSubscription = this.serv.getLoadingState().subscribe((data) => {
+      this.loadingState = data;
+    });
+    this.fetchGetDropdown();
+  }
+
+  fetchGetDropdown() {
+    this.serv.getDROPDOWN().subscribe((res: IGetDropdown[]) => this.searchData = res
+    );
+  }
+
+  onLiClick(sname: string, Id: number) {
     this.myEvent2_ReportBoxState.emit(true);
 
     // this.myEvent3_LoadingState.emit(false); //on click unhidden loading
     this.INPUT_VALUE_SNAME = sname;
-    this.INPUT_VALUE_ID =Id.toString() ;
+    this.INPUT_VALUE_ID = Id.toString();
 
     this.FILTER_STATE = true;
 
@@ -71,6 +87,10 @@ export class ResearchServiceComponent {
 
   //search box clicked
   OnSubmitClick() {
+
+    // this.fetchGetDropdown();
+
+
     this.myEvent3_LoadingState.emit(false); //on click unhidden loading
     // console.log('hello there input value have sended', this.INPUT_VALUE_SNAME);
 

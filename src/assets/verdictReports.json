@@ -1,0 +1,219 @@
+{
+  "stocks": [
+    {
+      "name": "HDFC Bank Ltd.",
+      "symbol": "HDFCBANK",
+      "isin": "INE040A01034",
+      "status": "Active",
+      "price_info": {
+        "cmp": 1606,
+        "open_price": 1625.95,
+        "day_low": 1601,
+        "day_high": 1625.95,
+        "52wk_low_dt": "2024-02-14",
+        "52wk_high_dt": "2024-07-03",
+        "altm_low": 3.23,
+        "altm_high": 1791.9,
+        "altm_low_dt": "1996-04-11",
+        "altm_high_dt": "2024-07-03",
+        "vol_msg": "Compared to 5 day average volume of 1.25 cr at 11:25 AM",
+        "mcap_class": "Large Cap",
+        "bid_price": 1606,
+        "bid_qty": 861,
+        "offer_price": 1606.8,
+        "offer_qty": 64,
+        "no_of_shares": 7608122302,
+        "div_yeild": 1.2,
+        "net_profit": 0,
+        "pe_ratio": 20.35,
+        "ind_pe_ratio": "19.36",
+        "price_to_book": 2.83,
+        "net_npa_perc": 0.33,
+        "gross_npa_perc": 1.12,
+        "p_adj_bv": "2.83",
+        "ind_p_adj_bv": "2.76",
+        "stock_status": "Active",
+        "dt": "2024-07-11 11:49:00",
+        "vol": 399815,
+        "mcap": 1227723,
+        "roe": "",
+        "car": 16.8,
+        "roa": 1.68,
+        "net_sale": 0,
+        "sector_chgp": -0.77,
+        "index_label": "SENSEX",
+        "5D_avg_vol": 14046166,
+        "vol_chgp": -30.34,
+        "mcap_grade": "1",
+        "is_traded": 1,
+        "val_trd": 645091507.125,
+        "wk_high52": 1791.9,
+        "wk_low52": 1363.45
+      },
+      "cover_page_data": {
+        "cover_headline": "Strong </br>Long Term Fundamentals ",
+        "cover_summary": [
+          {
+            "big_txt": "Very Positive",
+            "small_txt": "Results in Mar 24"
+          },
+          {
+            "big_txt": "Bullish",
+            "small_txt": "Technical Trend"
+          },
+          {
+            "big_txt": "Fair",
+            "small_txt": "Valuation"
+          },
+          {
+            "big_txt": "High (82.65%)",
+            "small_txt": "Institutional Holding"
+          }
+        ]
+      },
+      "score_text": "strong buy",
+      "cover_clr": "coverhead-green",
+      "stock_details": {
+        "sid": 592009,
+        "sname": "HDFC Bank Ltd.",
+        "short_name": "HDFC Bank",
+        "scripcode": 500180,
+        "symbol": "HDFCBANK",
+        "isin": "INE040A01034",
+        "status": "Active",
+        "ind_code": 50,
+        "ind_name": "Private Banks",
+        "sublisting": "Active",
+        "alias": "HDFC Bank,HDFCBANK,HDFC Bank,INE040A01026,500180,HDFCBk",
+        "fincode": 100180,
+        "fv": 1,
+        "header_msg": "",
+        "mcap_type": 1,
+        "inc_mnth": "30-08",
+        "inc_yr": "1994",
+        "is_seasonal": 1,
+        "acc_ind_code": 15,
+        "acc_ind_name": "Bank - Private",
+        "hse_code": 336,
+        "amfi_mcapsizerank": "largecap",
+        "jan31_high_2018": {
+          "bse": 1005.95,
+          "nse": 1006.75
+        },
+        "updated_at": "2018-01-01",
+        "nsedt": "2024-07-10",
+        "bsedt": "2024-07-11"
+      },
+      "block_page": 0,
+      "remaining_views": 0,
+      "total_views": 0,
+      "show_fallstock": "no"
+    },
+    {
+      "name": "Infosys Ltd.",
+      "symbol": "INFY",
+      "isin": "INE009A01021",
+      "status": "Active",
+      "price_info": {
+        "cmp": 1652,
+        "open_price": 1655,
+        "day_low": 1642.25,
+        "day_high": 1665,
+        "52wk_low_dt": "2023-07-21",
+        "52wk_high_dt": "2024-02-06",
+        "altm_low": 0.82,
+        "altm_high": 1953.7,
+        "altm_low_dt": "1995-05-03",
+        "altm_high_dt": "2022-01-17",
+        "vol_msg": "Compared to 5 day average volume of 28.89 lacs at 11:25 AM",
+        "mcap_class": "Large Cap",
+        "bid_price": 1652.1,
+        "bid_qty": 1,
+        "offer_price": 1652.5,
+        "offer_qty": 17,
+        "no_of_shares": 4152028475,
+        "div_yeild": 2.79,
+        "net_profit": 79750,
+        "pe_ratio": 26.08,
+        "ind_pe_ratio": "33.38",
+        "deb_equity": -0.22,
+        "price_to_book": 7.76,
+        "p_adj_bv": "0",
+        "ind_p_adj_bv": "7.96",
+        "stock_status": "Active",
+        "dt": "2024-07-11 11:50:00",
+        "vol": 40090,
+        "mcap": 685915.10407,
+        "roe": 29.77,
+        "net_sale": 379230,
+        "sector_chgp": 0.01,
+        "index_label": "SENSEX",
+        "5D_avg_vol": 3327256.2,
+        "vol_chgp": -19.13,
+        "mcap_grade": "1",
+        "is_traded": 1,
+        "val_trd": 66293826.25,
+        "wk_high52": 1731,
+        "wk_low52": 1311.6
+      },
+      "cover_page_data": {
+        "cover_headline": "Strong </br>Long Term Fundamentals ",
+        "cover_summary": [
+          {
+            "big_txt": "Mildly Bullish",
+            "small_txt": "Technical Trend"
+          },
+          {
+            "big_txt": "Fair",
+            "small_txt": "Valuation"
+          },
+          {
+            "big_txt": "High (70.03%)",
+            "small_txt": "Institutional Holding"
+          },
+          {
+            "big_txt": "Second Largest Company",
+            "small_txt": "in IT - Software sector"
+          }
+        ]
+      },
+      "score_text": "buy",
+      "cover_clr": "coverhead-green-light",
+      "stock_details": {
+        "sid": 399834,
+        "sname": "Infosys Ltd.",
+        "short_name": "Infosys",
+        "scripcode": 500209,
+        "symbol": "INFY",
+        "isin": "INE009A01021",
+        "status": "Active",
+        "ind_code": 57,
+        "ind_name": "IT - Software ",
+        "sublisting": "Active",
+        "alias": "Infosys,INFY,Infosys,INE009A01021,500209,Infy",
+        "fincode": 100209,
+        "fv": 5,
+        "header_msg": "",
+        "mcap_type": 1,
+        "inc_mnth": "02-07",
+        "inc_yr": "1981",
+        "is_seasonal": 0,
+        "acc_ind_code": 65,
+        "acc_ind_name": "IT - Software ",
+        "hse_code": 206,
+        "amfi_mcapsizerank": "largecap",
+        "jan31_high_2018": {
+          "bse": 583,
+          "nse": 583.3
+        },
+        "updated_at": "2018-01-01",
+        "nsedt": "2024-07-10",
+        "bsedt": "2024-07-11"
+      },
+      "block_page": 0,
+      "remaining_views": 0,
+      "total_views": 0,
+      "show_fallstock": "no"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ export class SwitcherReportComponent implements OnInit  {
     if (this.reportData) {
       console.log("the switcher report is: ",this.reportData)
       this.myEvent2_SendReportDataEvent.emit(this.reportData);
+      
     }
   }
 

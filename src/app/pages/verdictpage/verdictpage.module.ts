@@ -11,6 +11,7 @@ import { VerdictloadingComponent } from '../../components/verdictloading/verdict
 import { VerdictreportComponent } from '../../components/verdictreport/verdictreport.component';
 import { FilterReportPipe } from '../../pipes/filter-report.pipe';
 import { Verdict3newComponent } from "../../components/verdict3new/verdict3new.component";
+import { JsonDataService } from '../../services/json-data.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Verdict3newComponent } from "../../components/verdict3new/verdict3new.c
     FilterReportPipe,
     VerdictfooterComponent,
     VerdictloadingComponent,
-    Verdict3newComponent
+    Verdict3newComponent,
+    
 ]
 })
 export class VerdictpageModule {

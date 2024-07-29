@@ -7,12 +7,12 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FilterOtherSwitchersPipe } from './pipes/filter-other-switchers.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NavbarComponent],
+  imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
