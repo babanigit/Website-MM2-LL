@@ -21,8 +21,6 @@ export class FilterChoiceResultPipe implements PipeTransform {
     }
 
     searchText = searchText.toString();
-    console.log('choice pipe idstring  ', idstring, typeof idstring);
-    console.log('choice pipe searchText  ', searchText, typeof searchText);
 
     //filtering as per search text
     let getSwitcherReport: any[] = items.filter((item) => {
@@ -34,7 +32,7 @@ export class FilterChoiceResultPipe implements PipeTransform {
       return item.data.stockids[0].includes(idstring);
     });
 
-    console.log('choice pipe this is the return : ', getSwitcherReport2);
+    // console.log('choice pipe this is the return : ', getSwitcherReport2);
     // console.log(getSwitcherReport);
     return getSwitcherReport2;
   }

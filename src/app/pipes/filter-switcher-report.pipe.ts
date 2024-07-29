@@ -22,7 +22,6 @@ export class FilterSwitcherReportPipe implements PipeTransform {
         // || item.data.stock_details.short_name.toLowerCase().includes(searchText)
       });
 
-      console.log('the filtered report is:', getSwitcherReport);
       return getSwitcherReport;
     }
      else {

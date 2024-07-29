@@ -15,6 +15,7 @@ import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOp
 
 
 export class SwitchOtherChoicesComponent {
+
   @Input() reportData!: ISwitcherReportsAndOptions | undefined | any; //props
   @Input() ID_CHOICE_VALUE!: string | undefined;
   @Input() itemdata!: any[];
@@ -68,6 +69,8 @@ export class SwitchOtherChoicesComponent {
     // Return the array of short_names or undefined if none found
     return matchingShortNames.length > 0 ? matchingShortNames : undefined;
   }
+
+  
 
 
 }

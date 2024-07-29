@@ -271,5 +271,277 @@
             },
             "show_fallstock": "no"
         }
+    },
+    {
+        "code": "200",
+        "message": "Success",
+        "data": {
+            "block_page": 0,
+            "remaining_views": 0,
+            "total_views": 0,
+            "ispaid": 1,
+            "islogin": true,
+            "sect_type": {
+                "id": 2,
+                "name": "verdict",
+                "reason": "buy and strong buy"
+            },
+            "sname": "Infosys",
+            "qty": "",
+            "mcap": 748279,
+            "mcapclass": "Large Cap",
+            "ind_name": "IT - Software ",
+            "mcaptype": 1,
+            "ind_code": 57,
+            "verdict": {
+                "price_info": {
+                    "cmp": 1789.3,
+                    "open_price": 1842.05,
+                    "day_low": 1786,
+                    "day_high": 1843,
+                    "52wk_low_dt": "2023-07-21",
+                    "52wk_high_dt": "2024-07-18",
+                    "altm_low": 0.82,
+                    "altm_high": 1953.7,
+                    "altm_low_dt": "1995-05-03",
+                    "altm_high_dt": "2022-01-17",
+                    "vol_msg": "Compared to 5 day average volume of 96.98 lacs at 15:25 PM",
+                    "mcap_class": "Large Cap",
+                    "bid_price": 1788.9,
+                    "bid_qty": 253,
+                    "offer_price": 1790,
+                    "offer_qty": 1445,
+                    "no_of_shares": 4152028475,
+                    "div_yeild": 2.61,
+                    "net_profit": 63740,
+                    "pe_ratio": 27.84,
+                    "ind_pe_ratio": "35.26",
+                    "deb_equity": -0.22,
+                    "price_to_book": 8.29,
+                    "net_npa_perc": "",
+                    "gross_npa_perc": "",
+                    "p_adj_bv": "0",
+                    "ind_p_adj_bv": "8.52",
+                    "stock_status": "Active",
+                    "dt": "2024-07-19 15:31:00",
+                    "vol": 1647646,
+                    "mcap": 748279,
+                    "roe": 29.77,
+                    "car": "",
+                    "roa": "",
+                    "net_sale": 393150,
+                    "sector_chgp": -0.41,
+                    "index_label": "SENSEX",
+                    "5D_avg_vol": 9698187.4,
+                    "vol_chgp": -19.13,
+                    "mcap_grade": "1",
+                    "is_traded": 1,
+                    "val_trd": 2989653667,
+                    "wk_high52": 1843,
+                    "wk_low52": 1311.6
+                },
+                "cover_page_data": {
+                    "cover_headline": "Strong </br>Long Term Fundamentals ",
+                    "cover_summary": [
+                        {
+                            "big_txt": "Positive",
+                            "small_txt": "Results in Jun 24"
+                        },
+                        {
+                            "big_txt": "Mildly Bullish",
+                            "small_txt": "Technical Trend"
+                        },
+                        {
+                            "big_txt": "Fair",
+                            "small_txt": "Valuation"
+                        },
+                        {
+                            "big_txt": " High (70.03%)",
+                            "small_txt": "Institutional Holding"
+                        }
+                    ]
+                },
+                "score_text": "buy",
+                "cover_clr": "coverhead-green-light",
+                "stock_details": {
+                    "sid": 399834,
+                    "sname": "Infosys Ltd.",
+                    "short_name": "Infosys",
+                    "scripcode": 500209,
+                    "symbol": "INFY",
+                    "isin": "INE009A01021",
+                    "status": "Active",
+                    "ind_code": 57,
+                    "ind_name": "IT - Software ",
+                    "sublisting": "Active",
+                    "alias": "Infosys,INFY,Infosys,INE009A01021,500209,Infy",
+                    "fincode": 100209,
+                    "fv": 5,
+                    "header_msg": "",
+                    "mcap_type": 1,
+                    "inc_mnth": "02-07",
+                    "inc_yr": "1981",
+                    "is_seasonal": 0,
+                    "acc_ind_code": 65,
+                    "acc_ind_name": "IT - Software ",
+                    "hse_code": 206,
+                    "amfi_mcapsizerank": "largecap",
+                    "jan31_high_2018": {
+                        "bse": 583,
+                        "nse": 583.3
+                    },
+                    "updated_at": "2018-01-01",
+                    "nsedt": "2024-07-18",
+                    "bsedt": "2024-07-19"
+                },
+                "link": null,
+                "exch": 0
+            },
+            "show_fallstock": "no"
+        }
+    },
+    {
+        "code": "200",
+        "message": "Success",
+        "data": {
+            "block_page": 0,
+            "remaining_views": 0,
+            "total_views": 0,
+            "ispaid": 1,
+            "islogin": true,
+            "sect_type": {
+                "id": 1,
+                "name": "switcher",
+                "reason": "not buy and strong buy"
+            },
+            "sname": "Info Edg.(India)",
+            "qty": "",
+            "mcap": 89696.1881106,
+            "mcapclass": "Large Cap",
+            "ind_name": "IT - Software ",
+            "mcaptype": 1,
+            "ind_code": 57,
+            "ques": {
+                "list": [
+                    {
+                        "q": "Do you want to Switch to",
+                        "opt": [
+                            {
+                                "txt": "Higher rated Stock in IT - Software  Sector",
+                                "val": "s-234277",
+                                "valsid": 234277,
+                                "details": {
+                                    "sid": 234277,
+                                    "scoreText": "Buy",
+                                    "score": 78,
+                                    "type": "s",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "Persistent Sys",
+                                "type": "s",
+                                "other_choice": {
+                                    "112501": {
+                                        "sid": 112501,
+                                        "scoreText": "Strong Buy",
+                                        "score": 82,
+                                        "heading": "Across Large Cap",
+                                        "type": "m",
+                                        "short_name": "Axis Bank",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=234277,264317&sh=s,a&scid=57,&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "264317": {
+                                        "sid": 264317,
+                                        "scoreText": "Strong Buy",
+                                        "score": 81,
+                                        "heading": "Across the Market",
+                                        "type": "a",
+                                        "short_name": "BASF India",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=234277,112501&sh=s,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1"
+                            },
+                            {
+                                "txt": "Higher rated Stock in Large Cap",
+                                "val": "m-112501",
+                                "valsid": 112501,
+                                "details": {
+                                    "sid": 112501,
+                                    "scoreText": "Strong Buy",
+                                    "score": 82,
+                                    "type": "m",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "Axis Bank",
+                                "type": "m",
+                                "other_choice": {
+                                    "234277": {
+                                        "sid": 234277,
+                                        "scoreText": "Buy",
+                                        "score": 78,
+                                        "heading": "Across IT - Software  sector",
+                                        "type": "s",
+                                        "short_name": "Persistent Sys",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "264317": {
+                                        "sid": 264317,
+                                        "scoreText": "Strong Buy",
+                                        "score": 81,
+                                        "heading": "Across the Market",
+                                        "type": "a",
+                                        "short_name": "BASF India",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=112501,234277&sh=m,s&scid=1,57&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=234277,264317&sh=s,a&scid=57,&nos=,&othnos=,&downloadswitcher=1"
+                            },
+                            {
+                                "txt": "Higher rated Stock across the Market",
+                                "val": "a-264317",
+                                "valsid": 264317,
+                                "details": {
+                                    "sid": 264317,
+                                    "scoreText": "Strong Buy",
+                                    "score": 81,
+                                    "type": "a",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "BASF India",
+                                "type": "a",
+                                "other_choice": {
+                                    "234277": {
+                                        "sid": 234277,
+                                        "scoreText": "Buy",
+                                        "score": 78,
+                                        "heading": "Across IT - Software  sector",
+                                        "type": "s",
+                                        "short_name": "Persistent Sys",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,234277&oth=264317,112501&sh=a,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "112501": {
+                                        "sid": 112501,
+                                        "scoreText": "Strong Buy",
+                                        "score": 82,
+                                        "heading": "Across Large Cap",
+                                        "type": "m",
+                                        "short_name": "Axis Bank",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,112501&oth=264317,234277&sh=a,s&scid=,57&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=925707,264317&oth=234277,112501&sh=s,m&scid=57,1&nos=,&othnos=,&downloadswitcher=1"
+                            }
+                        ]
+                    }
+                ],
+                "show": 1,
+                "switch_chng": 0,
+                "switch_msg": "YOU HAVE ENTERED"
+            },
+            "show_fallstock": "no"
+        }
     }
 ]

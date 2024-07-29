@@ -64,14 +64,12 @@ export class SwitcherpageComponent {
     this.serv
       .getSwitcherReportandOptionsData()
       .subscribe((res: ISwitcherReportsAndOptions[]) => {
-        console.log('the res is : ', res);
         this.switcherReportsAndOptions = res;
       });
   }
 
   fetchGetSwitcherResult() {
     this.serv.getSwitcherResult().subscribe((res: ISwitcherResult[]) => {
-      console.log('the res is : ', res);
       this.switcherResult = res;
     });
   }
@@ -86,7 +84,7 @@ export class SwitcherpageComponent {
   // get input id
   State_getInputIdStr(e: string) {
     this.ID_INPUT_STRING = e;
-    console.log('the input id stirng is:', this.ID_INPUT_STRING);
+    console.log('the input ID String is:', this.ID_INPUT_STRING);
   }
   //manipulate reportBox State
   State_getReportBol(e: boolean) {
@@ -126,16 +124,11 @@ export class SwitcherpageComponent {
       this.switherReportData_State = false;
     }
 
-    console.log('hey from the page');
-    console.log(e);
-
     this.cdr.detectChanges();
   }
 
   // state of result
   State_getResultBol(e: boolean) {
     this.SWITCHER_RESULT_STATE = e;
-    console.log('hey from the page resultstate is : ', e);
-    console.log(e);
   }
 }

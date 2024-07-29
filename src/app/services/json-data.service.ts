@@ -43,7 +43,7 @@ export class JsonDataService {
     this.loadingSubject.next(false); // Emit loading true before HTTP request
 
     return this.http.get<IGetVerdictReportsData[]>(jsonPath).pipe(
-      delay(700),
+      delay(200),
       catchError((err) => {
         console.error('Error fetching verdict report data', err);
         throw err;
@@ -58,7 +58,7 @@ export class JsonDataService {
     this.loadingSubject.next(false); // Emit loading true before HTTP request
 
     return this.http.get<ISwitcherReportsAndOptions[]>(jsonPath).pipe(
-      delay(700),
+      delay(200),
       catchError((err) => {
         console.error('Error fetching switcherReport data', err);
         throw err;
@@ -73,7 +73,7 @@ export class JsonDataService {
     this.loadingSubject.next(false); // Emit loading true before HTTP request
 
     return this.http.get<ISwitcherResult[]>(jsonPath).pipe(
-      delay(700),
+      delay(200),
       catchError((err) => {
         console.error('Error fetching switcherResult data', err);
         throw err;
