@@ -1,27 +1,7 @@
+import { IGetDropdown } from "../models/interfaces";
+
 // Interface for each item in the sub-array
-export interface ISearchData {
-  Id: number;
-  Company: string;
-  ScriptCode: number | string;
-  Symbol: string;
-  url: string;
-  price: number | null;
-  ExchangeName: string;
-  sname: string| null ;
-  tag: string;
-  stockprice: string;
-  chg: string;
-  chgp: string;
-  chgdir: number | string;
-  score: number | string;
-  scoretext: string;
-  stock_traded_status: string;
-  show_score: number;
-  recurl: string;
-}
-
-
-export const searchData: ISearchData[] = [
+export const searchData: IGetDropdown[] = [
   {
     Id: 1003455,
     Company: 'Indian <b>Rail</b>way Finance Corporation Ltd',

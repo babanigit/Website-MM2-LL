@@ -1,19 +1,11 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { sectionDataSwitcher } from '../../assets/sectionData';
 import { verdict1SwitcherListData } from '../../assets/verdict1Data';
-import {
-  ISwitcherResponse2,
-  switcherGetRespone2,
-} from '../../assets/switcherGetRespone2';
-import { SwitcherReportData } from '../../assets/switcherReportsData';
 
-import {
-  ISearchData2Switcher,
-  searchData2Switcher,
-} from '../../assets/searchData2Switcher';
 import { Subscription } from 'rxjs';
 import { JsonDataService } from '../../services/json-data.service';
 import { ISwitcherReportsAndOptions } from '../../models/switcherReportsAndOption';
+import { ISwitcherResult } from '../../models/switcherResult';
 
 @Component({
   selector: 'app-switcherpage',
@@ -24,17 +16,15 @@ export class SwitcherpageComponent {
   sectionDataSwitcher: any[] = [];
   verdict1SwitcherListData: any[] = [];
 
-  switcherGetRespone2: ISwitcherReportsAndOptions[] = [];
-  SwitcherReportData: any[] = [];
-
-  searchData2Switcher: ISearchData2Switcher[] = [];
+  switcherReportsAndOptions: ISwitcherReportsAndOptions[] = [];
+  switcherResult: ISwitcherResult[] = [];
 
   SNAME_INPUT_STRING: string = '';
   ID_INPUT_STRING: string = '';
 
   // LOADING_STATE: boolean = true;
 
-  switherReportData: ISwitcherResponse2 | undefined;
+  switherReportData: ISwitcherReportsAndOptions | undefined;
   switherReportData_State: boolean = false;
 
   ID_CHOICE_VALUE: string | undefined;
@@ -46,14 +36,15 @@ export class SwitcherpageComponent {
   private loadingSubscription: Subscription | undefined;
   LOADING_STATE: boolean = true;
 
+  // private loadingSubResult: Subscription | undefined;
+  // LOADING_STATE2: boolean = true;
+
   constructor(private cdr: ChangeDetectorRef, private serv: JsonDataService) {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
 
-    // this.switcherGetRespone2 = switcherGetRespone2;
-    this.SwitcherReportData = SwitcherReportData;
-
-    this.searchData2Switcher = searchData2Switcher;
+    // this.switcherReportsAndOptions = switcherReportsAndOptions;
+    // this.switcherResult = SwitcherReportData;
   }
 
   ngOnInit(): void {
@@ -61,6 +52,12 @@ export class SwitcherpageComponent {
     this.loadingSubscription = this.serv.getLoadingState().subscribe((data) => {
       this.LOADING_STATE = data;
     });
+
+    // this.loadingSubResult = this.serv
+    //   .getLoadingState()
+    //   .subscribe((data) => {
+    //     this.LOADING_STATE = data;
+    //   });
   }
 
   fetchGetSwitcherReportandOptions() {
@@ -68,8 +65,15 @@ export class SwitcherpageComponent {
       .getSwitcherReportandOptionsData()
       .subscribe((res: ISwitcherReportsAndOptions[]) => {
         console.log('the res is : ', res);
-        this.switcherGetRespone2 = res;
+        this.switcherReportsAndOptions = res;
       });
+  }
+
+  fetchGetSwitcherResult() {
+    this.serv.getSwitcherResult().subscribe((res: ISwitcherResult[]) => {
+      console.log('the res is : ', res);
+      this.switcherResult = res;
+    });
   }
 
   //get input data
@@ -79,11 +83,11 @@ export class SwitcherpageComponent {
     this.SNAME_INPUT_STRING = e;
     this.cdr.detectChanges();
   }
+  // get input id
   State_getInputIdStr(e: string) {
     this.ID_INPUT_STRING = e;
     console.log('the input id stirng is:', this.ID_INPUT_STRING);
   }
-
   //manipulate reportBox State
   State_getReportBol(e: boolean) {
     this.REPORTB0X_STATE = e;
@@ -101,16 +105,18 @@ export class SwitcherpageComponent {
 
   // getchoicevalue id
   State_getChoiceBol(e: string | undefined) {
-    this.CHOICE_VALUE_STATE = true;
-    this.ID_CHOICE_VALUE = e;
-    console.log('the choice value is the id is : ', e);
+    this.fetchGetSwitcherResult();
 
+    this.ID_CHOICE_VALUE = e;
+    console.log('the choice value ID is : ', e);
+
+    this.CHOICE_VALUE_STATE = true;
     this.SWITCHER_RESULT_STATE = false;
 
     this.cdr.detectChanges();
   }
 
-  State_getReportArr(e: ISwitcherResponse2) {
+  State_getReportArr(e: ISwitcherReportsAndOptions) {
     this.switherReportData = e;
 
     // if undefind

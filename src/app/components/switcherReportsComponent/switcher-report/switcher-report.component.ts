@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
 import { CommonModule } from '@angular/common';
-import { emit } from 'process';
-import { FilterSwitcherReportPipe } from '../../../pipes/filter-switcher-report.pipe';
+
+import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 
 
 @Component({
@@ -15,11 +14,11 @@ import { FilterSwitcherReportPipe } from '../../../pipes/filter-switcher-report.
 ]
 })
 export class SwitcherReportComponent implements OnInit  {
-  @Input() reportData!: ISwitcherResponse2; //props
+  @Input() reportData!: ISwitcherReportsAndOptions; //props
 
   // events
   @Output() myEvent1_CloseBox = new EventEmitter<boolean>();
-  @Output() myEvent2_SendReportDataEvent = new EventEmitter<ISwitcherResponse2>();
+  @Output() myEvent2_SendReportDataEvent = new EventEmitter<ISwitcherReportsAndOptions>();
 
   ngOnInit() {
     // Emit reportData if it's defined

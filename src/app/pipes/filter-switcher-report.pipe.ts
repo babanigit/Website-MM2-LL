@@ -1,14 +1,14 @@
 // filter the options and normal verdict report
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISwitcherResponse2 } from '../assets/switcherGetRespone2';
+import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 
 @Pipe({
   name: 'filterSwitcherReport',
   standalone: true,
 })
 export class FilterSwitcherReportPipe implements PipeTransform {
-  transform(items: ISwitcherResponse2[], searchText: string): ISwitcherResponse2[] {
+  transform(items: ISwitcherReportsAndOptions[], searchText: string): ISwitcherReportsAndOptions[] {
     //case
     if (!items) return [];
     if (searchText == '') return [];

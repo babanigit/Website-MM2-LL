@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 
 @Component({
   selector: 'app-switch-options',
@@ -19,7 +19,7 @@ export class SwitchOptionsComponent {
   @Output() myEvent4_LoadingState = new EventEmitter<boolean>(); //for loadingState
 
 
-  @Input() reportData!: ISwitcherResponse2 | undefined; //props
+  @Input() reportData!: ISwitcherReportsAndOptions | undefined; //props
 
   selectedValue: string = ''; // Variable to hold selected radio button value
 

@@ -1,24 +1,24 @@
 // filter the dropdown list
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISearchData } from '../assets/searchData';
+import { IGetDropdown } from '../models/interfaces';
 
 @Pipe({
   name: 'filter',
   standalone: true,
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: ISearchData[], searchText: string): ISearchData[] | [{Company:string}] | any[] {
+  transform(items: IGetDropdown[], searchText: string): IGetDropdown[] | [{Company:string}] | any[] {
     //cases
     if (!items) return [];
     if (!searchText) return items;
 
     //filtered the data which haves tag="stock"
-    let onlyStock: any[] = items.filter((item) => item.tag === 'Stock');
+    let onlyStock: IGetDropdown[] = items.filter((item) => item.tag === 'Stock');
 
     //filtering as per search text
     searchText = searchText.toLowerCase();
-    let getCompany: any[] = onlyStock.filter((item) => {
+    let getCompany: IGetDropdown[] = onlyStock.filter((item) => {
       return (
         item.Company.toLowerCase().includes(searchText)
         // || item.sname.toLowerCase().includes(searchText)

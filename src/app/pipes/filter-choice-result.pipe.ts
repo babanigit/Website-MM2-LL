@@ -1,7 +1,7 @@
 // filter the main switcher report
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISwitcherReportData } from '../assets/switcherReportsData';
+import { ISwitcherResult } from '../models/switcherResult';
 
 @Pipe({
   name: 'filterChoiceResult',
@@ -9,10 +9,10 @@ import { ISwitcherReportData } from '../assets/switcherReportsData';
 })
 export class FilterChoiceResultPipe implements PipeTransform {
   transform(
-    items: ISwitcherReportData[],
+    items: ISwitcherResult[],
     searchText: string | undefined,
     idstring: string
-  ): ISwitcherReportData[] {
+  ): ISwitcherResult[] {
     //case
     if (!items) return [];
     if (searchText == undefined) {

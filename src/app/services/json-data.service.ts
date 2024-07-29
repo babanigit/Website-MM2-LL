@@ -3,22 +3,32 @@ import { Injectable } from '@angular/core';
 import { catchError, delay, finalize, Subject } from 'rxjs';
 import { IGetDropdown, IGetVerdictReportsData } from '../models/interfaces';
 import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
+import { ISwitcherResult } from '../models/switcherResult';
 
 const defaultDropdownPath = 'assets/dropdown.json';
 const defaultVerdictReportPath = 'assets/verdictReports.json';
 const defaultVerdictSwticherReportandOptionsPath = 'assets/switcherBasicReportsAndOptions.json';
+const defaultSwitcherResultPath = 'assets/switcherResult.json';
+
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class JsonDataService {
   private loadingSubject = new Subject<boolean>();
+  // private loadingSubjectResult = new Subject<boolean>();
+
 
   constructor(private http: HttpClient) {}
 
   getLoadingState() {
     return this.loadingSubject.asObservable();
   }
+
+  // getLoadingState12() {
+  //   return this.loadingSubjectResult.asObservable();
+  // }
 
   getDROPDOWN(jsonPath: string = defaultDropdownPath) {
     return this.http.get<IGetDropdown[]>(jsonPath).pipe(
@@ -50,11 +60,27 @@ export class JsonDataService {
     return this.http.get<ISwitcherReportsAndOptions[]>(jsonPath).pipe(
       delay(700),
       catchError((err) => {
-        console.error('Error fetching verdict report data', err);
+        console.error('Error fetching switcherReport data', err);
         throw err;
       }),
       finalize(() => this.loadingSubject.next(true)) // Emit loading false after HTTP request
     );
   }
+
+  getSwitcherResult(
+    jsonPath: string = defaultSwitcherResultPath
+  ) {
+    this.loadingSubject.next(false); // Emit loading true before HTTP request
+
+    return this.http.get<ISwitcherResult[]>(jsonPath).pipe(
+      delay(700),
+      catchError((err) => {
+        console.error('Error fetching switcherResult data', err);
+        throw err;
+      }),
+      finalize(() => this.loadingSubject.next(true)) // Emit loading false after HTTP request
+    );
+  }
+
 
 }

@@ -1,13 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISwitcherResponse2 } from '../assets/switcherGetRespone2';
+import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 
 @Pipe({
   name: 'filterOtherSwitchers',
   standalone: true,
 })
 export class FilterOtherSwitchersPipe implements PipeTransform {
-  transform(items: ISwitcherResponse2[], searchText: string | undefined): any[] {
-
+  transform(items: ISwitcherReportsAndOptions[], searchText: string | undefined): any[] {
 
     if (!items) return [];
     if (!searchText) return items;

@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { ISwitcherResponse2 } from '../../../assets/switcherGetRespone2';
 import { CommonModule } from '@angular/common';
 import { FilterOtherSwitchersPipe } from '../../../pipes/filter-other-switchers.pipe';
 
 import { IOption } from '../../../models/interfaces';
+import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 
 @Component({
   selector: 'app-switch-other-choices',
@@ -15,7 +15,7 @@ import { IOption } from '../../../models/interfaces';
 
 
 export class SwitchOtherChoicesComponent {
-  @Input() reportData!: ISwitcherResponse2 | undefined | any; //props
+  @Input() reportData!: ISwitcherReportsAndOptions | undefined | any; //props
   @Input() ID_CHOICE_VALUE!: string | undefined;
   @Input() itemdata!: any[];
 
