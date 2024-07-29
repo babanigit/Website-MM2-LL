@@ -8,8 +8,7 @@ import { ISwitcherResponse2 } from '../assets/switcherGetRespone2';
 export class FilterOtherSwitchersPipe implements PipeTransform {
   transform(items: ISwitcherResponse2[], searchText: string | undefined): any[] {
 
-    //case
-    // start
+
     if (!items) return [];
     if (!searchText) return items;
 
@@ -22,6 +21,6 @@ export class FilterOtherSwitchersPipe implements PipeTransform {
 
     console.log(' the other data is  ', getReport);
     return getReport;
-    // end
+
   }
 }

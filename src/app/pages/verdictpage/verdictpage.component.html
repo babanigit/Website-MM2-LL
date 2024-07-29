@@ -6,12 +6,13 @@
 
   (myEvent1_InputValue)="recievedDataEvent($event)"
   (myEvent2_ReportBoxState)="recievedReportStateEvent($event)"
-  (myEvent3_LoadingState)="recievedLoadingStateEvent($event)"
 />
 
 <!-- loading -->
 <app-verdictloading
- [hidden]="LOADING_STATE"
+ [hidden]="
+ LOADING_STATE
+ "
 
  [barColor]="'aqua'"
  [text1]="'Loading Verdict Report'"

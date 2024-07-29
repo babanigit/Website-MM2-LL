@@ -1,5 +1,5 @@
 
-// getdropdown
+// dropdown data
 export interface IGetDropdown {
     Id: number;
     Company: string;
@@ -21,8 +21,8 @@ export interface IGetDropdown {
     recurl: string;
 }
 
-
-export interface IGetVerdictReports {
+// verdict report data
+export interface IGetVerdictReportsData {
   code: number;
   message: string;
   data: {
@@ -48,19 +48,19 @@ export interface IGetVerdictReports {
           net_profit: number;
           pe_ratio: number;
           ind_pe_ratio: string;
-          deb_equity: number;
+          deb_equity: number |string;
           price_to_book: number;
-          net_npa_perc: string; // you may want to adjust this based on actual data type
-          gross_npa_perc: string; // you may want to adjust this based on actual data type
+          net_npa_perc: string |number; // you may want to adjust this based on actual data type
+          gross_npa_perc: string |number; // you may want to adjust this based on actual data type
           p_adj_bv: string;
           ind_p_adj_bv: string;
           stock_status: string;
           dt: string;
           vol: number;
           mcap: number;
-          roe: number;
-          car: string; // you may want to adjust this based on actual data type
-          roa: string; // you may want to adjust this based on actual data type
+          roe: number |string;
+          car: string |number; // you may want to adjust this based on actual data type
+          roa: string |number; // you may want to adjust this based on actual data type
           net_sale: number;
           sector_chgp: number;
           index_label: string;
@@ -85,7 +85,7 @@ export interface IGetVerdictReports {
           sid: number;
           sname: string;
           short_name: string;
-          scripcode: number;
+          scripcode: number|string;
           symbol: string;
           isin: string;
           status: string;
@@ -99,10 +99,10 @@ export interface IGetVerdictReports {
           mcap_type: number;
           inc_mnth: string;
           inc_yr: string;
-          is_seasonal: number;
+          is_seasonal: number |string;
           acc_ind_code: number;
           acc_ind_name: string;
-          hse_code: number;
+          hse_code: number|string;
           amfi_mcapsizerank: string;
           jan31_high_2018: {
               bse: number;
@@ -118,8 +118,6 @@ export interface IGetVerdictReports {
       show_fallstock: string;
   };
 }
-
-
 
 interface OtherChoice {
   sid: string;

@@ -1,0 +1,275 @@
+[
+    {
+        "code": "200",
+        "message": "Success",
+        "data": {
+            "block_page": 0,
+            "remaining_views": 0,
+            "total_views": 0,
+            "ispaid": 1,
+            "islogin": true,
+            "sect_type": {
+                "id": 2,
+                "name": "verdict",
+                "reason": "buy and strong buy"
+            },
+            "sname": "HDFC Bank",
+            "qty": "",
+            "mcap": 1230081,
+            "mcapclass": "Large Cap",
+            "ind_name": "Private Banks",
+            "mcaptype": 1,
+            "ind_code": 50,
+            "verdict": {
+                "price_info": {
+                    "cmp": 1606.6,
+                    "open_price": 1618.5,
+                    "day_low": 1603.15,
+                    "day_high": 1623.6,
+                    "52wk_low_dt": "2024-02-14",
+                    "52wk_high_dt": "2024-07-03",
+                    "altm_low": 3.23,
+                    "altm_high": 1791.9,
+                    "altm_low_dt": "1996-04-11",
+                    "altm_high_dt": "2024-07-03",
+                    "vol_msg": "Compared to 5 day average volume of 1.78 cr at 15:25 PM",
+                    "mcap_class": "Large Cap",
+                    "bid_price": 1604.05,
+                    "bid_qty": 456,
+                    "offer_price": 1606.6,
+                    "offer_qty": 11,
+                    "no_of_shares": 7608122302,
+                    "div_yeild": 1.21,
+                    "net_profit": 0,
+                    "pe_ratio": 20.2,
+                    "ind_pe_ratio": "19.4",
+                    "deb_equity": "",
+                    "price_to_book": 2.81,
+                    "net_npa_perc": 0.33,
+                    "gross_npa_perc": 1.12,
+                    "p_adj_bv": "2.81",
+                    "ind_p_adj_bv": "2.77",
+                    "stock_status": "Active",
+                    "dt": "2024-07-19 15:31:00",
+                    "vol": 672092,
+                    "mcap": 1230081,
+                    "roe": "",
+                    "car": 16.8,
+                    "roa": 1.68,
+                    "net_sale": 0,
+                    "sector_chgp": -0.65,
+                    "index_label": "SENSEX",
+                    "5D_avg_vol": 17765298,
+                    "vol_chgp": -30.34,
+                    "mcap_grade": "1",
+                    "is_traded": 1,
+                    "val_trd": 1084336430.5,
+                    "wk_high52": 1791.9,
+                    "wk_low52": 1363.45
+                },
+                "cover_page_data": {
+                    "cover_headline": "Strong </br>Long Term Fundamentals ",
+                    "cover_summary": [
+                        {
+                            "big_txt": "Very Positive",
+                            "small_txt": "Results in Mar 24"
+                        },
+                        {
+                            "big_txt": "Mildly Bullish",
+                            "small_txt": "Technical Trend"
+                        },
+                        {
+                            "big_txt": "Fair",
+                            "small_txt": "Valuation"
+                        },
+                        {
+                            "big_txt": " High (82.65%)",
+                            "small_txt": "Institutional Holding"
+                        }
+                    ]
+                },
+                "score_text": "strong buy",
+                "cover_clr": "coverhead-green",
+                "stock_details": {
+                    "sid": 592009,
+                    "sname": "HDFC Bank Ltd.",
+                    "short_name": "HDFC Bank",
+                    "scripcode": 500180,
+                    "symbol": "HDFCBANK",
+                    "isin": "INE040A01034",
+                    "status": "Active",
+                    "ind_code": 50,
+                    "ind_name": "Private Banks",
+                    "sublisting": "Active",
+                    "alias": "HDFC Bank,HDFCBANK,HDFC Bank,INE040A01026,500180,HDFCBk",
+                    "fincode": 100180,
+                    "fv": 1,
+                    "header_msg": "",
+                    "mcap_type": 1,
+                    "inc_mnth": "30-08",
+                    "inc_yr": "1994",
+                    "is_seasonal": 1,
+                    "acc_ind_code": 15,
+                    "acc_ind_name": "Bank - Private",
+                    "hse_code": 336,
+                    "amfi_mcapsizerank": "largecap",
+                    "jan31_high_2018": {
+                        "bse": 1005.95,
+                        "nse": 1006.75
+                    },
+                    "updated_at": "2018-01-01",
+                    "nsedt": "2024-07-18",
+                    "bsedt": "2024-07-19"
+                },
+                "link": null,
+                "exch": 0
+            },
+            "show_fallstock": "no",
+            "stockList": null
+        }
+    },
+    {
+        "code": "200",
+        "message": "Success",
+        "data": {
+            "block_page": 0,
+            "remaining_views": 0,
+            "total_views": 0,
+            "ispaid": 1,
+            "islogin": true,
+            "sect_type": {
+                "id": 1,
+                "name": "switcher",
+                "reason": "not buy and strong buy"
+            },
+            "sname": "HDFC Life Insur.",
+            "qty": "",
+            "mcap": 147256.04609562,
+            "mcapclass": "Large Cap",
+            "ind_name": "Finance/NBFC",
+            "mcaptype": 1,
+            "ind_code": 5,
+            "ques": {
+                "list": [
+                    {
+                        "q": "Do you want to Switch to",
+                        "opt": [
+                            {
+                                "txt": "Higher rated Stock in Finance/NBFC Sector",
+                                "val": "s-343801",
+                                "valsid": 343801,
+                                "details": {
+                                    "sid": 343801,
+                                    "scoreText": "Buy",
+                                    "score": 78,
+                                    "type": "s",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "Manappuram Fin.",
+                                "type": "s",
+                                "other_choice": {
+                                    "112501": {
+                                        "sid": 112501,
+                                        "scoreText": "Strong Buy",
+                                        "score": 82,
+                                        "heading": "Across Large Cap",
+                                        "type": "m",
+                                        "short_name": "Axis Bank",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=343801,264317&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "264317": {
+                                        "sid": 264317,
+                                        "scoreText": "Strong Buy",
+                                        "score": 81,
+                                        "heading": "Across the Market",
+                                        "type": "a",
+                                        "short_name": "BASF India",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=343801,112501&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1"
+                            },
+                            {
+                                "txt": "Higher rated Stock in Large Cap",
+                                "val": "m-112501",
+                                "valsid": 112501,
+                                "details": {
+                                    "sid": 112501,
+                                    "scoreText": "Strong Buy",
+                                    "score": 82,
+                                    "type": "a",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "Axis Bank",
+                                "type": "m",
+                                "other_choice": {
+                                    "343801": {
+                                        "sid": 343801,
+                                        "scoreText": "Buy",
+                                        "score": 78,
+                                        "heading": "Across Finance/NBFC sector",
+                                        "type": "s",
+                                        "short_name": "Manappuram Fin.",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=112501,264317&sh=m,a&scid=1,&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "264317": {
+                                        "sid": 264317,
+                                        "scoreText": "Strong Buy",
+                                        "score": 81,
+                                        "heading": "Across the Market",
+                                        "type": "a",
+                                        "short_name": "BASF India",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=112501,343801&sh=m,s&scid=1,5&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=343801,264317&sh=s,a&scid=5,&nos=,&othnos=,&downloadswitcher=1"
+                            },
+                            {
+                                "txt": "Higher rated Stock across the Market",
+                                "val": "a-264317",
+                                "valsid": 264317,
+                                "details": {
+                                    "sid": 264317,
+                                    "scoreText": "Strong Buy",
+                                    "score": 81,
+                                    "type": "a",
+                                    "short_name": "",
+                                    "dw_url": ""
+                                },
+                                "short_name": "BASF India",
+                                "type": "a",
+                                "other_choice": {
+                                    "343801": {
+                                        "sid": 343801,
+                                        "scoreText": "Buy",
+                                        "score": 78,
+                                        "heading": "Across Finance/NBFC sector",
+                                        "type": "s",
+                                        "short_name": "Manappuram Fin.",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,343801&oth=264317,112501&sh=a,m&scid=,1&nos=,&othnos=,&downloadswitcher=1"
+                                    },
+                                    "112501": {
+                                        "sid": 112501,
+                                        "scoreText": "Strong Buy",
+                                        "score": 82,
+                                        "heading": "Across Large Cap",
+                                        "type": "m",
+                                        "short_name": "Axis Bank",
+                                        "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,112501&oth=264317,343801&sh=a,s&scid=,5&nos=,&othnos=,&downloadswitcher=1"
+                                    }
+                                },
+                                "dw_url": "/Stocks_Stockresearchreport/getSwitcherDownload?sids=1002872,264317&oth=343801,112501&sh=s,m&scid=5,1&nos=,&othnos=,&downloadswitcher=1"
+                            }
+                        ]
+                    }
+                ],
+                "show": 1,
+                "switch_chng": 0,
+                "switch_msg": "YOU HAVE ENTERED"
+            },
+            "show_fallstock": "no"
+        }
+    }
+]

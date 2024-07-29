@@ -4,6 +4,7 @@ import { sectionDataVerdict } from '../../assets/sectionData';
 import { verdict1ListData } from '../../assets/verdict1Data';
 import { Subscription } from 'rxjs';
 import { JsonDataService } from '../../services/json-data.service';
+import { IGetVerdictReportsData } from '../../models/interfaces';
 
 @Component({
   selector: 'app-verdictpage',
@@ -11,39 +12,42 @@ import { JsonDataService } from '../../services/json-data.service';
   styleUrl: './verdictpage.component.css',
 })
 export class VerdictpageComponent implements OnInit {
-  sectionDataVerdict: any[] = [];
-  verdictReportsData: any[] = [];
-  verdict1ListData: any[] = [];
+  verdictReportsData: IGetVerdictReportsData[] = [];
 
+  sectionDataVerdict: any[] = [];
+  verdict1ListData: any[] = [];
 
   SNAME_INPUT_STRING: string = '';
   loadingState: boolean = true;
   ReportBoxState: boolean = false;
 
-  LOADING_STATE: boolean = false;
   private loadingSubscription: Subscription | undefined;
+  LOADING_STATE: boolean = true;
 
+  constructor(private serv: JsonDataService) {
+    // this.verdictReportsData = verdictReportsData; //verdict data
 
-  constructor( private serv :JsonDataService ) {
     this.sectionDataVerdict = sectionDataVerdict;
-    this.verdictReportsData = verdictReportsData;
     this.verdict1ListData = verdict1ListData;
   }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-
-    this.loadingSubscription = this.serv.getLoadingState().subscribe((state) => {
-      this.LOADING_STATE = state;
+    // init loading fun
+    this.loadingSubscription = this.serv.getLoadingState().subscribe((data) => {
+      this.LOADING_STATE = data;
     });
-
-    
   }
 
+  fetchGetVerdictReport() {
+    this.serv.getVerdictReport().subscribe((res: IGetVerdictReportsData[]) => {
+      console.log('the res is : ', res);
+      this.verdictReportsData = res;
+    });
+  }
 
   //get input data
   recievedDataEvent(e: string) {
+    this.fetchGetVerdictReport();
     this.SNAME_INPUT_STRING = e;
   }
 
@@ -52,8 +56,8 @@ export class VerdictpageComponent implements OnInit {
     this.ReportBoxState = e;
   }
 
-  //loadingState
-  recievedLoadingStateEvent(e: boolean) {
-    this.loadingState = e;
-  }
+  // //loadingState
+  // recievedLoadingStateEvent(e: boolean) {
+  //   this.loadingState = e;
+  // }
 }

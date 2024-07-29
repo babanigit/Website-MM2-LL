@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IReport_Response } from '../../models/ReportResponse';
 import { CommonModule } from '@angular/common';
+import { IGetVerdictReportsData } from '../../models/interfaces';
 
 @Component({
   selector: 'app-verdictreport',
@@ -13,7 +13,7 @@ export class VerdictreportComponent {
 
   @Output() myEvent_CloseBox = new EventEmitter<boolean>();
 
-  @Input() reportData!: IReport_Response; //props
+  @Input() reportData!: IGetVerdictReportsData; //props
 
   onClose() {
     this.myEvent_CloseBox.emit(true);

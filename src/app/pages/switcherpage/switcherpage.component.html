@@ -13,7 +13,6 @@
   [hideQuantityBox]="false"
   (myEvent1_InputValue)="State_getInputStr($event)"
   (myEvent2_ReportBoxState)="State_getReportBol($event)"
-  (myEvent3_LoadingState)="State_getLoadingBol($event)"
   (myEvent4_ChooseValue)="State_getChoiceBol($event)"
   (myEvent5_InputId)="State_getInputIdStr($event)"
 />
@@ -38,12 +37,13 @@
       let item of switcherGetRespone2
         | filterSwitcherReport : SNAME_INPUT_STRING
     "
+    [reportData]="item"
     [hidden]="
+      !LOADING_STATE ||
       SNAME_INPUT_STRING.length < 1 ||
       REPORTB0X_STATE ||
       switherReportData?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
     "
-    [reportData]="item"
     (myEvent2_SendReportDataEvent)="State_getReportArr($event)"
     (myEvent1_CloseBox)="State_getReportBol($event)"
   />
@@ -54,6 +54,7 @@
   <!-- 2 -->
   <app-switch-options
     [hidden]="
+      !LOADING_STATE ||
       switherReportData?.data?.ques?.switch_msg !== 'YOU HAVE ENTERED' ||
       REPORTB0X_STATE ||
       CHOICE_VALUE_STATE
@@ -63,7 +64,6 @@
     (myEvent1_CloseBox)="State_getReportBol($event)"
     (myEvent2_ChoiceValue)="State_getChoiceBol($event)"
     (myEvent3_afterChoiceSubmitState)="State_getResultBol($event)"
-    (myEvent4_LoadingState)="State_getLoadingBol($event)"
   />
 
   <!-- switcher report -->
