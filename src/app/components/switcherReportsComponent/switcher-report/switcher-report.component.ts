@@ -22,10 +22,9 @@ export class SwitcherReportComponent implements OnInit  {
 
   ngOnInit() {
     // Emit reportData if it's defined
-    if (this.reportData) {
+    if (this.reportData) 
       this.myEvent2_SendReportDataEvent.emit(this.reportData);
       
-    }
   }
 
   onClose() {

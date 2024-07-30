@@ -116,6 +116,7 @@ export class SwitcherpageComponent {
 
   State_getReportArr(e: ISwitcherReportsAndOptions) {
     this.switherReportData = e;
+    console.log(" the switcherReport Data is : " , this.switherReportData)
 
     // if undefind
     if (this.switherReportData!.data!.ques) {

@@ -1,47 +1,264 @@
 <!-- trail -->
 
-<div class="card text-center" style="height: 200px">
-  <div class="card-body" style="display: grid">
-    <!-- head -->
+<div class="card text-center" style="height: 75vh; width: 100%">
+  <div
+    style="
+      font-size: large;
+      font-weight: 400;
+      background-color: aliceblue;
+      padding: 20px;
+    "
+  >
+    YOU HAVE 2 OTHER CHOICES
+  </div>
 
-    <!-- body -->
-    <div class="container" style="height: 72vh">
-      <div class="row" style="height: 100%">
-        <!-- col1 -->
-        <div class="col-md-6"></div>
+  <div
+    style="
+      height: 100%;
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      place-items: center;
+    "
+  >
+    <div style="height: 100%" *ngIf="ID_CHOICE_VALUE">
+      <div
+        style="display: flex; height: 100%; width: 100%"
+        *ngFor="let item of data | filterOtherSwitchers : ID_CHOICE_VALUE"
+      >
+        <div
+          style="
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            gap: 3px;
+          "
+          *ngFor="let hero of item.data.ques!.list[0].opt"
+        >
+          <!-- col1 -->
+          <div style="background-color: aquamarine">
+            <strong> download report </strong>
+          </div>
 
-        <!-- col2 -->
-        <div class="col-md-6">
-          <div>test1</div>
+          <!-- col2 -->
+          <div>
+            {{ hero.valsid }}
 
-          <!-- <div *ngIf="ID_CHOICE_VALUE">
-            <div>the other choices are:</div>
+            <!-- col2 -->
 
+            <!-- [ngStyle]="{
+        'background-image':
+          'linear-gradient(to right, ' +
+          reportData.data.stocklist[reportData.data.stockids[0]].clr +
+          ', ' +
+          reportData.data.stocklist[reportData.data.stockids[1]].clr +
+          ')'
+      }" -->
             <div
-              *ngFor="let shortName of getOtherChoiceShortName(ID_CHOICE_VALUE)"
-            >
-              <div>{{ shortName }}</div>
-            </div>
-          </div> -->
-
-          <div>test2</div>
-          <div *ngIf="ID_CHOICE_VALUE">
-            <div
-              *ngFor="
-                let item of reportData | filterOtherSwitchers : ID_CHOICE_VALUE
+              style="
+                height: 350px;
+                width: 250px;
+                background-image: linear-gradient(
+                  to right,
+                  red,
+                  green
+                ); /* Gradient from left to right */
+                display: flex;
+                justify-content: center;
+                /* grid-template-rows: 30% 70%; */
               "
             >
-              <div>
-                {{ item }}
+              <div
+                style="
+                  height: 100%;
+                  width: 90%;
+                  padding-top: 20px;
+                  color: aliceblue;
+                  background-color: rgb(19, 35, 19);
+                  display: grid;
+                  grid-template-rows: 30% 70%;
+                "
+              >
+                <!-- Main Content Here -->
+                <div style="display: grid; grid-template-rows: 50% 50%">
+                  <!-- upper -->
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: baseline;
+                      align-items: center;
+                      gap: 5px;
+                      /* background-color: blueviolet; */
+                      height: 100%;
+                      width: 100%;
+                    "
+                  >
+                    <!-- <div style="margin: 0; padding: 0">mojo professional</div> -->
+                    <img
+                      style="
+                        text-align: center;
+
+                        width: 160px;
+                      "
+                      alt="imag"
+                      src="https://i.marketsmojo.com/switcher/switcher-logo.png"
+                    />
+
+                    <div
+                      style="
+                        text-align: left;
+                        margin: 0;
+                        padding-right: 10px;
+                        font-size: small;
+                      "
+                    >
+                      Report as on 15 July 2024 at 12:01 PM
+                    </div>
+                  </div>
+
+                  <!-- lower -->
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: flex-end;
+                    "
+                  >
+                    <!-- [innerHTML]="
+      reportData.data.verdict?.cover_page_data?.cover_headline
+    " -->
+
+                    <div
+                      style="
+                        color: rgb(59, 180, 59);
+                        font-weight: 800;
+                        font-size: x-large;
+                        text-align: left;
+                        padding: 10px;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- two colms -->
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    font-size: small;
+                  "
+                >
+                  <!-- col1 -->
+                  <div
+                    style="
+                      /* font-size: smaller; */
+                      text-align: left;
+                      border-right: 1px solid #ccc;
+                      place-content: center;
+                    "
+                  >
+                    <!-- [ngStyle]="{
+  'background-color':
+    reportData.data.stocklist[reportData.data.stockids[0]]
+      .clr
+}" -->
+
+                    <div
+                      style="
+                        width: 96%;
+                        height: 70%;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                      "
+                    >
+                      <strong>
+                        <!-- {{
+        reportData.data.stocklist[reportData.data.stockids[0]]
+          .sname
+      }} -->
+                        strong
+                      </strong>
+
+                      <div class="bullet_cio2">
+                        <ul>
+                          <!-- <li
+          *ngFor="
+            let item of reportData.data.stocklist[
+              reportData.data.stockids[0]
+            ].txt
+          "
+        >
+          {{ item }}
+        </li> -->
+                          <li>li data</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div style="height: 35px"></div>
+                  </div>
+
+                  <!-- col2 -->
+                  <div
+                    style="
+                      width: 100%;
+                      display: flex;
+                      justify-content: right;
+                      align-items: center;
+                    "
+                  >
+                    <div style="height: 35px"></div>
+
+                    <!-- [ngStyle]="{
+    'background-color':
+      reportData.data.stocklist[reportData.data.stockids[1]]
+        .clr
+  }" -->
+                    <div
+                      style="
+                        width: 96%;
+                        height: 70%;
+                        text-align: left;
+                        border-top-left-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                      "
+                    >
+                      <strong>
+                        <!-- {{
+        reportData.data.stocklist[reportData.data.stockids[1]]
+          .sname
+      }} -->
+                        strong
+                      </strong>
+                      <div class="bullet_cio2">
+                        <ul>
+                          <!-- <li
+          *ngFor="
+            let item of reportData.data.stocklist[
+              reportData.data.stockids[1]
+            ].txt
+          "
+        >
+          {{ item }}
+        </li> -->
+                          <li>li data</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- body -->
-    <!-- copy paste from verdictreport -->
   </div>
 </div>
 

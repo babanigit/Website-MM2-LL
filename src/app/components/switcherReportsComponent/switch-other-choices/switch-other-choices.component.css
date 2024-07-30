@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+    .card {
+      height: auto;
+    }
+    .card > div:first-child {
+      font-size: medium;
+      padding: 15px;
+    }
+    .card > div:last-child {
+      padding: 10px;
+    }
+    .card img {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card > div:first-child {
+      font-size: small;
+      padding: 10px;
+    }
+    .card img {
+      width: 100px;
+    }
+    .card > div:last-child {
+      padding: 5px;
+    }
+    .card div {
+      font-size: smaller;
+    }
+  }

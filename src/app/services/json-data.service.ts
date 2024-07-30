@@ -83,4 +83,20 @@ export class JsonDataService {
   }
 
 
+  getSwitcherReportandOptionsData2(
+    jsonPath: string = defaultVerdictSwticherReportandOptionsPath
+  ) {
+    // this.loadingSubject.next(false); // Emit loading true before HTTP request
+
+    return this.http.get<ISwitcherReportsAndOptions[]>(jsonPath).pipe(
+      delay(200),
+      catchError((err) => {
+        console.error('Error fetching switcherReport data', err);
+        throw err;
+      }),
+      // finalize(() => this.loadingSubject.next(true)) // Emit loading false after HTTP request
+    );
+  }
+
+
 }

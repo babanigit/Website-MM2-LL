@@ -8,27 +8,29 @@ import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 export class FilterOtherSwitchersPipe implements PipeTransform {
   transform(
     items: ISwitcherReportsAndOptions[],
-    searchText: string | undefined
+    ID_Choice: string | undefined
   ): ISwitcherReportsAndOptions[] {
-
     if (!items) return [];
-    if (!searchText) return items;
+    if (!ID_Choice) return items;
 
-    searchText = searchText.toString();
+    ID_Choice = ID_Choice.toString();
 
     console.log('the items is : ', items);
-    console.log('the searchtext is : ', searchText, typeof(searchText));
+    console.log('the searchtext is : ', ID_Choice, typeof ID_Choice);
 
-    //filtering as per search text
-    let getReport: ISwitcherReportsAndOptions[] = items.filter((item:ISwitcherReportsAndOptions) => {
-      console.log(' the valsid is : ', item.data.ques?.list[0].opt[0].valsid);
+      // Filtering as per choice id
+      let getReport: ISwitcherReportsAndOptions[] = items.filter(
+        (item: ISwitcherReportsAndOptions) => {
+          const val = item.data.ques?.list[0].opt[0].valsid;
+          if (val) {
+            console.log('the valsid is : ', val);
+            return val.toString().includes(ID_Choice);
+          }
+          return false;
+        }
+      );
 
-      item.data.ques?.list[0].opt[0].valsid
-        .toString()
-        .includes(searchText);
-    });
-
-    console.log(' the other data is  ', getReport);
+    console.log(' the return data of filter other switcher is :  ', getReport);
     return getReport;
   }
 }
