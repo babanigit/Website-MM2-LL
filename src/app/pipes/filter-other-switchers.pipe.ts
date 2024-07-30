@@ -18,16 +18,20 @@ export class FilterOtherSwitchersPipe implements PipeTransform {
     console.log('the items is : ', items);
     console.log('the searchtext is : ', ID_Choice, typeof ID_Choice);
 
-      // Filtering as per choice id
+      // getReport has all the options
       let getReport: ISwitcherReportsAndOptions[] = items.filter(
+
         (item: ISwitcherReportsAndOptions) => {
+
           const val = item.data.ques?.list[0].opt[0].valsid;
           if (val) {
             console.log('the valsid is : ', val);
             return val.toString().includes(ID_Choice);
           }
           return false;
+          
         }
+
       );
 
     console.log(' the return data of filter other switcher is :  ', getReport);

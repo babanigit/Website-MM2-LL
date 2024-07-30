@@ -1,5 +1,11 @@
 <!-- trail -->
 
+<div>
+  <div *ngFor="let items of getOtherChoiceShortName(ID_CHOICE_VALUE)">
+    {{ items }}
+  </div>
+</div>
+
 <div class="card text-center" style="height: 75vh; width: 100%">
   <div
     style="
@@ -22,10 +28,19 @@
     "
   >
     <div style="height: 100%" *ngIf="ID_CHOICE_VALUE">
+
+      <!-- *ngFor="
+          let item of otherSwitcherData | filterOtherSwitchers : ID_CHOICE_VALUE
+        " -->
       <div
         style="display: flex; height: 100%; width: 100%"
-        *ngFor="let item of data | filterOtherSwitchers : ID_CHOICE_VALUE"
+        *ngFor="
+          let item of fun1(ID_CHOICE_VALUE)
+        "
       >
+
+        <div *ngFor="let trail of fun2(item, ID_CHOICE_VALUE)">hello test</div>
+
         <div
           style="
             height: 100%;
