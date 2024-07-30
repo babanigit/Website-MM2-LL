@@ -32,14 +32,26 @@
       <!-- *ngFor="
           let item of otherSwitcherData | filterOtherSwitchers : ID_CHOICE_VALUE
         " -->
+        <!-- *ngFor="
+        let item of fun1(ID_CHOICE_VALUE)
+      " -->
       <div
         style="display: flex; height: 100%; width: 100%"
         *ngFor="
-          let item of fun1(ID_CHOICE_VALUE)
+          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE 
         "
       >
 
-        <div *ngFor="let trail of fun2(item, ID_CHOICE_VALUE)">hello test</div>
+      <!-- *ngFor="let trail of fun2(item, ID_CHOICE_VALUE)" -->
+        <!-- <div 
+        *ngFor="
+        let item of otherSwitcherData | fun2 : ID_CHOICE_VALUE 
+      "
+        >
+        hello test
+      </div> -->
+
+      
 
         <div
           style="

@@ -5,13 +5,15 @@ import { FilterOtherSwitchersPipe } from '../../../pipes/filter-other-switchers.
 import { IOption } from '../../../models/interfaces';
 import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 import { JsonDataService } from '../../../services/json-data.service';
+import { Fun1Pipe } from '../../../pipes/fun1.pipe';
+import { Fun2Pipe } from '../../../pipes/fun2.pipe';
 
 @Component({
   selector: 'app-switch-other-choices',
   templateUrl: './switch-other-choices.component.html',
   styleUrl: './switch-other-choices.component.css',
   standalone: true,
-  imports: [CommonModule, FilterOtherSwitchersPipe],
+  imports: [CommonModule, FilterOtherSwitchersPipe, Fun1Pipe, Fun2Pipe],
 })
 export class SwitchOtherChoicesComponent implements OnInit {
   // @Input() reportData!: ISwitcherReportsAndOptions | undefined | any; //props

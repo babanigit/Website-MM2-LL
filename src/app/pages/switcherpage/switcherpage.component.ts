@@ -111,7 +111,6 @@ export class SwitcherpageComponent {
     this.CHOICE_VALUE_STATE = true;
     this.SWITCHER_RESULT_STATE = false;
 
-    this.cdr.detectChanges();
   }
 
   State_getReportArr(e: ISwitcherReportsAndOptions) {
