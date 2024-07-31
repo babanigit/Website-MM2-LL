@@ -1,3 +1,21 @@
+
+
+interface StockResearchReport {
+  sid: number;
+  scoreText: string;
+  score: number;
+  heading: string;
+  type: 's' | 'a';  // Assuming 's' and 'a' are the only possible values for type
+  short_name: string;
+  dw_url: string;
+}
+
+export interface IOtherChoice {
+  [key: string]: StockResearchReport;
+}
+
+
+
 interface SectType {
   id: number;
   name: string;

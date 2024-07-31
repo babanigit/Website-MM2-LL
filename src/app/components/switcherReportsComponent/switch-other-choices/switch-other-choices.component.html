@@ -27,256 +27,200 @@
       place-items: center;
     "
   >
-    <div style="height: 100%" *ngIf="ID_CHOICE_VALUE">
-
-      <!-- *ngFor="
-          let item of otherSwitcherData | filterOtherSwitchers : ID_CHOICE_VALUE
-        " -->
-        <!-- *ngFor="
-        let item of fun1(ID_CHOICE_VALUE)
-      " -->
+    <div style="height: 100%; display: flex; gap: 15px" *ngIf="ID_CHOICE_VALUE">
+  
+      <!-- 
       <div
-        style="display: flex; height: 100%; width: 100%"
         *ngFor="
-          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE 
+          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE | keyvalue
         "
       >
-
-      <!-- *ngFor="let trail of fun2(item, ID_CHOICE_VALUE)" -->
-        <!-- <div 
-        *ngFor="
-        let item of otherSwitcherData | fun2 : ID_CHOICE_VALUE 
-      "
-        >
-        hello test
+        <div>
+          <div>Key: {{ item.key }}</div>
+          <div>SID: {{ item.value["sid"] }}</div>
+          <div>Score Text: {{ item.value["scoreText"] }}</div>
+          <div>Score: {{ item.value["score"] }}</div>
+          <div>Heading: {{ item.value["heading"] }}</div>
+          <div>Type: {{ item.value["type"] }}</div>
+          <div>Short Name: {{ item.value["short_name"] }}</div>
+          <div>
+            Download URL:
+            <a [href]="item.value['dw_url']" target="_blank">{{
+              item.value["dw_url"]
+            }}</a>
+          </div>
+        </div>
       </div> -->
 
-      
+      <div
+        style="
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          place-items: center;
+          gap: 3px;
+        "
+        *ngFor="
+          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE | keyvalue
+        "
+      >
+        <!-- col1 -->
+        <div style="background-color: aquamarine">
+          <strong> download report </strong>
+        </div>
 
-        <div
-          style="
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            place-items: center;
-            gap: 3px;
-          "
-          *ngFor="let hero of item.data.ques!.list[0].opt"
-        >
-          <!-- col1 -->
-          <div style="background-color: aquamarine">
-            <strong> download report </strong>
-          </div>
-
-          <!-- col2 -->
-          <div>
-            {{ hero.valsid }}
-
-            <!-- col2 -->
-
-            <!-- [ngStyle]="{
-        'background-image':
-          'linear-gradient(to right, ' +
-          reportData.data.stocklist[reportData.data.stockids[0]].clr +
-          ', ' +
-          reportData.data.stocklist[reportData.data.stockids[1]].clr +
-          ')'
-      }" -->
+        <!-- col2 -->
+        <div>
+          <div>Key: {{ item.key }}</div>
+          <div
+            style="
+              height: 350px;
+              width: 250px;
+              background-image: linear-gradient(
+                to right,
+                red,
+                green
+              ); /* Gradient from left to right */
+              display: flex;
+              justify-content: center;
+              /* grid-template-rows: 30% 70%; */
+            "
+          >
             <div
               style="
-                height: 350px;
-                width: 250px;
-                background-image: linear-gradient(
-                  to right,
-                  red,
-                  green
-                ); /* Gradient from left to right */
-                display: flex;
-                justify-content: center;
-                /* grid-template-rows: 30% 70%; */
+                height: 100%;
+                width: 90%;
+                padding-top: 20px;
+                color: aliceblue;
+                background-color: rgb(19, 35, 19);
+                display: grid;
+                grid-template-rows: 30% 70%;
               "
             >
-              <div
-                style="
-                  height: 100%;
-                  width: 90%;
-                  padding-top: 20px;
-                  color: aliceblue;
-                  background-color: rgb(19, 35, 19);
-                  display: grid;
-                  grid-template-rows: 30% 70%;
-                "
-              >
-                <!-- Main Content Here -->
-                <div style="display: grid; grid-template-rows: 50% 50%">
-                  <!-- upper -->
+              <!-- Main Content Here -->
+              <div style="display: grid; grid-template-rows: 50% 50%">
+                <!-- upper -->
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: baseline;
+                    align-items: center;
+                    gap: 5px;
+                    /* background-color: blueviolet; */
+                    height: 100%;
+                    width: 100%;
+                  "
+                >
+                  <!-- <div style="margin: 0; padding: 0">mojo professional</div> -->
+                  <img
+                    style="
+                      text-align: center;
+
+                      width: 160px;
+                    "
+                    alt="imag"
+                    src="https://i.marketsmojo.com/switcher/switcher-logo.png"
+                  />
+
                   <div
                     style="
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: baseline;
-                      align-items: center;
-                      gap: 5px;
-                      /* background-color: blueviolet; */
-                      height: 100%;
-                      width: 100%;
+                      text-align: left;
+                      margin: 0;
+                      padding-right: 10px;
+                      font-size: small;
                     "
                   >
-                    <!-- <div style="margin: 0; padding: 0">mojo professional</div> -->
-                    <img
-                      style="
-                        text-align: center;
-
-                        width: 160px;
-                      "
-                      alt="imag"
-                      src="https://i.marketsmojo.com/switcher/switcher-logo.png"
-                    />
-
-                    <div
-                      style="
-                        text-align: left;
-                        margin: 0;
-                        padding-right: 10px;
-                        font-size: small;
-                      "
-                    >
-                      Report as on 15 July 2024 at 12:01 PM
-                    </div>
-                  </div>
-
-                  <!-- lower -->
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: flex-start;
-                      align-items: flex-end;
-                    "
-                  >
-                    <!-- [innerHTML]="
-      reportData.data.verdict?.cover_page_data?.cover_headline
-    " -->
-
-                    <div
-                      style="
-                        color: rgb(59, 180, 59);
-                        font-weight: 800;
-                        font-size: x-large;
-                        text-align: left;
-                        padding: 10px;
-                      "
-                    ></div>
+                    Report as on 15 July 2024 at 12:01 PM
                   </div>
                 </div>
 
-                <!-- two colms -->
+                <!-- lower -->
                 <div
                   style="
-                    display: grid;
-                    grid-template-columns: 50% 50%;
-                    font-size: small;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-end;
                   "
                 >
-                  <!-- col1 -->
                   <div
                     style="
-                      /* font-size: smaller; */
+                      color: rgb(59, 180, 59);
+                      font-weight: 800;
+                      font-size: x-large;
                       text-align: left;
-                      border-right: 1px solid #ccc;
-                      place-content: center;
+                      padding: 10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+
+              <!-- two colms -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 50% 50%;
+                  font-size: small;
+                "
+              >
+                <!-- col1 -->
+                <div
+                  style="
+                    /* font-size: smaller; */
+                    text-align: left;
+                    border-right: 1px solid #ccc;
+                    place-content: center;
+                  "
+                >
+                  <div
+                    style="
+                      width: 96%;
+                      height: 70%;
+                      border-top-right-radius: 20px;
+                      border-bottom-right-radius: 20px;
+                      padding-left: 10px;
+                      padding-top: 10px;
                     "
                   >
-                    <!-- [ngStyle]="{
-  'background-color':
-    reportData.data.stocklist[reportData.data.stockids[0]]
-      .clr
-}" -->
+                    <strong> strong </strong>
 
-                    <div
-                      style="
-                        width: 96%;
-                        height: 70%;
-                        border-top-right-radius: 20px;
-                        border-bottom-right-radius: 20px;
-                        padding-left: 10px;
-                        padding-top: 10px;
-                      "
-                    >
-                      <strong>
-                        <!-- {{
-        reportData.data.stocklist[reportData.data.stockids[0]]
-          .sname
-      }} -->
-                        strong
-                      </strong>
-
-                      <div class="bullet_cio2">
-                        <ul>
-                          <!-- <li
-          *ngFor="
-            let item of reportData.data.stocklist[
-              reportData.data.stockids[0]
-            ].txt
-          "
-        >
-          {{ item }}
-        </li> -->
-                          <li>li data</li>
-                        </ul>
-                      </div>
+                    <div class="bullet_cio2">
+                      <ul>
+                        <li>li data</li>
+                      </ul>
                     </div>
-
-                    <div style="height: 35px"></div>
                   </div>
 
-                  <!-- col2 -->
+                  <div style="height: 35px"></div>
+                </div>
+
+                <!-- col2 -->
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                  "
+                >
+                  <div style="height: 35px"></div>
+
                   <div
                     style="
-                      width: 100%;
-                      display: flex;
-                      justify-content: right;
-                      align-items: center;
+                      width: 96%;
+                      height: 70%;
+                      text-align: left;
+                      border-top-left-radius: 20px;
+                      border-bottom-left-radius: 20px;
+                      padding-left: 10px;
+                      padding-top: 10px;
                     "
                   >
-                    <div style="height: 35px"></div>
-
-                    <!-- [ngStyle]="{
-    'background-color':
-      reportData.data.stocklist[reportData.data.stockids[1]]
-        .clr
-  }" -->
-                    <div
-                      style="
-                        width: 96%;
-                        height: 70%;
-                        text-align: left;
-                        border-top-left-radius: 20px;
-                        border-bottom-left-radius: 20px;
-                        padding-left: 10px;
-                        padding-top: 10px;
-                      "
-                    >
-                      <strong>
-                        <!-- {{
-        reportData.data.stocklist[reportData.data.stockids[1]]
-          .sname
-      }} -->
-                        strong
-                      </strong>
-                      <div class="bullet_cio2">
-                        <ul>
-                          <!-- <li
-          *ngFor="
-            let item of reportData.data.stocklist[
-              reportData.data.stockids[1]
-            ].txt
-          "
-        >
-          {{ item }}
-        </li> -->
-                          <li>li data</li>
-                        </ul>
-                      </div>
+                    <strong> strong </strong>
+                    <div class="bullet_cio2">
+                      <ul>
+                        <li>li data</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
