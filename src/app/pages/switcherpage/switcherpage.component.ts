@@ -36,8 +36,9 @@ export class SwitcherpageComponent {
   private loadingSubscription: Subscription | undefined;
   LOADING_STATE: boolean = true;
 
-  // private loadingSubResult: Subscription | undefined;
-  // LOADING_STATE2: boolean = true;
+
+  private loadingSubResult: Subscription | undefined;
+  LOADING_STATE2: boolean = true;
 
   constructor(private cdr: ChangeDetectorRef, private serv: JsonDataService) {
     this.sectionDataSwitcher = sectionDataSwitcher;
@@ -53,11 +54,11 @@ export class SwitcherpageComponent {
       this.LOADING_STATE = data;
     });
 
-    // this.loadingSubResult = this.serv
-    //   .getLoadingState()
-    //   .subscribe((data) => {
-    //     this.LOADING_STATE = data;
-    //   });
+    this.loadingSubResult = this.serv
+      .getLoadingState2()
+      .subscribe((data) => {
+        this.LOADING_STATE2 = data;
+      });
   }
 
   fetchGetSwitcherReportandOptions() {
@@ -115,7 +116,7 @@ export class SwitcherpageComponent {
 
   State_getReportArr(e: ISwitcherReportsAndOptions) {
     this.switherReportData = e;
-    console.log(" the switcherReport Data is : " , this.switherReportData)
+    console.log(" the switcherReport Data is : ", this.switherReportData)
 
     // if undefind
     if (this.switherReportData!.data!.ques) {

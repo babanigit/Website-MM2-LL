@@ -1,18 +1,13 @@
 import {
-  AfterContentInit,
   AfterViewChecked,
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
-  DoCheck,
   Input,
-  OnDestroy,
   OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterOtherSwitchersPipe } from '../../../pipes/filter-other-switchers.pipe';
 
-import { IOption } from '../../../models/interfaces';
 import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 import { JsonDataService } from '../../../services/json-data.service';
 import { Fun1Pipe } from '../../../pipes/fun1.pipe';
@@ -47,7 +42,12 @@ export class SwitchOtherChoicesComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    this.fetchGetSwitcherReportandOptions();
+
+    setTimeout(() => {
+      this.fetchGetSwitcherReportandOptions();
+
+    }, 2000);
+
     // console.log('the switcherReportsAndOptions is :', this.switcherReportsAndOptions);
     // this.cdr.detectChanges();
     // if (this.switcherReportsAndOptions.data.verdict) {

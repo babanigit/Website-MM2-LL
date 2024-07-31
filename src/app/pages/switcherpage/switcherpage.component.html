@@ -75,10 +75,10 @@
   <!-- SWITCHER_RESULT_STATE -->
   <div *ngIf="ID_CHOICE_VALUE">
     <div
-    *ngFor="
-    let item of switcherResult
-      | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
-  "
+      *ngFor="
+        let item of switcherResult
+          | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
+      "
     >
       <app-switch-result
         [reportData]="item"
@@ -86,10 +86,22 @@
         (myEvent_resultState)="State_getResultBol($event)"
       />
 
+      <!-- loading2 -->
+      <app-verdictloading
+        [hidden]="LOADING_STATE2"
+        [barColor]="'rgb(102, 102, 233)'"
+        [text1]="'Evaluating Other Choices'"
+      />
+
       <!-- 4 -->
       <div
         *ngIf="switherReportData_State"
-        [hidden]="!LOADING_STATE || !ID_CHOICE_VALUE || SWITCHER_RESULT_STATE"
+        [hidden]="
+          !LOADING_STATE ||
+          !LOADING_STATE2 ||
+          !ID_CHOICE_VALUE ||
+          SWITCHER_RESULT_STATE
+        "
       >
         <app-switch-other-choices
           [ID_CHOICE_VALUE]="ID_CHOICE_VALUE"
