@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { verdictReportsData } from '../../assets/verdictReportsData';
 import { sectionDataVerdict } from '../../assets/sectionData';
 import { verdict1ListData } from '../../assets/verdict1Data';
 import { Subscription } from 'rxjs';
@@ -25,8 +24,7 @@ export class VerdictpageComponent implements OnInit {
   LOADING_STATE: boolean = true;
 
   constructor(private serv: JsonDataService) {
-    // this.verdictReportsData = verdictReportsData; //verdict data
-
+ 
     this.sectionDataVerdict = sectionDataVerdict;
     this.verdict1ListData = verdict1ListData;
   }
@@ -56,8 +54,4 @@ export class VerdictpageComponent implements OnInit {
     this.ReportBoxState = e;
   }
 
-  // //loadingState
-  // recievedLoadingStateEvent(e: boolean) {
-  //   this.loadingState = e;
-  // }
 }

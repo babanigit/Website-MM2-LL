@@ -22,7 +22,6 @@ export class SwitcherpageComponent {
   SNAME_INPUT_STRING: string = '';
   ID_INPUT_STRING: string = '';
 
-  // LOADING_STATE: boolean = true;
 
   switherReportData: ISwitcherReportsAndOptions | undefined;
   switherReportData_State: boolean = false;
@@ -44,8 +43,6 @@ export class SwitcherpageComponent {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
 
-    // this.switcherReportsAndOptions = switcherReportsAndOptions;
-    // this.switcherResult = SwitcherReportData;
   }
 
   ngOnInit(): void {
@@ -96,11 +93,6 @@ export class SwitcherpageComponent {
 
     this.SWITCHER_RESULT_STATE = true;
   }
-
-  // //get loading state
-  // State_getLoadingBol(e: boolean) {
-  //   this.LOADING_STATE = e;
-  // }
 
   // getchoicevalue id
   State_getChoiceBol(e: string | undefined) {
