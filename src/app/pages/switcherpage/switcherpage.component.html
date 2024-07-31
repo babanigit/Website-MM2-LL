@@ -11,7 +11,6 @@
   "
   [serachBoxText]="'RUN SWITCHER'"
   [hideQuantityBox]="false"
-
   (myEvent1_InputValue)="State_getInputStr($event)"
   (myEvent2_ReportBoxState)="State_getReportBol($event)"
   (myEvent4_ChooseValue)="State_getChoiceBol($event)"
@@ -45,7 +44,6 @@
       REPORTB0X_STATE ||
       switherReportData?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'
     "
-
     (myEvent2_SendReportDataEvent)="State_getReportArr($event)"
     (myEvent1_CloseBox)="State_getReportBol($event)"
   />
@@ -63,7 +61,6 @@
     "
     *ngIf="switherReportData?.data?.ques?.switch_msg === 'YOU HAVE ENTERED'"
     [reportData]="switherReportData"
-
     (myEvent1_CloseBox)="State_getReportBol($event)"
     (myEvent2_ChoiceValue)="State_getChoiceBol($event)"
     (myEvent3_afterChoiceSubmitState)="State_getResultBol($event)"
@@ -73,37 +70,34 @@
   <!-- switherReportData?.data?.sect_type[1]!.name !== 'switcher' || -->
   <!-- *ngIf="switherReportData?.data?.sect_type[1]!.name === 'switcher'" -->
 
-
   <!-- 3 -->
   <!-- ID_CHOICE_VALUE -->
   <!-- SWITCHER_RESULT_STATE -->
   <div *ngIf="ID_CHOICE_VALUE">
-    <app-switch-result
-      *ngFor="
-        let item of switcherResult
-          | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
-      "
-      [reportData]="item"
-      [hidden]="
-      !LOADING_STATE ||
-      SWITCHER_RESULT_STATE"
-      
-      (myEvent_resultState)="State_getResultBol($event)"
-    />
-  </div>
+    <div
+    *ngFor="
+    let item of switcherResult
+      | filterChoiceResult : ID_CHOICE_VALUE : ID_INPUT_STRING
+  "
+    >
+      <app-switch-result
+        [reportData]="item"
+        [hidden]="!LOADING_STATE || SWITCHER_RESULT_STATE"
+        (myEvent_resultState)="State_getResultBol($event)"
+      />
 
-  <!-- 4 -->
-  <div
-    *ngIf="switherReportData_State"
-    [hidden]="
-    !LOADING_STATE ||
-    !ID_CHOICE_VALUE || SWITCHER_RESULT_STATE"
-  >
-  
-    <app-switch-other-choices
-      [ID_CHOICE_VALUE]="ID_CHOICE_VALUE"
-    />
-
+      <!-- 4 -->
+      <div
+        *ngIf="switherReportData_State"
+        [hidden]="!LOADING_STATE || !ID_CHOICE_VALUE || SWITCHER_RESULT_STATE"
+      >
+        <app-switch-other-choices
+          [ID_CHOICE_VALUE]="ID_CHOICE_VALUE"
+          [ID_INPUT_STRING]="ID_INPUT_STRING"
+          [reportData]="item"
+        />
+      </div>
+    </div>
   </div>
 </div>
 

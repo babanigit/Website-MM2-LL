@@ -1,11 +1,5 @@
 <!-- trail -->
 
-<div>
-  <div *ngFor="let items of getOtherChoiceShortName(ID_CHOICE_VALUE)">
-    {{ items }}
-  </div>
-</div>
-
 <div class="card text-center" style="height: 75vh; width: 100%">
   <div
     style="
@@ -28,11 +22,10 @@
     "
   >
     <div style="height: 100%; display: flex; gap: 15px" *ngIf="ID_CHOICE_VALUE">
-  
       <!-- 
       <div
         *ngFor="
-          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE | keyvalue
+          let item of switcherReportsAndOptions | fun1 : ID_CHOICE_VALUE | keyvalue
         "
       >
         <div>
@@ -53,174 +46,238 @@
       </div> -->
 
       <div
+        *ngFor="
+          let item of switcherReportsAndOptions
+            | fun1 : ID_CHOICE_VALUE
+            | keyvalue
+        "
         style="
           height: 100%;
-          display: flex;
+          display: grid;
           justify-content: center;
           place-items: center;
           gap: 3px;
         "
-        *ngFor="
-          let item of otherSwitcherData | fun1 : ID_CHOICE_VALUE | keyvalue
-        "
       >
-        <!-- col1 -->
-        <div style="background-color: aquamarine">
-          <strong> download report </strong>
+        <div>{{ item.value["heading"] }}</div>
+        <div style="width: 100%; border-top: 2px solid black">
+          <strong> {{ item.value["short_name"] }} </strong>
         </div>
+        <div
+          style="
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            gap: 3px;
+          "
+        >
+          <!-- col1 -->
+          <div style="background-color: aquamarine">
+            <strong> download report </strong>
+          </div>
 
-        <!-- col2 -->
-        <div>
-          <div>Key: {{ item.key }}</div>
-          <div
-            style="
-              height: 350px;
-              width: 250px;
-              background-image: linear-gradient(
-                to right,
-                red,
-                green
-              ); /* Gradient from left to right */
-              display: flex;
-              justify-content: center;
-              /* grid-template-rows: 30% 70%; */
-            "
-          >
+          <!-- col2 -->
+          <div>
+            <!-- <div>Key: {{ item.key }}</div> -->
             <div
+              [ngStyle]="{
+                'background-image':
+                  'linear-gradient(to right, ' +
+                  reportData.data.stocklist[reportData.data.stockids[0]].clr +
+                  ', ' +
+                  reportData.data.stocklist[reportData.data.stockids[1]].clr +
+                  ')'
+              }"
               style="
-                height: 100%;
-                width: 90%;
-                padding-top: 20px;
-                color: aliceblue;
-                background-color: rgb(19, 35, 19);
-                display: grid;
-                grid-template-rows: 30% 70%;
+                height: 350px;
+                width: 250px;
+                background-image: linear-gradient(
+                  to right,
+                  red,
+                  green
+                ); /* Gradient from left to right */
+                display: flex;
+                justify-content: center;
+                /* grid-template-rows: 30% 70%; */
               "
             >
-              <!-- Main Content Here -->
-              <div style="display: grid; grid-template-rows: 50% 50%">
-                <!-- upper -->
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: baseline;
-                    align-items: center;
-                    gap: 5px;
-                    /* background-color: blueviolet; */
-                    height: 100%;
-                    width: 100%;
-                  "
-                >
-                  <!-- <div style="margin: 0; padding: 0">mojo professional</div> -->
-                  <img
-                    style="
-                      text-align: center;
-
-                      width: 160px;
-                    "
-                    alt="imag"
-                    src="https://i.marketsmojo.com/switcher/switcher-logo.png"
-                  />
-
-                  <div
-                    style="
-                      text-align: left;
-                      margin: 0;
-                      padding-right: 10px;
-                      font-size: small;
-                    "
-                  >
-                    Report as on 15 July 2024 at 12:01 PM
-                  </div>
-                </div>
-
-                <!-- lower -->
-                <div
-                  style="
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-end;
-                  "
-                >
-                  <div
-                    style="
-                      color: rgb(59, 180, 59);
-                      font-weight: 800;
-                      font-size: x-large;
-                      text-align: left;
-                      padding: 10px;
-                    "
-                  ></div>
-                </div>
-              </div>
-
-              <!-- two colms -->
               <div
                 style="
+                  height: 100%;
+                  width: 90%;
+                  padding-top: 20px;
+                  color: aliceblue;
+                  background-color: rgb(19, 35, 19);
                   display: grid;
-                  grid-template-columns: 50% 50%;
-                  font-size: small;
+                  grid-template-rows: 30% 70%;
                 "
               >
-                <!-- col1 -->
-                <div
-                  style="
-                    /* font-size: smaller; */
-                    text-align: left;
-                    border-right: 1px solid #ccc;
-                    place-content: center;
-                  "
-                >
+                <!-- Main Content Here -->
+                <div style="display: grid; grid-template-rows: 50% 50%">
+                  <!-- upper -->
                   <div
                     style="
-                      width: 96%;
-                      height: 70%;
-                      border-top-right-radius: 20px;
-                      border-bottom-right-radius: 20px;
-                      padding-left: 10px;
-                      padding-top: 10px;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: baseline;
+                      align-items: center;
+                      gap: 5px;
+                      /* background-color: blueviolet; */
+                      height: 100%;
+                      width: 100%;
                     "
                   >
-                    <strong> strong </strong>
+                    <!-- <div style="margin: 0; padding: 0">mojo professional</div> -->
+                    <img
+                      style="
+                        text-align: center;
 
-                    <div class="bullet_cio2">
-                      <ul>
-                        <li>li data</li>
-                      </ul>
+                        width: 200px;
+                      "
+                      alt="imag"
+                      src="https://i.marketsmojo.com/switcher/switcher-logo.png"
+                    />
+
+                    <div
+                      style="
+                        text-align: left;
+                        margin: 0;
+                        padding-right: 10px;
+                        font-size: x-small;
+                      "
+                    >
+                      Report as on 15 July 2024 at 12:01 PM
                     </div>
                   </div>
 
-                  <div style="height: 35px"></div>
-                </div>
-
-                <!-- col2 -->
-                <div
-                  style="
-                    width: 100%;
-                    display: flex;
-                    justify-content: right;
-                    align-items: center;
-                  "
-                >
-                  <div style="height: 35px"></div>
-
+                  <!-- lower -->
                   <div
                     style="
-                      width: 96%;
-                      height: 70%;
-                      text-align: left;
-                      border-top-left-radius: 20px;
-                      border-bottom-left-radius: 20px;
-                      padding-left: 10px;
-                      padding-top: 10px;
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: flex-end;
                     "
                   >
-                    <strong> strong </strong>
-                    <div class="bullet_cio2">
-                      <ul>
-                        <li>li data</li>
-                      </ul>
+                    <div
+                      style="
+                        color: rgb(59, 180, 59);
+                        font-weight: 800;
+                        font-size: x-large;
+                        text-align: left;
+                        padding: 10px;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- two colms -->
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    font-size: small;
+                  "
+                >
+                  <!-- col1 -->
+                  <div
+                    style="
+                      /* font-size: smaller; */
+                      text-align: left;
+                      border-right: 1px solid #ccc;
+                      place-content: center;
+                    "
+                  >
+                    <div
+                      [ngStyle]="{
+                        'background-color':
+                          reportData.data.stocklist[reportData.data.stockids[0]]
+                            .clr
+                      }"
+                      style="
+                        width: 96%;
+                        height: 70%;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                      "
+                    >
+                      <div style="font-weight: 500; font-size: smaller">
+                        <!-- div -->
+                        {{
+                          reportData!.data!.stocklist[
+                            reportData!.data!.stockids[0]
+                          ].sname
+                        }}
+                      </div>
+
+                      <div class="bullet_cio2">
+                        <ul style="font-size: xx-small">
+                          <li
+                            *ngFor="
+                              let item of reportData.data.stocklist[
+                                reportData.data.stockids[0]
+                              ].txt
+                            "
+                          >
+                            {{ item }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div style="height: 35px"></div>
+                  </div>
+
+                  <!-- col2 -->
+                  <div
+                    style="
+                      width: 100%;
+                      display: flex;
+                      justify-content: right;
+                      align-items: center;
+                    "
+                  >
+                    <div style="height: 35px"></div>
+
+                    <div
+
+                    [ngStyle]="{
+                      'background-color': 'green'
+                    }"
+
+                      style="
+                        width: 96%;
+                        height: 70%;
+                        text-align: left;
+                        border-top-left-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                        /* background-color: green; */
+                      "
+                      *ngFor="
+                        let hero of switcherReportsAndOptions | fun2 : item.key
+                      "
+                    >
+                      <div style="font-weight: 500; font-size: smaller">
+                        {{ item.value["short_name"] }}
+                      </div>
+                      <div class="bullet_cio2">
+                        <ul style="font-size: xx-small">
+                          <li
+                            *ngFor="
+                              let summary of hero.data.verdict?.cover_page_data
+                                ?.cover_summary
+                            "
+                          >
+                            {{ summary.big_txt }}
+                            <br />
+                            {{ summary.small_txt }}
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

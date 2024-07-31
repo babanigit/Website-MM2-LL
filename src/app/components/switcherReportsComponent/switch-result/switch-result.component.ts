@@ -15,6 +15,7 @@ export class SwitchResultComponent {
 
   @Input() reportData!: ISwitcherResult; //props
 
+
   // onclose clicked
   onClose() {
     this.myEvent_resultState.emit(true); //emitting event to parent component to close the result box

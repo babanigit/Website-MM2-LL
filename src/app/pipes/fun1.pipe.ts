@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { IOtherChoice } from '../models/otherChoice';
 import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 
-
 @Pipe({
   name: 'fun1',
   standalone: true,
@@ -18,8 +17,14 @@ export class Fun1Pipe implements PipeTransform {
 
     const getReport = items.filter((item: ISwitcherReportsAndOptions) => {
       const optList = item.data?.ques?.list?.[0]?.opt;
-      return optList ? optList.some((opt: { valsid: any }) => opt.valsid?.toString().includes(ID_Choice)) : false;
+      return optList
+        ? optList.some((opt: { valsid: any }) =>
+            opt.valsid?.toString().includes(ID_Choice)
+          )
+        : false;
     });
+
+    console.log("the get report data is : ", getReport)
 
     if (getReport.length > 0) {
       const opts = getReport[0].data?.ques?.list?.[0]?.opt;
@@ -31,7 +36,8 @@ export class Fun1Pipe implements PipeTransform {
         }
       }
     }
-  console.log("the output of the pipe is :",getReport )
+    
+    console.log('the output of the pipe is :', getReport);
     return {}; // Default return empty object
   }
 }

@@ -1,7 +1,6 @@
-import { ISwitcherResult } from "../models/switcherResult";
+import { ISwitcherResult } from '../models/switcherResult';
 
 export const SwitcherResult: ISwitcherResult[] = [
-
   // hdfc
   // hdfc Stock in Finance/NBFC Sector
   {

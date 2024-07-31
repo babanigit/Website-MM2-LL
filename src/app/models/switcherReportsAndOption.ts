@@ -21,7 +21,7 @@ interface PriceInfo {
     div_yeild: number;
     net_profit: number;
     pe_ratio: number;
-    ind_pe_ratio: string;
+    ind_pe_ratio: string |number;
     deb_equity: string | number;
     price_to_book: number;
     net_npa_perc: number | string;
