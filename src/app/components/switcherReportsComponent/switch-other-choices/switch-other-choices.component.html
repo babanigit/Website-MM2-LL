@@ -1,15 +1,16 @@
 <!-- trail -->
 
-<div class="card text-center" style="height: 75vh; width: 100%">
-  <div
-    style="
-      font-size: large;
-      font-weight: 400;
-      background-color: aliceblue;
-      padding: 20px;
-    "
-  >
-    YOU HAVE 2 OTHER CHOICES
+<div
+  class="card text-center"
+  style="
+    padding-bottom: 30px;
+    height: auto;
+    width: 100%;
+    background-color: aliceblue;
+  "
+>
+  <div style="font-size: xx-large; font-weight: 300; padding: 20px">
+    YOU HAVE <strong style="font-size: larger"> 2 </strong> OTHER CHOICES
   </div>
 
   <div
@@ -22,29 +23,6 @@
     "
   >
     <div style="height: 100%; display: flex; gap: 15px" *ngIf="ID_CHOICE_VALUE">
-      <!-- 
-      <div
-        *ngFor="
-          let item of switcherReportsAndOptions | fun1 : ID_CHOICE_VALUE | keyvalue
-        "
-      >
-        <div>
-          <div>Key: {{ item.key }}</div>
-          <div>SID: {{ item.value["sid"] }}</div>
-          <div>Score Text: {{ item.value["scoreText"] }}</div>
-          <div>Score: {{ item.value["score"] }}</div>
-          <div>Heading: {{ item.value["heading"] }}</div>
-          <div>Type: {{ item.value["type"] }}</div>
-          <div>Short Name: {{ item.value["short_name"] }}</div>
-          <div>
-            Download URL:
-            <a [href]="item.value['dw_url']" target="_blank">{{
-              item.value["dw_url"]
-            }}</a>
-          </div>
-        </div>
-      </div> -->
-
       <div
         *ngFor="
           let item of switcherReportsAndOptions
@@ -61,7 +39,9 @@
       >
         <div>{{ item.value["heading"] }}</div>
         <div style="width: 100%; border-top: 2px solid black">
-          <strong> {{ item.value["short_name"] }} </strong>
+          <strong style="font-size: x-large">
+            {{ item.value["short_name"] }}
+          </strong>
         </div>
         <div
           style="
@@ -73,11 +53,6 @@
           "
         >
           <!-- col1 -->
-          <div style="background-color: aquamarine">
-            <strong> download report </strong>
-          </div>
-
-          <!-- col2 -->
           <div>
             <!-- <div>Key: {{ item.key }}</div> -->
             <div
@@ -90,8 +65,8 @@
                   ')'
               }"
               style="
-                height: 350px;
-                width: 250px;
+                height: 400px;
+                width: 300px;
                 background-image: linear-gradient(
                   to right,
                   red,
@@ -242,11 +217,9 @@
                     <div style="height: 35px"></div>
 
                     <div
-
-                    [ngStyle]="{
-                      'background-color': 'green'
-                    }"
-
+                      [ngStyle]="{
+                        'background-color': 'green'
+                      }"
                       style="
                         width: 96%;
                         height: 70%;
@@ -283,6 +256,11 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- col2 -->
+          <div style="background-color: aquamarine">
+            <strong> download report </strong>
           </div>
         </div>
       </div>

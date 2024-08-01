@@ -24,7 +24,6 @@ import { ISwitcherResult } from '../../../models/switcherResult';
   imports: [CommonModule, FilterOtherSwitchersPipe, Fun1Pipe, Fun2Pipe],
 })
 export class SwitchOtherChoicesComponent implements OnInit, AfterViewChecked {
- 
   @Input() ID_CHOICE_VALUE!: string | undefined;
   @Input() ID_INPUT_STRING!: string | undefined;
 
@@ -40,19 +39,25 @@ export class SwitchOtherChoicesComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    this.fetchGetSwitcherReportandOptions();
+    setTimeout(() => {
+      this.fetchGetSwitcherReportandOptions();
+    }, 0);
   }
 
-  ngAfterViewChecked(): void {
-
-  }
+  ngAfterViewChecked(): void {}
 
   fetchGetSwitcherReportandOptions() {
     this.serv
       .getSwitcherReportandOptionsData2()
       .subscribe((res: ISwitcherReportsAndOptions[]) => {
+        console.log('the other choices are : ', res);
         this.switcherReportsAndOptions = res;
       });
   }
 
+  // // Method to count the number of choices
+  // getNumberOfChoices(): number {
+  //   const choices = this.switcherReportsAndOptions | fun1 : this.ID_CHOICE_VALUE;
+  //   return choices ? Object.keys(choices).length : 0;
+  // }
 }

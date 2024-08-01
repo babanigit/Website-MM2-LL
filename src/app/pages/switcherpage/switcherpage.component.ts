@@ -22,7 +22,6 @@ export class SwitcherpageComponent {
   SNAME_INPUT_STRING: string = '';
   ID_INPUT_STRING: string = '';
 
-
   switherReportData: ISwitcherReportsAndOptions | undefined;
   switherReportData_State: boolean = false;
 
@@ -35,14 +34,12 @@ export class SwitcherpageComponent {
   private loadingSubscription: Subscription | undefined;
   LOADING_STATE: boolean = true;
 
-
   private loadingSubResult: Subscription | undefined;
   LOADING_STATE2: boolean = true;
 
   constructor(private cdr: ChangeDetectorRef, private serv: JsonDataService) {
     this.sectionDataSwitcher = sectionDataSwitcher;
     this.verdict1SwitcherListData = verdict1SwitcherListData;
-
   }
 
   ngOnInit(): void {
@@ -51,11 +48,10 @@ export class SwitcherpageComponent {
       this.LOADING_STATE = data;
     });
 
-    this.loadingSubResult = this.serv
-      .getLoadingState2()
-      .subscribe((data) => {
-        this.LOADING_STATE2 = data;
-      });
+    this.loadingSubResult = this.serv.getLoadingState2().subscribe((data) => {
+      this.LOADING_STATE2 = data;
+    });
+    // this.cdr.detectChanges();
   }
 
   fetchGetSwitcherReportandOptions() {
@@ -103,12 +99,10 @@ export class SwitcherpageComponent {
 
     this.CHOICE_VALUE_STATE = true;
     this.SWITCHER_RESULT_STATE = false;
-
   }
 
   State_getReportArr(e: ISwitcherReportsAndOptions) {
     this.switherReportData = e;
-    console.log(" the switcherReport Data is : ", this.switherReportData)
 
     // if undefind
     if (this.switherReportData!.data!.ques) {
@@ -116,7 +110,6 @@ export class SwitcherpageComponent {
     } else {
       this.switherReportData_State = false;
     }
-
     this.cdr.detectChanges();
   }
 

@@ -7,13 +7,13 @@ import { ISwitcherResult } from '../models/switcherResult';
 
 const defaultDropdownPath = 'assets/dropdown.json';
 const defaultVerdictReportPath = 'assets/verdictReports.json';
-const defaultVerdictSwticherReportandOptionsPath = 'assets/switcherBasicReportsAndOptions.json';
+const defaultVerdictSwticherReportandOptionsPath =
+  'assets/switcherBasicReportsAndOptions.json';
 const defaultSwitcherResultPath = 'assets/switcherResult.json';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class JsonDataService {
   private loadingSubject = new Subject<boolean>();
   private loadingSubjectResult = new Subject<boolean>();
@@ -65,9 +65,7 @@ export class JsonDataService {
     );
   }
 
-  getSwitcherResult(
-    jsonPath: string = defaultSwitcherResultPath
-  ) {
+  getSwitcherResult(jsonPath: string = defaultSwitcherResultPath) {
     this.loadingSubject.next(false); // Emit loading true before HTTP request
 
     return this.http.get<ISwitcherResult[]>(jsonPath).pipe(
@@ -86,7 +84,7 @@ export class JsonDataService {
     this.loadingSubjectResult.next(false); // Emit loading true before HTTP request
 
     return this.http.get<ISwitcherReportsAndOptions[]>(jsonPath).pipe(
-      delay(2500),
+      delay(1000),
       catchError((err) => {
         console.error('Error fetching switcherReport data', err);
         throw err;
@@ -94,5 +92,4 @@ export class JsonDataService {
       finalize(() => this.loadingSubjectResult.next(true)) // Emit loading false after HTTP request
     );
   }
-
 }
