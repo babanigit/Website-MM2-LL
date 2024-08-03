@@ -10,7 +10,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
   providers: [provideClientHydration(), provideHttpClient(withFetch())  // Add this line to enable fetch API
   ],

@@ -1,24 +1,26 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IPOpageRoutingModule } from './ipopage-routing.module';
-import { ChartModule } from 'angular-highcharts';
 import { IpoChartComponent } from '../../components/ipo/ipo-chart/ipo-chart.component';
 
+import { ChartModule } from 'angular-highcharts';
+import { IPOpageComponent } from './ipopage.component';
 
 @NgModule({
+
   declarations: [
-    // IpoChartComponent
+    IPOpageComponent
   ],
   imports: [
+    // basics imports
     CommonModule,
     IPOpageRoutingModule,
-
     ChartModule,
-    IpoChartComponent,
 
+    // components
+    IpoChartComponent,
   ],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line if it's a Web Component
 
 })
 export class IPOpageModule { }
