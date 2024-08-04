@@ -6,6 +6,7 @@ import { IpoChartComponent } from '../../components/ipo/ipo-chart/ipo-chart.comp
 
 import { ChartModule } from 'angular-highcharts';
 import { IPOpageComponent } from './ipopage.component';
+import { IpoSliderComponent } from '../../components/ipo/ipo-slider/ipo-slider.component';
 
 @NgModule({
 
@@ -20,6 +21,7 @@ import { IPOpageComponent } from './ipopage.component';
 
     // components
     IpoChartComponent,
+    IpoSliderComponent
   ],
 
 })

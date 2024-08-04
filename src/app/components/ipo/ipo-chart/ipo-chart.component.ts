@@ -21,8 +21,7 @@ export class IpoChartComponent {
   constructor() {
     this.graphData = graphData;
 
-    console.log('graphData:', this.graphData);
-
+    // console.log('graphData:', this.graphData);
 
     // Extract and filter the data points to show only between 15 and 16
     const startTime = new Date('2024-08-02T15:00:00').getTime();
@@ -30,18 +29,16 @@ export class IpoChartComponent {
 
     const filteredDataPoints = graphData.data.graph_indices[0].graph.IndiceArray
       .map(point => {
-        const yValue = typeof point.y === 'number' ? point.y : 0;
+        // const yValue = typeof point.y === 'number' ? point.y : 0;
+
         const timestamp = new Date(point.time).getTime();
-        return [timestamp, yValue];
+        return [timestamp, point.y];
       })
       .filter(([timestamp]) => timestamp >= startTime && timestamp <= endTime);
 
-    // Use filtered data points directly
-    const dataPoints = filteredDataPoints;
-
     // Calculate min and max values
-    this.minY = Math.min(...dataPoints.map(([_, y]) => y));
-    this.maxY = Math.max(...dataPoints.map(([_, y]) => y)) ; // Adding some buffer to the max value
+    this.minY = Math.min(...filteredDataPoints.map(([_, y]) => y));
+    this.maxY = Math.max(...filteredDataPoints.map(([_, y]) => y)); // Adding some buffer to the max value
 
     // Initialize the chart
     this.areaChart = new Chart({
@@ -59,25 +56,42 @@ export class IpoChartComponent {
         title: {
           text: 'Time'
         },
-        tickPixelInterval: 100, // Reduce the spacing between ticks
+        tickPixelInterval: 50, // Reduce the spacing between ticks
         tickInterval: 3600 * 10, // 1-hour interval (in milliseconds)
         labels: {
+          enabled: false, // This will remove the x-axis labels
+
+          //  time and date
           formatter: function () {
             const value = this.value;
             return typeof value === 'number'
               ? Highcharts.dateFormat('%b %d', value)
               : value;
           }
-        }
+        },
+        plotLines: [{ // Add the vertical line
+          color: 'green', // Line color
+          width: 2, // Line width
+          value: 16104, // X-axis value where the line will be drawn
+          label: {
+            text: 'Vertical Line',
+            align: 'right',
+            style: {
+              color: 'green'
+            }
+          },
+          zIndex: 5 // Make sure it's on top of other elements
+        }]
       },
       yAxis: {
         title: {
           text: 'Price'
         },
-        min: this.minY,
+        min: this.minY ,
         max: this.maxY,
         tickAmount: 6,
         labels: {
+          enabled: true,
           formatter: function () {
             const value = this.value;
             return typeof value === 'number'
@@ -87,22 +101,23 @@ export class IpoChartComponent {
         }
       },
       series: [{
-        type: 'area',
+        type: 'area', // Use 'line' type for smooth lines
         name: 'IPO Price',
-        data: dataPoints,
+        data: filteredDataPoints,
         color: '#DD7470',
-        fillOpacity: 0.3,
+        lineWidth: 2, // Set the line width
         marker: {
-          enabled: false,
-          radius: 4,
+          enabled: false, // Show markers (dots)
+          radius: 4, // Radius of the marker
           fillColor: '#DD7470',
           lineWidth: 2,
           lineColor: '#DD7470'
         },
         tooltip: {
           valueDecimals: 2
-        }
-      }] as Highcharts.SeriesOptionsType[]
+        },
+        smooth: true
+      }] as unknown as Highcharts.SeriesOptionsType[]
     });
   }
 }
