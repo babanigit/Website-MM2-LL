@@ -9,7 +9,7 @@ import { Verdict2Component } from '../../components/verdict2/verdict2.component'
 import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfooter.component';
 import { VerdictloadingComponent } from '../../components/verdictloading/verdictloading.component';
 import { VerdictreportComponent } from '../../components/verdictreport/verdictreport.component';
-import { FilterReportPipe } from '../../pipes/filter-report.pipe';
+import { FilterReportPipe } from '../../pipes/verdict/filter-report.pipe';
 import { Verdict3newComponent } from "../../components/verdict3new/verdict3new.component";
 import { JsonDataService } from '../../services/json-data.service';
 

@@ -1,4 +1,4 @@
-import { Fun2Pipe } from './fun2.pipe';
+import { Fun2Pipe } from '../fun2.pipe';
 
 describe('Fun2Pipe', () => {
   it('create an instance', () => {

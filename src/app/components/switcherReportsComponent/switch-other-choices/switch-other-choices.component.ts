@@ -6,12 +6,11 @@ import {
   OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilterOtherSwitchersPipe } from '../../../pipes/filter-other-switchers.pipe';
 
 import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOption';
 import { JsonDataService } from '../../../services/json-data.service';
-import { Fun1Pipe } from '../../../pipes/fun1.pipe';
-import { Fun2Pipe } from '../../../pipes/fun2.pipe';
+import { Fun1Pipe } from '../../../pipes/switcher/fun1.pipe';
+import { Fun2Pipe } from '../../../pipes/switcher/fun2.pipe';
 import { IOtherChoiceResponse } from '../../../models/otherChoice';
 import { otherchoices } from '../../../assets/otherChoices';
 import { ISwitcherResult } from '../../../models/switcherResult';
@@ -21,7 +20,7 @@ import { ISwitcherResult } from '../../../models/switcherResult';
   templateUrl: './switch-other-choices.component.html',
   styleUrl: './switch-other-choices.component.css',
   standalone: true,
-  imports: [CommonModule, FilterOtherSwitchersPipe, Fun1Pipe, Fun2Pipe],
+  imports: [CommonModule, Fun1Pipe, Fun2Pipe],
 })
 export class SwitchOtherChoicesComponent implements OnInit, AfterViewChecked {
   @Input() ID_CHOICE_VALUE!: string | undefined;

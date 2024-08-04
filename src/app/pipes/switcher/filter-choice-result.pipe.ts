@@ -1,7 +1,7 @@
 // filter the main switcher report
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISwitcherResult } from '../models/switcherResult';
+import { ISwitcherResult } from '../../models/switcherResult';
 
 @Pipe({
   name: 'filterChoiceResult',

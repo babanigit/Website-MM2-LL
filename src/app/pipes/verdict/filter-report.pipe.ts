@@ -1,7 +1,7 @@
 // filter the verdict report
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { IGetVerdictReportsData } from '../models/interfaces';
+import { IGetVerdictReportsData } from '../../models/interfaces';
 
 @Pipe({
   name: 'filterReport',

@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IOtherChoice } from '../models/otherChoice';
-import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
+import { IOtherChoice } from '../../models/otherChoice';
+import { ISwitcherReportsAndOptions } from '../../models/switcherReportsAndOption';
 
 @Pipe({
   name: 'fun1',

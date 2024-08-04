@@ -1,23 +1,19 @@
 <!-- search -->
 <app-research-service
-[title]="'Verdict is the Worlds 1st Real-Time Research Service​'"
-[serachBoxText]="'Search'"
-[hideQuantityBox]="true"
-
+  [title]="'Verdict is the Worlds 1st Real-Time Research Service​'"
+  [serachBoxText]="'Search'"
+  [hideQuantityBox]="true"
   (myEvent1_InputValue)="recievedDataEvent($event)"
   (myEvent2_ReportBoxState)="recievedReportStateEvent($event)"
 />
 
 <!-- loading -->
 <app-verdictloading
- [hidden]="
- LOADING_STATE
- "
-
- [barColor]="'aqua'"
- [text1]="'Loading Verdict Report'"
- [text2]="'Analysing Price & Volume'"
- />
+  [hidden]="LOADING_STATE"
+  [barColor]="'aqua'"
+  [text1]="'Loading Verdict Report'"
+  [text2]="'Analysing Price & Volume'"
+/>
 
 <!-- report -->
 <!-- SNAME_INPUT_STRING.length < 1 || boxState -->
@@ -37,15 +33,15 @@
 
 <!-- verdict page 2 -->
 <app-verdict2
-[headingTitle]="'ALL IN ONE REPORT - '"
- [headingDesc]="'STOCK ADVISE, QUANTITY, BETTER STOCKS, PEERS, DETAILED RESEARCH'"
- [imgSrc]="'https://i.marketsmojo.com/mojoprofessional/verdict_banner0906.png'"
+  [headingTitle]="'ALL IN ONE REPORT - '"
+  [headingDesc]="
+    'STOCK ADVISE, QUANTITY, BETTER STOCKS, PEERS, DETAILED RESEARCH'
+  "
+  [imgSrc]="'https://i.marketsmojo.com/mojoprofessional/verdict_banner0906.png'"
 />
 
 <!-- section verdict page 3 -->
-<app-verdict3new
-[sectionData] = "sectionDataVerdict"
-/>
+<app-verdict3new [sectionData]="sectionDataVerdict" />
 
 <!-- footer -->
 <app-verdictfooter />
