@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-import { IGraphData } from '../../models/graphData';
-import { graphData } from '../../assets/graphData';
 
 @Component({
-  selector: 'app-ipopage', 
+  selector: 'app-ipopage',
   templateUrl: './ipopage.component.html',
-  styleUrl: './ipopage.component.css'
+  styleUrl: './ipopage.component.css',
 })
 export class IPOpageComponent {
+  constructor() {
 
-  graphData:IGraphData|object
-
-  constructor () {
-    this.graphData =graphData
+    
   }
-
 }

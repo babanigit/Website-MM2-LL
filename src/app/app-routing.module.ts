@@ -1,5 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import Highcharts from 'highcharts';
+import Accessibility from 'highcharts/modules/accessibility';
+
+// Accessibility(Highcharts); // Initialize the module
+
+// Highcharts.chart('container', {
+//   // Other chart options
+//   accessibility: {
+//       enabled: false
+//   }
+// });
+
 
 const routes: Routes = [
 

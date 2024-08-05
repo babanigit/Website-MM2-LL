@@ -48,7 +48,8 @@
             }
           },
           "configurations": {
-            "production": {
+            "production": { 
+              "aot": true,
               "budgets": [
                 {
                   "type": "initial",

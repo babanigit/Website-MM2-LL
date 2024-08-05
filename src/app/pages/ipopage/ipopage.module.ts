@@ -7,6 +7,9 @@ import { IpoChartComponent } from '../../components/ipo/ipo-chart/ipo-chart.comp
 import { ChartModule } from 'angular-highcharts';
 import { IPOpageComponent } from './ipopage.component';
 import { IpoSliderComponent } from '../../components/ipo/ipo-slider/ipo-slider.component';
+import { IpoSnapshotComponent } from '../../components/ipo/ipo-snapshot/ipo-snapshot.component';
+import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfooter.component';
+import { SnapshotFilterPipe } from '../../pipes/ipo/snapshot-filter.pipe';
 
 @NgModule({
 
@@ -19,9 +22,14 @@ import { IpoSliderComponent } from '../../components/ipo/ipo-slider/ipo-slider.c
     IPOpageRoutingModule,
     ChartModule,
 
+    // pipes
+    SnapshotFilterPipe,
+
     // components
     IpoChartComponent,
-    IpoSliderComponent
+    IpoSliderComponent,
+    IpoSnapshotComponent,
+    VerdictfooterComponent
   ],
 
 })

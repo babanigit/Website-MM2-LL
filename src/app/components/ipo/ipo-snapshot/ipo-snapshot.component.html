@@ -1,0 +1,95 @@
+<h3 style="margin-left: 120px">IPO Snapshot > {{ iPO_TYPE }} IPOs</h3>
+
+<div
+  style="
+    margin-left: 120px;
+    display: flex;
+    border-collapse: collapse;
+    width: 50%;
+  "
+>
+  <button
+    (click)="onHandleClick('upcoming')"
+    [ngStyle]="{
+      'background-color': iPO_TYPE === 'upcoming' ? 'blue' : 'transparent',
+      color: iPO_TYPE === 'upcoming' ? 'white' : 'black'
+    }"
+    style="
+      border: 1px solid blue;
+      padding: 8px;
+      text-align: center;
+      flex: 1;
+      cursor: pointer;
+    "
+  >
+    Upcoming
+  </button>
+  <button
+    (click)="onHandleClick('open')"
+    [ngStyle]="{
+      'background-color': iPO_TYPE === 'open' ? 'blue' : 'transparent',
+      color: iPO_TYPE === 'open' ? 'white' : 'black'
+    }"
+    style="
+      border: 1px solid blue;
+      padding: 8px;
+      text-align: center;
+      flex: 1;
+      cursor: pointer;
+    "
+  >
+    Open
+  </button>
+  <button
+    (click)="onHandleClick('closed')"
+    [ngStyle]="{
+      'background-color': iPO_TYPE === 'closed' ? 'blue' : 'transparent',
+      color: iPO_TYPE === 'closed' ? 'white' : 'black'
+    }"
+    style="
+      border: 1px solid blue;
+      padding: 8px;
+      text-align: center;
+      flex: 1;
+      cursor: pointer;
+    "
+  >
+    Closed
+  </button>
+  <button
+    (click)="onHandleClick('listed')"
+    [ngStyle]="{
+      'background-color': iPO_TYPE === 'listed' ? 'blue' : 'transparent',
+      color: iPO_TYPE === 'listed' ? 'white' : 'black'
+    }"
+    style="
+      border: 1px solid blue;
+      padding: 8px;
+      text-align: center;
+      flex: 1;
+      cursor: pointer;
+    "
+  >
+    Listed
+  </button>
+</div>
+
+<br />
+
+<div class="container" style="padding: 20px">
+
+  <div *ngIf="iPO_TYPE === 'upcoming'">
+    <div *ngIf="ipoList![0].data!.upcoming!">
+      <div *ngFor="let hello of ipoList![0].data!.upcoming!">
+        {{ hello.sname }}
+      </div>
+    </div>
+  </div>
+  
+
+  <div *ngIf="iPO_TYPE === 'open'">hello open</div>
+
+  <div *ngIf="iPO_TYPE === 'closed'">hello closed</div>
+
+  <div *ngIf="iPO_TYPE === 'listed'">hello listed</div>
+</div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, ChartModule } from 'angular-highcharts';
-import * as Highcharts from 'highcharts';
+import {SeriesOptionsType} from 'highcharts';
 import { IGraphData } from '../../../models/graphData';
 import { graphData } from '../../../assets/graphData';
 
@@ -20,10 +20,6 @@ export class IpoChartComponent {
   constructor() {
     this.graphData = graphData;
 
-    // Define the time range for filtering data
-    const startTime = new Date('2024-08-02T15:00:00').getTime();
-    const endTime = new Date('2024-08-02T16:00:00').getTime();
-
     // Extract and filter the data points
     const DATA_POINTS = graphData.data.graph_indices[0].graph.IndiceArray.map(
       (point) => {
@@ -32,7 +28,7 @@ export class IpoChartComponent {
       }
     );
 
-    console.log('Raw Data Points:', DATA_POINTS); // Debug: log raw data
+    // console.log('Raw Data Points:', DATA_POINTS); // Debug: log raw data
 
     // Calculate min and max values
     this.minY = Math.min(...DATA_POINTS.map(([_, y]) => y));
@@ -95,7 +91,7 @@ export class IpoChartComponent {
           },
           smooth: true,
         },
-      ] as unknown as Highcharts.SeriesOptionsType[],
+      ] as unknown as SeriesOptionsType[],
     });
   }
 }
