@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, ChartModule } from 'angular-highcharts';
-import {SeriesOptionsType} from 'highcharts';
+import * as Highcharts from 'highcharts';
 import { IGraphData } from '../../../models/graphData';
 import { graphData } from '../../../assets/graphData';
 
@@ -28,14 +28,9 @@ export class IpoChartComponent {
       }
     );
 
-    // console.log('Raw Data Points:', DATA_POINTS); // Debug: log raw data
-
     // Calculate min and max values
     this.minY = Math.min(...DATA_POINTS.map(([_, y]) => y));
     this.maxY = Math.max(...DATA_POINTS.map(([_, y]) => y));
-
-    console.log('Min Y:', this.minY); // Debug: log min Y
-    console.log('Max Y:', this.maxY); // Debug: log max Y
 
     // Initialize the chart
     this.areaChart = new Chart({
@@ -91,7 +86,7 @@ export class IpoChartComponent {
           },
           smooth: true,
         },
-      ] as unknown as SeriesOptionsType[],
+      ] as unknown as Highcharts.SeriesOptionsType[],
     });
   }
 }

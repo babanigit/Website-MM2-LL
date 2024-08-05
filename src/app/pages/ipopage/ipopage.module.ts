@@ -24,6 +24,7 @@ import { SnapshotFilterPipe } from '../../pipes/ipo/snapshot-filter.pipe';
 
     // pipes
     SnapshotFilterPipe,
+    ChartModule,
 
     // components
     IpoChartComponent,

@@ -10,35 +10,45 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
 })
-
-export class IpoSnapshotComponent  {
-  ipoList: I_IPOList[] |undefined ;
-  ipoData: IPO_Data |undefined ;
-
+export class IpoSnapshotComponent implements OnInit {
+  ipoList: I_IPOList[] = [];
   iPO_TYPE: String = 'upcoming';
 
-
   constructor(private serv: JsonDataService) {
-
-    // fetch the data
-      this.serv.getIPOList().subscribe((res: I_IPOList[]) => {
-        this.ipoList = res;
-        this.ipoData =res[0].data;
-      });
-
-
+    // this.fetchIpoList();
+    console.log('the ipo list is : ', this.ipoList);
   }
 
-  // ngOnInit(): void {
-  //   this.fetchIpoList();
-  //   setTimeout(() => {
-  //     console.log('the ipo list is : ', this.ipoList);
-  //   }, 1);
-  // }
+  ngOnInit(): void {
+    this.fetchIpoList();
+  }
 
+  fetchIpoList() {
+    this.serv.getIPOList().subscribe((res: I_IPOList[]) => {
+      this.ipoList = res;
+    });
+  }
 
   onHandleClick(str: string) {
     console.log('handle clicked ...', str);
     this.iPO_TYPE = str;
+  }
+
+  // Method to return the color based on the status
+  getStatusColor(status: string): string {
+    switch (status) {
+      case 'Avoid':
+        return 'red';
+      case 'Neutral':
+        return 'orange';
+      case 'Subscribe':
+        return 'green';
+      default:
+        return 'black'; // Default color if status is not recognized
+    }
+  }
+
+  getListedGlColor(listedgl: string): string {
+    return parseInt(listedgl) < 0 ? 'red' : 'green';
   }
 }

@@ -3,3 +3,28 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* You can adjust the shadow values and color as needed */
   }
+
+  .ipo-item {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .ipo-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Change values as needed */
+  }
+  
+/* 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr {
+    height: 50px;
+} */
