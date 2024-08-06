@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Chart, ChartModule } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
 import { IGraphData } from '../../../models/graphData';
-import { graphData } from '../../../assets/graphData';
+import { graphData, graphData1Week } from '../../../assets/graphData';
 
 @Component({
   selector: 'app-ipo-chart',
@@ -13,12 +13,17 @@ import { graphData } from '../../../assets/graphData';
 })
 export class IpoChartComponent {
   graphData: IGraphData | object;
+  graphData1Week: IGraphData | object;
+
+  strr:string='1D'
+
   areaChart: Chart;
   minY: number;
   maxY: number;
 
   constructor() {
     this.graphData = graphData;
+    this.graphData1Week= graphData1Week
 
     // Extract and filter the data points
     const DATA_POINTS = graphData.data.graph_indices[0].graph.IndiceArray.map(
@@ -35,7 +40,7 @@ export class IpoChartComponent {
     // Initialize the chart
     this.areaChart = new Chart({
       chart: {
-        type: 'line',
+        type: 'area',
       },
       title: {
         text: '',
@@ -45,7 +50,6 @@ export class IpoChartComponent {
       },
       xAxis: {
         type: 'datetime',
-
         tickLength: 0, // Remove tick marks
         labels: {
           enabled: false, // Remove x-axis labels
@@ -87,6 +91,14 @@ export class IpoChartComponent {
           smooth: true,
         },
       ] as unknown as Highcharts.SeriesOptionsType[],
+
     });
+
+
+  }
+
+  onGraphButtonClick(str:string) {
+    console.log("the str is : ", str)
+    this.strr=str;
   }
 }

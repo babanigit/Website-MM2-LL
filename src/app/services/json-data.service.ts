@@ -14,7 +14,6 @@ const defaultSwitcherResultPath = 'assets/switcherResult.json';
 
 const defaultIPOListPath = 'assets/ipoList.json';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -97,21 +96,13 @@ export class JsonDataService {
     );
   }
 
-  getIPOList(
-    jsonPath: string = defaultIPOListPath
-  ) {
-    // this.loadingSubjectResult.next(false); // Emit loading true before HTTP request
-
+  getIPOList(jsonPath: string = defaultIPOListPath) {
     return this.http.get<I_IPOList[]>(jsonPath).pipe(
       // delay(1000),
       catchError((err) => {
         console.error('Error fetching ipoList data', err);
         throw err;
-      }),
-      // finalize(() => this.loadingSubjectResult.next(true)) // Emit loading false after HTTP request
+      })
     );
   }
-
-
-
 }

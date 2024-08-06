@@ -1,4 +1,7 @@
-<h3 style="margin-left: 120px">IPO Snapshot > {{ iPO_TYPE }} IPOs</h3>
+<h3 style="margin-left: 120px">
+  IPO Snapshot >
+  {{ iPO_TYPE.charAt(0).toUpperCase() + iPO_TYPE.slice(1).toLowerCase() }} IPOs
+</h3>
 
 <div
   style="
@@ -227,8 +230,70 @@
 
   <!-- closed -->
   <div *ngIf="iPO_TYPE === 'closed' && ipoList.length">
-    <div *ngFor="let hello of ipoList[0].data.closed">
+    <!-- <div *ngFor="let hello of ipoList[0].data.closed">
       {{ hello.sname }}
+    </div> -->
+
+    <div>
+      <table style="width: 100%; border-collapse: collapse">
+        <thead>
+          <tr style="height: 50px; text-align: center">
+            <th style="width: 250px; text-align: left">
+              <div>Company</div>
+              <div style="color: gray; font-size: smaller">Industry</div>
+            </th>
+            <th>IPO Analysis</th>
+            <th>Price Band</th>
+            <th>Issue open date</th>
+            <th>Issue close date</th>
+            <th>Listing date</th>
+          </tr>
+        </thead>
+        <br /><br />
+        <tbody *ngFor="let hello of ipoList[0].data.closed">
+          <tr
+            style="
+              height: 50px;
+              border-bottom: 1px solid gainsboro;
+              text-align: center;
+            "
+          >
+            <td style="text-align: left">
+              <div style="color: blue">
+                {{ hello.sname }}
+              </div>
+              <div style="font-weight: 400; color: grey; font-size: small">
+                {{ hello.industry }}
+              </div>
+            </td>
+            <td>
+              <div
+                [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
+              >
+                {{ hello.mojocall.sub_status }}
+              </div>
+            </td>
+            <td>
+              <!-- price band -->
+              {{ hello.price_band }}
+            </td>
+            <td>
+              <!-- Issue open date -->
+              {{ hello?.issue_details?.['Issue Opens'] || 'N/A' }}
+            </td>
+            <td>
+              <div>
+                <!-- Issue close date -->
+                {{ hello?.issue_details?.['Issue Closes'] || 'N/A' }}
+              </div>
+            </td>
+            <td>
+              <!-- Listing date -->
+              {{ hello.listing_date }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -237,8 +302,8 @@
     <div>
       <table style="width: 100%; border-collapse: collapse">
         <thead>
-          <tr style="height: 50px; text-align: center; ">
-            <th style="width: 250px; text-align: left;">
+          <tr style="height: 50px; text-align: center">
+            <th style="width: 250px; text-align: left">
               <div>Company</div>
               <div style="color: gray; font-size: smaller">Industry</div>
             </th>
@@ -263,8 +328,14 @@
         </thead>
         <br /><br />
         <tbody *ngFor="let hello of ipoList[0].data.listed">
-          <tr style="height: 50px; border-bottom: 1px solid gainsboro; text-align: center;">
-            <td style="text-align: left;" >
+          <tr
+            style="
+              height: 50px;
+              border-bottom: 1px solid gainsboro;
+              text-align: center;
+            "
+          >
+            <td style="text-align: left">
               <div style="color: blue">
                 {{ hello.sname }}
               </div>
@@ -295,8 +366,13 @@
               </div>
             </td>
             <td>
-              <div>hello1</div>
-              <div>hello2</div>
+              <div>{{ hello.cmp }}</div>
+              <div
+                [ngStyle]="{ color: getListedGlColor(hello.dgain_perc) }"
+                style="font-weight: 400; font-size: small"
+              >
+                {{ hello.dgain_perc }}
+              </div>
             </td>
             <td
               style="
@@ -315,7 +391,7 @@
                 color: getListedGlColor(hello.perc_chng_listing_price)
               }"
             >
-              {{ hello.perc_chng_listing_price }}
+              {{ hello.listed_price }}
             </td>
           </tr>
         </tbody>

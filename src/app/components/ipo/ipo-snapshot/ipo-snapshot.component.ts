@@ -14,10 +14,7 @@ export class IpoSnapshotComponent implements OnInit {
   ipoList: I_IPOList[] = [];
   iPO_TYPE: String = 'upcoming';
 
-  constructor(private serv: JsonDataService) {
-    // this.fetchIpoList();
-    console.log('the ipo list is : ', this.ipoList);
-  }
+  constructor(private serv: JsonDataService) {}
 
   ngOnInit(): void {
     this.fetchIpoList();
@@ -34,7 +31,6 @@ export class IpoSnapshotComponent implements OnInit {
     this.iPO_TYPE = str;
   }
 
-  // Method to return the color based on the status
   getStatusColor(status: string): string {
     switch (status) {
       case 'Avoid':

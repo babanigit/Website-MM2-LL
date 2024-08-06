@@ -1,5 +1,78 @@
+<h3 style="margin-left: 120px">BSE IPO INDEX</h3>
+<div class="container" style="padding: 20px">
+  <div style="display: flex; justify-content: space-between">
+    <span
+      style="
+        /* width: 100%; */
+        /* text-align: right; */
+        justify-content: left;
+        display: flex;
+      "
+    >
+      <p style="color: gray; font-weight: 400; width: 120px">BSE IPO INDEX</p>
+      <p style="font-size: x-large; margin-left: 1% ; font-weight: 500;"> {{ maxY }} </p>
+    </span>
 
-<h3 style=" margin-left: 120px;" >BSE IPO INDEX</h3>
-<div class="container" style=" padding: 20px;">
+    <span
+      style="
+        /* text-align: right; */
+        /* justify-content: right; */
+        display: flex;
+        gap: 4%;
+        margin-right: 40px;
+      "
+    >
+      <span>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onGraphButtonClick('1D')"
+        >
+          1D
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onGraphButtonClick('1W')"
+        >
+          1W
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onGraphButtonClick('1M')"
+        >
+          1M
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onGraphButtonClick('1Y')"
+        >
+          1Y
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onGraphButtonClick('3Y')"
+        >
+          3Y
+        </button>
+      </span>
+    </span>
+  </div>
+
   <div [chart]="areaChart"></div>
 </div>
