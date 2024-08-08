@@ -11,7 +11,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
   providers: [provideClientHydration(), provideHttpClient(withFetch())  // Add this line to enable fetch API

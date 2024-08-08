@@ -1,0 +1,83 @@
+<div
+  class="ipo-item"
+  style="
+    display: grid;
+    height: auto;
+    width: 290px;
+    grid-template-rows: 50% 50%;
+    border: 2px solid gainsboro;
+    padding: 0% 2%;
+    padding-bottom: 19%;
+  "
+>
+  <div>
+    <div style="height: 30px; font-size: small; padding-left: 2%">
+      INDUSTRY : <strong> {{ hello.industry }} </strong>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4%;
+        padding-left: 4%;
+        height: fit-content;
+      "
+    >
+      <span style="text-align: center">
+        <img
+          src="https://i.marketsmojo.com/{{ hello.stock_logo }}"
+          style="width: 50px"
+          alt=""
+        />
+      </span>
+      <span style="text-align: left; font-weight: 500">
+        {{ hello.sname }}
+      </span>
+    </div>
+    <div style="width: 100%; text-align: center; font-weight: 400; color: gray">
+      {{ hello.status }} IPO
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center">
+    <table style="font-size: small">
+      <tbody>
+        <tr style="display: flex; gap: 5%">
+          <td>Price Band</td>
+          <td>
+            <strong> {{ hello.price_band }} </strong>
+          </td>
+        </tr>
+        <tr style="display: flex; gap: 5%">
+          <td>Issue open date</td>
+          <td>{{ hello.start_date }}</td>
+        </tr>
+        <tr style="display: flex; gap: 5%">
+          <td>Issue close date</td>
+          <td>{{ hello.close_date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br />
+
+  <!-- line indicater -->
+  <div *ngIf="hello!" class="line-container">
+    <div class="line">
+      <div class="segment red"></div>
+      <div class="segment orange"></div>
+      <div class="segment green"></div>
+    </div>
+
+    <div *ngIf="hello!" class="dot" [ngStyle]="getDotProperties(hello)"></div>
+
+    <div class="hello" style="padding-bottom: 60px">
+      <span class="a">Avoid</span>
+      <span class="n">Neutral</span>
+      <span class="s">Subscribe</span>
+    </div>
+  </div>
+</div>

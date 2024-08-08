@@ -75,10 +75,7 @@
               <div
                 *ngIf="hero"
                 class="dot"
-                [ngStyle]="{
-                  left: getDotPosition(hero),
-                  backgroundColor: getDotColor(hero)
-                }"
+                [ngStyle]="getDotProperties(hero)"
               ></div>
 
               <div class="hello">

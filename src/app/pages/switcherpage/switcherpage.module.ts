@@ -17,6 +17,7 @@ import { SwitchOtherChoicesComponent } from '../../components/switcherReportsCom
 import { SwitchOptionsComponent } from '../../components/switcherReportsComponent/switch-options/switch-options.component';
 import { FilterChoiceResultPipe } from '../../pipes/switcher/filter-choice-result.pipe';
 import { DemoComponent } from '../../components/demo/demo.component';
+import { IpoFooterComponent } from '../../components/ipo/ipo-footer/ipo-footer.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DemoComponent } from '../../components/demo/demo.component';
     SwitchOptionsComponent,
     FilterChoiceResultPipe,
     DemoComponent,
+    IpoFooterComponent
   ],
 })
 export class SwitcherpageModule {}

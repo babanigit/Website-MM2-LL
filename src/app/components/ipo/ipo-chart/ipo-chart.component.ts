@@ -86,6 +86,7 @@ export class IpoChartComponent implements OnInit {
 
   updateChart() {
     const dataPoints = this.getDataPointsForSelectedRange();
+    console.log("the data points is : ", dataPoints)
     if (dataPoints.length === 0) return;
 
     let minY: number;

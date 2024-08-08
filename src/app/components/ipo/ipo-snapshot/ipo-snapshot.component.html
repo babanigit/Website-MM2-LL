@@ -79,213 +79,37 @@
 
 <br />
 
-<div class="container" style="padding: 20px" *ngIf="ipoList[0]?.data">
+<div
+  class="container"
+  style="padding: 20px; height: auto"
+  *ngIf="ipoList[0]?.data"
+>
+
   <!-- upcoming -->
   <div
-    *ngIf="iPO_TYPE === 'upcoming' && ipoList.length && ipoList"
-    style="display: flex; gap: 5%"
+    *ngIf="iPO_TYPE === 'upcoming' && ipoList"
+    style="display: flex; gap: 5%; height: auto"
   >
-
-    <div
-      class="ipo-item"
-      style="
-        display: grid;
-        height: auto;
-        width: 290px;
-        grid-template-rows: 50% 50%;
-        border: 2px solid gainsboro;
-        padding: 4% 2%;
-      "
+    <app-ipo-box
       *ngFor="let hello of ipoList[0].data.upcoming"
-    >
-
-      <div>
-        <div style="height: 30px; font-size: small; padding-left: 2%">
-          INDUSTRY : <strong> {{ hello.industry }} </strong>
-        </div>
-
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4%;
-            padding-left: 4%;
-            height: fit-content;
-          "
-        >
-          <span style="text-align: center">
-            <img
-              src="https://i.marketsmojo.com/{{ hello.stock_logo }}"
-              style="width: 50px"
-              alt=""
-            />
-          </span>
-          <span style="text-align: left; font-weight: 500">
-            {{ hello.sname }}
-          </span>
-        </div>
-        <div
-          style="width: 100%; text-align: center; font-weight: 400; color: gray"
-        >
-          {{ iPO_TYPE }} IPO
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: center; align-items: center">
-        <table style="font-size: small">
-          <tbody>
-            <tr style="display: flex; gap: 5%">
-              <td>Price Band</td>
-              <td>
-                <strong> {{ hello.price_band }} </strong>
-              </td>
-            </tr>
-            <tr style="display: flex; gap: 5%">
-              <td>Issue open date</td>
-              <td>{{ hello.start_date }}</td>
-            </tr>
-            <tr style="display: flex; gap: 5%">
-              <td>Issue close date</td>
-              <td>{{ hello.close_date }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- line indicater -->
-      <div *ngIf="hello!" class="line-container">
-
-        <div class="line">
-          <div class="segment red"></div>
-          <div class="segment orange"></div>
-          <div class="segment green"></div>
-        </div>
-
-        <div
-          *ngIf="hello!"
-          class="dot"
-          [ngStyle]="{
-            left: getDotPosition(hello),
-            backgroundColor: getDotColor(hello)
-          }"
-        ></div>
-
-        <div class="hello">
-          <span class="a">Avoid</span>
-          <span class="n">Neutral</span>
-          <span class="s">Subscribe</span>
-        </div>
-      </div>
-
-    </div>
-
+      [hello]="hello"
+    />
   </div>
 
   <!-- open -->
   <div
-    *ngIf="iPO_TYPE === 'open' && ipoList.length"
+    *ngIf="iPO_TYPE === 'open' && ipoList"
     style="display: flex; gap: 5%"
   >
-    <div
-      class="ipo-item"
-      style="
-        display: grid;
-        height: auto;
-        width: 290px;
-        grid-template-rows: 50% 50%;
-        border: 2px solid gainsboro;
-        padding: 4% 2%;
-      "
+    <app-ipo-box
       *ngFor="let hello of ipoList[0].data.open"
-    >
-      <div>
-        <div style="height: 30px; font-size: small; padding-left: 2%">
-          INDUSTRY : <strong> {{ hello.industry }} </strong>
-        </div>
-
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4%;
-            padding-left: 4%;
-            height: fit-content;
-          "
-        >
-          <span style="text-align: center">
-            <img
-              src="https://i.marketsmojo.com/{{ hello.stock_logo }}"
-              style="width: 50px"
-              alt=""
-            />
-          </span>
-          <span style="text-align: left; font-weight: 500">
-            {{ hello.sname }}
-          </span>
-        </div>
-        <div
-          style="width: 100%; text-align: center; font-weight: 400; color: gray"
-        >
-          {{ iPO_TYPE }} IPO
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: center; align-items: center">
-        <table style="font-size: small">
-          <tbody>
-            <tr style="display: flex; gap: 5%">
-              <td>Price Band</td>
-              <td>
-                <strong> {{ hello.price_band }} </strong>
-              </td>
-            </tr>
-            <tr style="display: flex; gap: 5%">
-              <td>Issue open date</td>
-              <td>{{ hello.start_date }}</td>
-            </tr>
-            <tr style="display: flex; gap: 5%">
-              <td>Issue close date</td>
-              <td>{{ hello.close_date }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- line indicater -->
-      <div *ngIf="hello!" class="line-container">
-        <div class="line">
-          <div class="segment red"></div>
-          <div class="segment orange"></div>
-          <div class="segment green"></div>
-        </div>
-
-        <div
-          *ngIf="hello"
-          class="dot"
-          [ngStyle]="{
-            left: getDotPosition(hello),
-            backgroundColor: getDotColor(hello)
-          }"
-        ></div>
-
-        <div class="hello">
-          <span class="a">Avoid</span>
-          <span class="n">Neutral</span>
-          <span class="s">Subscribe</span>
-        </div>
-      </div>
-    </div>
+      [hello]="hello"
+    />
   </div>
 
   <!-- closed -->
-  <div *ngIf="iPO_TYPE === 'closed' && ipoList.length">
-    <!-- <div *ngFor="let hello of ipoList[0].data.closed">
-      {{ hello.sname }}
-    </div> -->
-
-    <div>
+  <div *ngIf="iPO_TYPE === 'closed'">
+ 
       <table style="width: 100%; border-collapse: collapse">
         <thead>
           <tr style="height: 50px; text-align: center">
@@ -345,11 +169,11 @@
           </tr>
         </tbody>
       </table>
-    </div>
+   
   </div>
 
   <!-- listed -->
-  <div *ngIf="iPO_TYPE === 'listed' && ipoList.length">
+  <div *ngIf="iPO_TYPE === 'listed'">
     <div>
       <table style="width: 100%; border-collapse: collapse">
         <thead>

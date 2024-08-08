@@ -15,10 +15,26 @@ export class IpoSliderDemoComponent implements OnInit {
 
   maxValue = 200;
 
+  dotPositions: Map<any, string> = new Map();
+  dotColors: Map<any, string> = new Map();
+
   constructor(private serv: JsonDataService) {}
 
+  getDotProperties(hero: any) {
+    if (!this.dotPositions.has(hero)) {
+      const position = this.calculateDotPosition(hero);
+      const color = this.calculateDotColor(hero);
+      this.dotPositions.set(hero, position);
+      this.dotColors.set(hero, color);
+    }
+    return {
+      left: this.dotPositions.get(hero),
+      backgroundColor: this.dotColors.get(hero),
+    };
+  }
+
   // Method to calculate dot position in percentage
-  getDotPosition(unitValue: any): string {
+  calculateDotPosition(unitValue: any): string {
     let percentage = parseFloat(unitValue.mojocall.sub_point.replace('%', ''));
     let absolutePercentage = Math.abs(percentage); // Convert negative percentage to positive
     let position = (absolutePercentage / this.maxValue) * 100; // Calculate position as a percentage of maxValue
@@ -31,7 +47,7 @@ export class IpoSliderDemoComponent implements OnInit {
   }
 
   // Method to determine dot color based on position
-  getDotColor(unitValue: any): string {
+  calculateDotColor(unitValue: any): string {
     if (unitValue && unitValue.mojocall && unitValue.mojocall.sub_point) {
       let percentage = parseFloat(
         unitValue.mojocall.sub_point.replace('%', '')
