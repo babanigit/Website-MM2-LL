@@ -82,22 +82,22 @@
 <div class="container" style="padding: 20px" *ngIf="ipoList[0]?.data">
   <!-- upcoming -->
   <div
-    *ngIf="iPO_TYPE === 'upcoming' && ipoList.length"
+    *ngIf="iPO_TYPE === 'upcoming' && ipoList.length && ipoList"
     style="display: flex; gap: 5%"
   >
+
     <div
       class="ipo-item"
       style="
         display: grid;
-        height: 320px;
+        height: auto;
         width: 290px;
         grid-template-rows: 50% 50%;
         border: 2px solid gainsboro;
-        padding: 2%;
+        padding: 4% 2%;
       "
       *ngFor="let hello of ipoList[0].data.upcoming"
     >
-      <!-- {{ hello.sname }} -->
 
       <div>
         <div style="height: 30px; font-size: small; padding-left: 2%">
@@ -152,7 +152,34 @@
           </tbody>
         </table>
       </div>
+
+      <!-- line indicater -->
+      <div *ngIf="hello!" class="line-container">
+
+        <div class="line">
+          <div class="segment red"></div>
+          <div class="segment orange"></div>
+          <div class="segment green"></div>
+        </div>
+
+        <div
+          *ngIf="hello!"
+          class="dot"
+          [ngStyle]="{
+            left: getDotPosition(hello),
+            backgroundColor: getDotColor(hello)
+          }"
+        ></div>
+
+        <div class="hello">
+          <span class="a">Avoid</span>
+          <span class="n">Neutral</span>
+          <span class="s">Subscribe</span>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
   <!-- open -->
@@ -164,11 +191,11 @@
       class="ipo-item"
       style="
         display: grid;
-        height: 320px;
+        height: auto;
         width: 290px;
         grid-template-rows: 50% 50%;
         border: 2px solid gainsboro;
-        padding: 2%;
+        padding: 4% 2%;
       "
       *ngFor="let hello of ipoList[0].data.open"
     >
@@ -224,6 +251,30 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- line indicater -->
+      <div *ngIf="hello!" class="line-container">
+        <div class="line">
+          <div class="segment red"></div>
+          <div class="segment orange"></div>
+          <div class="segment green"></div>
+        </div>
+
+        <div
+          *ngIf="hello"
+          class="dot"
+          [ngStyle]="{
+            left: getDotPosition(hello),
+            backgroundColor: getDotColor(hello)
+          }"
+        ></div>
+
+        <div class="hello">
+          <span class="a">Avoid</span>
+          <span class="n">Neutral</span>
+          <span class="s">Subscribe</span>
+        </div>
       </div>
     </div>
   </div>

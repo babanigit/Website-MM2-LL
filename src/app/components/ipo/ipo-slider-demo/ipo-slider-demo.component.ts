@@ -15,23 +15,30 @@ export class IpoSliderDemoComponent implements OnInit {
 
   maxValue = 200;
 
-
-
   constructor(private serv: JsonDataService) {}
 
-    // Method to calculate dot position in percentage
-    getDotPosition(unitValue: any): string {
-      let percentage = parseFloat(unitValue.mojocall.sub_point.replace('%', ''));
-      let position = (percentage / this.maxValue) * 100;
-      console.log('the positions is : ', position);
-      return `${position}%`; // Return as a string with a percentage unit
-    }
+  // Method to calculate dot position in percentage
+  getDotPosition(unitValue: any): string {
+    let percentage = parseFloat(unitValue.mojocall.sub_point.replace('%', ''));
+    let absolutePercentage = Math.abs(percentage); // Convert negative percentage to positive
+    let position = (absolutePercentage / this.maxValue) * 100; // Calculate position as a percentage of maxValue
 
-   // Method to determine dot color based on position
-   getDotColor(unitValue: any): string {
+    console.log('The percentage is: ', percentage);
+    console.log('The absolute percentage is: ', absolutePercentage);
+    console.log('The position is: ', position);
+
+    return `${position}%`; // Return as a string with a percentage unit
+  }
+
+  // Method to determine dot color based on position
+  getDotColor(unitValue: any): string {
     if (unitValue && unitValue.mojocall && unitValue.mojocall.sub_point) {
-      let percentage = parseFloat(unitValue.mojocall.sub_point.replace('%', ''));
-      let position = (percentage / this.maxValue) * 100;
+      let percentage = parseFloat(
+        unitValue.mojocall.sub_point.replace('%', '')
+      );
+      // Convert negative percentage to positive
+      let absolutePercentage = Math.abs(percentage);
+      let position = (absolutePercentage / this.maxValue) * 100;
 
       if (position < 33) {
         return 'red';
