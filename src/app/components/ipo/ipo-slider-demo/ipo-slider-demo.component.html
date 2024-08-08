@@ -1,0 +1,115 @@
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="3000"
+  *ngIf="ipoList[0]"
+>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li
+      *ngFor="let hero of ipoList[0].data.open; let i = index"
+      [attr.data-bs-target]="'#carouselExampleIndicators'"
+      [attr.data-bs-slide-to]="i"
+      [ngClass]="{ active: i === 0 }"
+    ></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div
+      *ngFor="let hero of ipoList[0].data.open; let i = index"
+      class="carousel-item"
+      [ngClass]="{ active: i === 0 }"
+    >
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="width: 100%; height: 300px; background-color: whitesmoke"
+      >
+        <!-- the point is : {{ hero.mojocall.sub_point }} -->
+        <!-- main -->
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5%;
+            width: 60%;
+            height: 100%;
+            /* background-color: aqua; */
+          "
+          class="container"
+        >
+          <!-- div1 -->
+          <span>
+            <img
+              src="https://i.marketsmojo.com/{{ hero.stock_logo }}"
+              style="width: 150px"
+              alt=""
+            />
+          </span>
+
+          <!-- div2 -->
+          <span>
+            <div
+              style="text-align: left; font-weight: 600; font-size: xx-large"
+            >
+              {{ hero.sname }}
+            </div>
+            <div style="font-size: x-large">
+              Price Band:
+              <span style="font-weight: 600; font-size: x-large; color: gray">
+                {{ hero.price_band }}
+              </span>
+            </div>
+
+            <br />
+
+            <!-- line indicater -->
+            <div class="line-container">
+              <div class="line">
+                <div class="segment red"></div>
+                <div class="segment orange"></div>
+                <div class="segment green"></div>
+              </div>
+
+              <div
+                *ngIf="hero"
+                class="dot"
+                [ngStyle]="{
+                  left: getDotPosition(hero),
+                  backgroundColor: getDotColor(hero)
+                }"
+              ></div>
+
+              <div class="hello">
+                <span class="a">Avoid</span>
+                <span class="n">Neutral</span>
+                <span class="s">Subscribe</span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Repeat carousel-item for other slides -->
+  </div>
+
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>

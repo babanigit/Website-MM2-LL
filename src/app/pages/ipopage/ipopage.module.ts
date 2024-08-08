@@ -11,6 +11,8 @@ import { IpoSnapshotComponent } from '../../components/ipo/ipo-snapshot/ipo-snap
 import { VerdictfooterComponent } from '../../components/verdictfooter/verdictfooter.component';
 import { SnapshotFilterPipe } from '../../pipes/ipo/snapshot-filter.pipe';
 
+import { IpoSliderDemoComponent } from '../../components/ipo/ipo-slider-demo/ipo-slider-demo.component';
+
 @NgModule({
 
   declarations: [
@@ -22,6 +24,9 @@ import { SnapshotFilterPipe } from '../../pipes/ipo/snapshot-filter.pipe';
     IPOpageRoutingModule,
     ChartModule,
 
+    // SwiperModule,
+    
+    
     // pipes
     SnapshotFilterPipe,
     ChartModule,
@@ -30,7 +35,8 @@ import { SnapshotFilterPipe } from '../../pipes/ipo/snapshot-filter.pipe';
     IpoChartComponent,
     IpoSliderComponent,
     IpoSnapshotComponent,
-    VerdictfooterComponent
+    VerdictfooterComponent,
+    IpoSliderDemoComponent
   ],
 
 })
