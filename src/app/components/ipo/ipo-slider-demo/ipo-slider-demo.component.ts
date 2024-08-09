@@ -39,10 +39,6 @@ export class IpoSliderDemoComponent implements OnInit {
     let absolutePercentage = Math.abs(percentage); // Convert negative percentage to positive
     let position = (absolutePercentage / this.maxValue) * 100; // Calculate position as a percentage of maxValue
 
-    console.log('The percentage is: ', percentage);
-    console.log('The absolute percentage is: ', absolutePercentage);
-    console.log('The position is: ', position);
-
     return `${position}%`; // Return as a string with a percentage unit
   }
 

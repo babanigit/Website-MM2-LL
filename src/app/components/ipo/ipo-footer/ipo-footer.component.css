@@ -97,4 +97,50 @@
     height: max-content; */
   
   }
+
+
+  /* slider */
+.carousel-indicators li {
+  background-color: gray; /* Dot color */
+  width: 15px; /* Dot size */
+  height: 15px; /* Dot size */
+  border-radius: 50%; /* Make dots round */
+  position: relative;
+}
+
+.carousel-indicators li::before {
+  content: ""; /* Remove any content (numbers) */
+}
+
+.carousel-indicators .active {
+  background-color: blue; /* Active dot color */
+}
+
+/* If numbers are being added dynamically */
+.carousel-indicators li {
+  font-size: 0; /* Ensure no numbers or text are displayed */
+}
+
+.carousel-item {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px; /* Adjust spacing between images as needed */
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 100px; /* Adjust based on your height requirement */
+  object-fit: contain; /* Ensures images don't get distorted */
+}
+
+
+
+
   

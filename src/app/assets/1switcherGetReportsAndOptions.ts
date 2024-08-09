@@ -1,6 +1,7 @@
 import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 
-export const switcherGetRespone2: ISwitcherReportsAndOptions[] = [
+export const switcherGetReportsAndOptions: ISwitcherReportsAndOptions[] = [
+
   // hdfc normal verdict report
   {
     code: '200',
@@ -856,4 +857,5 @@ export const switcherGetRespone2: ISwitcherReportsAndOptions[] = [
       show_fallstock: 'no',
     },
   },
+
 ];

@@ -23086,7 +23086,28 @@
             }
         ],
         "upcoming": [
-          
+            {
+                "_id": {
+                    "$oid": "66b5bf27e2c478bacfd0613b"
+                },
+                "eqid": "SSDL60",
+                "status": "Upcoming",
+                "industry": "Retailing",
+                "start_date": "12-Aug-2024",
+                "close_date": "14-Aug-2024",
+                "price_band": "Rs 152 \u2013 Rs 160",
+                "twitterSocialImage": "ipo/Saraswati_Saree_Depot_Limited_tw.png",
+                "whatsappSocialImage": "ipo/Saraswati_Saree_Depot_Limited_whatsup.png",
+                "sname": "Saraswati Saree Depot Limited",
+                "viewstatus": 0,
+                "eqname": "Saraswati Saree Depot Limited",
+                "stock_logo": "ipo/Saraswati_Saree_Depot_Limited_circle.png",
+                "listing_date": "",
+                "cmp": "666.00",
+                "listed_price": "666.00",
+                "prevclose": null,
+                "upper_band_price": 0
+            }
         ],
         "listed": [
             {

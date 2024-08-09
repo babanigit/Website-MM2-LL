@@ -11,8 +11,7 @@ import { ISwitcherReportsAndOptions } from '../../../models/switcherReportsAndOp
 import { JsonDataService } from '../../../services/json-data.service';
 import { Fun1Pipe } from '../../../pipes/switcher/fun1.pipe';
 import { Fun2Pipe } from '../../../pipes/switcher/fun2.pipe';
-import { IOtherChoiceResponse } from '../../../models/otherChoice';
-import { otherchoices } from '../../../assets/otherChoices';
+
 import { ISwitcherResult } from '../../../models/switcherResult';
 
 @Component({
@@ -31,10 +30,8 @@ export class SwitchOtherChoicesComponent implements OnInit, AfterViewChecked {
   switcherReportsAndOptions: ISwitcherReportsAndOptions[] = [];
   id: number | undefined;
 
-  otherchoices: IOtherChoiceResponse[] = [];
 
   constructor(private cdr: ChangeDetectorRef, private serv: JsonDataService) {
-    this.otherchoices = otherchoices;
   }
 
   ngOnInit(): void {
