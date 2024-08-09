@@ -3,3 +3,54 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* You can adjust the shadow values and color as needed */
   }
+
+
+  /* hello */
+  .line-container {
+    position: relative;
+    width: 100%;
+    height: 20px;
+  }
+  
+  .line {
+    display: flex;
+    width: 100%;
+    height: 4px;
+    position: relative;
+    background: linear-gradient(to right, red, orange, green); /* Gradient background */
+  }
+  
+  .hello {
+    display: flex;
+    width: 100%;
+    position: relative;
+    /* overflow: hidden; */
+  }
+  
+  .a {
+    text-align: center;
+    width: 33.33%;
+    color: red;
+  }
+  
+  .n {
+    text-align: center;
+    width: 33.33%;
+    color: orange;
+  }
+  
+  .s {
+    text-align: center;
+    width: 33.33%;
+    color: green;
+  }
+  
+  .dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    top: -4px; /* Adjust based on line height */
+  }
+  

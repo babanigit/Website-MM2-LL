@@ -80,36 +80,67 @@
 
   <div
     *ngIf="graphData!.data!"
-    style="display: flex; gap: 4%; font-size: small"
+    style="display: flex; justify-content: space-between; padding: 0% 5%"
   >
-    <span>
-      <div>Top Gainer</div>
-      <div style="color: green">
-        {{ graphData.data.graph_indices[0].TOP_GAINER.name }}
-      </div>
+    <span style="display: flex; gap: 6%; font-size: small">
+
+      <span>
+        <div>Top Gainer</div>
+        <div style="color: green">
+          {{ graphData.data.graph_indices[0].TOP_GAINER.name }}
+        </div>
+      </span>
+      <span>
+        <div>Top Loser</div>
+        <div style="color: red">
+          {{ graphData.data.graph_indices[0].TOP_LOSER.name }}
+        </div>
+      </span>
+      <span>
+        <div>ADVANCES</div>
+        <div style="color: green">
+          {{ graphData.data.graph_indices[0].ADVANCES }} Stocks
+        </div>
+      </span>
+      <span>
+        <div>DECLINES</div>
+        <div style="color: red">
+          {{ graphData.data.graph_indices[0].DECLINES }} Stocks
+        </div>
+      </span>
+      <span>
+        <div>NO CHANGE</div>
+        <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
+      </span>
+
     </span>
-    <span>
-      <div>Top Loser</div>
-      <div style="color: red">
-        {{ graphData.data.graph_indices[0].TOP_LOSER.name }}
-      </div>
+
+    <span> 
+
+         <!-- line indicater -->
+         <div class="line-container">
+          <div class="line">
+            <div class="segment red"></div>
+            <div class="segment orange"></div>
+            <div class="segment green"></div>
+          </div>
+
+          
+          <!-- *ngIf="hero" -->
+          <!-- [ngStyle]="getDotProperties(hero)" -->
+          <div
+            class="dot"
+          ></div>
+
+          <div class="hello">
+            <span class="a">Avoid</span>
+            <span class="n">Neutral</span>
+            <span class="s">Subscribe</span>
+          </div>
+        </div>
+
     </span>
-    <span>
-      <div>ADVANCES</div>
-      <div style="color: green">
-        {{ graphData.data.graph_indices[0].ADVANCES }} Stocks
-      </div>
-    </span>
-    <span>
-      <div>DECLINES</div>
-      <div style="color: red">
-        {{ graphData.data.graph_indices[0].DECLINES }} Stocks
-      </div>
-    </span>
-    <span>
-      <div>NO CHANGE</div>
-      <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
-    </span>
+
   </div>
 
   <div [chart]="areaChart"></div>
