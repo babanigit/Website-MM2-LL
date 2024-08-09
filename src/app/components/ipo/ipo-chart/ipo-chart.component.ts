@@ -2,36 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Chart, ChartModule } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
 import { IGraphData } from '../../../models/graphData';
-import {
-  graphData,
-  graphData1Month,
-  graphData1Week,
-} from '../../../assets/graphData';
+
 import { GraphDataService } from '../../../services/graph-data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ipo-chart',
   templateUrl: './ipo-chart.component.html',
   styleUrls: ['./ipo-chart.component.css'],
   standalone: true,
-  imports: [ChartModule],
+  imports: [ChartModule, CommonModule],
 })
 export class IpoChartComponent implements OnInit {
-  graphData: IGraphData | object = {}; // Initialize with an empty object
-  graphData1Week: IGraphData | object = {};
-  graphData1Month: IGraphData | object = {};
+
+  graphData: IGraphData |object |any ={}; // Initialize with an empty object
 
   strr: string = '1D'; // Default value
   areaChart: Chart = new Chart({}); // Initialize with an empty chart
   maxYY!: number;
 
-  minLine = 15496.79;
-
-  constructor(private serv: GraphDataService) {
-    // this.graphData = graphData;
-    // this.graphData1Week = graphData1Week;
-    // this.graphData1Month = graphData1Month;
-  }
+  constructor(private serv: GraphDataService) {}
 
   ngOnInit(): void {
     this.fetchGraphDay();
@@ -46,180 +36,157 @@ export class IpoChartComponent implements OnInit {
 
   fetchGraphWeek() {
     this.serv.getGraphWeek().subscribe((res: IGraphData) => {
-      this.graphData1Week = res;
+      this.graphData = res;
       this.updateChart(); // Initialize the chart based on default value
     });
   }
 
   fetchGraphMonth() {
     this.serv.getGraphMonth().subscribe((res: IGraphData) => {
-      this.graphData1Month = res;
+      this.graphData = res;
       this.updateChart(); // Initialize the chart based on default value
     });
   }
 
   // get the data points
-  extractDataPoints(grapheee: IGraphData | object) {
-    if (grapheee && 'data' in grapheee) {
-      return (
-        grapheee as IGraphData
-      ).data.graph_indices[0].graph.IndiceArray.map((point) => {
-        const timestamp = new Date(point.time).getTime();
-        return [timestamp, point.y];
-      });
+  extractDataPoints(g: IGraphData | object) {
+    if (g && 'data' in g) {
+      return (g as IGraphData).data.graph_indices[0].graph.IndiceArray.map(
+        (point) => {
+          const timestamp = new Date(point.time).getTime();
+          return [timestamp, point.y];
+        }
+      );
     }
     return []; // Return empty array if no valid data
   }
-
-  getDataPointsForSelectedRange() {
-    switch (this.strr) {
-      case '1D':
-        return this.extractDataPoints(this.graphData);
-      case '1W':
-        return this.extractDataPoints(this.graphData1Week);
-      case '1M':
-        return this.extractDataPoints(this.graphData1Month);
-      default:
-        return [];
-    }
-  }
-
+  
   updateChart() {
-    const dataPoints = this.getDataPointsForSelectedRange();
-    console.log("the data points is : ", dataPoints)
-    if (dataPoints.length === 0) return;
-
+    const dataPoints = this.extractDataPoints(this.graphData);
     let minY: number;
     let maxY: number;
-
-    if (dataPoints) {
-      minY = Math.min(...dataPoints.map(([_, y]) => y));
-      this.maxYY = maxY = Math.max(...dataPoints.map(([_, y]) => y));
-
-      // Determine color based on minLine value
-      const colorAboveMinLine = '#DD7470'; // Color when values are above minLine
-      const colorBelowMinLine = '#4CAF50'; // Color when values are below minLine
-      const allPointsAboveMinLine = dataPoints.every(
-        ([, y]) => y >= this.minLine
-      );
-
-      // Initialize or update the chart
-      this.areaChart = new Chart({
-        chart: {
-          type: 'area',
-        },
-        title: {
-          text: '',
-        },
-        credits: {
+  
+    console.log('the data points is : ', dataPoints);
+  
+    if (dataPoints.length === 0) return;
+  
+    minY = Math.min(...dataPoints.map(([_, y]) => y));
+    maxY = Math.max(...dataPoints.map(([_, y]) => y));
+  
+    const previousClose = this.graphData.data.graph_indices[0].PreviousClose;
+  
+    // Initialize or update the chart
+    this.areaChart = new Chart({
+      chart: {
+        type: 'area',
+      },
+      title: {
+        text: '',
+      },
+      credits: {
+        enabled: false,
+      },
+      xAxis: {
+        type: 'datetime',
+        tickLength: 0,
+        labels: {
           enabled: false,
         },
-        xAxis: {
-          type: 'datetime',
-          tickLength: 0, // Remove tick marks
-          labels: {
-            enabled: false, // Remove x-axis labels
-          },
-          gridLineWidth: 0, // Remove grid lines
+        gridLineWidth: 0,
+      },
+      yAxis: {
+        title: {
+          text: null,
         },
-        yAxis: {
-          title: {
-            text: null, // Remove y-axis title
+        min: minY,
+        max: maxY,
+        tickAmount: 6,
+        labels: {
+          enabled:false,
+          formatter: function () {
+            const value = this.value;
+            return typeof value === 'number' ? value.toFixed(2) : value;
           },
-          min: minY,
-          max: maxY,
-          tickAmount: 6,
-          labels: {
-            formatter: function () {
-              const value = this.value;
-              return typeof value === 'number' ? value.toFixed(2) : value;
-            },
-          },
-          gridLineWidth: 0, // Remove grid lines
-
-          plotLines: [
-            {
-              color: '#C0C0C0', // Line color
-              width: 2, // Line width
-              value: this.minLine, // The value at which the line should be drawn
-              label: {
-                text: `Min Line: ${this.minLine.toFixed(2)}`, // Label for the line
-                align: 'right', // Label alignment
-                style: {
-                  color: '#404040',
-                },
-              },
-            },
-            {
-              color: '#66FF66', // Line color for the second line
-              width: 2, // Line width
-              value: maxY, // The value at which the line should be drawn
-              label: {
-                text: `High: ${maxY.toFixed(2)}`, // Label for the line
-                align: 'left', // Label alignment
-                style: {
-                  color: '#404040',
-                },
-              },
-            },
-            {
-              color: '#FF6666', // Line color for the third line
-              width: 2, // Line width
-              value: minY, // The value at which the line should be drawn
-              label: {
-                text: `Low: ${minY.toFixed(2)}`, // Label for the line
-                align: 'left', // Label alignment
-                style: {
-                  color: '#404040',
-                },
-              },
-            },
-          ],
-
-          //    plotBands: [
-          //   {
-          //     color: '#FFDDDD', // Light red color for the plot band
-          //     from: minY, // Start of the plot band
-          //     to: this.minLine, // End of the plot band
-          //     label: {
-          //       text: `Below Min Line`, // Label for the plot band
-          //       align: 'center',
-          //       style: {
-          //         color: '#404040',
-          //       },
-          //     },
-          //   },
-          // ],
         },
-        series: [
+        gridLineWidth: 0,
+        plotLines: [
           {
-            type: 'area', // Use 'area' type for the filled area chart
-            name: '',
-            data: dataPoints,
-            color: allPointsAboveMinLine
-              ? colorAboveMinLine
-              : colorBelowMinLine,
-            lineWidth: 1, // Set the line width
-            marker: {
-              enabled: false, // Show markers (dots)
-              radius: 2, // Radius of the marker
-              fillColor: allPointsAboveMinLine
-                ? colorAboveMinLine
-                : colorBelowMinLine,
-              lineWidth: 2,
-              lineColor: allPointsAboveMinLine
-                ? colorAboveMinLine
-                : colorBelowMinLine,
+            color: '#C0C0C0',
+            width: 2,
+            value: previousClose,
+            label: {
+              text: `PreviousClose line : ${previousClose.toFixed(2)}`,
+              align: 'right',
+              style: {
+                color: '#404040',
+              },
             },
-            tooltip: {
-              valueDecimals: 2,
-            },
-            smooth: true,
           },
-        ] as unknown as Highcharts.SeriesOptionsType[],
-      });
-    }
+          {
+            color: '#66FF66',
+            width: 2,
+            value: maxY,
+            label: {
+              text: `High: ${maxY.toFixed(2)}`,
+              align: 'left',
+              style: {
+                color: '#404040',
+              },
+            },
+          },
+          {
+            color: '#FF6666',
+            width: 2,
+            value: minY,
+            label: {
+              text: `Low: ${minY.toFixed(2)}`,
+              align: 'left',
+              style: {
+                color: '#404040',
+              },
+            },
+          },
+        ],
+      },
+      series: [
+        {
+          type: 'area',
+          name: 'Stock Data',
+          data: dataPoints,
+          color: '#4CAF50', // Color for the line itself
+          fillColor: {
+            stops: [
+              [0, 'rgba(255, 102, 102, 0.6)'], // Light red for below Previous Close
+              [1, 'rgba(76, 175, 80, 0.6)']   // Light green for above Previous Close
+            ],
+            zIndex: 0
+          },
+          lineWidth: 1,
+          marker: {
+            enabled: false,
+            radius: 2,
+          },
+          tooltip: {
+            valueDecimals: 2,
+          },
+          smooth: true,
+          zones: [
+            {
+              value: previousClose,
+              color: '#FF6666', // Color for below Previous Close
+              fillColor: 'rgba(255, 102, 102, 0.6)' // Light red fill for below Previous Close
+            },
+            {
+              color: '#4CAF50', // Color for above Previous Close
+              fillColor: 'rgba(76, 175, 80, 0.6)' // Light green fill for above Previous Close
+            }
+          ],
+        },
+      ] as unknown as Highcharts.SeriesOptionsType[],
+    });
   }
+  
+  
 
   // Fetch data based on the selected time range and update the chart
   fetchDataAndUpdateChart(timeRange: string) {

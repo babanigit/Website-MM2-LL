@@ -1,6 +1,7 @@
 <h3 style="margin-left: 120px">BSE IPO INDEX</h3>
 <div class="container" style="padding: 20px">
   <div style="display: flex; justify-content: space-between">
+    <!-- info -->
     <span
       style="
         /* width: 100%; */
@@ -10,9 +11,12 @@
       "
     >
       <p style="color: gray; font-weight: 400; width: 120px">BSE IPO INDEX</p>
-      <p style="font-size: x-large; margin-left: 1% ; font-weight: 500;"> {{ maxYY }} </p>
+      <p style="font-size: x-large; margin-left: 1%; font-weight: 500">
+        {{ maxYY }}
+      </p>
     </span>
 
+    <!-- buttons -->
     <span
       style="
         /* text-align: right; */
@@ -71,6 +75,40 @@
           3Y
         </button>
       </span>
+    </span>
+  </div>
+
+  <div
+    *ngIf="graphData!.data!"
+    style="display: flex; gap: 4%; font-size: small"
+  >
+    <span>
+      <div>Top Gainer</div>
+      <div style="color: green">
+        {{ graphData.data.graph_indices[0].TOP_GAINER.name }}
+      </div>
+    </span>
+    <span>
+      <div>Top Loser</div>
+      <div style="color: red">
+        {{ graphData.data.graph_indices[0].TOP_LOSER.name }}
+      </div>
+    </span>
+    <span>
+      <div>ADVANCES</div>
+      <div style="color: green">
+        {{ graphData.data.graph_indices[0].ADVANCES }} Stocks
+      </div>
+    </span>
+    <span>
+      <div>DECLINES</div>
+      <div style="color: red">
+        {{ graphData.data.graph_indices[0].DECLINES }} Stocks
+      </div>
+    </span>
+    <span>
+      <div>NO CHANGE</div>
+      <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
     </span>
   </div>
 
