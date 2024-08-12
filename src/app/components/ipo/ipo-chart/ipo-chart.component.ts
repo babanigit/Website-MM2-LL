@@ -3,7 +3,7 @@ import { Chart, ChartModule } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
 import { IGraphData } from '../../../models/graphData';
 
-import { GraphDataService } from '../../../services/graph-data.service';
+import { GraphDataService } from '../../../services/ipo/graph-data.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -193,7 +193,7 @@ export class IpoChartComponent implements OnInit {
   
 
   // Fetch data based on the selected time range and update the chart
-  fetchDataAndUpdateChart(timeRange: string) {
+  fetchDataAndUpdateChart(timeRange: string) {``
     switch (timeRange) {
       case '1D':
         this.fetchGraphDay();

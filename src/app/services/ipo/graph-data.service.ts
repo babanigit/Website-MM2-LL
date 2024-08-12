@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IGraphData } from '../models/graphData';
+import { IGraphData } from '../../models/graphData';
 import { catchError } from 'rxjs';
 
 const defaultGraphDayPath = 'assets/graphDataDay.json';

@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { GraphDataService } from './graph-data.service';
 
 describe('GraphDataService', () => {
