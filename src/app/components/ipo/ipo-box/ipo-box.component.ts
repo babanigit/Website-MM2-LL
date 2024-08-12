@@ -16,6 +16,6 @@ export class IpoBoxComponent {
   constructor(private dot: GetDotFunctionsService) {}
 
   getDotProperties(hero: any) {
-    return this.dot.getDotProperties(hero.mojocall.sub_point, this.maxValue);
+    return this.dot.getDotPropertiesService(hero.mojocall.sub_point, this.maxValue);
   }
 }

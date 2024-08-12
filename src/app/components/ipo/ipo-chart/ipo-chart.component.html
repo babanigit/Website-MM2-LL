@@ -11,8 +11,11 @@
       "
     >
       <p style="color: gray; font-weight: 400; width: 120px">BSE IPO INDEX</p>
-      <p style="font-size: x-large; margin-left: 1%; font-weight: 500">
-        {{ maxYY }}
+      <p
+        *ngIf="graphData!"
+        style="font-size: x-large; margin-left: 1%; font-weight: 500"
+      >
+        {{ graphData!.data!.graph_indices[0]!.cmp! }}
       </p>
     </span>
 
@@ -80,10 +83,14 @@
 
   <div
     *ngIf="graphData!.data!"
-    style="display: flex; justify-content: space-between; padding: 0% 5%; padding-top: 2%;"
+    style="
+      display: flex;
+      justify-content: space-between;
+      padding: 0% 5%;
+      padding-top: 2%;
+    "
   >
-    <span style="display: flex; gap: 13%; font-size: small">
-
+    <span style="display: flex; gap: 17%; font-size: small">
       <span>
         <div>Top Gainer</div>
         <div style="color: green">
@@ -112,34 +119,31 @@
         <div>NO CHANGE</div>
         <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
       </span>
-
     </span>
 
-    <span
-    style="width: 30%;"
-    > 
-
-         <!-- line indicater -->
-         <div class="line-container">
-          <div class="line">
-            <div class="segment red"></div>
-            <div class="segment orange"></div>
-            <div class="segment green"></div>
-          </div>
-
-          <!-- *ngIf="hero" -->
-          <!-- [ngStyle]="getDotProperties(hero)" -->
-          <div *ngIf="graphData!"  class="dot" [ngStyle]="getDotProperties(graphData)"></div>
-  
-          <div class="hello">
-            <span class="a">Avoid</span>
-            <span class="n">Neutral</span>
-            <span class="s">Subscribe</span>
-          </div>
+    <span *ngIf="strr === '1D'" style="width: 30%">
+      <!-- line indicater -->
+      <div class="line-container">
+        <div class="line">
+          <div class="segment red"></div>
+          <div class="segment orange"></div>
+          <div class="segment green"></div>
         </div>
 
-    </span>
+        <!-- dot -->
+        <div
+          *ngIf="graphData!"
+          class="dot"
+          [ngStyle]="getDotProperties(graphData)"
+        ></div>
 
+        <div class="hello">
+          <span class="a">Avoid</span>
+          <span class="n">Neutral</span>
+          <span class="s">Subscribe</span>
+        </div>
+      </div>
+    </span>
   </div>
 
   <div [chart]="areaChart"></div>
