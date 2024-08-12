@@ -22,8 +22,8 @@
         /* text-align: right; */
         /* justify-content: right; */
         display: flex;
-        gap: 4%;
-        margin-right: 40px;
+        gap: 12%;
+        margin-right: 130px;
       "
     >
       <span>
@@ -80,9 +80,9 @@
 
   <div
     *ngIf="graphData!.data!"
-    style="display: flex; justify-content: space-between; padding: 0% 5%"
+    style="display: flex; justify-content: space-between; padding: 0% 5%; padding-top: 2%;"
   >
-    <span style="display: flex; gap: 6%; font-size: small">
+    <span style="display: flex; gap: 13%; font-size: small">
 
       <span>
         <div>Top Gainer</div>
@@ -115,7 +115,9 @@
 
     </span>
 
-    <span> 
+    <span
+    style="width: 30%;"
+    > 
 
          <!-- line indicater -->
          <div class="line-container">
@@ -125,13 +127,10 @@
             <div class="segment green"></div>
           </div>
 
-          
           <!-- *ngIf="hero" -->
           <!-- [ngStyle]="getDotProperties(hero)" -->
-          <div
-            class="dot"
-          ></div>
-
+          <div *ngIf="graphData!"  class="dot" [ngStyle]="getDotProperties(graphData)"></div>
+  
           <div class="hello">
             <span class="a">Avoid</span>
             <span class="n">Neutral</span>
