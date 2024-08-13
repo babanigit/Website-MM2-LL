@@ -17,8 +17,8 @@
         *ngIf="graphData!"
         style="font-size: x-large; margin-left: 1%; font-weight: 500; margin: 0"
       >
-      {{ graphData?.data?.graph_indices[0]?.cmp || 'N/A' }}
-    </p>
+        {{ graphData?.data?.graph_indices[0]?.cmp || "N/A" }}
+      </p>
     </span>
 
     <!-- buttons -->
@@ -35,7 +35,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr == 'day'}"
           (click)="onGraphButtonClick('day')"
         >
           1D
@@ -45,7 +45,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr === 'week'}"
           (click)="onGraphButtonClick('week')"
         >
           1W
@@ -55,7 +55,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr === 'month'}"
           (click)="onGraphButtonClick('month')"
         >
           1M
@@ -65,7 +65,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr === 'YTD'}"
           (click)="onGraphButtonClick('YTD')"
         >
           YTD
@@ -75,7 +75,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr === 'year'}"
           (click)="onGraphButtonClick('year')"
         >
           1Y
@@ -85,7 +85,7 @@
       <span>
         <button
           type="button"
-          class="btn btn-primary"
+          [ngClass]="{'active-button': strr === 'threeYears'}"
           (click)="onGraphButtonClick('threeYears')"
         >
           3Y
@@ -107,13 +107,13 @@
       <span>
         <div>Top Gainer</div>
         <div style="color: green">
-          {{ graphData.data.graph_indices[0].TOP_GAINER.name }}
+          {{ graphData.data.graph_indices[0].TOP_GAINER.name || "N/A" }}
         </div>
       </span>
       <span>
         <div>Top Loser</div>
         <div style="color: red">
-          {{ graphData.data.graph_indices[0].TOP_LOSER.name }}
+          {{ graphData.data.graph_indices[0].TOP_LOSER.name || "N/A" }}
         </div>
       </span>
       <span>
@@ -135,6 +135,18 @@
     </span>
 
     <span *ngIf="strr === 'day'" style="width: 30%">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          font-size: small;
+          margin-bottom: 2%;
+        "
+      >
+        <span> 52 Wk low </span>
+        <span> 52 Wk high </span>
+      </div>
+
       <!-- line indicater -->
       <div class="line-container">
         <div class="line">
@@ -152,14 +164,30 @@
           class="image-class"
         />
 
-        <div class="hello">
+        <!-- <div class="hello">
           <span class="a">Avoid</span>
           <span class="n">Neutral</span>
           <span class="s">Subscribe</span>
+        </div> -->
+
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            font-size: small;
+            margin-bottom: 2%;
+          "
+        >
+          <span>
+            {{ graphData.data.graph_indices[0].WEEK_LOW_52 }}
+          </span>
+          <span>
+            {{ graphData.data.graph_indices[0].WEEK_HIGH_52 }}
+          </span>
         </div>
       </div>
     </span>
   </div>
 
-  <div *ngIf="graphData!"  [chart]="areaChart"></div>
+  <div *ngIf="graphData!" [chart]="areaChart"></div>
 </div>

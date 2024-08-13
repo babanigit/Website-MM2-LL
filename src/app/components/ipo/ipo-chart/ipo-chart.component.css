@@ -1,59 +1,62 @@
-
 .container {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* You can adjust the shadow values and color as needed */
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* You can adjust the shadow values and color as needed */
+}
 
+/* hello */
+.line-container {
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
 
-  /* hello */
-  .line-container {
-    position: relative;
-    width: 100%;
-    height: 20px;
-  }
-  
-  .line {
-    display: flex;
-    width: 100%;
-    height: 4px;
-    position: relative;
-    background: linear-gradient(to right, red, orange, green); /* Gradient background */
-  }
-  
-  .hello {
-    display: flex;
-    width: 100%;
-    position: relative;
-    /* overflow: hidden; */
-  }
-  
-  .a {
-    text-align: center;
-    width: 33.33%;
-    color: red;
-  }
-  
-  .n {
-    text-align: center;
-    width: 33.33%;
-    color: orange;
-  }
-  
-  .s {
-    text-align: center;
-    width: 33.33%;
-    color: green;
-  }
-  
-  .dot {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: red;
-    border-radius: 50%;
-    top: -4px; /* Adjust based on line height */
-  }
-  /* Image styles */
+.line {
+  display: flex;
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    green
+  ); /* Gradient background */
+}
+
+.hello {
+  display: flex;
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.a {
+  text-align: center;
+  width: 33.33%;
+  color: red;
+}
+
+.n {
+  text-align: center;
+  width: 33.33%;
+  color: orange;
+}
+
+.s {
+  text-align: center;
+  width: 33.33%;
+  color: green;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  top: -4px; /* Adjust based on line height */
+}
+/* Image styles */
 .image-class {
   position: absolute;
   width: 12px; /* Adjust width as needed */
@@ -62,4 +65,29 @@
   left: calc(50% - 12px); /* Center the image horizontally */
   /* Add any additional styling as needed */
 }
-  
+
+/* button */
+/* Default button style */
+button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px; /* Rounded corners */
+
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Active button style */
+.active-button {
+  background-color: blue;
+  border-color: blue;
+  color: white;
+}
+
+/* Hover style for additional visual feedback */
+button:hover {
+  background-color: rgb(126, 126, 255);
+  border-color: rgb(126, 126, 255);
+}

@@ -84,7 +84,6 @@
   style="padding: 20px; height: auto"
   *ngIf="ipoList[0]?.data"
 >
-
   <!-- upcoming -->
   <div
     *ngIf="iPO_TYPE === 'upcoming' && ipoList"
@@ -94,183 +93,309 @@
       *ngFor="let hello of ipoList[0].data.upcoming"
       [hello]="hello"
     />
+
+    <!-- Handle the case where no upcoming IPOs are found -->
+    <div
+      *ngIf="
+        iPO_TYPE === 'upcoming' &&
+        ipoList &&
+        ipoList.length &&
+        (!ipoList[0].data.upcoming || ipoList[0].data.upcoming.length === 0)
+      "
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      "
+    >
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img
+          src="https://i.marketsmojo.com/ipo/light.png"
+          alt="Not Found"
+          style="max-width: 100%; height: auto; margin-bottom: 10px"
+        />
+        <p>
+          No
+          {{
+            iPO_TYPE.charAt(0).toUpperCase() + iPO_TYPE.slice(1).toLowerCase()
+          }}
+          IPOs
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- open -->
-  <div
-    *ngIf="iPO_TYPE === 'open' && ipoList"
-    style="display: flex; gap: 5%"
-  >
-    <app-ipo-box
-      *ngFor="let hello of ipoList[0].data.open"
-      [hello]="hello"
-    />
+  <div *ngIf="iPO_TYPE === 'open' && ipoList" style="display: flex; gap: 5%">
+    <app-ipo-box *ngFor="let hello of ipoList[0].data.open" [hello]="hello" />
+
+    <!-- Handle the case where no open IPOs are found -->
+    <div
+      *ngIf="
+        iPO_TYPE === 'open' &&
+        ipoList &&
+        ipoList.length &&
+        (!ipoList[0].data.open || ipoList[0].data.open.length === 0)
+      "
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      "
+    >
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img
+          src="https://i.marketsmojo.com/ipo/light.png"
+          alt="Not Found"
+          style="max-width: 100%; height: auto; margin-bottom: 10px"
+        />
+        <p>
+          No
+          {{
+            iPO_TYPE.charAt(0).toUpperCase() + iPO_TYPE.slice(1).toLowerCase()
+          }}
+          IPOs
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- closed -->
   <div *ngIf="iPO_TYPE === 'closed'">
- 
-      <table style="width: 100%; border-collapse: collapse">
-        <thead>
-          <tr style="height: 50px; text-align: center">
-            <th style="width: 250px; text-align: left">
-              <div>Company</div>
-              <div style="color: gray; font-size: smaller">Industry</div>
-            </th>
-            <th>IPO Analysis</th>
-            <th>Price Band</th>
-            <th>Issue open date</th>
-            <th>Issue close date</th>
-            <th>Listing date</th>
-          </tr>
-        </thead>
-        <br /><br />
-        <tbody *ngFor="let hello of ipoList[0].data.closed">
-          <tr
-            style="
-              height: 50px;
-              border-bottom: 1px solid gainsboro;
-              text-align: center;
-            "
-          >
-            <td style="text-align: left">
-              <div style="color: blue">
-                {{ hello.sname }}
-              </div>
-              <div style="font-weight: 400; color: grey; font-size: small">
-                {{ hello.industry }}
-              </div>
-            </td>
-            <td>
-              <div
-                [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
-              >
-                {{ hello.mojocall.sub_status }}
-              </div>
-            </td>
-            <td>
-              <!-- price band -->
-              {{ hello.price_band }}
-            </td>
-            <td>
-              <!-- Issue open date -->
-              {{ hello?.issue_details?.['Issue Opens'] || 'N/A' }}
-            </td>
-            <td>
-              <div>
-                <!-- Issue close date -->
-                {{ hello?.issue_details?.['Issue Closes'] || 'N/A' }}
-              </div>
-            </td>
-            <td>
-              <!-- Listing date -->
-              {{ hello.listing_date }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-   
+    <table style="width: 100%; border-collapse: collapse">
+      <thead
+      [hidden]="(!ipoList[0].data.closed || ipoList[0].data.closed.length === 0)"
+      >
+        <tr style="height: 50px; text-align: center">
+          <th style="width: 250px; text-align: left">
+            <div>Company</div>
+            <div style="color: gray; font-size: smaller">Industry</div>
+          </th>
+          <th>IPO Analysis</th>
+          <th>Price Band</th>
+          <th>Issue open date</th>
+          <th>Issue close date</th>
+          <th>Listing date</th>
+        </tr>
+      </thead>
+      <br /><br />
+      <tbody *ngFor="let hello of ipoList[0].data.closed">
+        <tr
+          style="
+            height: 50px;
+            border-bottom: 1px solid gainsboro;
+            text-align: center;
+          "
+        >
+          <td style="text-align: left">
+            <div style="color: blue">
+              {{ hello.sname }}
+            </div>
+            <div style="font-weight: 400; color: grey; font-size: small">
+              {{ hello.industry }}
+            </div>
+          </td>
+          <td>
+            <div
+              [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
+            >
+              {{ hello.mojocall.sub_status }}
+            </div>
+          </td>
+          <td>
+            <!-- price band -->
+            {{ hello.price_band }}
+          </td>
+          <td>
+            <!-- Issue open date -->
+            {{ hello?.issue_details?.['Issue Opens'] || 'N/A' }}
+          </td>
+          <td>
+            <div>
+              <!-- Issue close date -->
+              {{ hello?.issue_details?.['Issue Closes'] || 'N/A' }}
+            </div>
+          </td>
+          <td>
+            <!-- Listing date -->
+            {{ hello.listing_date }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Handle the case where no closed IPOs are found -->
+    <div
+      *ngIf="
+        iPO_TYPE === 'closed' &&
+        ipoList &&
+        ipoList.length &&
+        (!ipoList[0].data.closed || ipoList[0].data.closed.length === 0)
+      "
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      "
+    >
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img
+          src="https://i.marketsmojo.com/ipo/light.png"
+          alt="Not Found"
+          style="max-width: 100%; height: auto; margin-bottom: 10px"
+        />
+        <p>
+          No
+          {{
+            iPO_TYPE.charAt(0).toUpperCase() + iPO_TYPE.slice(1).toLowerCase()
+          }}
+          IPOs
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- listed -->
   <div *ngIf="iPO_TYPE === 'listed'">
-    <div>
-      <table style="width: 100%; border-collapse: collapse">
-        <thead>
-          <tr style="height: 50px; text-align: center">
-            <th style="width: 250px; text-align: left">
-              <div>Company</div>
-              <div style="color: gray; font-size: smaller">Industry</div>
-            </th>
-            <th>
-              <div>IPO Analysis</div>
-              <div style="color: gray; font-size: smaller">
-                IPO closing date
-              </div>
-            </th>
-            <th>Issue Price</th>
-            <th>
-              <div>Listing Price</div>
-              <div style="color: gray; font-size: smaller">%Listing Gain*</div>
-            </th>
-            <th>
-              <div>Latest Price</div>
-              <div style="color: gray; font-size: smaller">%Change</div>
-            </th>
-            <th style="width: 150px">%Change from Issue Price</th>
-            <th style="width: 150px">%Change from Listing price</th>
-          </tr>
-        </thead>
-        <br /><br />
-        <tbody *ngFor="let hello of ipoList[0].data.listed">
-          <tr
-            style="
-              height: 50px;
-              border-bottom: 1px solid gainsboro;
-              text-align: center;
-            "
-          >
-            <td style="text-align: left">
-              <div style="color: blue">
-                {{ hello.sname }}
-              </div>
-              <div style="font-weight: 400; color: grey; font-size: small">
-                {{ hello.industry }}
-              </div>
-            </td>
-            <td>
-              <div
-                [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
-              >
-                {{ hello.mojocall.sub_status }}
-              </div>
-              <div style="font-weight: 400; font-size: small">
-                {{ hello.close_date }}
-              </div>
-            </td>
-            <td>{{ hello.issue_price }}.00</td>
-            <td>
-              <div>
-                {{ hello.listed_price }}
-              </div>
-              <div
-                [ngStyle]="{ color: getListedGlColor(hello.listedgl) }"
-                style="font-weight: 400; font-size: small"
-              >
-                ({{ hello.listedgl }})
-              </div>
-            </td>
-            <td>
-              <div>{{ hello.cmp }}</div>
-              <div
-                [ngStyle]="{ color: getListedGlColor(hello.dgain_perc) }"
-                style="font-weight: 400; font-size: small"
-              >
-                {{ hello.dgain_perc }}
-              </div>
-            </td>
-            <td
-              style="
-                background-color: lightgreen;
-                border-right: 1px solid gainsboro;
-              "
-              [ngStyle]="{
-                color: getListedGlColor(hello.perc_chng_issue_price)
-              }"
+    <table
+
+    style="width: 100%; border-collapse: collapse">
+    <thead
+    [hidden]="(!ipoList[0].data.listed || ipoList[0].data.listed.length === 0)"
+    >
+        <tr style="height: 50px; text-align: center">
+          <th style="width: 250px; text-align: left">
+            <div>Company</div>
+            <div style="color: gray; font-size: smaller">Industry</div>
+          </th>
+          <th>
+            <div>IPO Analysis</div>
+            <div style="color: gray; font-size: smaller">IPO closing date</div>
+          </th>
+          <th>Issue Price</th>
+          <th>
+            <div>Listing Price</div>
+            <div style="color: gray; font-size: smaller">%Listing Gain*</div>
+          </th>
+          <th>
+            <div>Latest Price</div>
+            <div style="color: gray; font-size: smaller">%Change</div>
+          </th>
+          <th style="width: 150px">%Change from Issue Price</th>
+          <th style="width: 150px">%Change from Listing price</th>
+        </tr>
+      </thead>
+      <br /><br />
+      <tbody *ngFor="let hello of ipoList[0].data.listed">
+        <tr
+          style="
+            height: 50px;
+            border-bottom: 1px solid gainsboro;
+            text-align: center;
+          "
+        >
+          <td style="text-align: left">
+            <div style="color: blue">
+              {{ hello.sname }}
+            </div>
+            <div style="font-weight: 400; color: grey; font-size: small">
+              {{ hello.industry }}
+            </div>
+          </td>
+          <td>
+            <div
+              [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
             >
-              {{ hello.perc_chng_issue_price }}
-            </td>
-            <td
-              style="background-color: lightgreen"
-              [ngStyle]="{
-                color: getListedGlColor(hello.perc_chng_listing_price)
-              }"
-            >
+              {{ hello.mojocall.sub_status }}
+            </div>
+            <div style="font-weight: 400; font-size: small">
+              {{ hello.close_date }}
+            </div>
+          </td>
+          <td>{{ hello.issue_price }}.00</td>
+          <td>
+            <div>
               {{ hello.listed_price }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+            <div
+              [ngStyle]="{ color: getListedGlColor(hello.listedgl) }"
+              style="font-weight: 400; font-size: small"
+            >
+              ({{ hello.listedgl }})
+            </div>
+          </td>
+          <td>
+            <div>{{ hello.cmp }}</div>
+            <div
+              [ngStyle]="{ color: getListedGlColor(hello.dgain_perc) }"
+              style="font-weight: 400; font-size: small"
+            >
+              {{ hello.dgain_perc }}
+            </div>
+          </td>
+          <td
+            style="
+              background-color: lightgreen;
+              border-right: 1px solid gainsboro;
+            "
+            [ngStyle]="{
+              color: getListedGlColor(hello.perc_chng_issue_price)
+            }"
+          >
+            {{ hello.perc_chng_issue_price }}
+          </td>
+          <td
+            style="background-color: lightgreen"
+            [ngStyle]="{
+              color: getListedGlColor(hello.perc_chng_listing_price)
+            }"
+          >
+            {{ hello.listed_price }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Handle the case where no listed IPOs are found -->
+    <div
+      *ngIf="
+        iPO_TYPE === 'listed' &&
+        ipoList &&
+        ipoList.length &&
+        (!ipoList[0].data.listed || ipoList[0].data.listed.length === 0)
+      "
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      "
+    >
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img
+          src="https://i.marketsmojo.com/ipo/light.png"
+          alt="Not Found"
+          style="max-width: 100%; height: auto; margin-bottom: 10px"
+        />
+        <p>
+          No
+          {{
+            iPO_TYPE.charAt(0).toUpperCase() + iPO_TYPE.slice(1).toLowerCase()
+          }}
+          IPOs
+        </p>
+      </div>
     </div>
   </div>
 </div>
