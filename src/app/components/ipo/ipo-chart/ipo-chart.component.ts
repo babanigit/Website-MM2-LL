@@ -54,25 +54,72 @@ export class IpoChartComponent implements OnInit {
     return []; // Return empty array if no valid data
   }
 
+  
   updateChart() {
     const dataPoints = this.extractDataPoints(this.graphData);
     let minY: number;
     let maxY: number;
-
+  
     console.log('the data points is : ', dataPoints);
-
+  
     if (dataPoints.length === 0) return;
-
+  
     minY = Math.min(...dataPoints.map(([_, y]) => y));
     maxY = Math.max(...dataPoints.map(([_, y]) => y));
-
+  
     const previousClose = this.graphData.data.graph_indices[0].PreviousClose;
-
+  
+    // Initialize segments
+    const abovePreviousClose: [number, number][] = [];
+    const belowPreviousClose: [number, number][] = [];
+    let currentSeries: { data: [number, number][]; color: string }[] = [];
+  
+    // Function to add a new segment
+    const addSegment = (seriesData: [number, number][], color: string) => {
+      if (seriesData.length > 0) {
+        currentSeries.push({
+          data: seriesData,
+          color: color,
+        });
+      }
+    };
+  
+    dataPoints.forEach(([timestamp, value], index) => {
+      if (index === 0) return; // Skip first point for comparison
+  
+      const [prevTimestamp, prevValue] = dataPoints[index - 1];
+      if (prevValue > previousClose && value > previousClose) {
+        abovePreviousClose.push([timestamp, value]);
+      } else if (prevValue < previousClose && value < previousClose) {
+        belowPreviousClose.push([timestamp, value]);
+      } else {
+        // Handle intersections
+        if (prevValue > previousClose && value < previousClose) {
+          addSegment([...abovePreviousClose, [prevTimestamp, previousClose], [timestamp, previousClose]], '#4CAF50');
+          abovePreviousClose.length = 0;
+          belowPreviousClose.push([prevTimestamp, previousClose]);
+          belowPreviousClose.push([timestamp, previousClose]);
+        } else if (prevValue < previousClose && value > previousClose) {
+          addSegment([...belowPreviousClose, [prevTimestamp, previousClose], [timestamp, previousClose]], '#FF6666');
+          belowPreviousClose.length = 0;
+          abovePreviousClose.push([prevTimestamp, previousClose]);
+          abovePreviousClose.push([timestamp, previousClose]);
+        }
+      }
+    });
+  
+    // Add remaining segments
+    if (abovePreviousClose.length > 0) {
+      addSegment(abovePreviousClose, '#4CAF50');
+    }
+    if (belowPreviousClose.length > 0) {
+      addSegment(belowPreviousClose, '#FF6666');
+    }
+  
     // Initialize or update the chart
     this.areaChart = new Chart({
-
-      accessibility:{
-        enabled:false
+      accessibility: {
+        enabled: false,
       },
       chart: {
         type: 'area',
@@ -145,44 +192,32 @@ export class IpoChartComponent implements OnInit {
           },
         ],
       },
-      series: [
-        {
-          type: 'area',
-          name: 'Stock Data',
-          data: dataPoints,
-          color: '#4CAF50', // Color for the line itself
-          fillColor: {
-            stops: [
-              [0, 'rgba(255, 102, 102, 0.6)'], // Light red for below Previous Close
-              [1, 'rgba(76, 175, 80, 0.6)'], // Light green for above Previous Close
-            ],
-            zIndex: 0,
-          },
-          lineWidth: 1,
-          marker: {
-            enabled: false,
-            radius: 2,
-          },
-          tooltip: {
-            valueDecimals: 2,
-          },
-          smooth: true,
-          zones: [
-            {
-              value: previousClose,
-              color: '#FF6666', // Color for below Previous Close
-              fillColor: 'rgba(255, 102, 102, 0.6)', // Light red fill for below Previous Close
-            },
-            {
-              color: '#4CAF50', // Color for above Previous Close
-              fillColor: 'rgba(76, 175, 80, 0.6)', // Light green fill for above Previous Close
-            },
+      series: currentSeries.map(series => ({
+        type: 'area',
+        name: 'Stock Data',
+        data: series.data,
+        color: series.color,
+        fillColor: {
+          stops: [
+            [0, series.color],
+            [1, series.color],
           ],
+          zIndex: 0,
         },
-      ] as unknown as Highcharts.SeriesOptionsType[],
+        lineWidth: 1,
+        marker: {
+          enabled: false,
+          radius: 2,
+        },
+        tooltip: {
+          valueDecimals: 2,
+        },
+        smooth: true,
+      })) as unknown as Highcharts.SeriesOptionsType[],
     });
   }
 
+  
   fetchGraphData(
     type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
   ) {
