@@ -39,7 +39,7 @@ export class GraphDataService {
     this.loadingSubject.next(true); // Set loading to true
 
     return this.http.get<IGraphData>(path).pipe(
-      // delay(3000),
+      delay(3000),
       catchError((err) => {
         
         this.loadingSubject.next(false); // Set loading to false on error

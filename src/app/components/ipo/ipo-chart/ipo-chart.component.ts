@@ -7,13 +7,14 @@ import { GraphDataService } from '../../../services/ipo/graph-data.service';
 import { CommonModule } from '@angular/common';
 import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.service';
 import { Observable } from 'rxjs';
+import { LoadingPopupComponent } from "../../loading-popup/loading-popup.component";
 
 @Component({
   selector: 'app-ipo-chart',
   templateUrl: './ipo-chart.component.html',
   styleUrls: ['./ipo-chart.component.css'],
   standalone: true,
-  imports: [ChartModule, CommonModule],
+  imports: [ChartModule, CommonModule, LoadingPopupComponent],
 })
 export class IpoChartComponent implements OnInit {
   graphData: IGraphData = {} as IGraphData; // Initialize with an empty object
@@ -26,7 +27,7 @@ export class IpoChartComponent implements OnInit {
   dotPositions: Map<any, string> = new Map();
   dotColors: Map<any, string> = new Map();
 
-  loading$: Observable<boolean> = this.serv.loading$;
+  loading$: Observable<boolean> = this.serv.loading$ 
   error$: Observable<string | null> = this.serv.error$;
   errorMessage: string | null = null;
 
