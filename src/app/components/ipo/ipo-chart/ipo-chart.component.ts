@@ -6,6 +6,7 @@ import { IGraphData } from '../../../models/graphData';
 import { GraphDataService } from '../../../services/ipo/graph-data.service';
 import { CommonModule } from '@angular/common';
 import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ipo-chart',
@@ -15,7 +16,7 @@ import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.
   imports: [ChartModule, CommonModule],
 })
 export class IpoChartComponent implements OnInit {
-  graphData: IGraphData | object | any = {}; // Initialize with an empty object
+  graphData: IGraphData = {} as IGraphData; // Initialize with an empty object
 
   strr: string = 'day'; // Default value
   areaChart: Chart = new Chart({}); // Initialize with an empty chart
@@ -25,24 +26,47 @@ export class IpoChartComponent implements OnInit {
   dotPositions: Map<any, string> = new Map();
   dotColors: Map<any, string> = new Map();
 
+  loading$: Observable<boolean> = this.serv.loading$;
+  error$: Observable<string | null> = this.serv.error$;
+  errorMessage: string | null = null;
+
   constructor(
     private serv: GraphDataService,
     private dot: GetDotFunctionsService
   ) {}
 
-  getDotProperties(hero: IGraphData) {
-    return this.dot.getDotPropertiesService(
-      hero.data.graph_indices[0].WEEK_POINTER_52,
-      this.maxValue
-    );
-  }
-
   ngOnInit(): void {
     this.fetchGraphData('day');
   }
 
+  fetchGraphData(
+    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
+  ) {
+  
+    this.serv.getGraphData(type).subscribe({
+      next: (res: IGraphData) => {
+        this.graphData = res;
+        this.updateChart(); // Initialize the chart based on default value
+        this.errorMessage = null; // Clear previous errors
+      },
+      error: (err) => { 
+        this.errorMessage = 'Failed to load data. Please try again later.' ;
+        console.error('Error:', err);
+      }
+    });
+
+  }
+
+  onGraphButtonClick(
+    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
+  ) {
+    console.log('clicked ', type);
+    this.strr = type;
+    this.fetchGraphData(type);
+  }
+
   // get the data points
-  extractDataPoints(g: IGraphData | object) {
+  extractDataPoints(g: IGraphData) {
     if (g && 'data' in g) {
       return (g as IGraphData).data.graph_indices[0].graph.IndiceArray.map(
         (point) => {
@@ -54,26 +78,25 @@ export class IpoChartComponent implements OnInit {
     return []; // Return empty array if no valid data
   }
 
-  
   updateChart() {
     const dataPoints = this.extractDataPoints(this.graphData);
     let minY: number;
     let maxY: number;
-  
+
     console.log('the data points is : ', dataPoints);
-  
+
     if (dataPoints.length === 0) return;
-  
+
     minY = Math.min(...dataPoints.map(([_, y]) => y));
     maxY = Math.max(...dataPoints.map(([_, y]) => y));
-  
+
     const previousClose = this.graphData.data.graph_indices[0].PreviousClose;
-  
+
     // Initialize segments
     const abovePreviousClose: [number, number][] = [];
     const belowPreviousClose: [number, number][] = [];
     let currentSeries: { data: [number, number][]; color: string }[] = [];
-  
+
     // Function to add a new segment
     const addSegment = (seriesData: [number, number][], color: string) => {
       if (seriesData.length > 0) {
@@ -83,10 +106,10 @@ export class IpoChartComponent implements OnInit {
         });
       }
     };
-  
+
     dataPoints.forEach(([timestamp, value], index) => {
       if (index === 0) return; // Skip first point for comparison
-  
+
       const [prevTimestamp, prevValue] = dataPoints[index - 1];
       if (prevValue > previousClose && value > previousClose) {
         abovePreviousClose.push([timestamp, value]);
@@ -95,19 +118,33 @@ export class IpoChartComponent implements OnInit {
       } else {
         // Handle intersections
         if (prevValue > previousClose && value < previousClose) {
-          addSegment([...abovePreviousClose, [prevTimestamp, previousClose], [timestamp, previousClose]], '#4CAF50');
+          addSegment(
+            [
+              ...abovePreviousClose,
+              [prevTimestamp, previousClose],
+              [timestamp, previousClose],
+            ],
+            '#4CAF50'
+          );
           abovePreviousClose.length = 0;
           belowPreviousClose.push([prevTimestamp, previousClose]);
           belowPreviousClose.push([timestamp, previousClose]);
         } else if (prevValue < previousClose && value > previousClose) {
-          addSegment([...belowPreviousClose, [prevTimestamp, previousClose], [timestamp, previousClose]], '#FF6666');
+          addSegment(
+            [
+              ...belowPreviousClose,
+              [prevTimestamp, previousClose],
+              [timestamp, previousClose],
+            ],
+            '#FF6666'
+          );
           belowPreviousClose.length = 0;
           abovePreviousClose.push([prevTimestamp, previousClose]);
           abovePreviousClose.push([timestamp, previousClose]);
         }
       }
     });
-  
+
     // Add remaining segments
     if (abovePreviousClose.length > 0) {
       addSegment(abovePreviousClose, '#4CAF50');
@@ -115,7 +152,7 @@ export class IpoChartComponent implements OnInit {
     if (belowPreviousClose.length > 0) {
       addSegment(belowPreviousClose, '#FF6666');
     }
-  
+
     // Initialize or update the chart
     this.areaChart = new Chart({
       accessibility: {
@@ -192,7 +229,7 @@ export class IpoChartComponent implements OnInit {
           },
         ],
       },
-      series: currentSeries.map(series => ({
+      series: currentSeries.map((series) => ({
         type: 'area',
         name: 'Stock Data',
         data: series.data,
@@ -218,20 +255,11 @@ export class IpoChartComponent implements OnInit {
   }
 
   
-  fetchGraphData(
-    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
-  ) {
-    this.serv.getGraphData(type).subscribe((res: IGraphData) => {
-      this.graphData = res;
-      this.updateChart(); // Initialize the chart based on default value
-    });
+  getDotProperties(hero: IGraphData) {
+    return this.dot.getDotPropertiesService(
+      hero.data.graph_indices[0].WEEK_POINTER_52,
+      this.maxValue
+    );
   }
 
-  onGraphButtonClick(
-    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
-  ) {
-    console.log('clicked ', type);
-    this.strr=type
-    this.fetchGraphData(type);
-  }
 }

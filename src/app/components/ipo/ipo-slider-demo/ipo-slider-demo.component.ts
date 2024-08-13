@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class IpoSliderDemoComponent implements OnInit {
-  ipoList: I_IPOList[] = [];
+  ipoList: I_IPOList = {} as I_IPOList;
 
   maxValue = 200;
 
@@ -68,7 +68,7 @@ export class IpoSliderDemoComponent implements OnInit {
   }
 
   fetchIpoList() {
-    this.serv.getIPOList().subscribe((res: I_IPOList[]) => {
+    this.serv.getIPOList().subscribe((res: I_IPOList) => {
       this.ipoList = res;
     });
   }

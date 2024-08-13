@@ -82,7 +82,7 @@
 <div
   class="container"
   style="padding: 20px; height: auto"
-  *ngIf="ipoList[0]?.data"
+  *ngIf="ipoList?.data"
 >
   <!-- upcoming -->
   <div
@@ -90,7 +90,7 @@
     style="display: flex; gap: 5%; height: auto"
   >
     <app-ipo-box
-      *ngFor="let hello of ipoList[0].data.upcoming"
+      *ngFor="let hello of ipoList.data.upcoming"
       [hello]="hello"
     />
 
@@ -99,8 +99,7 @@
       *ngIf="
         iPO_TYPE === 'upcoming' &&
         ipoList &&
-        ipoList.length &&
-        (!ipoList[0].data.upcoming || ipoList[0].data.upcoming.length === 0)
+        (!ipoList.data.upcoming || ipoList.data.upcoming.length === 0)
       "
       style="
         display: flex;
@@ -130,15 +129,14 @@
 
   <!-- open -->
   <div *ngIf="iPO_TYPE === 'open' && ipoList" style="display: flex; gap: 5%">
-    <app-ipo-box *ngFor="let hello of ipoList[0].data.open" [hello]="hello" />
+    <app-ipo-box *ngFor="let hello of ipoList.data.open" [hello]="hello" />
 
     <!-- Handle the case where no open IPOs are found -->
     <div
       *ngIf="
         iPO_TYPE === 'open' &&
         ipoList &&
-        ipoList.length &&
-        (!ipoList[0].data.open || ipoList[0].data.open.length === 0)
+        (!ipoList.data.open || ipoList.data.open.length === 0)
       "
       style="
         display: flex;
@@ -170,7 +168,7 @@
   <div *ngIf="iPO_TYPE === 'closed'">
     <table style="width: 100%; border-collapse: collapse">
       <thead
-      [hidden]="(!ipoList[0].data.closed || ipoList[0].data.closed.length === 0)"
+      [hidden]="(!ipoList.data.closed || ipoList.data.closed.length === 0)"
       >
         <tr style="height: 50px; text-align: center">
           <th style="width: 250px; text-align: left">
@@ -185,7 +183,7 @@
         </tr>
       </thead>
       <br /><br />
-      <tbody *ngFor="let hello of ipoList[0].data.closed">
+      <tbody *ngFor="let hello of ipoList.data.closed">
         <tr
           style="
             height: 50px;
@@ -235,8 +233,7 @@
       *ngIf="
         iPO_TYPE === 'closed' &&
         ipoList &&
-        ipoList.length &&
-        (!ipoList[0].data.closed || ipoList[0].data.closed.length === 0)
+        (!ipoList.data.closed || ipoList.data.closed.length === 0)
       "
       style="
         display: flex;
@@ -270,7 +267,7 @@
 
     style="width: 100%; border-collapse: collapse">
     <thead
-    [hidden]="(!ipoList[0].data.listed || ipoList[0].data.listed.length === 0)"
+    [hidden]="(!ipoList.data.listed || ipoList.data.listed.length === 0)"
     >
         <tr style="height: 50px; text-align: center">
           <th style="width: 250px; text-align: left">
@@ -295,7 +292,7 @@
         </tr>
       </thead>
       <br /><br />
-      <tbody *ngFor="let hello of ipoList[0].data.listed">
+      <tbody *ngFor="let hello of ipoList.data.listed">
         <tr
           style="
             height: 50px;
@@ -370,8 +367,7 @@
       *ngIf="
         iPO_TYPE === 'listed' &&
         ipoList &&
-        ipoList.length &&
-        (!ipoList[0].data.listed || ipoList[0].data.listed.length === 0)
+        (!ipoList.data.listed || ipoList.data.listed.length === 0)
       "
       style="
         display: flex;

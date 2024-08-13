@@ -97,7 +97,7 @@ export class JsonDataService {
   }
 
   getIPOList(jsonPath: string = defaultIPOListPath) {
-    return this.http.get<I_IPOList[]>(jsonPath).pipe(
+    return this.http.get<I_IPOList>(jsonPath).pipe(
 
       // delay(3000),
       catchError((err) => {
