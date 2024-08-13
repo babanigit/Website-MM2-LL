@@ -15,10 +15,9 @@ import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.
   imports: [ChartModule, CommonModule],
 })
 export class IpoChartComponent implements OnInit {
+  graphData: IGraphData | object | any = {}; // Initialize with an empty object
 
-  graphData: IGraphData |object |any ={}; // Initialize with an empty object
-  
-  strr: string = '1D'; // Default value
+  strr: string = 'day'; // Default value
   areaChart: Chart = new Chart({}); // Initialize with an empty chart
   maxYY!: number;
 
@@ -26,84 +25,20 @@ export class IpoChartComponent implements OnInit {
   dotPositions: Map<any, string> = new Map();
   dotColors: Map<any, string> = new Map();
 
-  constructor(private serv: GraphDataService,
-    private dot : GetDotFunctionsService
+  constructor(
+    private serv: GraphDataService,
+    private dot: GetDotFunctionsService
   ) {}
 
   getDotProperties(hero: IGraphData) {
-    return this.dot.getDotPropertiesService(hero.data.graph_indices[0].WEEK_POINTER_52, this.maxValue);
+    return this.dot.getDotPropertiesService(
+      hero.data.graph_indices[0].WEEK_POINTER_52,
+      this.maxValue
+    );
   }
-
-    // need to edit this...
-
-    getDotProperties2(hero: any) {
-      // let hero = heroo[0].data[0].graph_indices[0].WEEK_POINTER_52;
-      if (!this.dotPositions.has(hero)) {
-        const position = this.calculateDotPosition(hero);
-        const color = this.calculateDotColor(hero);
-        this.dotPositions.set(hero, position);
-        this.dotColors.set(hero, color);
-      }
-      return {
-        left: this.dotPositions.get(hero),
-        backgroundColor: this.dotColors.get(hero)
-      };
-    }
-  
-    // Method to calculate dot position in percentage
-    calculateDotPosition(unitValue: any): string {
-      if (unitValue && unitValue.WEEK_POINTER_52) {
-        let percentage = parseFloat(unitValue.WEEK_POINTER_52.replace('%', ''));
-        let absolutePercentage = Math.abs(percentage); // Convert negative percentage to positive
-        let position = (absolutePercentage / this.maxValue) * 100; // Calculate position as a percentage of maxValue
-        return `${position}%`; // Return as a string with a percentage unit
-      }
-      return '0%'; // Default position if WEEK_POINTER_52 is undefined or invalid
-    }
-  
-    // Method to determine dot color based on position
-    calculateDotColor(unitValue: any): string {
-      if (unitValue && unitValue.WEEK_POINTER_52) {
-        let percentage = parseFloat(
-          unitValue.WEEK_POINTER_52.replace('%', '')
-        );
-        let absolutePercentage = Math.abs(percentage);
-        let position = (absolutePercentage / this.maxValue) * 100;
-  
-        if (position < 33) {
-          return 'red';
-        } else if (position < 66) {
-          return 'orange';
-        } else {
-          return 'green';
-        }
-      }
-      return 'black'; // Default color if WEEK_POINTER_52 is undefined or invalid
-    }
 
   ngOnInit(): void {
-    this.fetchGraphDay();
-  }
-
-  fetchGraphDay() {
-    this.serv.getGraphDay().subscribe((res: IGraphData) => {
-      this.graphData = res;
-      this.updateChart(); // Initialize the chart based on default value
-    });
-  }
-
-  fetchGraphWeek() {
-    this.serv.getGraphWeek().subscribe((res: IGraphData) => {
-      this.graphData = res;
-      this.updateChart(); // Initialize the chart based on default value
-    });
-  }
-
-  fetchGraphMonth() {
-    this.serv.getGraphMonth().subscribe((res: IGraphData) => {
-      this.graphData = res;
-      this.updateChart(); // Initialize the chart based on default value
-    });
+    this.fetchGraphData('day');
   }
 
   // get the data points
@@ -118,23 +53,27 @@ export class IpoChartComponent implements OnInit {
     }
     return []; // Return empty array if no valid data
   }
-  
+
   updateChart() {
     const dataPoints = this.extractDataPoints(this.graphData);
     let minY: number;
     let maxY: number;
-  
+
     console.log('the data points is : ', dataPoints);
-  
+
     if (dataPoints.length === 0) return;
-  
+
     minY = Math.min(...dataPoints.map(([_, y]) => y));
     maxY = Math.max(...dataPoints.map(([_, y]) => y));
-  
+
     const previousClose = this.graphData.data.graph_indices[0].PreviousClose;
-  
+
     // Initialize or update the chart
     this.areaChart = new Chart({
+
+      accessibility:{
+        enabled:false
+      },
       chart: {
         type: 'area',
       },
@@ -160,7 +99,7 @@ export class IpoChartComponent implements OnInit {
         max: maxY,
         tickAmount: 6,
         labels: {
-          enabled:false,
+          enabled: false,
           formatter: function () {
             const value = this.value;
             return typeof value === 'number' ? value.toFixed(2) : value;
@@ -215,9 +154,9 @@ export class IpoChartComponent implements OnInit {
           fillColor: {
             stops: [
               [0, 'rgba(255, 102, 102, 0.6)'], // Light red for below Previous Close
-              [1, 'rgba(76, 175, 80, 0.6)']   // Light green for above Previous Close
+              [1, 'rgba(76, 175, 80, 0.6)'], // Light green for above Previous Close
             ],
-            zIndex: 0
+            zIndex: 0,
           },
           lineWidth: 1,
           marker: {
@@ -232,42 +171,32 @@ export class IpoChartComponent implements OnInit {
             {
               value: previousClose,
               color: '#FF6666', // Color for below Previous Close
-              fillColor: 'rgba(255, 102, 102, 0.6)' // Light red fill for below Previous Close
+              fillColor: 'rgba(255, 102, 102, 0.6)', // Light red fill for below Previous Close
             },
             {
               color: '#4CAF50', // Color for above Previous Close
-              fillColor: 'rgba(76, 175, 80, 0.6)' // Light green fill for above Previous Close
-            }
+              fillColor: 'rgba(76, 175, 80, 0.6)', // Light green fill for above Previous Close
+            },
           ],
         },
       ] as unknown as Highcharts.SeriesOptionsType[],
     });
   }
-  
-  
 
-  // Fetch data based on the selected time range and update the chart
-  fetchDataAndUpdateChart(timeRange: string) {``
-    switch (timeRange) {
-      case '1D':
-        this.fetchGraphDay();
-        break;
-      case '1W':
-        this.fetchGraphWeek();
-        break;
-      case '1M':
-        this.fetchGraphMonth();
-        break;
-      default:
-        console.error('Invalid time range');
-    }
+  fetchGraphData(
+    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
+  ) {
+    this.serv.getGraphData(type).subscribe((res: IGraphData) => {
+      this.graphData = res;
+      this.updateChart(); // Initialize the chart based on default value
+    });
   }
 
-  onGraphButtonClick(str: string) {
-    console.log('the str is:', str);
-    this.strr = str;
-    this.fetchDataAndUpdateChart(str);
-    // this.updateChart(); // Update chart when button is clicked
+  onGraphButtonClick(
+    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
+  ) {
+    console.log('clicked ', type);
+    this.strr=type
+    this.fetchGraphData(type);
   }
-
 }

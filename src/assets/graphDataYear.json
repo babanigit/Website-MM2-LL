@@ -1,0 +1,1800 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "graph_indices": [
+            {
+                "name": "BSEIPO",
+                "cmp": "15,865.89",
+                "chg": "5,541.27",
+                "chgp": "53.67%",
+                "chgp_val": "53.67",
+                "dir": 1,
+                "dt": "2024-08-13",
+                "IndexName": "BSEIPO",
+                "CurrentPrice": 15865.89,
+                "Close": 0,
+                "Volatility": 15865.89,
+                "PreviousClose": 10324.62,
+                "PreviousClosePerc": {
+                    "D1": "-0.16%",
+                    "D1_dir": -1,
+                    "W1": "3.32%",
+                    "W1_dir": 1,
+                    "M1": "-2.90%",
+                    "M1_dir": -1,
+                    "YTD": "27.71%",
+                    "YTD_dir": 1,
+                    "Y1": "53.67%",
+                    "Y1_dir": 1,
+                    "Y3": "25.05%",
+                    "Y3_dir": 1,
+                    "Y5": "229.10%",
+                    "Y5_dir": 1,
+                    "Y10": "599.72%",
+                    "Y10_dir": 1
+                },
+                "TOP_GAINER": {
+                    "name": "Netweb Technol.",
+                    "cmp": "2416.00",
+                    "chg": "1545.50",
+                    "chgp": "177.54",
+                    "high": "2,773.30",
+                    "low": "739.70",
+                    "q_clr": "green",
+                    "v_clr": "red",
+                    "f_clr": "green",
+                    "sid": 10038956,
+                    "dir": 1
+                },
+                "TOP_LOSER": {
+                    "name": "Utkarsh Small F.",
+                    "cmp": "48.46",
+                    "chg": "-2.39",
+                    "chgp": "-4.70",
+                    "high": "68.23",
+                    "low": "45.00",
+                    "q_clr": "green",
+                    "v_clr": "green",
+                    "f_clr": "green",
+                    "sid": 1003893,
+                    "dir": -1
+                },
+                "ADVANCES": 2,
+                "DECLINES": 1,
+                "NO_CHANGE": 80,
+                "WEEK_HIGH_52": "16,592.70",
+                "WEEK_LOW_52": "10,179.06",
+                "WEEK_POINTER_52": 88.67,
+                "graph": {
+                    "IndiceArray": [
+                        {
+                            "dispPrice": 10238.14,
+                            "time": "08/14/2023",
+                            "disptime": "08/14/2023",
+                            "segmentColor": "#DD7470",
+                            "y": 10238.14
+                        },
+                        {
+                            "dispPrice": 10234.62,
+                            "time": "08/16/2023",
+                            "disptime": "08/16/2023",
+                            "segmentColor": "#DD7470",
+                            "y": 10234.62
+                        },
+                        {
+                            "dispPrice": 10302.76,
+                            "time": "08/17/2023",
+                            "disptime": "08/17/2023",
+                            "segmentColor": "#DD7470",
+                            "y": 10302.76
+                        },
+                        {
+                            "dispPrice": 10308.98,
+                            "time": "08/18/2023",
+                            "disptime": "08/18/2023",
+                            "segmentColor": "#DD7470",
+                            "y": 10308.98
+                        },
+                        {
+                            "dispPrice": 10319.85,
+                            "time": "08/21/2023",
+                            "disptime": "08/21/2023",
+                            "segmentColor": "#DD7470",
+                            "y": 10319.85
+                        },
+                        {
+                            "dispPrice": 10507.27,
+                            "time": "08/22/2023",
+                            "disptime": "08/22/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10507.27
+                        },
+                        {
+                            "dispPrice": 10525.24,
+                            "time": "08/23/2023",
+                            "disptime": "08/23/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10525.24
+                        },
+                        {
+                            "dispPrice": 10537.39,
+                            "time": "08/24/2023",
+                            "disptime": "08/24/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10537.39
+                        },
+                        {
+                            "dispPrice": 10605.65,
+                            "time": "08/25/2023",
+                            "disptime": "08/25/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10605.65
+                        },
+                        {
+                            "dispPrice": 10682.85,
+                            "time": "08/28/2023",
+                            "disptime": "08/28/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10682.85
+                        },
+                        {
+                            "dispPrice": 10646.04,
+                            "time": "08/29/2023",
+                            "disptime": "08/29/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10646.04
+                        },
+                        {
+                            "dispPrice": 10654.44,
+                            "time": "08/30/2023",
+                            "disptime": "08/30/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10654.44
+                        },
+                        {
+                            "dispPrice": 10766.71,
+                            "time": "08/31/2023",
+                            "disptime": "08/31/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10766.71
+                        },
+                        {
+                            "dispPrice": 10654.04,
+                            "time": "09/01/2023",
+                            "disptime": "09/01/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10654.04
+                        },
+                        {
+                            "dispPrice": 10701.44,
+                            "time": "09/04/2023",
+                            "disptime": "09/04/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10701.44
+                        },
+                        {
+                            "dispPrice": 10754.88,
+                            "time": "09/05/2023",
+                            "disptime": "09/05/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10754.88
+                        },
+                        {
+                            "dispPrice": 10753.03,
+                            "time": "09/06/2023",
+                            "disptime": "09/06/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10753.03
+                        },
+                        {
+                            "dispPrice": 10771.84,
+                            "time": "09/07/2023",
+                            "disptime": "09/07/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10771.84
+                        },
+                        {
+                            "dispPrice": 10868.57,
+                            "time": "09/08/2023",
+                            "disptime": "09/08/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10868.57
+                        },
+                        {
+                            "dispPrice": 10956.68,
+                            "time": "09/11/2023",
+                            "disptime": "09/11/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10956.68
+                        },
+                        {
+                            "dispPrice": 10598.28,
+                            "time": "09/12/2023",
+                            "disptime": "09/12/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10598.28
+                        },
+                        {
+                            "dispPrice": 10639.12,
+                            "time": "09/13/2023",
+                            "disptime": "09/13/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10639.12
+                        },
+                        {
+                            "dispPrice": 10722,
+                            "time": "09/14/2023",
+                            "disptime": "09/14/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10722
+                        },
+                        {
+                            "dispPrice": 10754.19,
+                            "time": "09/15/2023",
+                            "disptime": "09/15/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10754.19
+                        },
+                        {
+                            "dispPrice": 10678.97,
+                            "time": "09/18/2023",
+                            "disptime": "09/18/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10678.97
+                        },
+                        {
+                            "dispPrice": 10607.42,
+                            "time": "09/20/2023",
+                            "disptime": "09/20/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10607.42
+                        },
+                        {
+                            "dispPrice": 10551.63,
+                            "time": "09/21/2023",
+                            "disptime": "09/21/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10551.63
+                        },
+                        {
+                            "dispPrice": 10566.81,
+                            "time": "09/22/2023",
+                            "disptime": "09/22/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10566.81
+                        },
+                        {
+                            "dispPrice": 10591.07,
+                            "time": "09/25/2023",
+                            "disptime": "09/25/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10591.07
+                        },
+                        {
+                            "dispPrice": 10618.96,
+                            "time": "09/26/2023",
+                            "disptime": "09/26/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10618.96
+                        },
+                        {
+                            "dispPrice": 10675.08,
+                            "time": "09/27/2023",
+                            "disptime": "09/27/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10675.08
+                        },
+                        {
+                            "dispPrice": 10778.72,
+                            "time": "09/28/2023",
+                            "disptime": "09/28/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10778.72
+                        },
+                        {
+                            "dispPrice": 10866.44,
+                            "time": "09/29/2023",
+                            "disptime": "09/29/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10866.44
+                        },
+                        {
+                            "dispPrice": 11038.17,
+                            "time": "10/03/2023",
+                            "disptime": "10/03/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11038.17
+                        },
+                        {
+                            "dispPrice": 10948.77,
+                            "time": "10/04/2023",
+                            "disptime": "10/04/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10948.77
+                        },
+                        {
+                            "dispPrice": 11058.54,
+                            "time": "10/05/2023",
+                            "disptime": "10/05/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11058.54
+                        },
+                        {
+                            "dispPrice": 11169.23,
+                            "time": "10/06/2023",
+                            "disptime": "10/06/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11169.23
+                        },
+                        {
+                            "dispPrice": 11041.37,
+                            "time": "10/09/2023",
+                            "disptime": "10/09/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11041.37
+                        },
+                        {
+                            "dispPrice": 11206.56,
+                            "time": "10/10/2023",
+                            "disptime": "10/10/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11206.56
+                        },
+                        {
+                            "dispPrice": 11337.98,
+                            "time": "10/11/2023",
+                            "disptime": "10/11/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11337.98
+                        },
+                        {
+                            "dispPrice": 11367.21,
+                            "time": "10/12/2023",
+                            "disptime": "10/12/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11367.21
+                        },
+                        {
+                            "dispPrice": 11389.09,
+                            "time": "10/13/2023",
+                            "disptime": "10/13/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11389.09
+                        },
+                        {
+                            "dispPrice": 11426,
+                            "time": "10/16/2023",
+                            "disptime": "10/16/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11426
+                        },
+                        {
+                            "dispPrice": 11479.86,
+                            "time": "10/17/2023",
+                            "disptime": "10/17/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11479.86
+                        },
+                        {
+                            "dispPrice": 11381.4,
+                            "time": "10/18/2023",
+                            "disptime": "10/18/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11381.4
+                        },
+                        {
+                            "dispPrice": 11396.82,
+                            "time": "10/19/2023",
+                            "disptime": "10/19/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11396.82
+                        },
+                        {
+                            "dispPrice": 11252.23,
+                            "time": "10/20/2023",
+                            "disptime": "10/20/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11252.23
+                        },
+                        {
+                            "dispPrice": 10862.81,
+                            "time": "10/23/2023",
+                            "disptime": "10/23/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10862.81
+                        },
+                        {
+                            "dispPrice": 10703.51,
+                            "time": "10/26/2023",
+                            "disptime": "10/26/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10703.51
+                        },
+                        {
+                            "dispPrice": 10980.28,
+                            "time": "10/27/2023",
+                            "disptime": "10/27/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10980.28
+                        },
+                        {
+                            "dispPrice": 10911.65,
+                            "time": "10/30/2023",
+                            "disptime": "10/30/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10911.65
+                        },
+                        {
+                            "dispPrice": 10928.04,
+                            "time": "10/31/2023",
+                            "disptime": "10/31/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10928.04
+                        },
+                        {
+                            "dispPrice": 10910.65,
+                            "time": "11/01/2023",
+                            "disptime": "11/01/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 10910.65
+                        },
+                        {
+                            "dispPrice": 11038.39,
+                            "time": "11/02/2023",
+                            "disptime": "11/02/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11038.39
+                        },
+                        {
+                            "dispPrice": 11035.25,
+                            "time": "11/03/2023",
+                            "disptime": "11/03/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11035.25
+                        },
+                        {
+                            "dispPrice": 11290.08,
+                            "time": "11/06/2023",
+                            "disptime": "11/06/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11290.08
+                        },
+                        {
+                            "dispPrice": 11394.17,
+                            "time": "11/07/2023",
+                            "disptime": "11/07/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11394.17
+                        },
+                        {
+                            "dispPrice": 11473.45,
+                            "time": "11/08/2023",
+                            "disptime": "11/08/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11473.45
+                        },
+                        {
+                            "dispPrice": 11492.5,
+                            "time": "11/09/2023",
+                            "disptime": "11/09/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11492.5
+                        },
+                        {
+                            "dispPrice": 11525.42,
+                            "time": "11/10/2023",
+                            "disptime": "11/10/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11525.42
+                        },
+                        {
+                            "dispPrice": 11762.82,
+                            "time": "11/12/2023",
+                            "disptime": "11/12/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11762.82
+                        },
+                        {
+                            "dispPrice": 11685.53,
+                            "time": "11/13/2023",
+                            "disptime": "11/13/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11685.53
+                        },
+                        {
+                            "dispPrice": 11772.22,
+                            "time": "11/15/2023",
+                            "disptime": "11/15/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11772.22
+                        },
+                        {
+                            "dispPrice": 11825.07,
+                            "time": "11/16/2023",
+                            "disptime": "11/16/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11825.07
+                        },
+                        {
+                            "dispPrice": 11865.51,
+                            "time": "11/17/2023",
+                            "disptime": "11/17/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11865.51
+                        },
+                        {
+                            "dispPrice": 11880.67,
+                            "time": "11/20/2023",
+                            "disptime": "11/20/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11880.67
+                        },
+                        {
+                            "dispPrice": 11937.62,
+                            "time": "11/21/2023",
+                            "disptime": "11/21/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11937.62
+                        },
+                        {
+                            "dispPrice": 11873.34,
+                            "time": "11/22/2023",
+                            "disptime": "11/22/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11873.34
+                        },
+                        {
+                            "dispPrice": 11959.71,
+                            "time": "11/23/2023",
+                            "disptime": "11/23/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11959.71
+                        },
+                        {
+                            "dispPrice": 12019.27,
+                            "time": "11/24/2023",
+                            "disptime": "11/24/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12019.27
+                        },
+                        {
+                            "dispPrice": 11947.95,
+                            "time": "11/28/2023",
+                            "disptime": "11/28/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11947.95
+                        },
+                        {
+                            "dispPrice": 11918.04,
+                            "time": "11/29/2023",
+                            "disptime": "11/29/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11918.04
+                        },
+                        {
+                            "dispPrice": 11966.72,
+                            "time": "11/30/2023",
+                            "disptime": "11/30/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11966.72
+                        },
+                        {
+                            "dispPrice": 11954.61,
+                            "time": "12/01/2023",
+                            "disptime": "12/01/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11954.61
+                        },
+                        {
+                            "dispPrice": 12001.53,
+                            "time": "12/04/2023",
+                            "disptime": "12/04/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12001.53
+                        },
+                        {
+                            "dispPrice": 11997.61,
+                            "time": "12/05/2023",
+                            "disptime": "12/05/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 11997.61
+                        },
+                        {
+                            "dispPrice": 12036.49,
+                            "time": "12/06/2023",
+                            "disptime": "12/06/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12036.49
+                        },
+                        {
+                            "dispPrice": 12088.56,
+                            "time": "12/07/2023",
+                            "disptime": "12/07/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12088.56
+                        },
+                        {
+                            "dispPrice": 12053.81,
+                            "time": "12/08/2023",
+                            "disptime": "12/08/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12053.81
+                        },
+                        {
+                            "dispPrice": 12228.22,
+                            "time": "12/11/2023",
+                            "disptime": "12/11/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12228.22
+                        },
+                        {
+                            "dispPrice": 12374.71,
+                            "time": "12/12/2023",
+                            "disptime": "12/12/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12374.71
+                        },
+                        {
+                            "dispPrice": 12488.77,
+                            "time": "12/13/2023",
+                            "disptime": "12/13/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12488.77
+                        },
+                        {
+                            "dispPrice": 12580.45,
+                            "time": "12/14/2023",
+                            "disptime": "12/14/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12580.45
+                        },
+                        {
+                            "dispPrice": 12595.16,
+                            "time": "12/15/2023",
+                            "disptime": "12/15/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12595.16
+                        },
+                        {
+                            "dispPrice": 12656.07,
+                            "time": "12/18/2023",
+                            "disptime": "12/18/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12656.07
+                        },
+                        {
+                            "dispPrice": 12641.11,
+                            "time": "12/19/2023",
+                            "disptime": "12/19/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12641.11
+                        },
+                        {
+                            "dispPrice": 12143.35,
+                            "time": "12/20/2023",
+                            "disptime": "12/20/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12143.35
+                        },
+                        {
+                            "dispPrice": 12358.88,
+                            "time": "12/21/2023",
+                            "disptime": "12/21/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12358.88
+                        },
+                        {
+                            "dispPrice": 12502.76,
+                            "time": "12/22/2023",
+                            "disptime": "12/22/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12502.76
+                        },
+                        {
+                            "dispPrice": 12437.35,
+                            "time": "12/26/2023",
+                            "disptime": "12/26/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12437.35
+                        },
+                        {
+                            "dispPrice": 12490.11,
+                            "time": "12/27/2023",
+                            "disptime": "12/27/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12490.11
+                        },
+                        {
+                            "dispPrice": 12424.25,
+                            "time": "12/28/2023",
+                            "disptime": "12/28/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12424.25
+                        },
+                        {
+                            "dispPrice": 12423.51,
+                            "time": "12/29/2023",
+                            "disptime": "12/29/2023",
+                            "segmentColor": "#3FC499",
+                            "y": 12423.51
+                        },
+                        {
+                            "dispPrice": 12467.16,
+                            "time": "01/01/2024",
+                            "disptime": "01/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12467.16
+                        },
+                        {
+                            "dispPrice": 12507.95,
+                            "time": "01/02/2024",
+                            "disptime": "01/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12507.95
+                        },
+                        {
+                            "dispPrice": 12599.13,
+                            "time": "01/03/2024",
+                            "disptime": "01/03/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12599.13
+                        },
+                        {
+                            "dispPrice": 12721.73,
+                            "time": "01/04/2024",
+                            "disptime": "01/04/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12721.73
+                        },
+                        {
+                            "dispPrice": 12749.76,
+                            "time": "01/05/2024",
+                            "disptime": "01/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12749.76
+                        },
+                        {
+                            "dispPrice": 12810.74,
+                            "time": "01/08/2024",
+                            "disptime": "01/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12810.74
+                        },
+                        {
+                            "dispPrice": 12885.59,
+                            "time": "01/09/2024",
+                            "disptime": "01/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12885.59
+                        },
+                        {
+                            "dispPrice": 12943.12,
+                            "time": "01/10/2024",
+                            "disptime": "01/10/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12943.12
+                        },
+                        {
+                            "dispPrice": 13045.94,
+                            "time": "01/11/2024",
+                            "disptime": "01/11/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13045.94
+                        },
+                        {
+                            "dispPrice": 13180.73,
+                            "time": "01/12/2024",
+                            "disptime": "01/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13180.73
+                        },
+                        {
+                            "dispPrice": 13245.51,
+                            "time": "01/15/2024",
+                            "disptime": "01/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13245.51
+                        },
+                        {
+                            "dispPrice": 13206.28,
+                            "time": "01/16/2024",
+                            "disptime": "01/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13206.28
+                        },
+                        {
+                            "dispPrice": 13074.75,
+                            "time": "01/17/2024",
+                            "disptime": "01/17/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13074.75
+                        },
+                        {
+                            "dispPrice": 13072.87,
+                            "time": "01/18/2024",
+                            "disptime": "01/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13072.87
+                        },
+                        {
+                            "dispPrice": 13246.22,
+                            "time": "01/19/2024",
+                            "disptime": "01/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13246.22
+                        },
+                        {
+                            "dispPrice": 13371.86,
+                            "time": "01/20/2024",
+                            "disptime": "01/20/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13371.86
+                        },
+                        {
+                            "dispPrice": 13201.16,
+                            "time": "01/23/2024",
+                            "disptime": "01/23/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13201.16
+                        },
+                        {
+                            "dispPrice": 13272.19,
+                            "time": "01/24/2024",
+                            "disptime": "01/24/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13272.19
+                        },
+                        {
+                            "dispPrice": 13393.8,
+                            "time": "01/25/2024",
+                            "disptime": "01/25/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13393.8
+                        },
+                        {
+                            "dispPrice": 13567.39,
+                            "time": "01/29/2024",
+                            "disptime": "01/29/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13567.39
+                        },
+                        {
+                            "dispPrice": 13525.79,
+                            "time": "01/30/2024",
+                            "disptime": "01/30/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13525.79
+                        },
+                        {
+                            "dispPrice": 13659.78,
+                            "time": "01/31/2024",
+                            "disptime": "01/31/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13659.78
+                        },
+                        {
+                            "dispPrice": 13706.4,
+                            "time": "02/01/2024",
+                            "disptime": "02/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13706.4
+                        },
+                        {
+                            "dispPrice": 13873.06,
+                            "time": "02/02/2024",
+                            "disptime": "02/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13873.06
+                        },
+                        {
+                            "dispPrice": 13968.29,
+                            "time": "02/05/2024",
+                            "disptime": "02/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13968.29
+                        },
+                        {
+                            "dispPrice": 14181.72,
+                            "time": "02/06/2024",
+                            "disptime": "02/06/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14181.72
+                        },
+                        {
+                            "dispPrice": 14160.71,
+                            "time": "02/07/2024",
+                            "disptime": "02/07/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14160.71
+                        },
+                        {
+                            "dispPrice": 14100.47,
+                            "time": "02/08/2024",
+                            "disptime": "02/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14100.47
+                        },
+                        {
+                            "dispPrice": 13955.92,
+                            "time": "02/09/2024",
+                            "disptime": "02/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13955.92
+                        },
+                        {
+                            "dispPrice": 13617.72,
+                            "time": "02/12/2024",
+                            "disptime": "02/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13617.72
+                        },
+                        {
+                            "dispPrice": 13437.35,
+                            "time": "02/13/2024",
+                            "disptime": "02/13/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13437.35
+                        },
+                        {
+                            "dispPrice": 13636.66,
+                            "time": "02/14/2024",
+                            "disptime": "02/14/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13636.66
+                        },
+                        {
+                            "dispPrice": 13834.09,
+                            "time": "02/15/2024",
+                            "disptime": "02/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13834.09
+                        },
+                        {
+                            "dispPrice": 13926.04,
+                            "time": "02/16/2024",
+                            "disptime": "02/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13926.04
+                        },
+                        {
+                            "dispPrice": 13999.6,
+                            "time": "02/19/2024",
+                            "disptime": "02/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13999.6
+                        },
+                        {
+                            "dispPrice": 14032.06,
+                            "time": "02/20/2024",
+                            "disptime": "02/20/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14032.06
+                        },
+                        {
+                            "dispPrice": 13865,
+                            "time": "02/21/2024",
+                            "disptime": "02/21/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13865
+                        },
+                        {
+                            "dispPrice": 13962.78,
+                            "time": "02/22/2024",
+                            "disptime": "02/22/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13962.78
+                        },
+                        {
+                            "dispPrice": 14079.45,
+                            "time": "02/23/2024",
+                            "disptime": "02/23/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14079.45
+                        },
+                        {
+                            "dispPrice": 13896.58,
+                            "time": "02/26/2024",
+                            "disptime": "02/26/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13896.58
+                        },
+                        {
+                            "dispPrice": 13890.79,
+                            "time": "02/27/2024",
+                            "disptime": "02/27/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13890.79
+                        },
+                        {
+                            "dispPrice": 13599.31,
+                            "time": "02/28/2024",
+                            "disptime": "02/28/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13599.31
+                        },
+                        {
+                            "dispPrice": 13665.9,
+                            "time": "02/29/2024",
+                            "disptime": "02/29/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13665.9
+                        },
+                        {
+                            "dispPrice": 13805.63,
+                            "time": "03/01/2024",
+                            "disptime": "03/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13805.63
+                        },
+                        {
+                            "dispPrice": 13964.2,
+                            "time": "03/02/2024",
+                            "disptime": "03/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13964.2
+                        },
+                        {
+                            "dispPrice": 13739.86,
+                            "time": "03/04/2024",
+                            "disptime": "03/04/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13739.86
+                        },
+                        {
+                            "dispPrice": 13536.08,
+                            "time": "03/05/2024",
+                            "disptime": "03/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13536.08
+                        },
+                        {
+                            "dispPrice": 13227.3,
+                            "time": "03/06/2024",
+                            "disptime": "03/06/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13227.3
+                        },
+                        {
+                            "dispPrice": 13423.64,
+                            "time": "03/07/2024",
+                            "disptime": "03/07/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13423.64
+                        },
+                        {
+                            "dispPrice": 13131.88,
+                            "time": "03/11/2024",
+                            "disptime": "03/11/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13131.88
+                        },
+                        {
+                            "dispPrice": 12750.42,
+                            "time": "03/12/2024",
+                            "disptime": "03/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12750.42
+                        },
+                        {
+                            "dispPrice": 12105.84,
+                            "time": "03/13/2024",
+                            "disptime": "03/13/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12105.84
+                        },
+                        {
+                            "dispPrice": 12514.05,
+                            "time": "03/14/2024",
+                            "disptime": "03/14/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12514.05
+                        },
+                        {
+                            "dispPrice": 12518.9,
+                            "time": "03/15/2024",
+                            "disptime": "03/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12518.9
+                        },
+                        {
+                            "dispPrice": 12668.4,
+                            "time": "03/18/2024",
+                            "disptime": "03/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12668.4
+                        },
+                        {
+                            "dispPrice": 12506.47,
+                            "time": "03/19/2024",
+                            "disptime": "03/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12506.47
+                        },
+                        {
+                            "dispPrice": 12454.5,
+                            "time": "03/20/2024",
+                            "disptime": "03/20/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12454.5
+                        },
+                        {
+                            "dispPrice": 12684.5,
+                            "time": "03/21/2024",
+                            "disptime": "03/21/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12684.5
+                        },
+                        {
+                            "dispPrice": 12895.49,
+                            "time": "03/22/2024",
+                            "disptime": "03/22/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12895.49
+                        },
+                        {
+                            "dispPrice": 12878.01,
+                            "time": "03/26/2024",
+                            "disptime": "03/26/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 12878.01
+                        },
+                        {
+                            "dispPrice": 13032.14,
+                            "time": "03/27/2024",
+                            "disptime": "03/27/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13032.14
+                        },
+                        {
+                            "dispPrice": 13052.94,
+                            "time": "03/28/2024",
+                            "disptime": "03/28/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13052.94
+                        },
+                        {
+                            "dispPrice": 13291.58,
+                            "time": "04/01/2024",
+                            "disptime": "04/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13291.58
+                        },
+                        {
+                            "dispPrice": 13511.41,
+                            "time": "04/02/2024",
+                            "disptime": "04/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13511.41
+                        },
+                        {
+                            "dispPrice": 13674.58,
+                            "time": "04/03/2024",
+                            "disptime": "04/03/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13674.58
+                        },
+                        {
+                            "dispPrice": 13768.43,
+                            "time": "04/04/2024",
+                            "disptime": "04/04/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13768.43
+                        },
+                        {
+                            "dispPrice": 14012.16,
+                            "time": "04/05/2024",
+                            "disptime": "04/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14012.16
+                        },
+                        {
+                            "dispPrice": 13928.85,
+                            "time": "04/08/2024",
+                            "disptime": "04/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13928.85
+                        },
+                        {
+                            "dispPrice": 13839.51,
+                            "time": "04/09/2024",
+                            "disptime": "04/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13839.51
+                        },
+                        {
+                            "dispPrice": 13840.69,
+                            "time": "04/10/2024",
+                            "disptime": "04/10/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13840.69
+                        },
+                        {
+                            "dispPrice": 13826.95,
+                            "time": "04/12/2024",
+                            "disptime": "04/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13826.95
+                        },
+                        {
+                            "dispPrice": 13531.24,
+                            "time": "04/15/2024",
+                            "disptime": "04/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13531.24
+                        },
+                        {
+                            "dispPrice": 13679.69,
+                            "time": "04/16/2024",
+                            "disptime": "04/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13679.69
+                        },
+                        {
+                            "dispPrice": 13830.97,
+                            "time": "04/18/2024",
+                            "disptime": "04/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13830.97
+                        },
+                        {
+                            "dispPrice": 13765.87,
+                            "time": "04/19/2024",
+                            "disptime": "04/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13765.87
+                        },
+                        {
+                            "dispPrice": 13958.82,
+                            "time": "04/22/2024",
+                            "disptime": "04/22/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13958.82
+                        },
+                        {
+                            "dispPrice": 14124.48,
+                            "time": "04/23/2024",
+                            "disptime": "04/23/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14124.48
+                        },
+                        {
+                            "dispPrice": 14182.71,
+                            "time": "04/24/2024",
+                            "disptime": "04/24/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14182.71
+                        },
+                        {
+                            "dispPrice": 14156,
+                            "time": "04/25/2024",
+                            "disptime": "04/25/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14156
+                        },
+                        {
+                            "dispPrice": 14188.85,
+                            "time": "04/26/2024",
+                            "disptime": "04/26/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14188.85
+                        },
+                        {
+                            "dispPrice": 14286.47,
+                            "time": "04/29/2024",
+                            "disptime": "04/29/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14286.47
+                        },
+                        {
+                            "dispPrice": 14252.57,
+                            "time": "04/30/2024",
+                            "disptime": "04/30/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14252.57
+                        },
+                        {
+                            "dispPrice": 14307.44,
+                            "time": "05/02/2024",
+                            "disptime": "05/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14307.44
+                        },
+                        {
+                            "dispPrice": 14253.08,
+                            "time": "05/03/2024",
+                            "disptime": "05/03/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14253.08
+                        },
+                        {
+                            "dispPrice": 14074.12,
+                            "time": "05/06/2024",
+                            "disptime": "05/06/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14074.12
+                        },
+                        {
+                            "dispPrice": 13843.88,
+                            "time": "05/07/2024",
+                            "disptime": "05/07/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13843.88
+                        },
+                        {
+                            "dispPrice": 13891.14,
+                            "time": "05/08/2024",
+                            "disptime": "05/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13891.14
+                        },
+                        {
+                            "dispPrice": 13652.73,
+                            "time": "05/09/2024",
+                            "disptime": "05/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13652.73
+                        },
+                        {
+                            "dispPrice": 13752.05,
+                            "time": "05/10/2024",
+                            "disptime": "05/10/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13752.05
+                        },
+                        {
+                            "dispPrice": 13666.07,
+                            "time": "05/13/2024",
+                            "disptime": "05/13/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13666.07
+                        },
+                        {
+                            "dispPrice": 13973.79,
+                            "time": "05/14/2024",
+                            "disptime": "05/14/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13973.79
+                        },
+                        {
+                            "dispPrice": 14007.12,
+                            "time": "05/15/2024",
+                            "disptime": "05/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14007.12
+                        },
+                        {
+                            "dispPrice": 13973.39,
+                            "time": "05/16/2024",
+                            "disptime": "05/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13973.39
+                        },
+                        {
+                            "dispPrice": 14070.36,
+                            "time": "05/17/2024",
+                            "disptime": "05/17/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14070.36
+                        },
+                        {
+                            "dispPrice": 14178.05,
+                            "time": "05/18/2024",
+                            "disptime": "05/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14178.05
+                        },
+                        {
+                            "dispPrice": 14136.35,
+                            "time": "05/21/2024",
+                            "disptime": "05/21/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14136.35
+                        },
+                        {
+                            "dispPrice": 14160.69,
+                            "time": "05/22/2024",
+                            "disptime": "05/22/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14160.69
+                        },
+                        {
+                            "dispPrice": 14121.07,
+                            "time": "05/23/2024",
+                            "disptime": "05/23/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14121.07
+                        },
+                        {
+                            "dispPrice": 14105.7,
+                            "time": "05/24/2024",
+                            "disptime": "05/24/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14105.7
+                        },
+                        {
+                            "dispPrice": 14148.1,
+                            "time": "05/27/2024",
+                            "disptime": "05/27/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14148.1
+                        },
+                        {
+                            "dispPrice": 13967.69,
+                            "time": "05/28/2024",
+                            "disptime": "05/28/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13967.69
+                        },
+                        {
+                            "dispPrice": 14063.24,
+                            "time": "05/29/2024",
+                            "disptime": "05/29/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14063.24
+                        },
+                        {
+                            "dispPrice": 13899.9,
+                            "time": "05/30/2024",
+                            "disptime": "05/30/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13899.9
+                        },
+                        {
+                            "dispPrice": 13999.96,
+                            "time": "05/31/2024",
+                            "disptime": "05/31/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13999.96
+                        },
+                        {
+                            "dispPrice": 14256.3,
+                            "time": "06/03/2024",
+                            "disptime": "06/03/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14256.3
+                        },
+                        {
+                            "dispPrice": 13244.24,
+                            "time": "06/04/2024",
+                            "disptime": "06/04/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13244.24
+                        },
+                        {
+                            "dispPrice": 13677.2,
+                            "time": "06/05/2024",
+                            "disptime": "06/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 13677.2
+                        },
+                        {
+                            "dispPrice": 14078.97,
+                            "time": "06/06/2024",
+                            "disptime": "06/06/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14078.97
+                        },
+                        {
+                            "dispPrice": 14349.48,
+                            "time": "06/07/2024",
+                            "disptime": "06/07/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14349.48
+                        },
+                        {
+                            "dispPrice": 14560.92,
+                            "time": "06/11/2024",
+                            "disptime": "06/11/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14560.92
+                        },
+                        {
+                            "dispPrice": 14664.6,
+                            "time": "06/12/2024",
+                            "disptime": "06/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14664.6
+                        },
+                        {
+                            "dispPrice": 14728.15,
+                            "time": "06/13/2024",
+                            "disptime": "06/13/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14728.15
+                        },
+                        {
+                            "dispPrice": 14848.91,
+                            "time": "06/14/2024",
+                            "disptime": "06/14/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 14848.91
+                        },
+                        {
+                            "dispPrice": 15077.19,
+                            "time": "06/18/2024",
+                            "disptime": "06/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15077.19
+                        },
+                        {
+                            "dispPrice": 15087.62,
+                            "time": "06/19/2024",
+                            "disptime": "06/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15087.62
+                        },
+                        {
+                            "dispPrice": 15036.38,
+                            "time": "06/20/2024",
+                            "disptime": "06/20/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15036.38
+                        },
+                        {
+                            "dispPrice": 15142.11,
+                            "time": "06/21/2024",
+                            "disptime": "06/21/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15142.11
+                        },
+                        {
+                            "dispPrice": 15163.01,
+                            "time": "06/24/2024",
+                            "disptime": "06/24/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15163.01
+                        },
+                        {
+                            "dispPrice": 15179.65,
+                            "time": "06/25/2024",
+                            "disptime": "06/25/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15179.65
+                        },
+                        {
+                            "dispPrice": 15290.36,
+                            "time": "06/26/2024",
+                            "disptime": "06/26/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15290.36
+                        },
+                        {
+                            "dispPrice": 15247.86,
+                            "time": "06/27/2024",
+                            "disptime": "06/27/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15247.86
+                        },
+                        {
+                            "dispPrice": 15236.95,
+                            "time": "06/28/2024",
+                            "disptime": "06/28/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15236.95
+                        },
+                        {
+                            "dispPrice": 15500.2,
+                            "time": "07/01/2024",
+                            "disptime": "07/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15500.2
+                        },
+                        {
+                            "dispPrice": 15527.47,
+                            "time": "07/02/2024",
+                            "disptime": "07/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15527.47
+                        },
+                        {
+                            "dispPrice": 15822.06,
+                            "time": "07/03/2024",
+                            "disptime": "07/03/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15822.06
+                        },
+                        {
+                            "dispPrice": 15993.49,
+                            "time": "07/04/2024",
+                            "disptime": "07/04/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15993.49
+                        },
+                        {
+                            "dispPrice": 16115.98,
+                            "time": "07/05/2024",
+                            "disptime": "07/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16115.98
+                        },
+                        {
+                            "dispPrice": 16182.43,
+                            "time": "07/08/2024",
+                            "disptime": "07/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16182.43
+                        },
+                        {
+                            "dispPrice": 16077.99,
+                            "time": "07/09/2024",
+                            "disptime": "07/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16077.99
+                        },
+                        {
+                            "dispPrice": 16082.76,
+                            "time": "07/10/2024",
+                            "disptime": "07/10/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16082.76
+                        },
+                        {
+                            "dispPrice": 16351.16,
+                            "time": "07/11/2024",
+                            "disptime": "07/11/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16351.16
+                        },
+                        {
+                            "dispPrice": 16340.41,
+                            "time": "07/12/2024",
+                            "disptime": "07/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16340.41
+                        },
+                        {
+                            "dispPrice": 16374.6,
+                            "time": "07/15/2024",
+                            "disptime": "07/15/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16374.6
+                        },
+                        {
+                            "dispPrice": 16299.48,
+                            "time": "07/16/2024",
+                            "disptime": "07/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16299.48
+                        },
+                        {
+                            "dispPrice": 16117.42,
+                            "time": "07/18/2024",
+                            "disptime": "07/18/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16117.42
+                        },
+                        {
+                            "dispPrice": 15918.33,
+                            "time": "07/19/2024",
+                            "disptime": "07/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15918.33
+                        },
+                        {
+                            "dispPrice": 15944.63,
+                            "time": "07/22/2024",
+                            "disptime": "07/22/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15944.63
+                        },
+                        {
+                            "dispPrice": 15952.75,
+                            "time": "07/23/2024",
+                            "disptime": "07/23/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15952.75
+                        },
+                        {
+                            "dispPrice": 16274.69,
+                            "time": "07/24/2024",
+                            "disptime": "07/24/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16274.69
+                        },
+                        {
+                            "dispPrice": 16185.24,
+                            "time": "07/25/2024",
+                            "disptime": "07/25/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16185.24
+                        },
+                        {
+                            "dispPrice": 16293.18,
+                            "time": "07/26/2024",
+                            "disptime": "07/26/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16293.18
+                        },
+                        {
+                            "dispPrice": 16426.84,
+                            "time": "07/29/2024",
+                            "disptime": "07/29/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16426.84
+                        },
+                        {
+                            "dispPrice": 16415.63,
+                            "time": "07/30/2024",
+                            "disptime": "07/30/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16415.63
+                        },
+                        {
+                            "dispPrice": 16341.76,
+                            "time": "07/31/2024",
+                            "disptime": "07/31/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16341.76
+                        },
+                        {
+                            "dispPrice": 16180.02,
+                            "time": "08/01/2024",
+                            "disptime": "08/01/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16180.02
+                        },
+                        {
+                            "dispPrice": 16088.27,
+                            "time": "08/02/2024",
+                            "disptime": "08/02/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16088.27
+                        },
+                        {
+                            "dispPrice": 15496.79,
+                            "time": "08/05/2024",
+                            "disptime": "08/05/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15496.79
+                        },
+                        {
+                            "dispPrice": 15356.45,
+                            "time": "08/06/2024",
+                            "disptime": "08/06/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15356.45
+                        },
+                        {
+                            "dispPrice": 15807.32,
+                            "time": "08/07/2024",
+                            "disptime": "08/07/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15807.32
+                        },
+                        {
+                            "dispPrice": 15844.24,
+                            "time": "08/08/2024",
+                            "disptime": "08/08/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15844.24
+                        },
+                        {
+                            "dispPrice": 15839.91,
+                            "time": "08/09/2024",
+                            "disptime": "08/09/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15839.91
+                        },
+                        {
+                            "dispPrice": 15892.08,
+                            "time": "08/12/2024",
+                            "disptime": "08/12/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15892.08
+                        },
+                        {
+                            "dispPrice": 15865.89,
+                            "time": "08/13/2024",
+                            "disptime": "08/13/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15865.89
+                        }
+                    ]
+                },
+                "High": 16426.84,
+                "Low": 10234.62
+            }
+        ]
+    }
+}

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IGraphData } from '../../models/graphData';
-import { catchError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 const defaultGraphDayPath = 'assets/graphDataDay.json';
 const defaultGraphWeekPath = 'assets/graphDataWeek.json';
@@ -12,52 +12,30 @@ const defaultGraph3YearsPath = 'assets/graphDataDay.json';
 @Injectable({
   providedIn: 'root',
 })
-
 export class GraphDataService {
+  // Define default paths as constants
+  private readonly paths = {
+    day: 'assets/graphDataDay.json',
+    week: 'assets/graphDataWeek.json',
+    month: 'assets/graphDataMonth.json',
+    YTD: 'assets/graphDataYTD.json',
+    year: 'assets/graphDataYear.json',
+    threeYears: 'assets/graphData3Years.json',
+  };
+
   constructor(private http: HttpClient) {}
 
-  getGraphDay(jsonPath: string = defaultGraphDayPath) {
-    return this.http.get<IGraphData>(jsonPath).pipe(
+  // Method to get graph data based on type
+  getGraphData(
+    type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
+  ): Observable<IGraphData> {
+    const path = this.paths[type] || this.paths.day; // Default to 'day' if type is not found
+
+    return this.http.get<IGraphData>(path).pipe(
       catchError((err) => {
         console.error('Error fetching graph data', err);
-        throw err;
+        return throwError(err); // Return an observable error
       })
     );
   }
-
-  getGraphWeek(jsonPath: string = defaultGraphWeekPath) {
-    return this.http.get<IGraphData>(jsonPath).pipe(
-      catchError((err) => {
-        console.error('Error fetching graph data', err);
-        throw err;
-      })
-    );
-  }
-
-  getGraphMonth(jsonPath: string = defaultGraphMonthPath) {
-    return this.http.get<IGraphData>(jsonPath).pipe(
-      catchError((err) => {
-        console.error('Error fetching graph data', err);
-        throw err;
-      })
-    );
-  }
-
-  // getGraphYear(jsonPath: string = defaultGraphDayPath) {
-  //   return this.http.get<IGraphData>(jsonPath).pipe(
-  //     catchError((err) => {
-  //       console.error('Error fetching graph data', err);
-  //       throw err;
-  //     })
-  //   );
-  // }
-
-  // getGraph3Years(jsonPath: string = defaultGraphDayPath) {
-  //   return this.http.get<IGraphData>(jsonPath).pipe(
-  //     catchError((err) => {
-  //       console.error('Error fetching graph data', err);
-  //       throw err;
-  //     })
-  //   );
-  // }
 }

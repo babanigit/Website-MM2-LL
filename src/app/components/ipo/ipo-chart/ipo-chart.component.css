@@ -53,4 +53,13 @@
     border-radius: 50%;
     top: -4px; /* Adjust based on line height */
   }
+  /* Image styles */
+.image-class {
+  position: absolute;
+  width: 12px; /* Adjust width as needed */
+  height: 12px; /* Adjust height as needed */
+  top: -8px; /* Adjust based on line height */
+  left: calc(50% - 12px); /* Center the image horizontally */
+  /* Add any additional styling as needed */
+}
   
