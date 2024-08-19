@@ -127,4 +127,9 @@
 
 
 
+a:hover span {
+  color: blue; /* Changes color on hover */
+}
+
+
   

@@ -3,7 +3,7 @@
   class="carousel slide"
   data-bs-ride="carousel"
   data-bs-interval="3000"
-  *ngIf="ipoList"
+  *ngIf="ipoList!.data!.open.length"
 >
   <!-- Indicators -->
   <ol class="carousel-indicators">

@@ -99,7 +99,7 @@ export class JsonDataService {
   getIPOList(jsonPath: string = defaultIPOListPath) {
     return this.http.get<I_IPOList>(jsonPath).pipe(
 
-      // delay(3000),
+      delay(1200),
       catchError((err) => {
         console.error('Error fetching ipoList data', err);
         throw err;
