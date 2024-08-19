@@ -1,212 +1,223 @@
-<div *ngIf="loading$ | async; else content">
-  <app-loading-popup />
-  <!-- You can also use a spinner or loading icon here -->
-</div>
+<!-- main start -->
+<h3 style="margin-left: 120px">BSE IPO INDEX</h3>
 
-<ng-template #content>
-  <div *ngIf="errorMessage; else chartContent">
-    <p class="error-message">{{ errorMessage }}</p>
+<div class="container" style="padding: 3%">
+  <!-- buttons -->
+  <div
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <!-- info -->
+    <span
+      style="
+        /* width: 100%; */
+        /* text-align: right; */
+        justify-content: left;
+        display: flex;
+      "
+    >
+      <p style="color: gray; font-weight: 400; width: 120px">BSE IPO INDEX</p>
+      <p
+        style="font-size: x-large; margin-left: 1%; font-weight: 500; margin: 0"
+      >
+        {{ graphData.data.graph_indices[0].cmp || "N/A" }}
+      </p>
+    </span>
+
+    <!-- buttons -->
+    <span
+      style="
+        display: flex;
+        gap: 24px; /* Increase gap between buttons */
+        justify-content: center; /* Center buttons horizontally */
+        padding: 10px; /* Add padding for spacing */
+        box-sizing: border-box; /* Include padding and border in dimensions */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+      "
+    >
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr == 'day' }"
+          (click)="onGraphButtonClick('day')"
+        >
+          1D
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr === 'week' }"
+          (click)="onGraphButtonClick('week')"
+        >
+          1W
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr === 'month' }"
+          (click)="onGraphButtonClick('month')"
+        >
+          1M
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr === 'YTD' }"
+          (click)="onGraphButtonClick('YTD')"
+        >
+          YTD
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr === 'year' }"
+          (click)="onGraphButtonClick('year')"
+        >
+          1Y
+        </button>
+      </span>
+
+      <span>
+        <button
+          type="button"
+          [ngClass]="{ 'active-button': strr === 'threeYears' }"
+          (click)="onGraphButtonClick('threeYears')"
+        >
+          3Y
+        </button>
+      </span>
+    </span>
   </div>
 
-  <ng-template #chartContent>
-    <!-- main start -->
-    <h3 style="margin-left: 120px">BSE IPO INDEX</h3>
-    <div class="container" style="padding: 3%">
+  <!-- data  -->
+  <div
+    *ngIf="graphData!.data!"
+    style="
+      display: flex;
+      justify-content: space-between;
+      padding: 3% 5%;
+      /* padding-top: 2%; */
+    "
+  >
+    <span style="display: flex; gap: 17%; font-size: small">
+      <span>
+        <div>Top Gainer</div>
+        <div style="color: green">
+          {{ graphData.data.graph_indices[0].TOP_GAINER.name || "N/A" }}
+        </div>
+      </span>
+      <span>
+        <div>Top Loser</div>
+        <div style="color: red">
+          {{ graphData.data.graph_indices[0].TOP_LOSER.name || "N/A" }}
+        </div>
+      </span>
+      <span>
+        <div>ADVANCES</div>
+        <div style="color: green">
+          {{ graphData.data.graph_indices[0].ADVANCES }} Stocks
+        </div>
+      </span>
+      <span>
+        <div>DECLINES</div>
+        <div style="color: red">
+          {{ graphData.data.graph_indices[0].DECLINES }} Stocks
+        </div>
+      </span>
+      <span>
+        <div>NO CHANGE</div>
+        <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
+      </span>
+    </span>
+
+    <span *ngIf="strr === 'day'" style="width: 30%">
       <div
         style="
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          font-size: small;
+          margin-bottom: 2%;
         "
       >
-        <!-- info -->
-        <span
-          style="
-            /* width: 100%; */
-            /* text-align: right; */
-            justify-content: left;
-            display: flex;
-          "
-        >
-          <p style="color: gray; font-weight: 400; width: 120px">
-            BSE IPO INDEX
-          </p>
-          <p
-            style="
-              font-size: x-large;
-              margin-left: 1%;
-              font-weight: 500;
-              margin: 0;
-            "
-          >
-            {{ graphData.data.graph_indices[0].cmp || "N/A" }}
-          </p>
-        </span>
+        <span> 52 Wk low </span>
+        <span> 52 Wk high </span>
+      </div>
 
-        <!-- buttons -->
-        <span
+      <!-- line indicater -->
+      <div class="line-container">
+        <div class="line">
+          <div class="segment red"></div>
+          <div class="segment orange"></div>
+          <div class="segment green"></div>
+        </div>
+
+        <!-- image instead of dot -->
+        <img
+          *ngIf="graphData!"
+          [src]="'https://i.marketsmojo.com/graph_arrow.png'"
+          [ngStyle]="getDotProperties(graphData)"
+          alt="Graph Image"
+          class="image-class"
+        />
+
+        <div
           style="
             display: flex;
-            gap: 24px; /* Increase gap between buttons */
-            justify-content: center; /* Center buttons horizontally */
-            padding: 10px; /* Add padding for spacing */
-            box-sizing: border-box; /* Include padding and border in dimensions */
-            flex-wrap: wrap; /* Allow wrapping if necessary */
+            justify-content: space-between;
+            font-size: small;
+            margin-bottom: 2%;
           "
         >
           <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr == 'day' }"
-              (click)="onGraphButtonClick('day')"
-            >
-              1D
-            </button>
+            {{ graphData.data.graph_indices[0].WEEK_LOW_52 }}
           </span>
-
           <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr === 'week' }"
-              (click)="onGraphButtonClick('week')"
-            >
-              1W
-            </button>
+            {{ graphData.data.graph_indices[0].WEEK_HIGH_52 }}
           </span>
-
-          <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr === 'month' }"
-              (click)="onGraphButtonClick('month')"
-            >
-              1M
-            </button>
-          </span>
-
-          <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr === 'YTD' }"
-              (click)="onGraphButtonClick('YTD')"
-            >
-              YTD
-            </button>
-          </span>
-
-          <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr === 'year' }"
-              (click)="onGraphButtonClick('year')"
-            >
-              1Y
-            </button>
-          </span>
-
-          <span>
-            <button
-              type="button"
-              [ngClass]="{ 'active-button': strr === 'threeYears' }"
-              (click)="onGraphButtonClick('threeYears')"
-            >
-              3Y
-            </button>
-          </span>
-        </span>
+        </div>
       </div>
+    </span>
+  </div>
 
-      <div
-        *ngIf="graphData!.data!"
-        style="
-          display: flex;
-          justify-content: space-between;
-          padding: 3% 5%;
-          /* padding-top: 2%; */
-        "
-      >
-        <span style="display: flex; gap: 17%; font-size: small">
-          <span>
-            <div>Top Gainer</div>
-            <div style="color: green">
-              {{ graphData.data.graph_indices[0].TOP_GAINER.name || "N/A" }}
-            </div>
-          </span>
-          <span>
-            <div>Top Loser</div>
-            <div style="color: red">
-              {{ graphData.data.graph_indices[0].TOP_LOSER.name || "N/A" }}
-            </div>
-          </span>
-          <span>
-            <div>ADVANCES</div>
-            <div style="color: green">
-              {{ graphData.data.graph_indices[0].ADVANCES }} Stocks
-            </div>
-          </span>
-          <span>
-            <div>DECLINES</div>
-            <div style="color: red">
-              {{ graphData.data.graph_indices[0].DECLINES }} Stocks
-            </div>
-          </span>
-          <span>
-            <div>NO CHANGE</div>
-            <div>{{ graphData.data.graph_indices[0].NO_CHANGE }} Stocks</div>
-          </span>
-        </span>
+  <!-- hehhe  -->
 
-        <span *ngIf="strr === 'day'" style="width: 30%">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              font-size: small;
-              margin-bottom: 2%;
-            "
-          >
-            <span> 52 Wk low </span>
-            <span> 52 Wk high </span>
-          </div>
-
-          <!-- line indicater -->
-          <div class="line-container">
-            <div class="line">
-              <div class="segment red"></div>
-              <div class="segment orange"></div>
-              <div class="segment green"></div>
-            </div>
-
-            <!-- image instead of dot -->
-            <img
-              *ngIf="graphData!"
-              [src]="'https://i.marketsmojo.com/graph_arrow.png'"
-              [ngStyle]="getDotProperties(graphData)"
-              alt="Graph Image"
-              class="image-class"
-            />
-
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                font-size: small;
-                margin-bottom: 2%;
-              "
-            >
-              <span>
-                {{ graphData.data.graph_indices[0].WEEK_LOW_52 }}
-              </span>
-              <span>
-                {{ graphData.data.graph_indices[0].WEEK_HIGH_52 }}
-              </span>
-            </div>
-          </div>
-        </span>
-      </div>
-
-      <div [chart]="areaChart"></div>
+  <div *ngIf="loading$ | async; else content">
+    <div
+      style="
+        height: 300px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+      "
+    >
+      Loading the Graph...
     </div>
-    <!-- main end -->
+    <!-- <app-loading-popup /> -->
+    <!-- You can also use a spinner or loading icon here -->
+  </div>
+
+  <ng-template #content>
+
+    <div *ngIf="errorMessage; else chartContent">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <ng-template #chartContent>
+      
+      <!-- graph -->
+      <div [chart]="areaChart"></div>
+
+    </ng-template>
   </ng-template>
-</ng-template>
+
+  <!-- hehhe -->
+</div>
+<!-- main end -->
