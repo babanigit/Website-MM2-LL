@@ -7,7 +7,7 @@ import { GraphDataService } from '../../../services/ipo/graph-data.service';
 import { CommonModule } from '@angular/common';
 import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.service';
 import { Observable } from 'rxjs';
-import { LoadingPopupComponent } from "../../loading-popup/loading-popup.component";
+import { LoadingPopupComponent } from '../../loading-popup/loading-popup.component';
 
 @Component({
   selector: 'app-ipo-chart',
@@ -17,7 +17,7 @@ import { LoadingPopupComponent } from "../../loading-popup/loading-popup.compone
   imports: [ChartModule, CommonModule, LoadingPopupComponent],
 })
 export class IpoChartComponent implements OnInit {
-  graphData: IGraphData = {} as IGraphData; // Initialize with an empty object
+  graphData: IGraphData | undefined; // Initialize with an empty object
 
   strr: string = 'day'; // Default value
   areaChart: Chart = new Chart({}); // Initialize with an empty chart
@@ -27,7 +27,7 @@ export class IpoChartComponent implements OnInit {
   dotPositions: Map<any, string> = new Map();
   dotColors: Map<any, string> = new Map();
 
-  loading$: Observable<boolean> = this.serv.loading$ 
+  loading$: Observable<boolean> = this.serv.loading$;
   error$: Observable<string | null> = this.serv.error$;
   errorMessage: string | null = null;
 
@@ -43,19 +43,17 @@ export class IpoChartComponent implements OnInit {
   fetchGraphData(
     type: 'day' | 'week' | 'month' | 'YTD' | 'year' | 'threeYears'
   ) {
-  
     this.serv.getGraphData(type).subscribe({
       next: (res: IGraphData) => {
         this.graphData = res;
         this.updateChart(); // Initialize the chart based on default value
         this.errorMessage = null; // Clear previous errors
       },
-      error: (err) => { 
-        this.errorMessage = 'Failed to load data. Please try again later.' ;
+      error: (err) => {
+        this.errorMessage = 'Failed to load data. Please try again later.';
         console.error('Error:', err);
-      }
+      },
     });
-
   }
 
   onGraphButtonClick(
@@ -80,7 +78,7 @@ export class IpoChartComponent implements OnInit {
   }
 
   updateChart() {
-    const dataPoints = this.extractDataPoints(this.graphData);
+    const dataPoints = this.extractDataPoints(this.graphData!);
     let minY: number;
     let maxY: number;
 
@@ -91,7 +89,7 @@ export class IpoChartComponent implements OnInit {
     minY = Math.min(...dataPoints.map(([_, y]) => y));
     maxY = Math.max(...dataPoints.map(([_, y]) => y));
 
-    const previousClose = this.graphData.data.graph_indices[0].PreviousClose;
+    const previousClose = this.graphData!.data.graph_indices[0].PreviousClose;
 
     // Initialize segments
     const abovePreviousClose: [number, number][] = [];
@@ -169,12 +167,17 @@ export class IpoChartComponent implements OnInit {
         enabled: false,
       },
       xAxis: {
+      
         type: 'datetime',
         tickLength: 0,
         labels: {
           enabled: false,
         },
         gridLineWidth: 0,
+        title: {
+          text: null, // Ensure x-axis title is removed
+        },
+        
       },
       yAxis: {
         title: {
@@ -255,12 +258,10 @@ export class IpoChartComponent implements OnInit {
     });
   }
 
-  
   getDotProperties(hero: IGraphData) {
     return this.dot.getDotPropertiesService(
       hero.data.graph_indices[0].WEEK_POINTER_52,
       this.maxValue
     );
   }
-
 }

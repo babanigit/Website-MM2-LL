@@ -1,7 +1,7 @@
 <!-- main start -->
 <h3 style="margin-left: 120px">BSE IPO INDEX</h3>
 
-<div class="container" style="padding: 3%">
+<div *ngIf="graphData" class="container" style="padding: 3%">
   <!-- buttons -->
   <div
     style="display: flex; justify-content: space-between; align-items: center"
@@ -98,7 +98,7 @@
 
   <!-- data  -->
   <div
-    *ngIf="graphData!.data!"
+    *ngIf="graphData.data"
     style="
       display: flex;
       justify-content: space-between;
@@ -205,16 +205,13 @@
   </div>
 
   <ng-template #content>
-
     <div *ngIf="errorMessage; else chartContent">
       <p class="error-message">{{ errorMessage }}</p>
     </div>
 
     <ng-template #chartContent>
-      
       <!-- graph -->
       <div [chart]="areaChart"></div>
-
     </ng-template>
   </ng-template>
 

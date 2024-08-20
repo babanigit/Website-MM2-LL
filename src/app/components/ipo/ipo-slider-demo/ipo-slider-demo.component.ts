@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class IpoSliderDemoComponent implements OnInit {
-  ipoList: I_IPOList = {} as I_IPOList;
+  ipoList: I_IPOList|undefined;
 
   maxValue = 200;
 
