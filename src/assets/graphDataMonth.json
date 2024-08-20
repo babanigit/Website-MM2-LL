@@ -5,130 +5,102 @@
         "graph_indices": [
             {
                 "name": "BSEIPO",
-                "cmp": "15,863.06",
-                "chg": "-477.35",
-                "chgp": "-2.92%",
-                "chgp_val": "-2.92",
-                "dir": -1,
-                "dt": "2024-08-13",
+                "cmp": "16,110.84",
+                "chg": "192.51",
+                "chgp": "1.21%",
+                "chgp_val": "1.21",
+                "dir": 1,
+                "dt": "2024-08-20",
                 "IndexName": "BSEIPO",
-                "CurrentPrice": 15863.06,
+                "CurrentPrice": 16110.84,
                 "Close": 0,
-                "Volatility": 15863.06,
-                "PreviousClose": 16340.41,
+                "Volatility": 16110.84,
+                "PreviousClose": 15918.33,
                 "PreviousClosePerc": {
-                    "D1": "-0.18%",
+                    "D1": "-0.27%",
                     "D1_dir": -1,
-                    "W1": "3.30%",
+                    "W1": "3.07%",
                     "W1_dir": 1,
-                    "M1": "-2.92%",
-                    "M1_dir": -1,
-                    "YTD": "27.69%",
+                    "M1": "1.21%",
+                    "M1_dir": 1,
+                    "YTD": "29.68%",
                     "YTD_dir": 1,
-                    "Y1": "53.64%",
+                    "Y1": "56.28%",
                     "Y1_dir": 1,
-                    "Y3": "25.03%",
+                    "Y3": "30.70%",
                     "Y3_dir": 1,
-                    "Y5": "229.04%",
+                    "Y5": "233.40%",
                     "Y5_dir": 1,
-                    "Y10": "599.59%",
+                    "Y10": "580.80%",
                     "Y10_dir": 1
                 },
                 "TOP_GAINER": {
-                    "name": "Platinum Industr",
-                    "cmp": "365.30",
-                    "chg": "127.80",
-                    "chgp": "53.81",
-                    "high": "398.15",
-                    "low": "167.40",
+                    "name": "J.G.Chemicals",
+                    "cmp": "369.00",
+                    "chg": "124.00",
+                    "chgp": "50.61",
+                    "high": "374.10",
+                    "low": "171.00",
                     "q_clr": "orange",
-                    "v_clr": "red",
-                    "f_clr": "green",
-                    "sid": 10039181,
+                    "v_clr": "orange",
+                    "f_clr": "orange",
+                    "sid": 10039192,
                     "dir": 1
                 },
                 "TOP_LOSER": {
                     "name": "Valiant Laborato",
-                    "cmp": "119.15",
-                    "chg": "-32.35",
-                    "chgp": "-21.35",
+                    "cmp": "109.65",
+                    "chg": "-24.35",
+                    "chgp": "-18.17",
                     "high": "226.95",
-                    "low": "115.15",
+                    "low": "99.90",
                     "q_clr": "orange",
                     "v_clr": "red",
                     "f_clr": "red",
                     "sid": 10039033,
                     "dir": -1
                 },
-                "ADVANCES": 31,
-                "DECLINES": 49,
-                "NO_CHANGE": 3,
+                "ADVANCES": 46,
+                "DECLINES": 34,
+                "NO_CHANGE": 6,
                 "WEEK_HIGH_52": "16,592.70",
-                "WEEK_LOW_52": "10,179.06",
-                "WEEK_POINTER_52": 88.62,
+                "WEEK_LOW_52": "10,250.69",
+                "WEEK_POINTER_52": 92.4,
                 "graph": {
                     "IndiceArray": [
-                        {
-                            "dispPrice": 16374.6,
-                            "time": "07/15/2024",
-                            "disptime": "07/15/2024",
-                            "segmentColor": "#3FC499",
-                            "y": 16374.6
-                        },
-                        {
-                            "dispPrice": 16299.48,
-                            "time": "07/16/2024",
-                            "disptime": "07/16/2024",
-                            "segmentColor": "#DD7470",
-                            "y": 16299.48
-                        },
-                        {
-                            "dispPrice": 16117.42,
-                            "time": "07/18/2024",
-                            "disptime": "07/18/2024",
-                            "segmentColor": "#DD7470",
-                            "y": 16117.42
-                        },
-                        {
-                            "dispPrice": 15918.33,
-                            "time": "07/19/2024",
-                            "disptime": "07/19/2024",
-                            "segmentColor": "#DD7470",
-                            "y": 15918.33
-                        },
                         {
                             "dispPrice": 15944.63,
                             "time": "07/22/2024",
                             "disptime": "07/22/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 15944.63
                         },
                         {
                             "dispPrice": 15952.75,
                             "time": "07/23/2024",
                             "disptime": "07/23/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 15952.75
                         },
                         {
                             "dispPrice": 16274.69,
                             "time": "07/24/2024",
                             "disptime": "07/24/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 16274.69
                         },
                         {
                             "dispPrice": 16185.24,
                             "time": "07/25/2024",
                             "disptime": "07/25/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 16185.24
                         },
                         {
                             "dispPrice": 16293.18,
                             "time": "07/26/2024",
                             "disptime": "07/26/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 16293.18
                         },
                         {
@@ -156,14 +128,14 @@
                             "dispPrice": 16180.02,
                             "time": "08/01/2024",
                             "disptime": "08/01/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 16180.02
                         },
                         {
                             "dispPrice": 16088.27,
                             "time": "08/02/2024",
                             "disptime": "08/02/2024",
-                            "segmentColor": "#DD7470",
+                            "segmentColor": "#3FC499",
                             "y": 16088.27
                         },
                         {
@@ -209,11 +181,39 @@
                             "y": 15892.08
                         },
                         {
-                            "dispPrice": 15863.06,
+                            "dispPrice": 15630.32,
                             "time": "08/13/2024",
                             "disptime": "08/13/2024",
                             "segmentColor": "#DD7470",
-                            "y": 15863.06
+                            "y": 15630.32
+                        },
+                        {
+                            "dispPrice": 15604.21,
+                            "time": "08/14/2024",
+                            "disptime": "08/14/2024",
+                            "segmentColor": "#DD7470",
+                            "y": 15604.21
+                        },
+                        {
+                            "dispPrice": 15952.96,
+                            "time": "08/16/2024",
+                            "disptime": "08/16/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 15952.96
+                        },
+                        {
+                            "dispPrice": 16154.36,
+                            "time": "08/19/2024",
+                            "disptime": "08/19/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16154.36
+                        },
+                        {
+                            "dispPrice": 16110.84,
+                            "time": "08/20/2024",
+                            "disptime": "08/20/2024",
+                            "segmentColor": "#3FC499",
+                            "y": 16110.84
                         }
                     ]
                 },

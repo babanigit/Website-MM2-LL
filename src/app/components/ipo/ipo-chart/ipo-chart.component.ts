@@ -78,18 +78,18 @@ export class IpoChartComponent implements OnInit {
   }
 
   updateChart() {
-    const dataPoints = this.extractDataPoints(this.graphData!);
+
+    const dataPoints:number[][] = this.extractDataPoints(this.graphData!); //get the data in number[][]
     let minY: number;
     let maxY: number;
 
-    console.log('the data points is : ', dataPoints);
-
     if (dataPoints.length === 0) return;
 
-    minY = Math.min(...dataPoints.map(([_, y]) => y));
+    minY = Math.min(...dataPoints.map(([_, y]) => y)); //get max and min data point
     maxY = Math.max(...dataPoints.map(([_, y]) => y));
-
     const previousClose = this.graphData!.data.graph_indices[0].PreviousClose;
+
+    console.log("the min y point is : ", minY, " and the max y is : ", maxY, " the prevClose is : ", previousClose)
 
     // Initialize segments
     const abovePreviousClose: [number, number][] = [];
@@ -106,14 +106,18 @@ export class IpoChartComponent implements OnInit {
       }
     };
 
+    // dataPoints
     dataPoints.forEach(([timestamp, value], index) => {
       if (index === 0) return; // Skip first point for comparison
 
       const [prevTimestamp, prevValue] = dataPoints[index - 1];
+
       if (prevValue > previousClose && value > previousClose) {
         abovePreviousClose.push([timestamp, value]);
+
       } else if (prevValue < previousClose && value < previousClose) {
         belowPreviousClose.push([timestamp, value]);
+
       } else {
         // Handle intersections
         if (prevValue > previousClose && value < previousClose) {
@@ -128,6 +132,7 @@ export class IpoChartComponent implements OnInit {
           abovePreviousClose.length = 0;
           belowPreviousClose.push([prevTimestamp, previousClose]);
           belowPreviousClose.push([timestamp, previousClose]);
+
         } else if (prevValue < previousClose && value > previousClose) {
           addSegment(
             [
@@ -140,9 +145,12 @@ export class IpoChartComponent implements OnInit {
           belowPreviousClose.length = 0;
           abovePreviousClose.push([prevTimestamp, previousClose]);
           abovePreviousClose.push([timestamp, previousClose]);
+
         }
       }
     });
+
+    console.log('the data points is : ', dataPoints);
 
     // Add remaining segments
     if (abovePreviousClose.length > 0) {
@@ -167,7 +175,6 @@ export class IpoChartComponent implements OnInit {
         enabled: false,
       },
       xAxis: {
-      
         type: 'datetime',
         tickLength: 0,
         labels: {
@@ -177,7 +184,6 @@ export class IpoChartComponent implements OnInit {
         title: {
           text: null, // Ensure x-axis title is removed
         },
-        
       },
       yAxis: {
         title: {
