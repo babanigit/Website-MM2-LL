@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import Highcharts from 'highcharts';
-import Accessibility from 'highcharts/modules/accessibility';
+
+// import Highcharts from 'highcharts';
+// import Accessibility from 'highcharts/modules/accessibility';
 
 // Accessibility(Highcharts); // Initialize the module
 
@@ -12,17 +13,37 @@ import Accessibility from 'highcharts/modules/accessibility';
 //   }
 // });
 
-
 const routes: Routes = [
-
-  { path: 'verdict', loadChildren: () => import('./pages/verdictpage/verdictpage.module').then(m => m.VerdictpageModule) },
-  { path: 'switcher', loadChildren: () => import('./pages/switcherpage/switcherpage.module').then(m => m.SwitcherpageModule) },
-  { path: 'ipo_home', loadChildren: () => import('./pages/ipopage/ipopage.module').then(m => m.IPOpageModule) },
-
+  {
+    path: 'verdict',
+    loadChildren: () =>
+      import('./pages/verdictpage/verdictpage.module').then(
+        (m) => m.VerdictpageModule
+      ),
+  },
+  {
+    path: 'switcher',
+    loadChildren: () =>
+      import('./pages/switcherpage/switcherpage.module').then(
+        (m) => m.SwitcherpageModule
+      ),
+  },
+  {
+    path: 'ipo_home',
+    loadChildren: () =>
+      import('./pages/ipopage/ipopage.module').then((m) => m.IPOpageModule),
+  },
+  {
+    path: 'portfolio-plus',
+    loadChildren: () =>
+      import('./pages/personal-portfolios/personal-portfolios.module').then(
+        (m) => m.PersonalPortfoliosModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

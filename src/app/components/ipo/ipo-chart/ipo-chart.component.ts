@@ -121,6 +121,7 @@ export class IpoChartComponent implements OnInit {
       } else {
         // Handle intersections
         if (prevValue > previousClose && value < previousClose) {
+
           addSegment(
             [
               ...abovePreviousClose,
@@ -129,11 +130,13 @@ export class IpoChartComponent implements OnInit {
             ],
             '#4CAF50'
           );
+
           abovePreviousClose.length = 0;
           belowPreviousClose.push([prevTimestamp, previousClose]);
           belowPreviousClose.push([timestamp, previousClose]);
 
         } else if (prevValue < previousClose && value > previousClose) {
+
           addSegment(
             [
               ...belowPreviousClose,
@@ -142,6 +145,7 @@ export class IpoChartComponent implements OnInit {
             ],
             '#FF6666'
           );
+          
           belowPreviousClose.length = 0;
           abovePreviousClose.push([prevTimestamp, previousClose]);
           abovePreviousClose.push([timestamp, previousClose]);
