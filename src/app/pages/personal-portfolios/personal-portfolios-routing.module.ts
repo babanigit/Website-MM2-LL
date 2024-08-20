@@ -3,11 +3,32 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonalPortfoliosComponent } from './personal-portfolios.component';
 
 const routes: Routes = [
-  { path: 'stock-investments', component:PersonalPortfoliosComponent },
+  {
+    path: '',
+    component: PersonalPortfoliosComponent,
+    children: [
+
+      // childrens
+      {
+        path: 'stock-investments',
+        loadChildren: () =>
+          import(
+            './../../components/personal-portfolios/stocker-investments/stocker-investments.module'
+          ).then((m) => m.StockerInvestmentsModule),
+      },
+      {
+        path: 'mutualfund-investments',
+        loadChildren: () =>
+          import(
+            './../../components/personal-portfolios/mutual-funds-investments/mutual-funds-investments.module'
+          ).then((m) => m.MutualFundsInvestmentsModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PersonalPortfoliosRoutingModule { }
+export class PersonalPortfoliosRoutingModule {}

@@ -1,1 +1,40 @@
 <p>personal-portfolios works!</p>
+
+<!-- navbar -->
+<nav
+  style="
+    display: flex;
+    justify-items: center;
+    place-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  "
+>
+
+  <div>
+    <a [routerLink]="['/portfolio-plus/stock-investments']">
+      stock-investments
+    </a>
+  </div>
+
+  <div>
+    <a [routerLink]="['/portfolio-plus/mutualfund-investments']">
+      mutualfund-investments
+    </a>
+  </div>
+
+  <!-- <div>
+    <a [routerLink]="['/ipo_home']"> ipo-home </a>
+  </div>
+
+  <div>
+    <a [routerLink]="['/portfolio-plus']">
+      personal portfolios
+    </a>
+  </div> -->
+</nav>
+<hr />
+
+<div>
+  <router-outlet> </router-outlet>
+</div>
