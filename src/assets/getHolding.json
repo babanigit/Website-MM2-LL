@@ -1,8 +1,9 @@
+
+
 {
   "code": "200",
   "message": "Success",
   "data": {
-      "max_event_cnt": 2,
       "list": {
           "421555": {
               "sid": 421555,
@@ -45,13 +46,13 @@
               "indname": "Mining & Minerals",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 532.35,
-              "chg": 8.1,
-              "chgp": 1.55,
+              "cmp": 532.05,
+              "chg": 7.8,
+              "chgp": 1.49,
               "cmpdir": 1,
               "prevclose": 524.25,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.82,
+              "mcap": 327887.960638035,
+              "sect_chgp": 0.87,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -59,59 +60,81 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 8009686,
-              "volperc": -4.57,
-              "voldir": -1,
-              "unrgain": 26155,
-              "unrgainp": 159.15,
-              "unrgaindir": 1,
-              "dgain": 648,
-              "dgainp": 1.55,
+              "dl": 524.5,
+              "dh": 535,
+              "wk52l": 226.1,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 542,
+              "wk52hdt": "2024-08-01",
+              "atl": 109.5,
+              "atldt": "2020-10-15",
+              "ath": 542,
+              "athdt": "2024-08-01",
+              "cvol": 9271610,
+              "cvolp": -2.76,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 500,
+              "var": 2483,
+              "iprice": 205.42,
+              "ival": 16434,
+              "dgain": 624,
+              "dgainp": 1.49,
               "dgaindir": 1,
-              "lval": 42588,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
+              "unrgain": 26131,
+              "unrgainp": 159.01,
+              "unrgaindir": 1,
+              "lval": 42564,
+              "iqty": 80,
+              "tret": 26631,
+              "tretp": 162.05,
+              "tretdir": 1,
+              "corpadj": 0,
+              "risk": "No",
+              "details": [
+                  {
+                      "sid": 421555,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 164.2,
+                      "iqty": 30,
+                      "qtyunadj": 50,
+                      "ival": 4926,
+                      "idate": "14-Feb-2022",
+                      "dt": "2022-02-14",
+                      "rawdate": "2022-02-14",
+                      "dgain": 234,
+                      "dgainp": 1.49,
+                      "dgaindir": 1,
+                      "unrgain": 11036,
+                      "unrgainp": 224.03,
+                      "unrgaindir": 1,
+                      "lval": 15962,
+                      "rgain": 0
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Close to 52 Week High",
-                          "msg": "1.97% away from 52 week high of Rs 542",
-                          "dir": 1
-                      },
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 5.32% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-31",
-                      "chgp": 1.95,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 6.27,
-                      "dir": 1
-                  },
-                  "dt": "31st Jul",
-                  "rawdt": "2024-07-31",
-                  "srtdt": "2024-07-31",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=421555&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1722364200
+                  {
+                      "sid": 421555,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 230.15,
+                      "iqty": 50,
+                      "qtyunadj": 50,
+                      "ival": 11507.5,
+                      "idate": "01-Jun-2023",
+                      "dt": "2023-06-01",
+                      "rawdate": "2023-06-01",
+                      "dgain": 390,
+                      "dgainp": 1.49,
+                      "dgaindir": 1,
+                      "unrgain": 15095,
+                      "unrgainp": 131.18,
+                      "unrgaindir": 1,
+                      "lval": 26603,
+                      "rgain": 0
+                  }
+              ],
+              "pwt": 18.59,
+              "unrgaincontri": 25.01
           },
           "454045": {
               "sid": 454045,
@@ -154,13 +177,13 @@
               "indname": "Pesticides & Agrochem",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 1622.75,
-              "chg": -54.75,
-              "chgp": -3.26,
+              "cmp": 1629,
+              "chg": -48.5,
+              "chgp": -2.89,
               "cmpdir": -1,
               "prevclose": 1677.5,
-              "mcap": "Small Cap",
-              "sect_chgp": 0.85,
+              "mcap": 2454.4307529,
+              "sect_chgp": 0.82,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -168,54 +191,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 19311,
-              "volperc": -62.44,
-              "voldir": -1,
-              "unrgain": 60623,
-              "unrgainp": 295.5,
-              "unrgaindir": 1,
-              "dgain": -2738,
-              "dgainp": -3.26,
+              "dl": 1619.7,
+              "dh": 1689.05,
+              "wk52l": 535,
+              "wk52ldt": "2023-10-26",
+              "wk52h": 1787,
+              "wk52hdt": "2024-06-26",
+              "atl": 26.55,
+              "atldt": "2013-08-19",
+              "ath": 1787,
+              "athdt": "2024-06-26",
+              "cvol": 20971,
+              "cvolp": -61.67,
+              "cvoldir": -1,
+              "mcapcls": "Small Cap",
+              "div": 0,
+              "var": 39549,
+              "iprice": 410.3,
+              "ival": 20515,
+              "dgain": -2425,
+              "dgainp": -2.89,
               "dgaindir": -1,
-              "lval": 81138,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 6 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-08-12",
-                      "chgp": 7.45,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 13.24,
-                      "dir": 1
-                  },
-                  "dt": "12th Aug",
-                  "rawdt": "2024-08-12",
-                  "srtdt": "2024-08-12",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=454045&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1723401000
+              "unrgain": 60935,
+              "unrgainp": 297.03,
+              "unrgaindir": 1,
+              "lval": 81450,
+              "iqty": 50,
+              "tret": 60935,
+              "tretp": 297.03,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "02-Feb-2017",
+              "risk": "No",
+              "pwt": 35.58,
+              "unrgaincontri": 58.33
           },
           "119922": {
               "sid": 119922,
@@ -258,13 +267,13 @@
               "indname": "Private Banks",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 170.15,
-              "chg": 0.1,
-              "chgp": 0.06,
-              "cmpdir": 1,
+              "cmp": 169.9,
+              "chg": -0.15,
+              "chgp": -0.09,
+              "cmpdir": -1,
               "prevclose": 170.05,
-              "mcap": "Mid Cap",
-              "sect_chgp": -0.35,
+              "mcap": 12584.015648960001,
+              "sect_chgp": -0.21,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -272,59 +281,81 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 2042863,
-              "volperc": 69.66,
-              "voldir": 1,
-              "unrgain": -1055,
-              "unrgainp": -7.64,
+              "dl": 167.75,
+              "dh": 171.3,
+              "wk52l": 121,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 176.7,
+              "wk52hdt": "2024-08-01",
+              "atl": 0.73,
+              "atldt": "1999-02-08",
+              "ath": 249,
+              "athdt": "2020-01-16",
+              "cvol": 2634733,
+              "cvolp": 67.6,
+              "cvoldir": 1,
+              "mcapcls": "Mid Cap",
+              "div": 0,
+              "var": 987,
+              "iprice": 184.22,
+              "ival": 13816,
+              "dgain": -11,
+              "dgainp": -0.09,
+              "dgaindir": -1,
+              "unrgain": -1074,
+              "unrgainp": -7.77,
               "unrgaindir": -1,
-              "dgain": 8,
-              "dgainp": 0.06,
-              "dgaindir": 1,
-              "lval": 12761,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
+              "lval": 12743,
+              "iqty": 75,
+              "tret": -1074,
+              "tretp": -7.77,
+              "tretdir": -1,
+              "corpadj": 0,
+              "risk": "No",
+              "details": [
+                  {
+                      "sid": 119922,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 209.25,
+                      "iqty": 50,
+                      "qtyunadj": 1210,
+                      "ival": 10462.5,
+                      "idate": "17-Jul-2019",
+                      "dt": "2019-07-17",
+                      "rawdate": "2019-07-17",
+                      "dgain": -8,
+                      "dgainp": -0.09,
+                      "dgaindir": -1,
+                      "unrgain": -1968,
+                      "unrgainp": -18.81,
+                      "unrgaindir": -1,
+                      "lval": 8495,
+                      "rgain": 0
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Close to 52 Week High",
-                          "msg": "4.4% away from 52 week high of Rs 176.7",
-                          "dir": 1
-                      },
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 3 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-26",
-                      "chgp": 6.08,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 4.77,
-                      "dir": 1
-                  },
-                  "dt": "26th Jul",
-                  "rawdt": "2024-07-26",
-                  "srtdt": "2024-07-26",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=119922&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1721932200
+                  {
+                      "sid": 119922,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 134.15,
+                      "iqty": 25,
+                      "qtyunadj": 25,
+                      "ival": 3353.75,
+                      "idate": "14-Feb-2022",
+                      "dt": "2022-02-14",
+                      "rawdate": "2022-02-14",
+                      "dgain": -4,
+                      "dgainp": -0.09,
+                      "dgaindir": -1,
+                      "unrgain": 894,
+                      "unrgainp": 26.65,
+                      "unrgaindir": 1,
+                      "lval": 4248,
+                      "rgain": 0
+                  }
+              ],
+              "pwt": 5.57,
+              "unrgaincontri": -1.03
           },
           "400868": {
               "sid": 400868,
@@ -367,13 +398,13 @@
               "indname": "Power ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 243.2,
-              "chg": 4.85,
-              "chgp": 2.03,
+              "cmp": 243.15,
+              "chg": 4.8,
+              "chgp": 2.01,
               "cmpdir": 1,
               "prevclose": 238.35,
-              "mcap": "Mid Cap",
-              "sect_chgp": -0.02,
+              "mcap": 9631.929982110001,
+              "sect_chgp": -0.1,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -381,54 +412,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 8353676,
-              "volperc": -19.2,
-              "voldir": -1,
-              "unrgain": -5206,
-              "unrgainp": -51.7,
-              "unrgaindir": -1,
-              "dgain": 97,
-              "dgainp": 2.03,
+              "dl": 238.75,
+              "dh": 247.35,
+              "wk52l": 143.7,
+              "wk52ldt": "2024-06-05",
+              "wk52h": 308,
+              "wk52hdt": "2024-04-04",
+              "atl": 8.65,
+              "atldt": "2020-03-26",
+              "ath": 2631.7,
+              "athdt": "2008-01-10",
+              "cvol": 9837021,
+              "cvolp": -15.03,
+              "cvoldir": -1,
+              "mcapcls": "Mid Cap",
+              "div": 0,
+              "var": 480,
+              "iprice": 503.5,
+              "ival": 10070,
+              "dgain": 96,
+              "dgainp": 2.01,
               "dgaindir": 1,
-              "lval": 4864,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 3 days and has risen 10.84% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-08-14",
-                      "chgp": 10.42,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 27.13,
-                      "dir": 1
-                  },
-                  "dt": "14th Aug",
-                  "rawdt": "2024-08-14",
-                  "srtdt": "2024-08-14",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=400868&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1723573800
+              "unrgain": -5207,
+              "unrgainp": -51.71,
+              "unrgaindir": -1,
+              "lval": 4863,
+              "iqty": 20,
+              "tret": -5207,
+              "tretp": -51.71,
+              "tretdir": -1,
+              "corpadj": 0,
+              "idate": "31-Aug-2017",
+              "risk": "No",
+              "pwt": 2.12,
+              "unrgaincontri": -4.98
           },
           "431628": {
               "sid": 431628,
@@ -471,13 +488,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 593.7,
-              "chg": -6.1,
-              "chgp": -1.02,
+              "cmp": 594.25,
+              "chg": -5.55,
+              "chgp": -0.93,
               "cmpdir": -1,
               "prevclose": 599.8,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "mcap": 156479.3362,
+              "sect_chgp": 0.81,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -485,54 +502,81 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 5743737,
-              "volperc": -3.09,
-              "voldir": -1,
-              "unrgain": 30734,
-              "unrgainp": 830.58,
-              "unrgaindir": 1,
-              "dgain": -354,
-              "dgainp": -1.02,
+              "dl": 592.5,
+              "dh": 604.85,
+              "wk52l": 230.6,
+              "wk52ldt": "2023-09-01",
+              "wk52h": 653.9,
+              "wk52hdt": "2024-07-12",
+              "atl": 26.78,
+              "atldt": "2008-11-28",
+              "ath": 653.9,
+              "athdt": "2024-07-12",
+              "cvol": 6994670,
+              "cvolp": -5.94,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 415,
+              "var": 2334,
+              "iprice": 63.8,
+              "ival": 3700,
+              "dgain": -322,
+              "dgainp": -0.93,
               "dgaindir": -1,
-              "lval": 34435,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
+              "unrgain": 30766,
+              "unrgainp": 831.44,
+              "unrgaindir": 1,
+              "lval": 34467,
+              "iqty": 58,
+              "tret": 31181,
+              "tretp": 842.66,
+              "tretdir": 1,
+              "corpadj": 0,
+              "risk": "No",
+              "details": [
+                  {
+                      "sid": 431628,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 148,
+                      "iqty": 25,
+                      "qtyunadj": 50,
+                      "ival": 3700,
+                      "idate": "11-Sep-2019",
+                      "dt": "2019-09-11",
+                      "rawdate": "2019-09-11",
+                      "dgain": -139,
+                      "dgainp": -0.93,
+                      "dgaindir": -1,
+                      "unrgain": 11156,
+                      "unrgainp": 301.52,
+                      "unrgaindir": 1,
+                      "lval": 14856,
+                      "rgain": 0
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 3 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-27",
-                      "chgp": -7.89,
-                      "dir": -1
-                  },
-                  "D15": {
-                      "chgp": 4.63,
-                      "dir": 1
-                  },
-                  "dt": "27th Jul",
-                  "rawdt": "2024-07-27",
-                  "srtdt": "2024-07-27",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=431628&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1722018600
+                  {
+                      "sid": 431628,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 0.01,
+                      "iqty": 33,
+                      "qtyunadj": 33,
+                      "ival": 0.33,
+                      "idate": "26-Aug-2022",
+                      "dt": "2022-08-26",
+                      "rawdate": "2022-08-26",
+                      "dgain": -183,
+                      "dgainp": -0.93,
+                      "dgaindir": -1,
+                      "unrgain": 19610,
+                      "unrgainp": 5942400,
+                      "unrgaindir": 1,
+                      "lval": 19610,
+                      "rgain": 0
+                  }
+              ],
+              "pwt": 15.06,
+              "unrgaincontri": 29.45
           },
           "837957": {
               "sid": 837957,
@@ -575,13 +619,13 @@
               "indname": "Capital Goods",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 3594.25,
-              "chg": 20.05,
-              "chgp": 0.56,
+              "cmp": 3595.85,
+              "chg": 21.65,
+              "chgp": 0.61,
               "cmpdir": 1,
               "prevclose": 3574.2,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.02,
+              "mcap": 494427.5411165,
+              "sect_chgp": 0.15,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -589,54 +633,81 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 1394052,
-              "volperc": -6.62,
-              "voldir": -1,
-              "unrgain": 13341,
-              "unrgainp": 112.88,
-              "unrgaindir": 1,
-              "dgain": 140,
-              "dgainp": 0.56,
+              "dl": 3580.5,
+              "dh": 3615,
+              "wk52l": 2623.95,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 3948.6,
+              "wk52hdt": "2024-06-03",
+              "atl": 9.31,
+              "atldt": "1991-01-25",
+              "ath": 3948.6,
+              "athdt": "2024-06-03",
+              "cvol": 1778064,
+              "cvolp": -4.02,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 196,
+              "var": 1541,
+              "iprice": 1688.38,
+              "ival": 11819,
+              "dgain": 152,
+              "dgainp": 0.61,
               "dgaindir": 1,
-              "lval": 25160,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
+              "unrgain": 13352,
+              "unrgainp": 112.98,
+              "unrgaindir": 1,
+              "lval": 25171,
+              "iqty": 7,
+              "tret": 13548,
+              "tretp": 114.63,
+              "tretdir": 1,
+              "corpadj": 0,
+              "risk": "No",
+              "details": [
+                  {
+                      "sid": 837957,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 1599.95,
+                      "iqty": 5,
+                      "qtyunadj": 5,
+                      "ival": 7999.75,
+                      "idate": "20-Aug-2021",
+                      "dt": "2021-08-20",
+                      "rawdate": "2021-08-20",
+                      "dgain": 108,
+                      "dgainp": 0.61,
+                      "dgaindir": 1,
+                      "unrgain": 9980,
+                      "unrgainp": 124.75,
+                      "unrgaindir": 1,
+                      "lval": 17979,
+                      "rgain": 0
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 2 days and has risen 1.14% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-24",
-                      "chgp": 2.13,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 0.26,
-                      "dir": 1
-                  },
-                  "dt": "24th Jul",
-                  "rawdt": "2024-07-24",
-                  "srtdt": "2024-07-24",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=837957&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1721759400
+                  {
+                      "sid": 837957,
+                      "tranxtype": 0,
+                      "tranxtxt": "Buy",
+                      "iprice": 1909.45,
+                      "iqty": 2,
+                      "qtyunadj": 2,
+                      "ival": 3818.9,
+                      "idate": "24-Oct-2022",
+                      "dt": "2022-10-24",
+                      "rawdate": "2022-10-24",
+                      "dgain": 43,
+                      "dgainp": 0.61,
+                      "dgaindir": 1,
+                      "unrgain": 3373,
+                      "unrgainp": 88.32,
+                      "unrgaindir": 1,
+                      "lval": 7192,
+                      "rgain": 0
+                  }
+              ],
+              "pwt": 11,
+              "unrgaincontri": 12.78
           },
           "151046": {
               "sid": 151046,
@@ -684,8 +755,8 @@
               "chgp": 20,
               "cmpdir": 1,
               "prevclose": 24,
-              "mcap": "Micro Cap",
-              "sect_chgp": 0.6,
+              "mcap": 69.9207408,
+              "sect_chgp": 0.81,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -693,54 +764,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 56647,
-              "volperc": 757.4,
-              "voldir": 1,
-              "unrgain": 187,
-              "unrgainp": 256.88,
-              "unrgaindir": 1,
+              "dl": 28.8,
+              "dh": 28.8,
+              "wk52l": 19.5,
+              "wk52ldt": "2023-11-10",
+              "wk52h": 36.01,
+              "wk52hdt": "2024-05-07",
+              "atl": 1.92,
+              "atldt": "2013-09-25",
+              "ath": 36.01,
+              "athdt": "2024-05-07",
+              "cvol": 56647,
+              "cvolp": 670.6,
+              "cvoldir": 1,
+              "mcapcls": "Micro Cap",
+              "div": 0,
+              "var": 24,
+              "iprice": 8.07,
+              "ival": 73,
               "dgain": 43,
               "dgainp": 20,
               "dgaindir": 1,
+              "unrgain": 187,
+              "unrgainp": 256.88,
+              "unrgaindir": 1,
               "lval": 259,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has gained after 3 days of consecutive fall",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-08-12",
-                      "chgp": 11.37,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 14.74,
-                      "dir": 1
-                  },
-                  "dt": "12th Aug",
-                  "rawdt": "2024-08-12",
-                  "srtdt": "2024-08-12",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=151046&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1723401000
+              "iqty": 9,
+              "tret": 187,
+              "tretp": 256.88,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "26-Apr-2018",
+              "risk": "No",
+              "pwt": 0.11,
+              "unrgaincontri": 0.18
           },
           "616556": {
               "sid": 616556,
@@ -783,13 +840,13 @@
               "indname": "Public Banks",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 116.3,
-              "chg": -1.1,
-              "chgp": -0.94,
+              "cmp": 116.45,
+              "chg": -0.95,
+              "chgp": -0.81,
               "cmpdir": -1,
               "prevclose": 117.4,
-              "mcap": "Large Cap",
-              "sect_chgp": -0.64,
+              "mcap": 128223.27617291002,
+              "sect_chgp": -0.38,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -797,54 +854,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 24738913,
-              "volperc": 36.42,
-              "voldir": 1,
-              "unrgain": -185,
-              "unrgainp": -3.08,
-              "unrgaindir": -1,
-              "dgain": -55,
-              "dgainp": -0.94,
+              "dl": 115.3,
+              "dh": 117.75,
+              "wk52l": 61.13,
+              "wk52ldt": "2023-08-25",
+              "wk52h": 142.9,
+              "wk52hdt": "2024-04-30",
+              "atl": 6.98,
+              "atldt": "2002-04-29",
+              "ath": 279,
+              "athdt": "2010-11-09",
+              "cvol": 33419695,
+              "cvolp": 51.07,
+              "cvoldir": 1,
+              "mcapcls": "Large Cap",
+              "div": 75,
+              "var": 419,
+              "iprice": 120,
+              "ival": 6000,
+              "dgain": -48,
+              "dgainp": -0.81,
               "dgaindir": -1,
-              "lval": 5815,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 2 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-27",
-                      "chgp": -8.39,
-                      "dir": -1
-                  },
-                  "D15": {
-                      "chgp": 2.11,
-                      "dir": 1
-                  },
-                  "dt": "27th Jul",
-                  "rawdt": "2024-07-27",
-                  "srtdt": "2024-07-27",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=616556&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1722018600
+              "unrgain": -178,
+              "unrgainp": -2.96,
+              "unrgaindir": -1,
+              "lval": 5823,
+              "iqty": 50,
+              "tret": -103,
+              "tretp": -1.71,
+              "tretdir": -1,
+              "corpadj": 0,
+              "idate": "12-Feb-2024",
+              "risk": "No",
+              "pwt": 2.54,
+              "unrgaincontri": -0.17
           },
           "1002872": {
               "sid": 1002872,
@@ -863,7 +906,7 @@
                   "f_dir": 1,
                   "prev_score": 8,
                   "q_dir": "NA",
-                  "tech_score": 1.17,
+                  "tech_score": 1.39,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
@@ -887,13 +930,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 724.85,
-              "chg": 13.75,
-              "chgp": 1.93,
+              "cmp": 724.55,
+              "chg": 13.45,
+              "chgp": 1.89,
               "cmpdir": 1,
               "prevclose": 711.1,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "mcap": 155885.983701775,
+              "sect_chgp": 0.81,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -901,59 +944,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 5501792,
-              "volperc": 45.64,
-              "voldir": 1,
-              "unrgain": 224,
-              "unrgainp": 6.6,
-              "unrgaindir": 1,
-              "dgain": 69,
-              "dgainp": 1.93,
+              "dl": 708.45,
+              "dh": 727.65,
+              "wk52l": 511.1,
+              "wk52ldt": "2024-06-04",
+              "wk52h": 727.65,
+              "wk52hdt": "2024-08-01",
+              "atl": 307.65,
+              "atldt": "2017-11-17",
+              "ath": 775.65,
+              "athdt": "2021-09-02",
+              "cvol": 6438017,
+              "cvolp": 40.39,
+              "cvoldir": 1,
+              "mcapcls": "Large Cap",
+              "div": 10,
+              "var": 246,
+              "iprice": 680,
+              "ival": 3400,
+              "dgain": 67,
+              "dgainp": 1.89,
               "dgaindir": 1,
-              "lval": 3624,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "New 52 Week High",
-                          "msg": "Rs.727.65 hit today",
-                          "dir": 1
-                      },
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 2 days and has risen 5.53% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-15",
-                      "chgp": 13.64,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 6.47,
-                      "dir": 1
-                  },
-                  "dt": "15th Jul",
-                  "rawdt": "2024-07-15",
-                  "srtdt": "2024-07-15",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=1002872&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1720981800
+              "unrgain": 223,
+              "unrgainp": 6.55,
+              "unrgaindir": 1,
+              "lval": 3623,
+              "iqty": 5,
+              "tret": 233,
+              "tretp": 6.85,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "04-Jun-2024",
+              "risk": "No",
+              "pwt": 1.58,
+              "unrgaincontri": 0.21
           },
           "302744": {
               "sid": 302744,
@@ -996,13 +1020,13 @@
               "indname": "Power ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 18.88,
-              "chg": 0.79,
-              "chgp": 4.37,
+              "cmp": 18.78,
+              "chg": 0.69,
+              "chgp": 3.81,
               "cmpdir": 1,
               "prevclose": 18.09,
-              "mcap": "Mid Cap",
-              "sect_chgp": -0.02,
+              "mcap": 12870.795677106002,
+              "sect_chgp": -0.1,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
@@ -1023,54 +1047,40 @@
                   "show": 1,
                   "text": "+1 More"
               },
-              "traded": "Traded",
-              "vol": 69343899,
-              "volperc": 154.8,
-              "voldir": 1,
-              "unrgain": 1644,
-              "unrgainp": 27.57,
-              "unrgaindir": 1,
-              "dgain": 318,
-              "dgainp": 4.37,
+              "dl": 18.12,
+              "dh": 18.99,
+              "wk52l": 7.09,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 23.99,
+              "wk52hdt": "2024-02-12",
+              "atl": 0.54,
+              "atldt": "2020-03-26",
+              "ath": 144,
+              "athdt": "2008-01-04",
+              "cvol": 78697350,
+              "cvolp": 162.05,
+              "cvoldir": 1,
+              "mcapcls": "Mid Cap",
+              "div": 0,
+              "var": 782,
+              "iprice": 14.8,
+              "ival": 5964,
+              "dgain": 278,
+              "dgainp": 3.81,
               "dgaindir": 1,
-              "lval": 7609,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 7.96% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-27",
-                      "chgp": -2.68,
-                      "dir": -1
-                  },
-                  "D15": {
-                      "chgp": 4.6,
-                      "dir": 1
-                  },
-                  "dt": "27th Jul",
-                  "rawdt": "2024-07-27",
-                  "srtdt": "2024-07-27",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=302744&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1722018600
+              "unrgain": 1604,
+              "unrgainp": 26.89,
+              "unrgaindir": 1,
+              "lval": 7568,
+              "iqty": 403,
+              "tret": 1604,
+              "tretp": 26.89,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "04-Jun-2024",
+              "risk": "No",
+              "pwt": 3.31,
+              "unrgaincontri": 1.54
           },
           "10039196": {
               "sid": 10039196,
@@ -1088,7 +1098,7 @@
                   "f_dir": "NA",
                   "prev_score": "",
                   "q_dir": 1,
-                  "tech_score": -0.25,
+                  "tech_score": -0.17,
                   "tech_txt": "Mildly Bearish",
                   "tech_clr": "Red",
                   "q_clr": "orange",
@@ -1118,8 +1128,8 @@
               "chgp": -1.36,
               "cmpdir": -1,
               "prevclose": 735,
-              "mcap": "Micro Cap",
-              "sect_chgp": -0.19,
+              "mcap": 520,
+              "sect_chgp": -0.33,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1127,48 +1137,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 3600,
-              "volperc": -3.23,
-              "voldir": -1,
-              "unrgain": 5,
-              "unrgainp": 0.69,
-              "unrgaindir": 1,
+              "dl": 705,
+              "dh": 737,
+              "wk52l": 260,
+              "wk52ldt": "2024-03-14",
+              "wk52h": 835,
+              "wk52hdt": "2024-07-11",
+              "atl": 260,
+              "atldt": "2024-03-14",
+              "ath": 835,
+              "athdt": "2024-07-11",
+              "cvol": 4800,
+              "cvolp": -6.98,
+              "cvoldir": -1,
+              "mcapcls": "Micro Cap",
+              "div": 0,
+              "var": 0,
+              "iprice": 720,
+              "ival": 720,
               "dgain": -10,
               "dgainp": -1.36,
               "dgaindir": -1,
+              "unrgain": 5,
+              "unrgainp": 0.69,
+              "unrgaindir": 1,
               "lval": 725,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 0,
-                  "list": [],
-                  "txt": "-"
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-05-29",
-                      "chgp": 78.35,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 0.69,
-                      "dir": 1
-                  },
-                  "dt": "NA",
-                  "rawdt": "2024-05-29",
-                  "srtdt": "2024-05-29",
-                  "sortorder": 3,
-                  "flag": 1,
-                  "msg": "Result Awaited"
-              },
-              "orgresdt": -19800
+              "iqty": 1,
+              "tret": 5,
+              "tretp": 0.69,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "07-Aug-2024",
+              "risk": "No",
+              "pwt": 0.32,
+              "unrgaincontri": 0
           },
           "234277": {
               "sid": 234277,
@@ -1211,13 +1213,13 @@
               "indname": "IT - Software ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 4910.2,
-              "chg": -19.6,
-              "chgp": -0.4,
+              "cmp": 4922.45,
+              "chg": -7.35,
+              "chgp": -0.15,
               "cmpdir": -1,
               "prevclose": 4929.8,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.06,
+              "mcap": 76125.68925,
+              "sect_chgp": 0.29,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
@@ -1232,59 +1234,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 127904,
-              "volperc": -62.94,
-              "voldir": -1,
-              "unrgain": -2740,
-              "unrgainp": -35.82,
-              "unrgaindir": -1,
-              "dgain": -20,
-              "dgainp": -0.4,
+              "dl": 4888.95,
+              "dh": 4951,
+              "wk52l": 2401.55,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 4995.5,
+              "wk52hdt": "2024-08-20",
+              "atl": 140.4,
+              "atldt": "2011-08-29",
+              "ath": 8979.85,
+              "athdt": "2024-02-19",
+              "cvol": 170681,
+              "cvolp": -57.79,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 42,
+              "var": 308,
+              "iprice": 7650.3,
+              "ival": 7650,
+              "dgain": -7,
+              "dgainp": -0.15,
               "dgaindir": -1,
-              "lval": 4910,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Close to 52 Week High",
-                          "msg": "1.93% away from 52 week high of Rs 4995.5",
-                          "dir": 1
-                      },
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 5 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-18",
-                      "chgp": 0.15,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 9.42,
-                      "dir": 1
-                  },
-                  "dt": "18th Jul",
-                  "rawdt": "2024-07-18",
-                  "srtdt": "2024-07-18",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=234277&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1721241000
+              "unrgain": -2728,
+              "unrgainp": -35.66,
+              "unrgaindir": -1,
+              "lval": 4922,
+              "iqty": 1,
+              "tret": -2686,
+              "tretp": -35.11,
+              "tretdir": -1,
+              "corpadj": 1,
+              "idate": "12-Jan-2024",
+              "risk": "No",
+              "pwt": 2.15,
+              "unrgaincontri": -2.61
           },
           "304521": {
               "sid": 304521,
@@ -1327,13 +1310,13 @@
               "indname": "Tyres",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 2825.35,
-              "chg": 75.35,
-              "chgp": 2.74,
+              "cmp": 2822.3,
+              "chg": 72.3,
+              "chgp": 2.63,
               "cmpdir": 1,
               "prevclose": 2750,
-              "mcap": "Mid Cap",
-              "sect_chgp": 0.98,
+              "mcap": 11416.22946516,
+              "sect_chgp": 1.15,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
@@ -1348,54 +1331,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 491317,
-              "volperc": 221.56,
-              "voldir": 1,
-              "unrgain": 333,
-              "unrgainp": 13.38,
-              "unrgaindir": 1,
-              "dgain": 75,
-              "dgainp": 2.74,
+              "dl": 2725.25,
+              "dh": 2863.8,
+              "wk52l": 2055.05,
+              "wk52ldt": "2023-10-09",
+              "wk52h": 2997.25,
+              "wk52hdt": "2024-01-20",
+              "atl": 13.42,
+              "atldt": "2001-09-27",
+              "ath": 2997.25,
+              "athdt": "2024-01-20",
+              "cvol": 526464,
+              "cvolp": 189.2,
+              "cvoldir": 1,
+              "mcapcls": "Mid Cap",
+              "div": 0,
+              "var": 184,
+              "iprice": 2491.95,
+              "ival": 2492,
+              "dgain": 72,
+              "dgainp": 2.63,
               "dgaindir": 1,
-              "lval": 2825,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 7.98% returns in the period",
-                          "dir": 1
-                      }
-                  ],
-                  "txt": ""
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-18",
-                      "chgp": 2.04,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 8.67,
-                      "dir": 1
-                  },
-                  "dt": "18th Jul",
-                  "rawdt": "2024-07-18",
-                  "srtdt": "2024-07-18",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=304521&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1721241000
+              "unrgain": 330,
+              "unrgainp": 13.26,
+              "unrgaindir": 1,
+              "lval": 2822,
+              "iqty": 1,
+              "tret": 330,
+              "tretp": 13.26,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "12-Jan-2024",
+              "risk": "No",
+              "pwt": 1.23,
+              "unrgaincontri": 0.32
           },
           "1003511": {
               "sid": 1003511,
@@ -1414,7 +1383,7 @@
                   "f_dir": 1,
                   "prev_score": 32,
                   "q_dir": 1,
-                  "tech_score": 1.59,
+                  "tech_score": 1.7,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
@@ -1438,13 +1407,13 @@
               "indname": "IT - Software ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 260.2,
-              "chg": -2.8,
-              "chgp": -1.06,
+              "cmp": 259.95,
+              "chg": -3.05,
+              "chgp": -1.16,
               "cmpdir": -1,
               "prevclose": 263,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.06,
+              "mcap": 229548.90879621002,
+              "sect_chgp": 0.29,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1452,48 +1421,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 32315678,
-              "volperc": -68,
-              "voldir": -1,
-              "unrgain": 125,
-              "unrgainp": 92.81,
-              "unrgaindir": 1,
+              "dl": 258.95,
+              "dh": 264.45,
+              "wk52l": 88.16,
+              "wk52ldt": "2023-08-21",
+              "wk52h": 280,
+              "wk52hdt": "2024-08-19",
+              "atl": 40.55,
+              "atldt": "2022-07-27",
+              "ath": 280,
+              "athdt": "2024-08-19",
+              "cvol": 40728881,
+              "cvolp": -62.64,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 0,
+              "var": 0,
+              "iprice": 134.95,
+              "ival": 135,
               "dgain": -3,
-              "dgainp": -1.06,
+              "dgainp": -1.16,
               "dgaindir": -1,
+              "unrgain": 125,
+              "unrgainp": 92.63,
+              "unrgaindir": 1,
               "lval": 260,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 0,
-                  "list": [],
-                  "txt": "-"
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-08-01",
-                      "chgp": 11.15,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 4.48,
-                      "dir": 1
-                  },
-                  "dt": "1st Aug",
-                  "rawdt": "2024-08-01",
-                  "srtdt": "2024-08-01",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=1003511&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1722450600
+              "iqty": 1,
+              "tret": 125,
+              "tretp": 92.63,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "29-Jan-2024",
+              "risk": "No",
+              "pwt": 0.11,
+              "unrgaincontri": 0.12
           },
           "1003648": {
               "sid": 1003648,
@@ -1512,7 +1473,7 @@
                   "f_dir": 1,
                   "prev_score": -3,
                   "q_dir": "NA",
-                  "tech_score": 1.25,
+                  "tech_score": 1.42,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
@@ -1536,13 +1497,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 1083.5,
-              "chg": 15.95,
-              "chgp": 1.49,
+              "cmp": 1083.7,
+              "chg": 16.15,
+              "chgp": 1.51,
               "cmpdir": 1,
               "prevclose": 1067.55,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "mcap": 685440.00085737,
+              "sect_chgp": 0.81,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1550,48 +1511,40 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 1081700,
-              "volperc": -52.88,
-              "voldir": -1,
-              "unrgain": 169,
-              "unrgainp": 18.49,
-              "unrgaindir": 1,
+              "dl": 1065,
+              "dh": 1086,
+              "wk52l": 597.65,
+              "wk52ldt": "2023-10-26",
+              "wk52h": 1221.5,
+              "wk52hdt": "2024-08-01",
+              "atl": 530.2,
+              "atldt": "2023-03-29",
+              "ath": 1221.5,
+              "athdt": "2024-08-01",
+              "cvol": 1437131,
+              "cvolp": -47.44,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 10,
+              "var": 0,
+              "iprice": 914.45,
+              "ival": 914,
               "dgain": 16,
-              "dgainp": 1.49,
+              "dgainp": 1.51,
               "dgaindir": 1,
+              "unrgain": 169,
+              "unrgainp": 18.51,
+              "unrgaindir": 1,
               "lval": 1084,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 0,
-                  "list": [],
-                  "txt": "-"
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-08-09",
-                      "chgp": -4.42,
-                      "dir": -1
-                  },
-                  "D15": {
-                      "chgp": 0.12,
-                      "dir": 1
-                  },
-                  "dt": "9th Aug",
-                  "rawdt": "2024-08-09",
-                  "srtdt": "2024-08-09",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=1003648&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1723141800
+              "iqty": 1,
+              "tret": 179,
+              "tretp": 19.6,
+              "tretdir": 1,
+              "corpadj": 0,
+              "idate": "29-Jan-2024",
+              "risk": "No",
+              "pwt": 0.47,
+              "unrgaincontri": 0.16
           },
           "1003566": {
               "sid": 1003566,
@@ -1634,13 +1587,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 572.7,
-              "chg": -0.05,
-              "chgp": -0.01,
-              "cmpdir": -1,
+              "cmp": 573.8,
+              "chg": 1.05,
+              "chgp": 0.18,
+              "cmpdir": 1,
               "prevclose": 572.75,
-              "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "mcap": 36515.73956886,
+              "sect_chgp": 0.81,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1648,52 +1601,224 @@
                   "show": 0,
                   "text": ""
               },
-              "traded": "Traded",
-              "vol": 4152168,
-              "volperc": -54.21,
-              "voldir": -1,
-              "unrgain": -187,
-              "unrgainp": -24.57,
+              "dl": 570.1,
+              "dh": 583.15,
+              "wk52l": 310,
+              "wk52ldt": "2024-05-09",
+              "wk52h": 998.3,
+              "wk52hdt": "2023-10-20",
+              "atl": 310,
+              "atldt": "2024-05-09",
+              "ath": 1961.05,
+              "athdt": "2021-11-18",
+              "cvol": 4946928,
+              "cvolp": -52.58,
+              "cvoldir": -1,
+              "mcapcls": "Large Cap",
+              "div": 0,
+              "var": 0,
+              "iprice": 759.2,
+              "ival": 759,
+              "dgain": 1,
+              "dgainp": 0.18,
+              "dgaindir": 1,
+              "unrgain": -185,
+              "unrgainp": -24.42,
               "unrgaindir": -1,
-              "dgain": 0,
-              "dgainp": -0.01,
-              "dgaindir": -1,
-              "lval": 573,
-              "action": {
-                  "bell": {
-                      "flag": 0,
-                      "msg": ""
-                  },
-                  "status": 0,
-                  "list": [],
-                  "txt": "-"
-              },
-              "reco": {
-                  "status": 0,
-                  "txt": "No Recos in the last one month"
-              },
-              "result": {
-                  "resultdt": {
-                      "resdt": "2024-07-19",
-                      "chgp": 24.85,
-                      "dir": 1
-                  },
-                  "D15": {
-                      "chgp": 16.68,
-                      "dir": 1
-                  },
-                  "dt": "19th Jul",
-                  "rawdt": "2024-07-19",
-                  "srtdt": "2024-07-19",
-                  "sortorder": 1,
-                  "flag": 0,
-                  "msg": "<a href=\"https://www.marketsmojo.com/Stocks?StockId=1003566&Exchange=0\">Check Result</a>"
-              },
-              "orgresdt": 1721327400
+              "lval": 574,
+              "iqty": 1,
+              "tret": -185,
+              "tretp": -24.42,
+              "tretdir": -1,
+              "corpadj": 0,
+              "idate": "29-Jan-2024",
+              "risk": "No",
+              "pwt": 0.25,
+              "unrgaincontri": -0.18
           }
+      },
+      "higestreturn": {
+          "gain": 60935,
+          "gainp": 297,
+          "sid": 454045,
+          "sname": "Jubilant Inds."
+      },
+      "topgainer": {
+          "gainperc": 831.44,
+          "sid": 431628,
+          "sname": "REC Ltd"
+      },
+      "total": {
+          "cap": {
+              "large": {
+                  "pwt": 51.75,
+                  "unrgain": 67675.22,
+                  "unrgaincont": 64.77,
+                  "unrgaindir": 1
+              },
+              "small": {
+                  "pwt": 35.58,
+                  "unrgain": 60935,
+                  "unrgaincont": 58.33,
+                  "unrgaindir": 1
+              },
+              "mid": {
+                  "pwt": 12.23,
+                  "unrgain": -4346.46,
+                  "unrgaincont": -4.15,
+                  "unrgaindir": -1
+              },
+              "micro": {
+                  "pwt": 0.43,
+                  "unrgain": 191.57,
+                  "unrgaincont": 0.18,
+                  "unrgaindir": 1
+              }
+          },
+          "sector": {
+              "Mining & Minerals": {
+                  "pwt": 18.59,
+                  "unrgain": 26130.5,
+                  "unrgaincont": 25.01,
+                  "unrgaindir": 1
+              },
+              "Pesticides & Agrochem": {
+                  "pwt": 35.58,
+                  "unrgain": 60935,
+                  "unrgaincont": 58.33,
+                  "unrgaindir": 1
+              },
+              "Private Banks": {
+                  "pwt": 5.57,
+                  "unrgain": -1073.75,
+                  "unrgaincont": -1.03,
+                  "unrgaindir": -1
+              },
+              "Power ": {
+                  "pwt": 5.43,
+                  "unrgain": -3603.06,
+                  "unrgaincont": -3.44,
+                  "unrgaindir": -1
+              },
+              "Finance/NBFC": {
+                  "pwt": 17.47,
+                  "unrgain": 31159.34,
+                  "unrgaincont": 29.82,
+                  "unrgaindir": 1
+              },
+              "Capital Goods": {
+                  "pwt": 11,
+                  "unrgain": 13352.3,
+                  "unrgaincont": 12.78,
+                  "unrgaindir": 1
+              },
+              "Public Banks": {
+                  "pwt": 2.54,
+                  "unrgain": -177.5,
+                  "unrgaincont": -0.17,
+                  "unrgaindir": -1
+              },
+              "Textile - Machinery": {
+                  "pwt": 0.32,
+                  "unrgain": 5,
+                  "unrgaincont": 0,
+                  "unrgaindir": 1
+              },
+              "IT - Software ": {
+                  "pwt": 2.26,
+                  "unrgain": -2602.85,
+                  "unrgaincont": -2.49,
+                  "unrgaindir": -1
+              },
+              "Tyres": {
+                  "pwt": 1.23,
+                  "unrgain": 330.35,
+                  "unrgaincont": 0.32,
+                  "unrgaindir": 1
+              }
+          },
+          "top3": [
+              454045,
+              421555,
+              431628
+          ],
+          "tail": [
+              151046,
+              10039196,
+              1003511,
+              1003648,
+              1003566
+          ],
+          "remain": [
+              837957,
+              119922,
+              302744,
+              234277,
+              304521
+          ],
+          "ival": 104462,
+          "lval": 228917,
+          "dgain": -1476,
+          "dgainp": -0.64,
+          "dgaindir": -1,
+          "unrgain": 124455,
+          "unrgainp": 119.14,
+          "unrgaindir": 1,
+          "unrgaincontri": 119.14,
+          "tret": 125703,
+          "tretp": 120.33,
+          "tretdir": 1,
+          "tretpdir": 1,
+          "dividend": 1659,
+          "divdir": 1,
+          "rgain": 71276,
+          "rgaindir": 1,
+          "tgain": 197390,
+          "tgaindir": 1
+      },
+      "header": {
+          "dgain": -1476,
+          "dgainp": -0.64,
+          "dgaindir": -1
       },
       "other": {
           "paid": 1
-      }
+      },
+      "pf_score": {
+          "show": 1,
+          "score": 61,
+          "score_txt": "Average",
+          "perc": 11.11111111111111,
+          "grade_arr": {
+              "Poor": "poor",
+              "Below Average": "belowaverage",
+              "Average": "average",
+              "Good": "good",
+              "Excellent": "excellent"
+          },
+          "cls_arr": {
+              "Poor": "list12",
+              "Below Average": "list12",
+              "Average": "list12",
+              "Good": "list11",
+              "Excellent": "list11"
+          },
+          "pf_clr_txt": "org",
+          "msgtype": "1A1",
+          "txt": "Replacing just 1 stock can drastically improve your portfolio performance",
+          "msg_dir": "-1",
+          "footer": "Portfolio Score has helped 1.2 lac users optimize and make their portfolio better",
+          "button": "Action this Now",
+          "dir_img": "aleart.png",
+          "dir_msg": "Alert",
+          "txt_clr": "red"
+      },
+      "sceniaros_txt": {
+          "msgtype": "1A1",
+          "txt": "Replacing just 1 stock can drastically improve your portfolio performance",
+          "msg_dir": "-1",
+          "footer": ""
+      },
+      "opti_profile": "Very Aggressive"
   }
 }

@@ -174,7 +174,9 @@
 
     <!-- closed -->
     <div *ngIf="iPO_TYPE === 'closed'">
-      <table style="width: 100%; border-collapse: collapse">
+      <table
+      *ngIf="ipoList!"
+      style="width: 100%; border-collapse: collapse">
         <thead
           [hidden]="!ipoList.data.closed || ipoList.data.closed.length === 0"
         >
@@ -271,7 +273,9 @@
 
     <!-- listed -->
     <div *ngIf="iPO_TYPE === 'listed'">
-      <table style="width: 100%; border-collapse: collapse">
+      <table
+      *ngIf="ipoList!"
+      style="width: 100%; border-collapse: collapse">
         <thead
           [hidden]="!ipoList.data.listed || ipoList.data.listed.length === 0"
         >

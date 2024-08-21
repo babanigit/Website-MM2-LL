@@ -5,14 +5,15 @@ import { IGetDropdown, IGetVerdictReportsData } from '../models/interfaces';
 import { ISwitcherReportsAndOptions } from '../models/switcherReportsAndOption';
 import { ISwitcherResult } from '../models/switcherResult';
 import { I_IPOList } from '../models/ipoList';
+import { IGetOverview } from '../models/overview';
 
 const defaultDropdownPath = 'assets/dropdown.json';
 const defaultVerdictReportPath = 'assets/verdictReports.json';
 const defaultVerdictSwticherReportandOptionsPath =
   'assets/switcherBasicReportsAndOptions.json';
 const defaultSwitcherResultPath = 'assets/switcherResult.json';
-
 const defaultIPOListPath = 'assets/ipoList.json';
+const defaultOverviewPath = 'assets/getOverview.json';
 
 @Injectable({
   providedIn: 'root',
@@ -106,4 +107,6 @@ export class JsonDataService {
       })
     );
   }
+
+
 }

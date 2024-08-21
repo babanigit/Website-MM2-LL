@@ -1,4 +1,3 @@
-
 <app-pf-price-msg />
 
 <!-- navbar -->
@@ -14,9 +13,12 @@
     padding: 2%;
   "
 >
-
   <div>
-    <a [routerLink]="['/portfolio-plus/networth-tracker']" [queryParams]="{ selected_menu: 'all' }">All</a>
+    <a
+      [routerLink]="['/portfolio-plus/networth-tracker']"
+      [queryParams]="{ selected_menu: 'all' }"
+      >All</a
+    >
   </div>
 
   <div>
@@ -32,9 +34,12 @@
   </div>
 
   <div>
-    <a [routerLink]="['/portfolio-plus/networth-tracker']" [queryParams]="{ selected_menu: 'commodity' }">Commodity</a>
+    <a
+      [routerLink]="['/portfolio-plus/networth-tracker']"
+      [queryParams]="{ selected_menu: 'commodity' }"
+      >Commodity</a
+    >
   </div>
-
 </nav>
 <hr />
 

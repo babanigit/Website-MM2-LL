@@ -12,7 +12,7 @@ import { IpoBoxComponent } from "../ipo-box/ipo-box.component";
   imports: [CommonModule, IpoBoxComponent],
 })
 export class IpoSnapshotComponent implements OnInit {
-  ipoList: I_IPOList = {} as I_IPOList;
+  ipoList: I_IPOList |undefined;
   iPO_TYPE: String = 'upcoming';
   maxValue = 200;
 
