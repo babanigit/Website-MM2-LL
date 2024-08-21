@@ -13,14 +13,14 @@ const routes: Routes = [
         path: 'stock-investments',
         loadChildren: () =>
           import(
-            './../../components/personal-portfolios/stocker-investments/stocker-investments.module'
+            './../../components/personalPortfo-COMPO/stocker-investments/stocker-investments.module'
           ).then((m) => m.StockerInvestmentsModule),
       },
       {
         path: 'mutualfund-investments',
         loadChildren: () =>
           import(
-            './../../components/personal-portfolios/mutual-funds-investments/mutual-funds-investments.module'
+            './../../components/personalPortfo-COMPO/mutual-funds-investments/mutual-funds-investments.module'
           ).then((m) => m.MutualFundsInvestmentsModule),
       },
     ],

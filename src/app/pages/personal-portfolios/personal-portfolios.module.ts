@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PersonalPortfoliosRoutingModule } from './personal-portfolios-routing.module';
 import { PersonalPortfoliosComponent } from './personal-portfolios.component';
-import { StockerInvestmentsComponent } from '../../components/personal-portfolios/stocker-investments/stocker-investments.component';
-import { MutualFundsInvestmentsComponent } from '../../components/personal-portfolios/mutual-funds-investments/mutual-funds-investments.component';
+import { StockerInvestmentsComponent } from '../../components/personalPortfo-COMPO/stocker-investments/stocker-investments.component';
+import { MutualFundsInvestmentsComponent } from '../../components/personalPortfo-COMPO/mutual-funds-investments/mutual-funds-investments.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { MutualFundsInvestmentsComponent } from '../../components/personal-portf
     // childerns
     StockerInvestmentsComponent,
     MutualFundsInvestmentsComponent
-    
+
   ],
   imports: [CommonModule, PersonalPortfoliosRoutingModule],
 })

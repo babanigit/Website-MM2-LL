@@ -8,8 +8,14 @@
     place-content: center;
     gap: 20px;
     margin: 20px 0;
+    background-color: darkslategray;
+    height: auto;
+    padding: 2%;
   "
 >
+  <div>
+    <a [routerLink]="['/portfolio-plus/stock-investments']"> All </a>
+  </div>
 
   <div>
     <a [routerLink]="['/portfolio-plus/stock-investments']">
@@ -21,6 +27,10 @@
     <a [routerLink]="['/portfolio-plus/mutualfund-investments']">
       mutualfund-investments
     </a>
+  </div>
+
+  <div>
+    <a [routerLink]="['/portfolio-plus/stock-investments']"> commodity </a>
   </div>
 
   <!-- <div>
