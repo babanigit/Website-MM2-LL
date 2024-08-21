@@ -7,14 +7,13 @@ import { GraphDataService } from '../../../services/ipo/graph-data.service';
 import { CommonModule } from '@angular/common';
 import { GetDotFunctionsService } from '../../../services/ipo/get-dot-functions.service';
 import { Observable } from 'rxjs';
-import { LoadingPopupComponent } from '../../loading-popup/loading-popup.component';
 
 @Component({
   selector: 'app-ipo-chart',
   templateUrl: './ipo-chart.component.html',
   styleUrls: ['./ipo-chart.component.css'],
   standalone: true,
-  imports: [ChartModule, CommonModule, LoadingPopupComponent],
+  imports: [ChartModule, CommonModule],
 })
 export class IpoChartComponent implements OnInit {
   graphData: IGraphData | undefined; // Initialize with an empty object
@@ -145,7 +144,7 @@ export class IpoChartComponent implements OnInit {
             ],
             '#FF6666'
           );
-          
+
           belowPreviousClose.length = 0;
           abovePreviousClose.push([prevTimestamp, previousClose]);
           abovePreviousClose.push([timestamp, previousClose]);

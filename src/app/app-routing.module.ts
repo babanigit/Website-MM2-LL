@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/others/not-found/not-found.component';
 
 // import Highcharts from 'highcharts';
 // import Accessibility from 'highcharts/modules/accessibility';
@@ -40,6 +41,11 @@ const routes: Routes = [
         (m) => m.PersonalPortfoliosModule
       ),
   },
+  {
+    path: '**',
+    component: NotFoundComponent // Use component directly
+  },
+
 ];
 
 @NgModule({

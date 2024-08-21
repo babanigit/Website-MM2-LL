@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonalPortfoliosComponent } from './personal-portfolios.component';
+import { NotFoundComponent } from '../../components/others/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
             './../../components/personalPortfo-COMPO/mutual-funds-investments/mutual-funds-investments.module'
           ).then((m) => m.MutualFundsInvestmentsModule),
       },
+      {
+        path: '**',
+        component: NotFoundComponent // Use component directly
+      },
+
     ],
   },
 ];

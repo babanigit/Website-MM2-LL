@@ -8,7 +8,7 @@ import { Verdict3newComponent } from '../../components/verdict3new/verdict3new.c
 import { Verdict1Component } from '../../components/verdict1/verdict1.component';
 import { Verdict2Component } from '../../components/verdict2/verdict2.component';
 import { ResearchServiceComponent } from '../../components/research-service/research-service.component';
-import { VerdictloadingComponent } from '../../components/verdictloading/verdictloading.component';
+import { VerdictloadingComponent } from '../../components/others/verdictloading/verdictloading.component';
 import { VerdictreportComponent } from '../../components/verdictreport/verdictreport.component';
 import { SwitcherReportComponent } from '../../components/switcherReportsComponent/switcher-report/switcher-report.component';
 import { FilterSwitcherReportPipe } from '../../pipes/switcher/filter-switcher-report.pipe';
