@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonalPortfoliosComponent } from './personal-portfolios.component';
 import { NotFoundComponent } from '../../components/others/not-found/not-found.component';
+import { NetworthTrackerComponent } from '../../components/personalPortfo-COMPO/networth-tracker/networth-tracker.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
             './../../components/personalPortfo-COMPO/mutual-funds-investments/mutual-funds-investments.module'
           ).then((m) => m.MutualFundsInvestmentsModule),
       },
+      { path: 'portfolio-plus/networth-tracker', component:NetworthTrackerComponent  },
+
+      { path: '', redirectTo: '/portfolio-plus/networth-tracker', pathMatch: 'full' },
+
       {
         path: '**',
         component: NotFoundComponent // Use component directly
