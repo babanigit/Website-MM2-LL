@@ -13,7 +13,7 @@
                   "stk_sect": 27,
                   "q_txt": "Excellent",
                   "v_rank": -1,
-                  "v_txt": "Fair",
+                  "v_txt": "Expensive",
                   "f_pts": 0,
                   "f_txt": "Flat",
                   "f_clr": "orange",
@@ -21,37 +21,37 @@
                   "f_dir": -1,
                   "prev_score": 5,
                   "q_dir": 0,
-                  "tech_score": 1.28,
+                  "tech_score": 1.17,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "green",
-                  "v_clr": "orange",
-                  "score": 77,
-                  "score_date": "2024-08-21",
+                  "v_clr": "red",
+                  "score": 74,
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Strong Buy",
                   "prevScoreTextDate": "2024-07-18",
                   "prevScore": 80,
                   "final_score_grade_41": "Hold",
-                  "final_score_41_or": 68,
+                  "final_score_41_or": 64,
                   "current_final_score_grade_41": "Hold",
-                  "current_final_score_41": 68,
+                  "current_final_score_41": 64,
                   "mfin_score": 0,
                   "scoreTextChange": 0,
-                  "curfscore": 77,
+                  "curfscore": 74,
                   "s_clr": "btnbuy"
               },
               "indcode": 52,
               "indname": "Mining & Minerals",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 532.35,
-              "chg": 8.1,
-              "chgp": 1.55,
-              "cmpdir": 1,
-              "prevclose": 524.25,
+              "cmp": 531.3,
+              "chg": -0.75,
+              "chgp": -0.14,
+              "cmpdir": -1,
+              "prevclose": 532.05,
               "mcap": "Large Cap",
-              "sect_chgp": 0.82,
+              "sect_chgp": 0.23,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -60,16 +60,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 8009686,
-              "volperc": -4.57,
-              "voldir": -1,
-              "unrgain": 26155,
-              "unrgainp": 159.15,
+              "vol": 2203071,
+              "volperc": 2.06,
+              "voldir": 1,
+              "unrgain": 26071,
+              "unrgainp": 158.64,
               "unrgaindir": 1,
-              "dgain": 648,
-              "dgainp": 1.55,
-              "dgaindir": 1,
-              "lval": 42588,
+              "dgain": -60,
+              "dgainp": -0.14,
+              "dgaindir": -1,
+              "lval": 42504,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -79,13 +79,13 @@
                   "list": [
                       {
                           "header": "Close to 52 Week High",
-                          "msg": "1.97% away from 52 week high of Rs 542",
+                          "msg": "2.1% away from 52 week high of Rs 542",
                           "dir": 1
                       },
                       {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 5.32% returns in the period",
-                          "dir": 1
+                          "header": "Trend Reversal",
+                          "msg": "Stock has fallen after 4 days of consecutive gain",
+                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -97,12 +97,12 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-31",
-                      "chgp": 1.95,
+                      "chgp": 1.75,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 6.27,
-                      "dir": 1
+                      "chgp": -0.08,
+                      "dir": -1
                   },
                   "dt": "31st Jul",
                   "rawdt": "2024-07-31",
@@ -130,13 +130,13 @@
                   "f_dir": 1,
                   "prev_score": -1,
                   "q_dir": 0,
-                  "tech_score": 1.11,
+                  "tech_score": 1.06,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "red",
                   "v_clr": "red",
                   "score": 51,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Hold",
                   "prevScoreText": "Sell",
                   "prevScoreTextDate": "2024-08-20",
@@ -154,13 +154,13 @@
               "indname": "Pesticides & Agrochem",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 1622.75,
-              "chg": -54.75,
-              "chgp": -3.26,
-              "cmpdir": -1,
-              "prevclose": 1677.5,
+              "cmp": 1681,
+              "chg": 52,
+              "chgp": 3.19,
+              "cmpdir": 1,
+              "prevclose": 1629,
               "mcap": "Small Cap",
-              "sect_chgp": 0.85,
+              "sect_chgp": 2.49,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -169,30 +169,24 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 19311,
-              "volperc": -62.44,
+              "vol": 2569,
+              "volperc": -90.63,
               "voldir": -1,
-              "unrgain": 60623,
-              "unrgainp": 295.5,
+              "unrgain": 63535,
+              "unrgainp": 309.7,
               "unrgaindir": 1,
-              "dgain": -2738,
-              "dgainp": -3.26,
-              "dgaindir": -1,
-              "lval": 81138,
+              "dgain": 2600,
+              "dgainp": 3.19,
+              "dgaindir": 1,
+              "lval": 84050,
               "action": {
                   "bell": {
                       "flag": 0,
                       "msg": ""
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 6 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
+                  "status": 0,
+                  "list": [],
+                  "txt": "-"
               },
               "reco": {
                   "status": 0,
@@ -201,11 +195,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-08-12",
-                      "chgp": 7.45,
+                      "chgp": 11.31,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 13.24,
+                      "chgp": 14.9,
                       "dir": 1
                   },
                   "dt": "12th Aug",
@@ -234,13 +228,13 @@
                   "f_dir": -1,
                   "prev_score": 6,
                   "q_dir": 0,
-                  "tech_score": 1.28,
+                  "tech_score": 1.22,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "green",
                   "v_clr": "green",
                   "score": 72,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-08-19",
@@ -258,13 +252,13 @@
               "indname": "Private Banks",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 170.15,
-              "chg": 0.1,
-              "chgp": 0.06,
+              "cmp": 171.85,
+              "chg": 1.95,
+              "chgp": 1.15,
               "cmpdir": 1,
-              "prevclose": 170.05,
+              "prevclose": 169.9,
               "mcap": "Mid Cap",
-              "sect_chgp": -0.35,
+              "sect_chgp": 0.41,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -273,16 +267,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 2042863,
-              "volperc": 69.66,
+              "vol": 1097331,
+              "volperc": 113.3,
               "voldir": 1,
-              "unrgain": -1055,
-              "unrgainp": -7.64,
+              "unrgain": -928,
+              "unrgainp": -6.71,
               "unrgaindir": -1,
-              "dgain": 8,
-              "dgainp": 0.06,
+              "dgain": 146,
+              "dgainp": 1.15,
               "dgaindir": 1,
-              "lval": 12761,
+              "lval": 12889,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -292,13 +286,8 @@
                   "list": [
                       {
                           "header": "Close to 52 Week High",
-                          "msg": "4.4% away from 52 week high of Rs 176.7",
+                          "msg": "3.15% away from 52 week high of Rs 176.7",
                           "dir": 1
-                      },
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 3 days of consecutive gain",
-                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -310,11 +299,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-26",
-                      "chgp": 6.08,
+                      "chgp": 7.14,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 4.77,
+                      "chgp": 4.75,
                       "dir": 1
                   },
                   "dt": "26th Jul",
@@ -343,13 +332,13 @@
                   "f_dir": 1,
                   "prev_score": -2,
                   "q_dir": 0,
-                  "tech_score": 0.22,
+                  "tech_score": 0.28,
                   "tech_txt": "Mildly Bullish",
                   "tech_clr": "Green",
                   "q_clr": "red",
                   "v_clr": "green",
                   "score": 53,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Hold",
                   "prevScoreText": "Sell",
                   "prevScoreTextDate": "2024-08-16",
@@ -367,13 +356,13 @@
               "indname": "Power ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 243.2,
-              "chg": 4.85,
-              "chgp": 2.03,
-              "cmpdir": 1,
-              "prevclose": 238.35,
+              "cmp": 240.65,
+              "chg": -2.5,
+              "chgp": -1.03,
+              "cmpdir": -1,
+              "prevclose": 243.15,
               "mcap": "Mid Cap",
-              "sect_chgp": -0.02,
+              "sect_chgp": -0.44,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -382,16 +371,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 8353676,
-              "volperc": -19.2,
+              "vol": 5022609,
+              "volperc": -4.63,
               "voldir": -1,
-              "unrgain": -5206,
-              "unrgainp": -51.7,
+              "unrgain": -5257,
+              "unrgainp": -52.2,
               "unrgaindir": -1,
-              "dgain": 97,
-              "dgainp": 2.03,
-              "dgaindir": 1,
-              "lval": 4864,
+              "dgain": -50,
+              "dgainp": -1.03,
+              "dgaindir": -1,
+              "lval": 4813,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -400,9 +389,9 @@
                   "status": 1,
                   "list": [
                       {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 3 days and has risen 10.84% returns in the period",
-                          "dir": 1
+                          "header": "Trend Reversal",
+                          "msg": "Stock has fallen after 3 days of consecutive gain",
+                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -414,11 +403,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-08-14",
-                      "chgp": 10.42,
+                      "chgp": 9.26,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 27.13,
+                      "chgp": 12.51,
                       "dir": 1
                   },
                   "dt": "14th Aug",
@@ -453,7 +442,7 @@
                   "q_clr": "green",
                   "v_clr": "red",
                   "score": 72,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-08-19",
@@ -471,13 +460,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 593.7,
-              "chg": -6.1,
-              "chgp": -1.02,
-              "cmpdir": -1,
-              "prevclose": 599.8,
+              "cmp": 596,
+              "chg": 1.75,
+              "chgp": 0.29,
+              "cmpdir": 1,
+              "prevclose": 594.25,
               "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "sect_chgp": 0.25,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -486,30 +475,24 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 5743737,
-              "volperc": -3.09,
+              "vol": 1134170,
+              "volperc": -48.59,
               "voldir": -1,
-              "unrgain": 30734,
-              "unrgainp": 830.58,
+              "unrgain": 30868,
+              "unrgainp": 834.19,
               "unrgaindir": 1,
-              "dgain": -354,
-              "dgainp": -1.02,
-              "dgaindir": -1,
-              "lval": 34435,
+              "dgain": 102,
+              "dgainp": 0.29,
+              "dgaindir": 1,
+              "lval": 34568,
               "action": {
                   "bell": {
                       "flag": 0,
                       "msg": ""
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 3 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
+                  "status": 0,
+                  "list": [],
+                  "txt": "-"
               },
               "reco": {
                   "status": 0,
@@ -518,11 +501,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-27",
-                      "chgp": -7.89,
+                      "chgp": -7.53,
                       "dir": -1
                   },
                   "D15": {
-                      "chgp": 4.63,
+                      "chgp": 0.94,
                       "dir": 1
                   },
                   "dt": "27th Jul",
@@ -551,13 +534,13 @@
                   "f_dir": -1,
                   "prev_score": 15,
                   "q_dir": 0,
-                  "tech_score": 0.72,
+                  "tech_score": 0.67,
                   "tech_txt": "Mildly Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
                   "v_clr": "green",
                   "score": 58,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Hold",
                   "prevScoreText": "Buy",
                   "prevScoreTextDate": "2024-07-24",
@@ -575,13 +558,13 @@
               "indname": "Capital Goods",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 3594.25,
-              "chg": 20.05,
-              "chgp": 0.56,
-              "cmpdir": 1,
-              "prevclose": 3574.2,
+              "cmp": 3593.35,
+              "chg": -2.5,
+              "chgp": -0.07,
+              "cmpdir": -1,
+              "prevclose": 3595.85,
               "mcap": "Large Cap",
-              "sect_chgp": 0.02,
+              "sect_chgp": 0.03,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -590,16 +573,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 1394052,
-              "volperc": -6.62,
+              "vol": 224677,
+              "volperc": -58.19,
               "voldir": -1,
-              "unrgain": 13341,
-              "unrgainp": 112.88,
+              "unrgain": 13335,
+              "unrgainp": 112.83,
               "unrgaindir": 1,
-              "dgain": 140,
-              "dgainp": 0.56,
-              "dgaindir": 1,
-              "lval": 25160,
+              "dgain": -18,
+              "dgainp": -0.07,
+              "dgaindir": -1,
+              "lval": 25153,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -608,9 +591,9 @@
                   "status": 1,
                   "list": [
                       {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 2 days and has risen 1.14% returns in the period",
-                          "dir": 1
+                          "header": "Trend Reversal",
+                          "msg": "Stock has fallen after 2 days of consecutive gain",
+                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -622,12 +605,12 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-24",
-                      "chgp": 2.13,
+                      "chgp": 2.1,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 0.26,
-                      "dir": 1
+                      "chgp": -1.42,
+                      "dir": -1
                   },
                   "dt": "24th Jul",
                   "rawdt": "2024-07-24",
@@ -655,16 +638,16 @@
                   "f_dir": -1,
                   "prev_score": 16,
                   "q_dir": 0,
-                  "tech_score": -0.44,
-                  "tech_txt": "Mildly Bearish",
-                  "tech_clr": "Red",
+                  "tech_score": 0.56,
+                  "tech_txt": "Mildly Bullish",
+                  "tech_clr": "Green",
                   "q_clr": "grey",
                   "v_clr": "red",
                   "score": 0,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Not Rated",
                   "prevScoreText": "",
-                  "prevScoreTextDate": "2024-08-21",
+                  "prevScoreTextDate": "2024-08-22",
                   "prevScore": 0,
                   "final_score_grade_41": "Not Rated",
                   "final_score_41_or": 0,
@@ -679,13 +662,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 28.8,
-              "chg": 4.8,
+              "cmp": 34.56,
+              "chg": 5.76,
               "chgp": 20,
               "cmpdir": 1,
-              "prevclose": 24,
+              "prevclose": 28.8,
               "mcap": "Micro Cap",
-              "sect_chgp": 0.6,
+              "sect_chgp": 0.25,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -694,16 +677,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 56647,
-              "volperc": 757.4,
+              "vol": 28574,
+              "volperc": 148.56,
               "voldir": 1,
-              "unrgain": 187,
-              "unrgainp": 256.88,
+              "unrgain": 238,
+              "unrgainp": 328.25,
               "unrgaindir": 1,
-              "dgain": 43,
+              "dgain": 52,
               "dgainp": 20,
               "dgaindir": 1,
-              "lval": 259,
+              "lval": 311,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -712,8 +695,13 @@
                   "status": 1,
                   "list": [
                       {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has gained after 3 days of consecutive fall",
+                          "header": "Close to 52 Week High",
+                          "msg": "4.2% away from 52 week high of Rs 36.01",
+                          "dir": 1
+                      },
+                      {
+                          "header": "Consecutive Gain",
+                          "msg": "Stock has been gaining for the last 2 days and has risen 44% returns in the period",
                           "dir": 1
                       }
                   ],
@@ -726,11 +714,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-08-12",
-                      "chgp": 11.37,
+                      "chgp": 33.64,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 14.74,
+                      "chgp": 32.92,
                       "dir": 1
                   },
                   "dt": "12th Aug",
@@ -765,7 +753,7 @@
                   "q_clr": "orange",
                   "v_clr": "green",
                   "score": 72,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-05-14",
@@ -783,13 +771,13 @@
               "indname": "Public Banks",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 116.3,
-              "chg": -1.1,
-              "chgp": -0.94,
-              "cmpdir": -1,
-              "prevclose": 117.4,
+              "cmp": 117.75,
+              "chg": 1.3,
+              "chgp": 1.12,
+              "cmpdir": 1,
+              "prevclose": 116.45,
               "mcap": "Large Cap",
-              "sect_chgp": -0.64,
+              "sect_chgp": 0.54,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -798,30 +786,24 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 24738913,
-              "volperc": 36.42,
-              "voldir": 1,
-              "unrgain": -185,
-              "unrgainp": -3.08,
+              "vol": 7984429,
+              "volperc": -12.78,
+              "voldir": -1,
+              "unrgain": -113,
+              "unrgainp": -1.88,
               "unrgaindir": -1,
-              "dgain": -55,
-              "dgainp": -0.94,
-              "dgaindir": -1,
-              "lval": 5815,
+              "dgain": 65,
+              "dgainp": 1.12,
+              "dgaindir": 1,
+              "lval": 5888,
               "action": {
                   "bell": {
                       "flag": 0,
                       "msg": ""
                   },
-                  "status": 1,
-                  "list": [
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 2 days of consecutive gain",
-                          "dir": -1
-                      }
-                  ],
-                  "txt": ""
+                  "status": 0,
+                  "list": [],
+                  "txt": "-"
               },
               "reco": {
                   "status": 0,
@@ -830,11 +812,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-27",
-                      "chgp": -8.39,
+                      "chgp": -7.25,
                       "dir": -1
                   },
                   "D15": {
-                      "chgp": 2.11,
+                      "chgp": 1.55,
                       "dir": 1
                   },
                   "dt": "27th Jul",
@@ -863,13 +845,13 @@
                   "f_dir": 1,
                   "prev_score": 8,
                   "q_dir": "NA",
-                  "tech_score": 1.17,
+                  "tech_score": 1.39,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
                   "v_clr": "red",
                   "score": 65,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Hold",
                   "prevScoreText": "Sell",
                   "prevScoreTextDate": "2024-07-31",
@@ -887,13 +869,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 724.85,
-              "chg": 13.75,
-              "chgp": 1.93,
+              "cmp": 727.75,
+              "chg": 3.2,
+              "chgp": 0.44,
               "cmpdir": 1,
-              "prevclose": 711.1,
+              "prevclose": 724.55,
               "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "sect_chgp": 0.25,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -902,16 +884,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 5501792,
-              "volperc": 45.64,
-              "voldir": 1,
-              "unrgain": 224,
-              "unrgainp": 6.6,
+              "vol": 996234,
+              "volperc": -19.35,
+              "voldir": -1,
+              "unrgain": 239,
+              "unrgainp": 7.02,
               "unrgaindir": 1,
-              "dgain": 69,
-              "dgainp": 1.93,
+              "dgain": 16,
+              "dgainp": 0.44,
               "dgaindir": 1,
-              "lval": 3624,
+              "lval": 3639,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -921,12 +903,12 @@
                   "list": [
                       {
                           "header": "New 52 Week High",
-                          "msg": "Rs.727.65 hit today",
+                          "msg": "Rs.729.2 hit today",
                           "dir": 1
                       },
                       {
                           "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 2 days and has risen 5.53% returns in the period",
+                          "msg": "Stock has been gaining for the last 3 days and has risen 5.98% returns in the period",
                           "dir": 1
                       }
                   ],
@@ -939,11 +921,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-15",
-                      "chgp": 13.64,
+                      "chgp": 14.09,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 6.47,
+                      "chgp": 4.49,
                       "dir": 1
                   },
                   "dt": "15th Jul",
@@ -972,13 +954,13 @@
                   "f_dir": -1,
                   "prev_score": 33,
                   "q_dir": 1,
-                  "tech_score": 0.33,
+                  "tech_score": 0.22,
                   "tech_txt": "Mildly Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
                   "v_clr": "green",
                   "score": 72,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-07-29",
@@ -996,25 +978,25 @@
               "indname": "Power ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 18.88,
-              "chg": 0.79,
-              "chgp": 4.37,
+              "cmp": 18.85,
+              "chg": 0.07,
+              "chgp": 0.37,
               "cmpdir": 1,
-              "prevclose": 18.09,
+              "prevclose": 18.78,
               "mcap": "Mid Cap",
-              "sect_chgp": -0.02,
+              "sect_chgp": -0.44,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
                   {
                       "name": "Hidden Turnarounds",
-                      "text": "since 12 months 24 days",
+                      "text": "since 12 months 25 days",
                       "url": "https://www.marketsmojo.com/mojopro/strategy/1",
                       "product_class": "skyblue-tag"
                   },
                   {
                       "name": "MomentumNow Stocks",
-                      "text": "since 5 months 23 days",
+                      "text": "since 5 months 24 days",
                       "url": "https://www.marketsmojo.com/mojopro/strategy/2",
                       "product_class": "purple-tag"
                   }
@@ -1024,16 +1006,16 @@
                   "text": "+1 More"
               },
               "traded": "Traded",
-              "vol": 69343899,
-              "volperc": 154.8,
+              "vol": 19219460,
+              "volperc": 54.9,
               "voldir": 1,
-              "unrgain": 1644,
-              "unrgainp": 27.57,
+              "unrgain": 1632,
+              "unrgainp": 27.36,
               "unrgaindir": 1,
-              "dgain": 318,
-              "dgainp": 4.37,
+              "dgain": 28,
+              "dgainp": 0.37,
               "dgaindir": 1,
-              "lval": 7609,
+              "lval": 7597,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -1042,9 +1024,9 @@
                   "status": 1,
                   "list": [
                       {
-                          "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 7.96% returns in the period",
-                          "dir": 1
+                          "header": "Trend Reversal",
+                          "msg": "Stock has fallen after 4 days of consecutive gain",
+                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -1056,12 +1038,12 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-27",
-                      "chgp": -2.68,
+                      "chgp": -2.84,
                       "dir": -1
                   },
                   "D15": {
-                      "chgp": 4.6,
-                      "dir": 1
+                      "chgp": -0.16,
+                      "dir": -1
                   },
                   "dt": "27th Jul",
                   "rawdt": "2024-07-27",
@@ -1088,14 +1070,14 @@
                   "f_dir": "NA",
                   "prev_score": "",
                   "q_dir": 1,
-                  "tech_score": -0.25,
+                  "tech_score": -0.17,
                   "tech_txt": "Mildly Bearish",
                   "tech_clr": "Red",
                   "q_clr": "orange",
                   "v_clr": "red",
                   "f_clr": "grey",
                   "score": 0,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Not Rated",
                   "prevScoreText": "",
                   "prevScoreTextDate": "2024-03-15",
@@ -1113,13 +1095,13 @@
               "indname": "Textile - Machinery",
               "exch": "NSE",
               "exchcode": 1,
-              "cmp": 725,
-              "chg": -10,
-              "chgp": -1.36,
-              "cmpdir": -1,
-              "prevclose": 735,
+              "cmp": 740,
+              "chg": 15,
+              "chgp": 2.07,
+              "cmpdir": 1,
+              "prevclose": 725,
               "mcap": "Micro Cap",
-              "sect_chgp": -0.19,
+              "sect_chgp": -0.03,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1128,16 +1110,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 3600,
-              "volperc": -3.23,
-              "voldir": -1,
-              "unrgain": 5,
-              "unrgainp": 0.69,
+              "vol": 1800,
+              "volperc": 1400,
+              "voldir": 1,
+              "unrgain": 20,
+              "unrgainp": 2.78,
               "unrgaindir": 1,
-              "dgain": -10,
-              "dgainp": -1.36,
-              "dgaindir": -1,
-              "lval": 725,
+              "dgain": 15,
+              "dgainp": 2.07,
+              "dgaindir": 1,
+              "lval": 740,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -1154,11 +1136,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-05-29",
-                      "chgp": 78.35,
+                      "chgp": 82.04,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 0.69,
+                      "chgp": 2.78,
                       "dir": 1
                   },
                   "dt": "NA",
@@ -1193,7 +1175,7 @@
                   "q_clr": "green",
                   "v_clr": "red",
                   "score": 78,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-04-22",
@@ -1211,19 +1193,19 @@
               "indname": "IT - Software ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 4910.2,
-              "chg": -19.6,
-              "chgp": -0.4,
-              "cmpdir": -1,
-              "prevclose": 4929.8,
+              "cmp": 4965,
+              "chg": 42.55,
+              "chgp": 0.86,
+              "cmpdir": 1,
+              "prevclose": 4922.45,
               "mcap": "Large Cap",
-              "sect_chgp": 0.06,
+              "sect_chgp": 0.11,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
                   {
                       "name": "Stock of the Month",
-                      "text": "since 8 months 10 days",
+                      "text": "since 8 months 11 days",
                       "url": "https://www.marketsmojo.com/mojo/stock-of-the-month",
                       "product_class": "som-tag"
                   }
@@ -1233,16 +1215,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 127904,
-              "volperc": -62.94,
+              "vol": 50528,
+              "volperc": -64.48,
               "voldir": -1,
-              "unrgain": -2740,
-              "unrgainp": -35.82,
+              "unrgain": -2685,
+              "unrgainp": -35.1,
               "unrgaindir": -1,
-              "dgain": -20,
-              "dgainp": -0.4,
-              "dgaindir": -1,
-              "lval": 4910,
+              "dgain": 43,
+              "dgainp": 0.86,
+              "dgaindir": 1,
+              "lval": 4965,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -1252,13 +1234,8 @@
                   "list": [
                       {
                           "header": "Close to 52 Week High",
-                          "msg": "1.93% away from 52 week high of Rs 4995.5",
+                          "msg": "0.98% away from 52 week high of Rs 4995.5",
                           "dir": 1
-                      },
-                      {
-                          "header": "Trend Reversal",
-                          "msg": "Stock has fallen after 5 days of consecutive gain",
-                          "dir": -1
                       }
                   ],
                   "txt": ""
@@ -1270,11 +1247,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-18",
-                      "chgp": 0.15,
+                      "chgp": 1.26,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 9.42,
+                      "chgp": 6.36,
                       "dir": 1
                   },
                   "dt": "18th Jul",
@@ -1303,13 +1280,13 @@
                   "f_dir": -1,
                   "prev_score": 10,
                   "q_dir": 0,
-                  "tech_score": 1.33,
+                  "tech_score": 1.28,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "green",
                   "v_clr": "green",
                   "score": 72,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-08-19",
@@ -1327,19 +1304,19 @@
               "indname": "Tyres",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 2825.35,
-              "chg": 75.35,
-              "chgp": 2.74,
+              "cmp": 2855.25,
+              "chg": 32.95,
+              "chgp": 1.17,
               "cmpdir": 1,
-              "prevclose": 2750,
+              "prevclose": 2822.3,
               "mcap": "Mid Cap",
-              "sect_chgp": 0.98,
+              "sect_chgp": 0.41,
               "show_mojostock": "yes",
               "show_fallstock": "no",
               "product_icon_list": [
                   {
                       "name": "Stock of the Month",
-                      "text": "since 7 months 11 days",
+                      "text": "since 7 months 12 days",
                       "url": "https://www.marketsmojo.com/mojo/stock-of-the-month",
                       "product_class": "som-tag"
                   }
@@ -1349,16 +1326,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 491317,
-              "volperc": 221.56,
+              "vol": 76206,
+              "volperc": 10.31,
               "voldir": 1,
-              "unrgain": 333,
-              "unrgainp": 13.38,
+              "unrgain": 363,
+              "unrgainp": 14.58,
               "unrgaindir": 1,
-              "dgain": 75,
-              "dgainp": 2.74,
+              "dgain": 33,
+              "dgainp": 1.17,
               "dgaindir": 1,
-              "lval": 2825,
+              "lval": 2855,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -1368,7 +1345,7 @@
                   "list": [
                       {
                           "header": "Consecutive Gain",
-                          "msg": "Stock has been gaining for the last 4 days and has risen 7.98% returns in the period",
+                          "msg": "Stock has been gaining for the last 5 days and has risen 9.24% returns in the period",
                           "dir": 1
                       }
                   ],
@@ -1381,11 +1358,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-18",
-                      "chgp": 2.04,
+                      "chgp": 3.12,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 8.67,
+                      "chgp": 6.25,
                       "dir": 1
                   },
                   "dt": "18th Jul",
@@ -1414,13 +1391,13 @@
                   "f_dir": 1,
                   "prev_score": 32,
                   "q_dir": 1,
-                  "tech_score": 1.59,
+                  "tech_score": 1.7,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
                   "v_clr": "red",
                   "score": 71,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Buy",
                   "prevScoreText": "Hold",
                   "prevScoreTextDate": "2024-08-02",
@@ -1438,13 +1415,13 @@
               "indname": "IT - Software ",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 260.2,
-              "chg": -2.8,
-              "chgp": -1.06,
-              "cmpdir": -1,
-              "prevclose": 263,
+              "cmp": 259.95,
+              "chg": 0,
+              "chgp": 0,
+              "cmpdir": 0,
+              "prevclose": 259.95,
               "mcap": "Large Cap",
-              "sect_chgp": 0.06,
+              "sect_chgp": 0.11,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1453,15 +1430,15 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 32315678,
-              "volperc": -68,
+              "vol": 39828561,
+              "volperc": -42.78,
               "voldir": -1,
               "unrgain": 125,
-              "unrgainp": 92.81,
+              "unrgainp": 92.63,
               "unrgaindir": 1,
-              "dgain": -3,
-              "dgainp": -1.06,
-              "dgaindir": -1,
+              "dgain": 0,
+              "dgainp": 0,
+              "dgaindir": 0,
               "lval": 260,
               "action": {
                   "bell": {
@@ -1479,12 +1456,12 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-08-01",
-                      "chgp": 11.15,
+                      "chgp": 11.04,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 4.48,
-                      "dir": 1
+                      "chgp": -2.18,
+                      "dir": -1
                   },
                   "dt": "1st Aug",
                   "rawdt": "2024-08-01",
@@ -1512,13 +1489,13 @@
                   "f_dir": 1,
                   "prev_score": -3,
                   "q_dir": "NA",
-                  "tech_score": 1.25,
+                  "tech_score": 1.42,
                   "tech_txt": "Bullish",
                   "tech_clr": "Green",
                   "q_clr": "orange",
                   "v_clr": "green",
                   "score": 68,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Hold",
                   "prevScoreText": "Sell",
                   "prevScoreTextDate": "2023-07-10",
@@ -1536,13 +1513,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 1083.5,
-              "chg": 15.95,
-              "chgp": 1.49,
-              "cmpdir": 1,
-              "prevclose": 1067.55,
+              "cmp": 1081.05,
+              "chg": -2.65,
+              "chgp": -0.24,
+              "cmpdir": -1,
+              "prevclose": 1083.7,
               "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "sect_chgp": 0.25,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1551,16 +1528,16 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 1081700,
-              "volperc": -52.88,
+              "vol": 319492,
+              "volperc": -64.28,
               "voldir": -1,
-              "unrgain": 169,
-              "unrgainp": 18.49,
+              "unrgain": 167,
+              "unrgainp": 18.22,
               "unrgaindir": 1,
-              "dgain": 16,
-              "dgainp": 1.49,
-              "dgaindir": 1,
-              "lval": 1084,
+              "dgain": -3,
+              "dgainp": -0.24,
+              "dgaindir": -1,
+              "lval": 1081,
               "action": {
                   "bell": {
                       "flag": 0,
@@ -1577,12 +1554,12 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-08-09",
-                      "chgp": -4.42,
+                      "chgp": -4.64,
                       "dir": -1
                   },
                   "D15": {
-                      "chgp": 0.12,
-                      "dir": 1
+                      "chgp": -3.81,
+                      "dir": -1
                   },
                   "dt": "9th Aug",
                   "rawdt": "2024-08-09",
@@ -1616,7 +1593,7 @@
                   "q_clr": "orange",
                   "v_clr": "red",
                   "score": 28,
-                  "score_date": "2024-08-21",
+                  "score_date": "2024-08-22",
                   "scoreText": "Strong Sell",
                   "prevScoreText": "Sell",
                   "prevScoreTextDate": "2024-05-22",
@@ -1634,13 +1611,13 @@
               "indname": "Finance/NBFC",
               "exch": "BSE",
               "exchcode": 0,
-              "cmp": 572.7,
-              "chg": -0.05,
-              "chgp": -0.01,
-              "cmpdir": -1,
-              "prevclose": 572.75,
+              "cmp": 583.75,
+              "chg": 9.95,
+              "chgp": 1.73,
+              "cmpdir": 1,
+              "prevclose": 573.8,
               "mcap": "Large Cap",
-              "sect_chgp": 0.6,
+              "sect_chgp": 0.25,
               "show_mojostock": "no",
               "show_fallstock": "no",
               "product_icon_list": [],
@@ -1649,24 +1626,30 @@
                   "text": ""
               },
               "traded": "Traded",
-              "vol": 4152168,
-              "volperc": -54.21,
-              "voldir": -1,
-              "unrgain": -187,
-              "unrgainp": -24.57,
+              "vol": 8049669,
+              "volperc": 146.99,
+              "voldir": 1,
+              "unrgain": -175,
+              "unrgainp": -23.11,
               "unrgaindir": -1,
-              "dgain": 0,
-              "dgainp": -0.01,
-              "dgaindir": -1,
-              "lval": 573,
+              "dgain": 10,
+              "dgainp": 1.73,
+              "dgaindir": 1,
+              "lval": 584,
               "action": {
                   "bell": {
                       "flag": 0,
                       "msg": ""
                   },
-                  "status": 0,
-                  "list": [],
-                  "txt": "-"
+                  "status": 1,
+                  "list": [
+                      {
+                          "header": "Consecutive Gain",
+                          "msg": "Stock has been gaining for the last 2 days and has risen 2.23% returns in the period",
+                          "dir": 1
+                      }
+                  ],
+                  "txt": ""
               },
               "reco": {
                   "status": 0,
@@ -1675,11 +1658,11 @@
               "result": {
                   "resultdt": {
                       "resdt": "2024-07-19",
-                      "chgp": 24.85,
+                      "chgp": 27.26,
                       "dir": 1
                   },
                   "D15": {
-                      "chgp": 16.68,
+                      "chgp": 15.15,
                       "dir": 1
                   },
                   "dt": "19th Jul",

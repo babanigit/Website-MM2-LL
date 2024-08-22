@@ -1,1 +1,19 @@
-<p>networth-tracker works!</p>
+<!-- networth-tracker.component.html -->
+
+<div *ngIf="selectedMenu === 'all'">
+  <!-- Content for 'all' menu -->
+  <h1>All Menu Content</h1>
+  <p>This is the content displayed when the 'all' menu is selected.</p>
+</div>
+
+<div *ngIf="selectedMenu === 'commodity'">
+  <!-- Content for 'commodity' menu -->
+  <h1>Commodity Menu Content</h1>
+  <p>This is the content displayed when the 'commodity' menu is selected.</p>
+</div>
+
+<div *ngIf="selectedMenu === null">
+  <!-- Content for when no menu is selected -->
+  <h1>No Menu Selected</h1>
+  <p>Please select a menu to view the content.</p>
+</div>

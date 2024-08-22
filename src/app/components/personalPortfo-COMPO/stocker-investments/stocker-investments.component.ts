@@ -1,54 +1,71 @@
-import { Component } from '@angular/core';
-import { JsonDataService } from '../../../services/json-data.service';
-import { IGetOverview } from '../../../models/overview';
+import { Component, OnInit } from '@angular/core';
 import { GetPersonalPFService } from '../../../services/personal-portfolio/get-personal-pf.service';
+import { IGetOverview } from '../../../models/overview';
 
 @Component({
   selector: 'app-stocker-investments',
   templateUrl: './stocker-investments.component.html',
-  styleUrl: './stocker-investments.component.css',
+  styleUrls: ['./stocker-investments.component.css'],
 })
-export class StockerInvestmentsComponent {
+export class StockerInvestmentsComponent implements OnInit {
+  private dataCache: { [key: string]: IGetOverview | undefined } = {};
+
+  stocks: IGetOverview | undefined;
   overviewData: IGetOverview | undefined;
   holdingData: IGetOverview | undefined;
 
-  stocks: IGetOverview | undefined;
+  TYPE: 'overview' | 'holding' | 'price' = 'holding';
+  unrgainTabList: any[] = []
+  // priceData: IGetOverview | undefined;
+
   constructor(private serv: GetPersonalPFService) {}
 
   ngOnInit(): void {
-    this.fetchStocks('overview');
+    this.fetchStocks('holding');
   }
 
-  fetchStocks(type: 'overview' | 'holding') {
-    console.log("data fetched")
+  fetchStocks(type: 'overview' | 'holding'): void {
+    // Check if the data is already cached
+    if (this.dataCache[type]) {
+      this.updateData(type);
+      return;
+    }
+
+    console.log('Data fetched for type:', type);
     this.serv.getOverviewStocks(type).subscribe((data) => {
-      this.stocks = data;
+      this.dataCache[type] = data;
+      this.updateData(type);
     });
   }
 
-  i1:number=0
-  i2:number=0
+  updateData(type: 'overview' | 'holding'): void {
+    if (type === 'overview') {
+      this.overviewData = this.dataCache[type];
+      this.stocks = this.overviewData;
+    } else if (type === 'holding') {
+      this.holdingData = this.dataCache[type];
+      this.stocks = this.holdingData;
+    }
+    //  else if (type === 'price') {
+    //   this.priceData = this.dataCache[type];
+    //   this.stocks = this.priceData;
+    // }
+  }
 
-  onClick(str: 'overview' | 'holding') {
-    if (str == 'overview' ) {
-      if (this.i1<1) {
-        console.log('hello ', str);
-        this.fetchStocks(str);
-        return
-      }
-      this.overviewData=this.overviewData
-      this.i1++
+  onClick(type: 'overview' | 'holding' | 'price'): void {
+    this.TYPE = type;
+
+    // Handle the special case for 'price'
+    if (type === 'price') {
+      // Use 'overview' data instead of 'price'
+      type = 'holding';
     }
 
-    if (str == 'holding' || this.i2<1) {
-      if (this.i2<1) {
-        console.log('hello ', str);
-        this.fetchStocks(str);
-        return
-      }
-      this.holdingData=this.holdingData
-      this.i2++
-
+    if (!this.dataCache[type]) {
+      console.log('Fetching data for type:', type);
+      this.fetchStocks(type);
+    } else {
+      this.updateData(type);
     }
   }
 }

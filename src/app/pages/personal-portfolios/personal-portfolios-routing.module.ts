@@ -26,15 +26,21 @@ const routes: Routes = [
           ).then((m) => m.MutualFundsInvestmentsModule),
       },
 
-      { path: 'portfolio-plus/networth-tracker', component:NetworthTrackerComponent  },
+      {
+        path: 'networth-tracker',
+        component: NetworthTrackerComponent,
+      },
 
-      { path: '', redirectTo: '/portfolio-plus/networth-tracker', pathMatch: 'full' },
+      {
+        path: '',
+        redirectTo: 'networth-tracker',
+        pathMatch: 'full',
+      },
 
       {
         path: '**',
-        component: NotFoundComponent // Use component directly
+        component: NotFoundComponent, // Use component directly
       },
-
     ],
   },
 ];

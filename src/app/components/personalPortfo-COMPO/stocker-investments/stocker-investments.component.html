@@ -8,49 +8,125 @@
 >
   <button (click)="onClick('overview')">OVERVIEW</button>
   <button (click)="onClick('holding')">HOLDING</button>
-  <button (click)="onClick('overview')">PRICE</button>
+  <button (click)="onClick('price')">PRICE</button>
 </nav>
+
+the type is :-
+{{ TYPE }}
 
 <div *ngIf="stocks!">
   <table style="width: 100%; border-collapse: collapse">
     <thead>
       <tr style="height: 50px; text-align: center">
+        <!-- company -->
         <th style="width: 250px; text-align: left">
           <div>Company</div>
           <div style="color: gray; font-size: smaller">Industry</div>
         </th>
+
+        <!-- score -->
         <th>
           <div>score</div>
-          <!-- <div style="color: gray; font-size: smaller">
-            IPO closing date
-          </div> -->
         </th>
-        <th>
-          <div>Latest Price</div>
+
+        <!-- latest price -->
+        <th *ngIf="['price', 'holding'].includes(TYPE)">
+          <div>latest price</div>
+          <div>changes</div>
+        </th>
+
+        <!--  -->
+        <!-- price -->
+        <th *ngIf="TYPE === 'price'">
+          <div>combined</div>
+          <div>vol</div>
+        </th>
+
+        <th *ngIf="TYPE === 'price'">
+          <div>Days High</div>
+        </th>
+
+        <th *ngIf="TYPE === 'price'">
+          <div>Days Low</div>
+        </th>
+
+        <th *ngIf="TYPE === 'price'">
+          <div>52 Week High</div>
+          <div>Date</div>
+        </th>
+
+        <th *ngIf="TYPE === 'price'">
+          <div>52 Week Low</div>
+          <div>Date</div>
+        </th>
+        <th *ngIf="TYPE === 'price'">
+          <div>All Time High</div>
+          <div>Date</div>
+        </th>
+
+        <th *ngIf="TYPE === 'price'">
+          <div>All Time Low</div>
+          <div>Date</div>
+        </th>
+        <!--  -->
+
+        <!-- inv price -->
+        <th *ngIf="TYPE === 'holding'">
+          <div>Inv.Price</div>
+          <div>Quality</div>
+        </th>
+
+        <!-- inv value -->
+        <th *ngIf="TYPE === 'holding'">
+          <div>Inv Value</div>
+          <div>Inv. Date</div>
+        </th>
+
+        <!-- day gain -->
+        <th *ngIf="TYPE === 'holding'">
+          <div>Day's Gain</div>
+          <div>in %</div>
+        </th>
+
+        <!-- changes -->
+        <th *ngIf="TYPE === 'overview'">
+          <div>Price</div>
           <div style="color: gray; font-size: smaller">Change</div>
         </th>
-        <th>
-          <div>Inv price</div>
+
+        <!-- qualtity -->
+        <th *ngIf="TYPE === 'overview'">
+          <div>Volume</div>
           <div style="color: gray; font-size: smaller">Quality</div>
         </th>
-        <th>
-          <div>Inv Value</div>
-          <div style="color: gray; font-size: smaller">inv. Date</div>
-        </th>
-        <th style="width: 150px">
-          <div>Days Gain</div>
-          <div style="color: gray; font-size: smaller">in%</div>
-        </th>
-        <th style="width: 150px">
+
+        <!-- urealized gain -->
+        <th *ngIf="['overview', 'holding'].includes(TYPE)">
           <div>unrealized Gain</div>
-          <div style="color: gray; font-size: smaller">in%</div>
         </th>
-        <th>Latest Value</th>
+
+        <!-- Latest value -->
+        <th *ngIf="TYPE === 'holding'">
+          <div>Latest Value</div>
+        </th>
+
+        <!-- technical -->
+        <th *ngIf="TYPE === 'overview'" style="width: 150px">
+          <div>Technical</div>
+        </th>
+
+        <!-- fiancial tred -->
+        <th *ngIf="TYPE === 'overview'" style="width: 150px">
+          <div>Financial Trend</div>
+          <div style="color: gray; font-size: smaller">Result Date</div>
+        </th>
+
+        <!-- things you should know -->
+        <th *ngIf="TYPE === 'overview'">Things you should know</th>
       </tr>
     </thead>
 
-
-    <!-- <tbody *ngFor="let hello of stocks.data.list | keyvalue" >
+    <tbody *ngFor="let hello of stocks.data.list | keyvalue">
       <tr
         style="
           height: 50px;
@@ -58,67 +134,166 @@
           text-align: center;
         "
       >
+        <!-- company -->
         <td style="text-align: left">
-          <div style="color: blue">
-            {{ hello.value.sname }}
+          {{ hello.value.short }}
+        </td>
+
+        <!-- score -->
+        <td>
+          <span>
+            {{ hello.value.dotsum.score }}
+          </span>
+          <span>| score</span>
+          <span>
+            {{ hello.value.dotsum.scoreText }}
+          </span>
+        </td>
+
+        <!-- latest price  -->
+        <td *ngIf="['price', 'holding'].includes(TYPE)">
+          <div>
+            {{ hello.value.cmp }}
           </div>
-          <div style="font-weight: 400; color: grey; font-size: small">
-            {{ hello.industry }}
+          <div>
+            {{ hello.value.chg }}
           </div>
         </td>
-        <td>
-          <div
-            [ngStyle]="{ color: getStatusColor(hello.mojocall.sub_status) }"
-          >
-            {{ hello.mojocall.sub_status }}
+
+        <!-- price  -->
+        <!-- combined vol  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.cvol }}
+          </div>
+        </td>
+
+        <!--day high  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.dh }}
+          </div>
+        </td>
+
+        <!--day low  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.dl }}
+          </div>
+        </td>
+
+        <!-- 52 week high  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.wk52h }}
+          </div>
+        </td>
+
+        <!-- 52 week low  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.wk52l }}
+          </div>
+        </td>
+
+        <!-- all time high  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.ath }}
+          </div>
+        </td>
+
+        <!-- all time low  -->
+        <td *ngIf="TYPE === 'price'">
+          <div>
+            {{ hello.value.atl }}
+          </div>
+        </td>
+
+        <!--  -->
+
+        <!-- inv price  -->
+        <td *ngIf="TYPE === 'holding'">
+          <div>
+            {{ hello.value.iprice }}
+          </div>
+          <div>
+            {{ hello.value.iqty }}
+          </div>
+        </td>
+
+        <!-- inv value  -->
+        <td *ngIf="TYPE === 'holding'">
+          <div>
+            {{ hello.value.ival }}
+          </div>
+          <div>
+            date
+            <!-- {{ hello.value.ival }} -->
+          </div>
+        </td>
+
+        <!-- day gain  -->
+        <td *ngIf="TYPE === 'holding'">
+          <div>
+            {{ hello.value.dgain }}
+          </div>
+          <div>
+            {{ hello.value.dgainp }}
+          </div>
+        </td>
+
+        <!-- price -->
+        <td *ngIf="TYPE === 'overview'">
+          <div>trail</div>
+
+          <div>
+            {{ hello.value.dotsum.tech_score }}
+          </div>
+        </td>
+
+        <!-- volume -->
+        <td *ngIf="TYPE === 'overview'">
+          <div>
+            {{ hello.value.vol }}
           </div>
           <div style="font-weight: 400; font-size: small">
-            {{ hello.close_date }}
+            {{ hello.value.volperc }}
           </div>
         </td>
-        <td>{{ hello.issue_price }}.00</td>
-        <td>
-          <div>
-            {{ hello.listed_price }}
-          </div>
-          <div
-            [ngStyle]="{ color: getListedGlColor(hello.listedgl) }"
-            style="font-weight: 400; font-size: small"
-          >
-            ({{ hello.listedgl }})
-          </div>
-        </td>
-        <td>
-          <div>{{ hello.cmp }}</div>
-          <div
-            [ngStyle]="{ color: getListedGlColor(hello.dgain_perc) }"
-            style="font-weight: 400; font-size: small"
-          >
-            {{ hello.dgain_perc }}
-          </div>
-        </td>
-        <td
-          style="
-            background-color: lightgreen;
-            border-right: 1px solid gainsboro;
-          "
-          [ngStyle]="{
-            color: getListedGlColor(hello.perc_chng_issue_price)
-          }"
-        >
-          {{ hello.perc_chng_issue_price }}
-        </td>
-        <td
-          style="background-color: lightgreen"
-          [ngStyle]="{
-            color: getListedGlColor(hello.perc_chng_listing_price)
-          }"
-        >
-          {{ hello.listed_price }}
-        </td>
-      </tr>
-    </tbody> -->
 
+        <!-- unrealized gain -->
+        <td *ngIf="['overview', 'holding'].includes(TYPE)">
+          <div>
+            {{ hello.value.unrgainp }}
+          </div>
+        </td>
+
+        <!-- Latest value  -->
+        <td *ngIf="TYPE === 'holding'">
+          <div>
+            {{ hello.value.lval }}
+          </div>
+        </td>
+
+        <!-- technical -->
+        <td *ngIf="TYPE === 'overview'">
+          {{ hello.value.dotsum.tech_txt }}
+        </td>
+
+        <!-- financial trend -->
+        <td *ngIf="TYPE === 'overview'">
+          <div>
+            {{ hello.value.dotsum.f_txt }}
+          </div>
+          <div>date trail</div>
+          <div>circle</div>
+        </td>
+
+        <!-- things u should k -->
+        <td *ngIf="TYPE === 'overview'">thing u should k</td>
+      </tr>
+    </tbody>
   </table>
 
   `

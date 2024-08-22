@@ -11,6 +11,16 @@ export interface Data {
 }
 
 export interface IListValue {
+dh: any;
+dl: any;
+wk52h: any;
+wk52l: any;
+ath: any;
+atl: any;
+cvol: any;
+ival: any;
+iqty: any;
+iprice: any;
   sid:               number;
   sname:             string;
   short:             string;
