@@ -11,6 +11,9 @@ export interface Data {
 }
 
 export interface IListValue {
+unrgaincontri: any;
+pwt: any;
+mcapcls: any;
 dh: any;
 dl: any;
 wk52h: any;

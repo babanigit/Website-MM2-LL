@@ -9,6 +9,7 @@
   <button (click)="onClick('overview')">OVERVIEW</button>
   <button (click)="onClick('holding')">HOLDING</button>
   <button (click)="onClick('price')">PRICE</button>
+  <button (click)="onClick('contri')">CONTRIBUTION</button>
 </nav>
 
 the type is :-
@@ -25,15 +26,21 @@ the type is :-
         </th>
 
         <!-- score -->
-        <th>
-          <div>score</div>
-        </th>
+        <th>score</th>
 
         <!-- latest price -->
-        <th *ngIf="['price', 'holding'].includes(TYPE)">
+        <th *ngIf="['price', 'holding', 'contri'].includes(TYPE)">
           <div>latest price</div>
           <div>changes</div>
         </th>
+
+        <!-- contri -->
+        <!--  -->
+        <th *ngIf="['contri'].includes(TYPE)">
+          <div>Market Cap</div>
+          <div>category</div>
+        </th>
+        <!--  -->
 
         <!--  -->
         <!-- price -->
@@ -101,9 +108,17 @@ the type is :-
         </th>
 
         <!-- urealized gain -->
-        <th *ngIf="['overview', 'holding'].includes(TYPE)">
+        <th *ngIf="['overview', 'holding', 'contri'].includes(TYPE)">
           <div>unrealized Gain</div>
         </th>
+
+        <!-- contri 2 -->
+        <th *ngIf="['contri'].includes(TYPE)">unrealized Gain Contri</th>
+
+        <th *ngIf="['contri'].includes(TYPE)">Portfolio Weight</th>
+
+        <th *ngIf="['contri'].includes(TYPE)">Latest Value</th>
+        <!--  -->
 
         <!-- Latest value -->
         <th *ngIf="TYPE === 'holding'">
@@ -151,7 +166,7 @@ the type is :-
         </td>
 
         <!-- latest price  -->
-        <td *ngIf="['price', 'holding'].includes(TYPE)">
+        <td *ngIf="['price', 'holding', 'contri'].includes(TYPE)">
           <div>
             {{ hello.value.cmp }}
           </div>
@@ -159,6 +174,18 @@ the type is :-
             {{ hello.value.chg }}
           </div>
         </td>
+
+        <!--  -->
+        <!-- contri -->
+        <td *ngIf="['contri'].includes(TYPE)">
+          <div>
+            {{ hello.value.mcap }}
+          </div>
+          <div>
+            {{ hello.value.mcapcls }}
+          </div>
+        </td>
+        <!--  -->
 
         <!-- price  -->
         <!-- combined vol  -->
@@ -263,11 +290,31 @@ the type is :-
         </td>
 
         <!-- unrealized gain -->
-        <td *ngIf="['overview', 'holding'].includes(TYPE)">
+        <td *ngIf="['overview', 'holding', 'contri'].includes(TYPE)">
           <div>
             {{ hello.value.unrgainp }}
           </div>
         </td>
+
+        <!-- contri 2-->
+        <td *ngIf="['contri'].includes(TYPE)">
+          <div>
+            {{ hello.value.unrgaincontri }}
+          </div>
+        </td>
+
+        <td *ngIf="['contri'].includes(TYPE)">
+          <div>
+            {{ hello.value.pwt }}
+          </div>
+        </td>
+
+        <td *ngIf="['contri'].includes(TYPE)">
+          <div>
+            {{ hello.value.lval }}
+          </div>
+        </td>
+        <!--  -->
 
         <!-- Latest value  -->
         <td *ngIf="TYPE === 'holding'">

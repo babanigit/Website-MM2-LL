@@ -14,9 +14,13 @@ export class StockerInvestmentsComponent implements OnInit {
   overviewData: IGetOverview | undefined;
   holdingData: IGetOverview | undefined;
 
-  TYPE: 'overview' | 'holding' | 'price' = 'holding';
+  TYPE: 'overview' | 'holding' | 'price'| 'contri' = 'holding';
   unrgainTabList: any[] = []
   // priceData: IGetOverview | undefined;
+
+    // New properties for sorting
+    sortColumn: string = 'short'; // Default sort column
+    sortDirection: 'asc' | 'desc' = 'asc'; // Default sort direction
 
   constructor(private serv: GetPersonalPFService) {}
 
@@ -52,11 +56,11 @@ export class StockerInvestmentsComponent implements OnInit {
     // }
   }
 
-  onClick(type: 'overview' | 'holding' | 'price'): void {
+  onClick(type: 'overview' | 'holding' | 'price' | 'contri'): void {
     this.TYPE = type;
 
     // Handle the special case for 'price'
-    if (type === 'price') {
+    if (type === 'price' || type === 'contri') {
       // Use 'overview' data instead of 'price'
       type = 'holding';
     }
@@ -68,4 +72,8 @@ export class StockerInvestmentsComponent implements OnInit {
       this.updateData(type);
     }
   }
+
+
+
+
 }
