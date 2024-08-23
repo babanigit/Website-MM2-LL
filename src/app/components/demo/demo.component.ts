@@ -10,6 +10,10 @@ import {
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { JsonDataService } from '../../services/json-data.service';
+import { GetPersonalPFService } from '../../services/personal-portfolio/get-personal-pf.service';
+import { IGetOverview } from '../../models/overview';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 export interface PeriodicElement {
   name: string;
@@ -40,29 +44,56 @@ export interface PeriodicElement {
     MatSortModule,
     MatTableModule, // Corrected
     CommonModule,
+    // NoopAnimationsModule
+    // BrowserAnimationsModule
   ],
 })
 export class DemoComponent implements OnInit, AfterViewInit {
-  private _liveAnnouncer = inject(LiveAnnouncer);
-  private dataService = inject(JsonDataService);
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>([]);
+  private _liveAnnouncer = inject(LiveAnnouncer);
+
+  // private dataService = inject(JsonDataService);
+  private serv = inject(GetPersonalPFService);
+
+  displayedColumns: string[] = ['sid', 'sname', 'short', 'mcap'];
+  // dataSource = new MatTableDataSource<PeriodicElement>([]);
+  dataSource2 = new MatTableDataSource<any>([]);
 
   @ViewChild(MatSort)
   sort!: MatSort;
 
   ngOnInit() {
-    this.loadData();
+    // this.loadData();
+    this.loadData2();
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
+    this.dataSource2.sort = this.sort;
+
   }
 
-  private loadData() {
-    this.dataService.getTrail().subscribe((data) => {
-      this.dataSource.data = data;
+  // private loadData() {
+  //   this.dataService.getTrail().subscribe((data) => {
+  //     this.dataSource.data = data;
+  //   });
+  // }
+
+  private loadData2() {
+    this.serv.getOverviewStocks('holding').subscribe( {
+
+      next: (response) => {
+
+        const elements = Object.values(response.data.list); // Convert the object values to an array
+        this.dataSource2.data = elements;
+
+        console.log("the elements is : ",elements)
+      },
+      error: (err) => {
+        console.error('Failed to load data', err);
+        // Optionally handle the error in your UI
+      }
+
     });
   }
 

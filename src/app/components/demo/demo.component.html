@@ -1,62 +1,32 @@
-<table
-  mat-table
-  [dataSource]="dataSource"
-  matSort
-  (matSortChange)="announceSortChange($event)"
-  class="mat-elevation-z8"
->
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th
-      mat-header-cell
-      *matHeaderCellDef
-      mat-sort-header
-      sortActionDescription="Sort by number"
-    >
-      No.
-    </th>
-    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-  </ng-container>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource2" matSort (matSortChange)="announceSortChange($event)">
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th
-      mat-header-cell
-      *matHeaderCellDef
-      mat-sort-header
-      sortActionDescription="Sort by name"
-    >
-      Name
-    </th>
-    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-  </ng-container>
+    <!-- SID Column -->
+    <ng-container matColumnDef="sid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by sid" > SID </th>
+      <td mat-cell *matCellDef="let element"> {{element.sid}} </td>
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th
-      mat-header-cell
-      *matHeaderCellDef
-      mat-sort-header
-      sortActionDescription="Sort by weight"
-    >
-      Weight
-    </th>
-    <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="sname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.sname}} </td>
+    </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th
-      mat-header-cell
-      *matHeaderCellDef
-      mat-sort-header
-      sortActionDescription="Sort by symbol"
-    >
-      Symbol
-    </th>
-    <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-  </ng-container>
+    <!-- Short Column -->
+    <ng-container matColumnDef="short">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Short </th>
+      <td mat-cell *matCellDef="let element"> {{element.short}} </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <!-- Market Cap Column -->
+    <ng-container matColumnDef="mcap">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
+      <td mat-cell *matCellDef="let element"> {{element.mcap}} </td>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

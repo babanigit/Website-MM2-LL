@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IGetOverview } from '../../models/overview';
+// import { IGetOverview } from '../../models/overview';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs';
 
@@ -25,7 +25,7 @@ export class GetPersonalPFService {
 
     const path = this.paths[type] || this.paths.overview; // Default to 'day' if type is not found
 
-    return this.http.get<IGetOverview>(path).pipe(
+    return this.http.get<any>(path).pipe(
 
       // delay(1200),
       catchError((err) => {

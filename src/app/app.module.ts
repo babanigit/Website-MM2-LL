@@ -12,10 +12,14 @@ import {
   provideHttpClient,
   withFetch,
 } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()), // Add this line to enable fetch API
