@@ -6,6 +6,7 @@ import { PersonalPortfoliosComponent } from './personal-portfolios.component';
 import { StockerInvestmentsComponent } from '../../components/personalPortfo-COMPO/stocker-investments/stocker-investments.component';
 import { MutualFundsInvestmentsComponent } from '../../components/personalPortfo-COMPO/mutual-funds-investments/mutual-funds-investments.component';
 import { PfPriceMsgComponent } from '../../components/personalPortfo-COMPO/pf-price-msg/pf-price-msg.component';
+import { DemoComponent } from '../../components/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { PfPriceMsgComponent } from '../../components/personalPortfo-COMPO/pf-pr
     MutualFundsInvestmentsComponent
 
   ],
-  imports: [CommonModule, PersonalPortfoliosRoutingModule, PfPriceMsgComponent],
+  imports: [CommonModule, PersonalPortfoliosRoutingModule, PfPriceMsgComponent, DemoComponent],
 })
 export class PersonalPortfoliosModule {}
