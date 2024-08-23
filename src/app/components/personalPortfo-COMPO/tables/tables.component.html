@@ -6,205 +6,230 @@
     justify-content: center;
   "
 >
-
   <button (click)="onClick('overview')">OVERVIEW</button>
   <button (click)="onClick('holding')">HOLDING</button>
   <button (click)="onClick('price')">PRICE</button>
   <button (click)="onClick('contri')">CONTRIBUTION</button>
-
 </nav>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource2" matSort (matSortChange)="announceSortChange($event)">
-
+  <table
+    mat-table
+    [dataSource]="dataSource2"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
     <!-- SID Column -->
     <ng-container matColumnDef="sid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> SID </th>
-      <td mat-cell *matCellDef="let element"> {{element.sid}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SID</th>
+      <td mat-cell *matCellDef="let element">{{ element.sid }}</td>
     </ng-container>
 
     <!-- Company Column -->
     <ng-container matColumnDef="short">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
-      <td mat-cell *matCellDef="let element"> {{element.short}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
+      <td mat-cell *matCellDef="let element">{{ element.short }}</td>
     </ng-container>
 
     <!-- Score Column -->
     <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
       <td mat-cell *matCellDef="let element">
-        <span>{{element.score}}</span>
+        <span>{{ element.score }}</span>
         <span>| score</span>
-        <span>{{element.scoreText}}</span>
+        <span>{{ element.scoreText }}</span>
       </td>
     </ng-container>
 
-    <!-- Latest Price Column -->
-    <ng-container matColumnDef="latestPrice">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Latest Price </th>
-      <td
-      style="background-color: lightcoral;"
-      mat-cell *matCellDef="let element" >
-        <div>{{element.cmp}}</div>
-        <div>{{element.chg}}</div>
+    <!-- combined -->
+    <ng-container matColumnDef="combined">
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <span>Latest Price</span>
+          <mat-icon (click)="sortBy('cmp')">arrow_downward</mat-icon>
+        </div>
+        <div>
+          <span>Changes</span>
+          <mat-icon (click)="sortBy('chg')">arrow_downward</mat-icon>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element" style="background-color: lightcoral">
+        <div>{{ element.cmp }}</div>
+        <div>{{ element.chg }}</div>
+      </td>
+    </ng-container>
+
+
+    <!-- Changes Column -->
+    <ng-container matColumnDef="changes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <div>Changes</div>
+      </th>
+      <td mat-cell *matCellDef="let element" style="background-color: lightcoral">
+        <div>{{ element.chg }}</div>
       </td>
     </ng-container>
 
     <!-- Market Cap Column -->
     <ng-container matColumnDef="mcap">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.mcap}}</div>
-        <div>{{element.mcapcls}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Market Cap</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.mcap }}</div>
+        <div>{{ element.mcapcls }}</div>
       </td>
     </ng-container>
-
     <!-- Combined Volume Column -->
     <ng-container matColumnDef="cvol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Combined Volume </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.cvol}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Combined Volume</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.cvol }}</div>
       </td>
     </ng-container>
 
     <!-- Day High Column -->
     <ng-container matColumnDef="dh">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dh}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day High</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.dh }}</div>
       </td>
     </ng-container>
 
     <!-- Day Low Column -->
     <ng-container matColumnDef="dl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dl}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day Low</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.dl }}</div>
       </td>
     </ng-container>
 
     <!-- 52 Week High Column -->
     <ng-container matColumnDef="wk52h">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> 52 Week High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.wk52h}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>52 Week High</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.wk52h }}</div>
       </td>
     </ng-container>
 
     <!-- 52 Week Low Column -->
     <ng-container matColumnDef="wk52l">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> 52 Week Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.wk52l}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>52 Week Low</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.wk52l }}</div>
       </td>
     </ng-container>
 
     <!-- All Time High Column -->
     <ng-container matColumnDef="ath">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> All Time High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.ath}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>All Time High</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.ath }}</div>
       </td>
     </ng-container>
 
     <!-- All Time Low Column -->
     <ng-container matColumnDef="atl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> All Time Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.atl}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>All Time Low</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.atl }}</div>
       </td>
     </ng-container>
 
     <!-- Investment Price Column -->
     <ng-container matColumnDef="iprice">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Investment Price </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.iprice}}</div>
-        <div>{{element.iqty}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Investment Price
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.iprice }}</div>
+        <div>{{ element.iqty }}</div>
       </td>
     </ng-container>
 
     <!-- Investment Value Column -->
     <ng-container matColumnDef="ival">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Investment Value </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.ival}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Investment Value
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.ival }}</div>
         <div>date</div>
       </td>
     </ng-container>
 
     <!-- Day Gain Column -->
     <ng-container matColumnDef="dgain">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day Gain </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dgain}}</div>
-        <div>{{element.dgainp}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day Gain</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.dgain }}</div>
+        <div>{{ element.dgainp }}</div>
       </td>
     </ng-container>
 
     <!-- Technical Score Column -->
     <ng-container matColumnDef="techScore">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Technical Score </th>
-      <td mat-cell *matCellDef="let element" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Technical Score</th>
+      <td mat-cell *matCellDef="let element">
         <div>trail</div>
-        <div>{{element.tech_score}}</div>
+        <div>{{ element.tech_score }}</div>
       </td>
     </ng-container>
 
     <!-- Volume Column -->
     <ng-container matColumnDef="vol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.vol}}</div>
-        <div style="font-weight: 400; font-size: small">{{element.volperc}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Volume</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.vol }}</div>
+        <div style="font-weight: 400; font-size: small">
+          {{ element.volperc }}
+        </div>
       </td>
     </ng-container>
 
     <!-- Unrealized Gain Column -->
     <ng-container matColumnDef="unrgainp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Unrealized Gain </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.unrgainp}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Unrealized Gain</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.unrgainp }}</div>
       </td>
     </ng-container>
 
     <!-- Contribution Column -->
     <ng-container matColumnDef="unrgaincontri">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Contribution </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.unrgaincontri}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Contribution</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.unrgaincontri }}</div>
       </td>
     </ng-container>
 
     <!-- PWT Column -->
     <ng-container matColumnDef="pwt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> PWT </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.pwt}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>PWT</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.pwt }}</div>
       </td>
     </ng-container>
 
     <!-- Latest Value Column -->
     <ng-container matColumnDef="lval">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Latest Value </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.lval}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Latest Value</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.lval }}</div>
       </td>
     </ng-container>
 
     <!-- Technical Text Column -->
     <ng-container matColumnDef="techTxt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Technical Text </th>
-      <td mat-cell *matCellDef="let element" >
-        {{element.tech_txt}}
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Technical Text</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.tech_txt }}
       </td>
     </ng-container>
 
     <!-- Financial Trend Column -->
     <ng-container matColumnDef="f_txt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Financial Trend </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.f_txt}}</div>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Financial Trend</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.f_txt }}</div>
         <div>date trail</div>
         <div>circle</div>
       </td>
@@ -212,6 +237,6 @@
 
     <!-- Header and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>

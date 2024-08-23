@@ -1,0 +1,7 @@
+.arrow_upward {
+  transform: rotate(0deg);
+}
+
+.arrow_downward {
+  transform: rotate(180deg);
+}

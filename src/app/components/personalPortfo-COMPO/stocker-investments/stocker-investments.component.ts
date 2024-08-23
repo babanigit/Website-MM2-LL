@@ -35,7 +35,7 @@ export class StockerInvestmentsComponent implements OnInit {
       return;
     }
 
-    console.log('Data fetched for type:', type);
+    // console.log('Data fetched for type:', type);
     this.serv.getOverviewStocks(type).subscribe((data) => {
       this.dataCache[type] = data;
       this.updateData(type);

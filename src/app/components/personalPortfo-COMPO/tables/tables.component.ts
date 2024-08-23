@@ -1,28 +1,19 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  AfterViewInit,
-  inject,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { GetPersonalPFService } from '../../../services/personal-portfolio/get-personal-pf.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
-  styleUrl: './tables.component.css',
+  styleUrls: ['./tables.component.css'],
   standalone: true,
-  imports: [
-    MatSortModule, MatTableModule, CommonModule
-  ]
+  imports: [MatSortModule, MatTableModule, CommonModule, MatIconModule],
 })
 export class TablesComponent implements OnInit, AfterViewInit {
-
-
   private _liveAnnouncer = inject(LiveAnnouncer);
   private serv = inject(GetPersonalPFService);
 
@@ -40,11 +31,12 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // Ensure MatSort is assigned to the dataSource
+    console.log('MatSort:', this.sort); // Debugging statement
     this.dataSource2.sort = this.sort;
   }
 
-  private fetchStocks(type: 'overview' | 'holding') {
-
+  private fetchStocks(type: 'overview' | 'holding' ) {
     if (this.dataCache[type]) {
       this.updateData(type);
       return;
@@ -55,7 +47,6 @@ export class TablesComponent implements OnInit, AfterViewInit {
         const elements = Object.values(response.data.list);
         this.dataCache[type] = elements;
         this.updateData(type);
-        console.log("data fetched : ", elements , " from type " + type);
       },
       error: (err) => {
         console.error('Failed to load data', err);
@@ -66,21 +57,61 @@ export class TablesComponent implements OnInit, AfterViewInit {
   getColums(type: 'overview' | 'holding' | 'price' | 'contri'): void {
     switch (type) {
       case 'overview':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'techScore', 'vol', 'unrgainp', 'unrgaincontri', 'pwt', 'lval', 'techTxt', 'f_txt'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'combined',
+          'techScore',
+          'vol',
+          'unrgainp',
+          'unrgaincontri',
+          'pwt',
+          'lval',
+          'techTxt',
+          'f_txt',
+        ];
         break;
       case 'holding':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'iprice', 'ival', 'dgain', 'lval'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'combined',
+          'iprice',
+          'ival',
+          'dgain',
+          'lval',
+        ];
         break;
       case 'price':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'cvol', 'dh', 'dl', 'wk52h', 'wk52l', 'ath', 'atl'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'combined',
+          'cvol',
+          'dh',
+          'dl',
+          'wk52h',
+          'wk52l',
+          'ath',
+          'atl',
+        ];
         break;
       case 'contri':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'mcap', 'unrgainp', 'unrgaincontri', 'pwt', 'lval'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'combined',
+          'mcap',
+          'unrgainp',
+          'unrgaincontri',
+          'pwt',
+          'lval',
+        ];
         break;
     }
   }
 
-  updateData(type: 'overview' | 'holding'): void {
+  updateData(type: 'overview' | 'holding' | 'price' | 'contri'): void {
     this.dataSource2.data = this.dataCache[type] || [];
   }
 
@@ -99,6 +130,29 @@ export class TablesComponent implements OnInit, AfterViewInit {
     }
   }
 
+  sortBy(property: 'cmp' | 'chg') {
+    const sortState: Sort = { active: property, direction: this.sort.direction === 'asc' ? 'desc' : 'asc' };
+    this.sort.active = property;
+    this.sort.direction = sortState.direction;
+
+    this.dataSource2.data = this.dataSource2.data.sort((a, b) => {
+      const isAsc = sortState.direction === 'asc';
+      if (a[property] < b[property]) {
+        return isAsc ? -1 : 1;
+      }
+      if (a[property] > b[property]) {
+        return isAsc ? 1 : -1;
+      }
+      return 0;
+    });
+
+    this.announceSortChange(sortState);
+  }
+
+  // isSortActive(column: 'cmp' | 'chg'): boolean {
+  //   return this.sort.active === column;
+  // }
+
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
@@ -106,5 +160,4 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
-
 }
