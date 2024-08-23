@@ -13,7 +13,7 @@ const defaultVerdictSwticherReportandOptionsPath =
   'assets/switcherBasicReportsAndOptions.json';
 const defaultSwitcherResultPath = 'assets/switcherResult.json';
 const defaultIPOListPath = 'assets/ipoList.json';
-const defaultOverviewPath = 'assets/getOverview.json';
+const defaulaTrailPath = 'assets/atrail.json';
 
 @Injectable({
   providedIn: 'root',
@@ -101,6 +101,16 @@ export class JsonDataService {
     return this.http.get<I_IPOList>(jsonPath).pipe(
 
       delay(1200),
+      catchError((err) => {
+        console.error('Error fetching ipoList data', err);
+        throw err;
+      })
+    );
+  }
+
+  getTrail(jsonPath: string = defaulaTrailPath) {
+    return this.http.get<any>(jsonPath).pipe(
+
       catchError((err) => {
         console.error('Error fetching ipoList data', err);
         throw err;
