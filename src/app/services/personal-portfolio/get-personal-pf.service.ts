@@ -23,7 +23,7 @@ export class GetPersonalPFService {
 
   getOverviewStocks(type: 'overview' | 'holding') {
 
-    const path = this.paths[type] || this.paths.overview; // Default to 'day' if type is not found
+    const path = this.paths[type] || this.paths.holding; // default is holding
 
     return this.http.get<any>(path).pipe(
 

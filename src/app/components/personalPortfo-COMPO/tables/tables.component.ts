@@ -9,16 +9,19 @@ import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
-import { GetPersonalPFService } from '../../services/personal-portfolio/get-personal-pf.service';
+import { GetPersonalPFService } from '../../../services/personal-portfolio/get-personal-pf.service';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.css'],
+  selector: 'app-tables',
+  templateUrl: './tables.component.html',
+  styleUrl: './tables.component.css',
   standalone: true,
-  imports: [MatSortModule, MatTableModule, CommonModule],
+  imports: [
+    MatSortModule, MatTableModule, CommonModule
+  ]
 })
-export class DemoComponent implements OnInit, AfterViewInit {
+export class TablesComponent implements OnInit, AfterViewInit {
+
 
   private _liveAnnouncer = inject(LiveAnnouncer);
   private serv = inject(GetPersonalPFService);
@@ -103,4 +106,5 @@ export class DemoComponent implements OnInit, AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
 }

@@ -11,8 +11,8 @@ export class StockerInvestmentsComponent implements OnInit {
   private dataCache: { [key: string]: IGetOverview | undefined } = {};
 
   stocks: IGetOverview | undefined;
-  overviewData: IGetOverview | undefined;
-  holdingData: IGetOverview | undefined;
+  // overviewData: IGetOverview | undefined;
+  // holdingData: IGetOverview | undefined;
 
   TYPE: 'overview' | 'holding' | 'price'| 'contri' = 'holding';
   unrgainTabList: any[] = []
@@ -44,11 +44,9 @@ export class StockerInvestmentsComponent implements OnInit {
 
   updateData(type: 'overview' | 'holding'): void {
     if (type === 'overview') {
-      this.overviewData = this.dataCache[type];
-      this.stocks = this.overviewData;
+      this.stocks = this.dataCache[type];
     } else if (type === 'holding') {
-      this.holdingData = this.dataCache[type];
-      this.stocks = this.holdingData;
+      this.stocks = this.dataCache[type];
     }
     //  else if (type === 'price') {
     //   this.priceData = this.dataCache[type];

@@ -89,40 +89,4 @@ export class StockerInvestmentsComponent implements OnInit, AfterViewInit {
     }
   }
 
-  sortData(sort: Sort) {
-    const data = this.dataSource.data.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a: { company: string | number; score: string | number; latestPrice: string | number; marketCap: string | number; combinedVolume: string | number; daysHigh: string | number; daysLow: string | number; weekHigh: string | number; }, b: { company: string | number; score: string | number; latestPrice: string | number; marketCap: string | number; combinedVolume: string | number; daysHigh: string | number; daysLow: string | number; weekHigh: string | number; }) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'company':
-          return compare(a.company, b.company, isAsc);
-        case 'score':
-          return compare(a.score, b.score, isAsc);
-        case 'latestPrice':
-          return compare(a.latestPrice, b.latestPrice, isAsc);
-        case 'marketCap':
-          return compare(a.marketCap, b.marketCap, isAsc);
-        case 'combinedVolume':
-          return compare(a.combinedVolume, b.combinedVolume, isAsc);
-        case 'daysHigh':
-          return compare(a.daysHigh, b.daysHigh, isAsc);
-        case 'daysLow':
-          return compare(a.daysLow, b.daysLow, isAsc);
-        case 'weekHigh':
-          return compare(a.weekHigh, b.weekHigh, isAsc);
-        default:
-          return 0;
-      }
-    });
-    this.dataSource.data = this.sortedData;
-  }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
