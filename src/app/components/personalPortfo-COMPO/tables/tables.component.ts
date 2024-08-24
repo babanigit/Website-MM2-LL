@@ -31,7 +31,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('MatSort:', this.sort); // Debugging statement
+    // console.log('MatSort:', this.sort); // Debugging statement
     if (this.sort) {
       this.dataSource2.sort = this.sort;
     } else {
@@ -155,8 +155,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   isSortActive(column: 'cmp' | 'chg'): boolean {
-    console.log('Current sort active:', this.sort?.active); // Debugging statement
-    return this.sort?.active === column;
+    return this.sort?.active === column && this.sort?.direction !== '';
+  }
+
+  getSortIconClass(column: 'cmp' | 'chg'): string {
+    if (this.sort?.active === column) {
+      return this.sort?.direction === 'asc' ? 'arrow_upward' : 'arrow_downward';
+    }
+    return '';
   }
 
   announceSortChange(sortState: Sort) {

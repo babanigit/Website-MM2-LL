@@ -42,22 +42,18 @@
     </ng-container>
 
    <!-- Combined Column for Latest Price and Changes -->
-   <ng-container  matColumnDef="combined">
+   <ng-container matColumnDef="combined">
     <th mat-header-cell *matHeaderCellDef>
       <div>
-        <span (click)="sortBy('cmp')">
+        <span (click)="sortBy('cmp')" [ngClass]="{'active': isSortActive('cmp')}">
           Latest Price
-          <mat-icon [ngClass]="{'arrow_upward': isSortActive('cmp') && sort.direction === 'asc', 'arrow_downward': isSortActive('cmp') && sort.direction === 'desc'}">
-            arrow_downward
-          </mat-icon>
+          <mat-icon [ngClass]="getSortIconClass('cmp')">arrow_downward</mat-icon>
         </span>
       </div>
       <div>
-        <span (click)="sortBy('chg')">
+        <span (click)="sortBy('chg')" [ngClass]="{'active': isSortActive('chg')}">
           Changes
-          <mat-icon [ngClass]="{'arrow_upward': isSortActive('chg') && sort.direction === 'asc', 'arrow_downward': isSortActive('chg') && sort.direction === 'desc'}">
-            arrow_downward
-          </mat-icon>
+          <mat-icon [ngClass]="getSortIconClass('chg')">arrow_downward</mat-icon>
         </span>
       </div>
     </th>

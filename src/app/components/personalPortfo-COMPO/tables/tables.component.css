@@ -1,14 +1,41 @@
-/* Base style for the mat-icon arrows */
+
+/* Ensure that the span containing text and icons is a flex container */
+th span {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 8px; /* Space between text and icon */
+}
+
+/* Base style for the arrow */
 .mat-icon {
-  transition: transform 0.3s ease; /* Smooth rotation animation */
+  font-size: 16px; /* Decrease size of the arrow */
+  font-size: 16px; /* Decrease size of the arrow */
+  font-weight: bold; /* Increase thickness of the arrow */  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Make the arrow visible when its parent span is hovered */
+span:hover .mat-icon {
+  opacity: 1; /* Show on hover */
+  color: gray; /* Gray color on hover */
+}
+
+/* Make the arrow black when it is active (clicked) */
+span.active .mat-icon {
+  opacity: 1; /* Ensure it is visible when active */
+  color: black; /* Black color when active */
 }
 
 /* Arrow pointing up */
 .arrow_upward {
-  transform: rotate(0deg);
+  display: inline-block;
+  transform: scaleY(1); /* Default orientation */
+  transition: transform 0.3s ease; /* Smooth flipping animation */
 }
 
 /* Arrow pointing down */
 .arrow_downward {
-  transform: rotate(180deg);
+  display: inline-block;
+  transform: scaleY(-1); /* Flip the arrow vertically */
+  transition: transform 0.3s ease; /* Smooth flipping animation */
 }
