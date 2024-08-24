@@ -31,10 +31,15 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Ensure MatSort is assigned to the dataSource
     console.log('MatSort:', this.sort); // Debugging statement
-    this.dataSource2.sort = this.sort;
+    if (this.sort) {
+      this.dataSource2.sort = this.sort;
+    } else {
+      console.error('MatSort is not available');
+    }
   }
+
+
 
   private fetchStocks(type: 'overview' | 'holding' ) {
     if (this.dataCache[type]) {
@@ -149,9 +154,10 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.announceSortChange(sortState);
   }
 
-  // isSortActive(column: 'cmp' | 'chg'): boolean {
-  //   return this.sort.active === column;
-  // }
+  isSortActive(column: 'cmp' | 'chg'): boolean {
+    console.log('Current sort active:', this.sort?.active); // Debugging statement
+    return this.sort?.active === column;
+  }
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {

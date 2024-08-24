@@ -1,7 +1,14 @@
+/* Base style for the mat-icon arrows */
+.mat-icon {
+  transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+/* Arrow pointing up */
 .arrow_upward {
   transform: rotate(0deg);
 }
 
+/* Arrow pointing down */
 .arrow_downward {
   transform: rotate(180deg);
 }
