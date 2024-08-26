@@ -4,7 +4,18 @@ th span {
   display: flex;
   align-items: center; /* Center items vertically */
   gap: 8px; /* Space between text and icon */
+  background-color: gainsboro;
 }
+
+th {
+  border: 1px solid gray;
+  background-color: gainsboro;
+}
+
+td {
+  border: 1px solid gray;
+}
+
 
 /* Base style for the arrow */
 .mat-icon {
@@ -38,4 +49,10 @@ span.active .mat-icon {
   display: inline-block;
   transform: scaleY(-1); /* Flip the arrow vertically */
   transition: transform 0.3s ease; /* Smooth flipping animation */
+}
+
+/* active */
+.active {
+  color: black; /* Optional: Change text color for better contrast */
+  background-color: whitesmoke;
 }

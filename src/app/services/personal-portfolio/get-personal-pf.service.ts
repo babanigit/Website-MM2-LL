@@ -9,8 +9,8 @@ import { catchError } from 'rxjs';
 export class GetPersonalPFService {
 
   private readonly paths = {
-    overview: 'assets/getOverview.json',
-    holding: 'assets/getHolding.json',
+    OVERVIEW: 'assets/getOverview.json',
+    HOLDING: 'assets/getHolding.json',
     // month: 'assets/graphDataMonth.json',
     // YTD: 'assets/graphDataYTD.json',
     // year: 'assets/graphDataYear.json',
@@ -21,9 +21,9 @@ export class GetPersonalPFService {
     private http: HttpClient
   ) { }
 
-  getOverviewStocks(type: 'overview' | 'holding') {
+  getOverviewStocks(type: 'OVERVIEW' | 'HOLDING') {
 
-    const path = this.paths[type] || this.paths.holding; // default is holding
+    const path = this.paths[type] || this.paths.HOLDING; // default is holding
 
     return this.http.get<any>(path).pipe(
 

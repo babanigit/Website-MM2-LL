@@ -47,17 +47,17 @@ export class DemoComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    this.serv.getOverviewStocks(type).subscribe({
-      next: (response) => {
-        const elements = Object.values(response.data.list);
-        this.dataCache[type] = elements;
-        this.updateData(type);
-        console.log("data fetched : ", elements , " from type " + type);
-      },
-      error: (err) => {
-        console.error('Failed to load data', err);
-      },
-    });
+    // this.serv.getOverviewStocks(type).subscribe({
+    //   next: (response) => {
+    //     const elements = Object.values(response.data.list);
+    //     this.dataCache[type] = elements;
+    //     this.updateData(type);
+    //     console.log("data fetched : ", elements , " from type " + type);
+    //   },
+    //   error: (err) => {
+    //     console.error('Failed to load data', err);
+    //   },
+    // });
   }
 
   getColums(type: 'overview' | 'holding' | 'price' | 'contri'): void {

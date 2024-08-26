@@ -28,12 +28,27 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  TYPE: 'overview' | 'holding' | 'price' | 'contri' = 'holding';
+  TYPE:
+    | 'OVERVIEW'
+    | 'HOLDING'
+    | 'PRICE'
+    | 'CONTRIBUTION'
+    | 'DIVIDEND'
+    | 'MOJO'
+    | 'RISK'
+    | 'LIQUIDITY'
+    | 'TAX'
+    | 'RATIOS'
+    | 'FINANCIALS'
+    | 'RETURN'
+    | 'RESULT'
+    | 'TOTAL RETURNS' = 'HOLDING';
+
   private dataCache: { [key: string]: any[] | undefined } = {};
 
   ngOnInit() {
-    this.getColums('holding');
-    this.fetchStocks('holding');
+    this.getColums('HOLDING');
+    this.fetchStocks('HOLDING');
   }
 
   ngAfterViewInit() {
@@ -50,7 +65,25 @@ export class TablesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private fetchStocks(type: 'overview' | 'holding') {
+  // List of items to display
+  items: any = [
+    'OVERVIEW',
+    'HOLDING',
+    'PRICE',
+    'CONTRIBUTION',
+    'DIVIDEND',
+    'MOJO',
+    'RISK',
+    'LIQUIDITY',
+    'TAX',
+    'RATIOS',
+    'FINANCIALS',
+    'RETURN',
+    'RESULT',
+    'TOTAL RETURNS',
+  ];
+
+  private fetchStocks(type: 'OVERVIEW' | 'HOLDING') {
     if (this.dataCache[type]) {
       this.updateStocks(type);
       return;
@@ -69,41 +102,55 @@ export class TablesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  updateStocks(type: 'overview' | 'holding' | 'price' | 'contri'): void {
+  updateStocks(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     this.dataSource2.data = this.dataCache[type] || [];
   }
 
-  getColums(type: 'overview' | 'holding' | 'price' | 'contri'): void {
+  getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     switch (type) {
-      case 'overview':
+      case 'OVERVIEW':
         this.displayedColumns = ['short', 'score'];
         break;
-      case 'holding':
+      case 'HOLDING':
         this.displayedColumns = [
           'short',
           'score',
-          'latest_Price',
+          'cmp',
           'iprice',
           'dgain',
           'unrgain',
           'lval',
         ];
         break;
-      case 'price':
+      case 'PRICE':
         this.displayedColumns = ['short', 'score'];
         break;
-      case 'contri':
+      case 'CONTRIBUTION':
         this.displayedColumns = ['short', 'score'];
         break;
     }
   }
 
-  onClick(type: 'overview' | 'holding' | 'price' | 'contri'): void {
+  onClick(
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'
+    // | 'DIVIDEND'
+    // | 'MOJO'
+    // | 'RISK'
+    // | 'LIQUIDITY'
+    // | 'TAX'
+    // | 'RATIOS'
+    // | 'FINANCIALS'
+    // | 'RETURN'
+    // | 'RESULT'
+    // | 'TOTAL RETURNS'
+  ): void {
+    // this.activeItem = type;
+
     this.TYPE = type;
     this.getColums(type);
 
-    if (type === 'price' || type === 'contri') {
-      type = 'holding';
+    if (type === 'PRICE' || type === 'CONTRIBUTION') {
+      type = 'HOLDING';
     }
 
     if (!this.dataCache[type]) {

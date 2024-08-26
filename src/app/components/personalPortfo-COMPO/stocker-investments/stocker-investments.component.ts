@@ -36,10 +36,10 @@ export class StockerInvestmentsComponent implements OnInit {
     }
 
     // console.log('Data fetched for type:', type);
-    this.serv.getOverviewStocks(type).subscribe((data) => {
-      this.dataCache[type] = data;
-      this.updateData(type);
-    });
+    // this.serv.getOverviewStocks(type).subscribe((data) => {
+    //   this.dataCache[type] = data;
+    //   this.updateData(type);
+    // });
   }
 
   updateData(type: 'overview' | 'holding'): void {
