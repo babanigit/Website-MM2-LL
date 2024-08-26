@@ -117,6 +117,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
           'score',
           'cmp',
           'iprice',
+          'ival',
           'dgain',
           'unrgain',
           'lval',
@@ -231,6 +232,35 @@ export class TablesComponent implements OnInit, AfterViewInit {
     }
     return '';
   }
+
+  // Colors
+  getColor(listedgl: string): string {
+    const value = parseFloat(listedgl);
+    if (isNaN(value)) {
+      return 'black'; // Fallback color if value is not a number
+    }
+    if (value === 0) {
+      return ''; // Neutral color for 0
+    }
+    return isNaN(value) || value < 0 ? 'red' : 'green';
+  }
+
+  getBgColor(listedgl: string): string {
+    const value = parseFloat(listedgl);
+    if (isNaN(value)) {
+      return '#e0e0e0'; // Fallback background color if value is not a number
+    }
+    if (value === 0) {
+      return ''; // Neutral background color for 0
+    }
+    return value < 0 ? '#ffcccc' : '#ccffcc'; // Colors for negative and positive values
+  }
+
+  fun(sid:number) {
+    console.log("the fun clicked", sid)
+  }
+
+
 }
 
 // Utility function to compare numbers

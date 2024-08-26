@@ -1,4 +1,3 @@
-
 <!-- buttons -->
 <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
   <span
@@ -6,9 +5,11 @@
     [ngStyle]="{
       'background-color': TYPE === item ? 'gainsboro' : '',
       color: TYPE === item ? 'black' : 'white',
-      padding: '1% 2%',
+      padding: '1% 1.5%',
       'border-right': '1px solid gray',
       cursor: 'pointer',
+      'font-size': '12px',
+
     }"
     (click)="onClick(item)"
   >
@@ -34,7 +35,17 @@
       >
         Company
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.short }}</td>
+      <td mat-cell *matCellDef="let element">
+        <span
+          *ngIf="element.details"
+          (click)="fun(element.details[0].sid)"
+          style="cursor: pointer"
+        >
+          arrow#
+        </span>
+
+        {{ element.short }}
+      </td>
     </ng-container>
 
     <!-- score -->
@@ -48,9 +59,27 @@
         Score
       </th>
       <td mat-cell *matCellDef="let element">
-        <span>{{ element.dotsum.scoreText }}</span>
-        <span> | score </span>
-        <span>{{ element.dotsum.score }}</span>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            /* margin: 1px; */
+            padding: 5px;
+            border-radius: 7px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add shadow here */
+          "
+          [ngStyle]="{
+            color: element.dotsum.f_clr
+          }"
+        >
+          <span>
+            <strong>
+              {{ element.dotsum.scoreText }}
+            </strong>
+          </span>
+          <span> | score </span>
+          <span>{{ element.dotsum.score }}</span>
+        </div>
       </td>
     </ng-container>
 
@@ -81,7 +110,14 @@
           </span>
         </div>
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngStyle]="{
+          color: getColor(element.chg),
+          'background-color': getBgColor(element.chg)
+        }"
+      >
         <div>{{ element.cmp }}</div>
         <div>{{ element.chg }}</div>
       </td>
@@ -120,6 +156,25 @@
       </td>
     </ng-container>
 
+    <!-- ival inv value  -->
+    <ng-container matColumnDef="ival">
+      <th
+        style="background-color: gainsboro"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        <div style="text-align: left">
+          <div>Inv. Value</div>
+          <div style="font-size: small; color: gray">date</div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.ival }}</div>
+        <div style="font-size: small; color: gray">{{ element.idate }}</div>
+      </td>
+    </ng-container>
+
     <!-- dgain -->
     <ng-container matColumnDef="dgain">
       <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
@@ -147,7 +202,14 @@
           </span>
         </div>
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngStyle]="{
+          color: getColor(element.dgainp),
+          'background-color': getBgColor(element.dgainp)
+        }"
+      >
         <div>{{ element.dgain }}</div>
         <div>{{ element.dgainp }}</div>
       </td>
@@ -180,7 +242,14 @@
           </span>
         </div>
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngStyle]="{
+          color: getColor(element.unrgainp),
+          'background-color': getBgColor(element.unrgainp)
+        }"
+      >
         <div>{{ element.unrgain }}</div>
         <div>{{ element.unrgainp }}</div>
       </td>
@@ -215,6 +284,8 @@
         <div>{{ element.lval }}</div>
       </td>
     </ng-container>
+
+
 
     <!-- Header and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
