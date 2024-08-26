@@ -19,129 +19,81 @@
     matSort
     (matSortChange)="announceSortChange($event)"
   >
-    <!-- SID Column -->
-    <ng-container matColumnDef="sid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>SID</th>
-      <td mat-cell *matCellDef="let element">{{ element.sid }}</td>
-    </ng-container>
-
-    <!-- Company Column -->
+    <!-- short Company Column -->
     <ng-container matColumnDef="short">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
       <td mat-cell *matCellDef="let element">{{ element.short }}</td>
     </ng-container>
 
-    <!-- Score Column -->
+    <!-- score -->
     <ng-container matColumnDef="score">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
       <td mat-cell *matCellDef="let element">
-        <span>{{ element.score }}</span>
-        <span>| score</span>
-        <span>{{ element.scoreText }}</span>
+        <span>{{ element.dotsum.scoreText }}</span>
+        <span> | score </span>
+        <span>{{ element.dotsum.score }}</span>
       </td>
     </ng-container>
 
-   <!-- Combined Column for Latest Price and Changes -->
-   <ng-container matColumnDef="combined">
-    <th mat-header-cell *matHeaderCellDef>
-      <div>
-        <span (click)="sortBy('cmp')" [ngClass]="{'active': isSortActive('cmp')}">
-          Latest Price
-          <mat-icon [ngClass]="getSortIconClass('cmp')">arrow_downward</mat-icon>
-        </span>
-      </div>
-      <div>
-        <span (click)="sortBy('chg')" [ngClass]="{'active': isSortActive('chg')}">
-          Changes
-          <mat-icon [ngClass]="getSortIconClass('chg')">arrow_downward</mat-icon>
-        </span>
-      </div>
-    </th>
-    <td mat-cell *matCellDef="let element" style="background-color: lightcoral">
-      <div>{{ element.cmp }}</div>
-      <div>{{ element.chg }}</div>
-    </td>
-  </ng-container>
-
-
-    <!-- Changes Column -->
-    <ng-container matColumnDef="changes">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
-        <div>Changes</div>
+    <!-- cmp latest Price -->
+    <ng-container matColumnDef="latest_Price">
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('cmp')"
+            [ngClass]="{ active: isSortActive('cmp') }"
+          >
+            Latest Price
+            <mat-icon [ngClass]="getSortIconClass('cmp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('chg')"
+            [ngClass]="{ active: isSortActive('chg') }"
+            style="font-size: small; color: gray"
+          >
+            Changes
+            <mat-icon [ngClass]="getSortIconClass('chg')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
       </th>
-      <td mat-cell *matCellDef="let element" style="background-color: lightcoral">
+      <td mat-cell *matCellDef="let element">
+        <div>{{ element.cmp }}</div>
         <div>{{ element.chg }}</div>
       </td>
     </ng-container>
 
-    <!-- Market Cap Column -->
-    <ng-container matColumnDef="mcap">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Market Cap</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.mcap }}</div>
-        <div>{{ element.mcapcls }}</div>
-      </td>
-    </ng-container>
-    <!-- Combined Volume Column -->
-    <ng-container matColumnDef="cvol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Combined Volume</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.cvol }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Day High Column -->
-    <ng-container matColumnDef="dh">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day High</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.dh }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Day Low Column -->
-    <ng-container matColumnDef="dl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day Low</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.dl }}</div>
-      </td>
-    </ng-container>
-
-    <!-- 52 Week High Column -->
-    <ng-container matColumnDef="wk52h">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>52 Week High</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.wk52h }}</div>
-      </td>
-    </ng-container>
-
-    <!-- 52 Week Low Column -->
-    <ng-container matColumnDef="wk52l">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>52 Week Low</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.wk52l }}</div>
-      </td>
-    </ng-container>
-
-    <!-- All Time High Column -->
-    <ng-container matColumnDef="ath">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>All Time High</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.ath }}</div>
-      </td>
-    </ng-container>
-
-    <!-- All Time Low Column -->
-    <ng-container matColumnDef="atl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>All Time Low</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.atl }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Investment Price Column -->
+    <!-- iprice -->
     <ng-container matColumnDef="iprice">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
-        Investment Price
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('iprice')"
+            [ngClass]="{ active: isSortActive('iprice') }"
+          >
+            Inv.Price
+            <mat-icon [ngClass]="getSortIconClass('iprice')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('iqty')"
+            [ngClass]="{ active: isSortActive('iqty') }"
+            style="font-size: small; color: gray"
+          >
+            Quality
+            <mat-icon [ngClass]="getSortIconClass('iqty')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
       </th>
       <td mat-cell *matCellDef="let element">
         <div>{{ element.iprice }}</div>
@@ -149,93 +101,85 @@
       </td>
     </ng-container>
 
-    <!-- Investment Value Column -->
-    <ng-container matColumnDef="ival">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
-        Investment Value
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.ival }}</div>
-        <div>date</div>
-      </td>
-    </ng-container>
-
-    <!-- Day Gain Column -->
+    <!-- dgain -->
     <ng-container matColumnDef="dgain">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day Gain</th>
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('dgain')"
+            [ngClass]="{ active: isSortActive('dgain') }"
+          >
+            Day's Gain
+            <mat-icon [ngClass]="getSortIconClass('dgain')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('dgainp')"
+            [ngClass]="{ active: isSortActive('dgainp') }"
+            style="font-size: small; color: gray"
+          >
+            in %
+            <mat-icon [ngClass]="getSortIconClass('dgainp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
       <td mat-cell *matCellDef="let element">
         <div>{{ element.dgain }}</div>
         <div>{{ element.dgainp }}</div>
       </td>
     </ng-container>
 
-    <!-- Technical Score Column -->
-    <ng-container matColumnDef="techScore">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Technical Score</th>
-      <td mat-cell *matCellDef="let element">
-        <div>trail</div>
-        <div>{{ element.tech_score }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Volume Column -->
-    <ng-container matColumnDef="vol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Volume</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.vol }}</div>
-        <div style="font-weight: 400; font-size: small">
-          {{ element.volperc }}
+     <!-- unrgain -->
+     <ng-container matColumnDef="unrgain">
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('unrgain')"
+            [ngClass]="{ active: isSortActive('unrgain') }"
+          >
+            Unrealized Gain
+            <mat-icon [ngClass]="getSortIconClass('unrgain')"
+              >arrow_downward</mat-icon
+            >
+          </span>
         </div>
-      </td>
-    </ng-container>
-
-    <!-- Unrealized Gain Column -->
-    <ng-container matColumnDef="unrgainp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Unrealized Gain</th>
+        <div>
+          <span
+            (click)="sortBy('unrgainp')"
+            [ngClass]="{ active: isSortActive('unrgainp') }"
+            style="font-size: small; color: gray"
+          >
+            in %
+            <mat-icon [ngClass]="getSortIconClass('unrgainp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
       <td mat-cell *matCellDef="let element">
+        <div>{{ element.unrgain }}</div>
         <div>{{ element.unrgainp }}</div>
       </td>
     </ng-container>
 
-    <!-- Contribution Column -->
-    <ng-container matColumnDef="unrgaincontri">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Contribution</th>
+    <!-- Technical Score Column -->
+    <ng-container matColumnDef="tech_score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Technical Score</th>
       <td mat-cell *matCellDef="let element">
-        <div>{{ element.unrgaincontri }}</div>
+        <div>{{ element.dotsum.tech_score }}</div>
       </td>
     </ng-container>
 
-    <!-- PWT Column -->
-    <ng-container matColumnDef="pwt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>PWT</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.pwt }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Latest Value Column -->
+    <!-- lval Latest value -->
     <ng-container matColumnDef="lval">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Latest Value</th>
       <td mat-cell *matCellDef="let element">
         <div>{{ element.lval }}</div>
-      </td>
-    </ng-container>
-
-    <!-- Technical Text Column -->
-    <ng-container matColumnDef="techTxt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Technical Text</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.tech_txt }}
-      </td>
-    </ng-container>
-
-    <!-- Financial Trend Column -->
-    <ng-container matColumnDef="f_txt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Financial Trend</th>
-      <td mat-cell *matCellDef="let element">
-        <div>{{ element.f_txt }}</div>
-        <div>date trail</div>
-        <div>circle</div>
       </td>
     </ng-container>
 

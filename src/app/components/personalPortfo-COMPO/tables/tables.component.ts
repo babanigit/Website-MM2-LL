@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit, inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  inject,
+} from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
@@ -31,19 +37,22 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // console.log('MatSort:', this.sort); // Debugging statement
     if (this.sort) {
       this.dataSource2.sort = this.sort;
+      this.sort.sortChange.subscribe((sortState: Sort) => {
+        console.log('The sort state is:', sortState);
+        if (sortState.active) {
+          this.sortData(sortState);
+        }
+      });
     } else {
       console.error('MatSort is not available');
     }
   }
 
-
-
-  private fetchStocks(type: 'overview' | 'holding' ) {
+  private fetchStocks(type: 'overview' | 'holding') {
     if (this.dataCache[type]) {
-      this.updateData(type);
+      this.updateStocks(type);
       return;
     }
 
@@ -51,7 +60,8 @@ export class TablesComponent implements OnInit, AfterViewInit {
       next: (response) => {
         const elements = Object.values(response.data.list);
         this.dataCache[type] = elements;
-        this.updateData(type);
+        this.updateStocks(type);
+        console.log('Fetched data:', elements);
       },
       error: (err) => {
         console.error('Failed to load data', err);
@@ -59,65 +69,33 @@ export class TablesComponent implements OnInit, AfterViewInit {
     });
   }
 
+  updateStocks(type: 'overview' | 'holding' | 'price' | 'contri'): void {
+    this.dataSource2.data = this.dataCache[type] || [];
+  }
+
   getColums(type: 'overview' | 'holding' | 'price' | 'contri'): void {
     switch (type) {
       case 'overview':
-        this.displayedColumns = [
-          'short',
-          'score',
-          'combined',
-          'techScore',
-          'vol',
-          'unrgainp',
-          'unrgaincontri',
-          'pwt',
-          'lval',
-          'techTxt',
-          'f_txt',
-        ];
+        this.displayedColumns = ['short', 'score'];
         break;
       case 'holding':
         this.displayedColumns = [
           'short',
           'score',
-          'combined',
+          'latest_Price',
           'iprice',
-          'ival',
           'dgain',
+          'unrgain',
           'lval',
         ];
         break;
       case 'price':
-        this.displayedColumns = [
-          'short',
-          'score',
-          'combined',
-          'cvol',
-          'dh',
-          'dl',
-          'wk52h',
-          'wk52l',
-          'ath',
-          'atl',
-        ];
+        this.displayedColumns = ['short', 'score'];
         break;
       case 'contri':
-        this.displayedColumns = [
-          'short',
-          'score',
-          'combined',
-          'mcap',
-          'unrgainp',
-          'unrgaincontri',
-          'pwt',
-          'lval',
-        ];
+        this.displayedColumns = ['short', 'score'];
         break;
     }
-  }
-
-  updateData(type: 'overview' | 'holding' | 'price' | 'contri'): void {
-    this.dataSource2.data = this.dataCache[type] || [];
   }
 
   onClick(type: 'overview' | 'holding' | 'price' | 'contri'): void {
@@ -131,12 +109,54 @@ export class TablesComponent implements OnInit, AfterViewInit {
     if (!this.dataCache[type]) {
       this.fetchStocks(type);
     } else {
-      this.updateData(type);
+      this.updateStocks(type);
     }
   }
 
-  sortBy(property: 'cmp' | 'chg') {
-    const sortState: Sort = { active: property, direction: this.sort.direction === 'asc' ? 'desc' : 'asc' };
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
+
+  private sortData(sortState: Sort) {
+    const data = this.dataSource2.data.slice();
+    if (!sortState.active || sortState.direction === '') {
+      this.dataSource2.data = data;
+      return;
+    }
+
+    const isAsc = sortState.direction === 'asc';
+
+    this.dataSource2.data = data.sort((a, b) => {
+      let valueA: number;
+      let valueB: number;
+
+      // Convert values to numbers
+      // if (sortState.active === 'techScore') {
+      //   valueA = +a.dotsum.tech_score || 0;
+      //   valueB = +b.dotsum.tech_score || 0;
+      // } else {
+      valueA = +a.dotsum[sortState.active] || 0;
+      valueB = +b.dotsum[sortState.active] || 0;
+      // }
+
+      console.log(
+        `Comparing ${valueA} with ${valueB} for column ${sortState.active}`
+      );
+      return compare(valueA, valueB, isAsc);
+    });
+  }
+
+  // latest price
+  // specially for latest price cause it has two data inside
+  sortBy(property: string) {
+    const sortState: Sort = {
+      active: property,
+      direction: this.sort.direction === 'asc' ? 'desc' : 'asc',
+    };
     this.sort.active = property;
     this.sort.direction = sortState.direction;
 
@@ -154,22 +174,19 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.announceSortChange(sortState);
   }
 
-  isSortActive(column: 'cmp' | 'chg'): boolean {
+  isSortActive(column: string): boolean {
     return this.sort?.active === column && this.sort?.direction !== '';
   }
 
-  getSortIconClass(column: 'cmp' | 'chg'): string {
+  getSortIconClass(column: string): string {
     if (this.sort?.active === column) {
       return this.sort?.direction === 'asc' ? 'arrow_upward' : 'arrow_downward';
     }
     return '';
   }
+}
 
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
-  }
+// Utility function to compare numbers
+function compare(a: number, b: number, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
