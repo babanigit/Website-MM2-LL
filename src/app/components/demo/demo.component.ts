@@ -4,22 +4,31 @@ import {
   ViewChild,
   AfterViewInit,
   inject,
+  signal,
 } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { GetPersonalPFService } from '../../services/personal-portfolio/get-personal-pf.service';
+import { MatIconModule } from '@angular/material/icon';
+
+import { MatExpansionModule } from '@angular/material/expansion'; // Import MatExpansionModule
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css'],
   standalone: true,
-  imports: [MatSortModule, MatTableModule, CommonModule],
+  imports: [
+    MatSortModule,
+    MatTableModule,
+    CommonModule,
+    MatIconModule,
+    MatExpansionModule,
+  ],
 })
 export class DemoComponent implements OnInit, AfterViewInit {
-
   private _liveAnnouncer = inject(LiveAnnouncer);
   private serv = inject(GetPersonalPFService);
 
@@ -28,71 +37,137 @@ export class DemoComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  TYPE: 'overview' | 'holding' | 'price' | 'contri' = 'holding';
+  // type
+  TYPE:
+    | 'OVERVIEW'
+    | 'HOLDING'
+    | 'PRICE'
+    | 'CONTRIBUTION'
+    | 'DIVIDEND'
+    | 'MOJO'
+    | 'RISK'
+    | 'LIQUIDITY'
+    | 'TAX'
+    | 'RATIOS'
+    | 'FINANCIALS'
+    | 'RETURN'
+    | 'RESULT'
+    | 'TOTAL RETURNS' = 'HOLDING';
+
   private dataCache: { [key: string]: any[] | undefined } = {};
 
   ngOnInit() {
-    this.getColums('holding');
-    this.fetchStocks('holding');
+    this.getColums('HOLDING');
+    this.fetchStocks('HOLDING');
   }
 
   ngAfterViewInit() {
-    this.dataSource2.sort = this.sort;
+    if (this.sort) {
+      this.dataSource2.sort = this.sort;
+      this.sort.sortChange.subscribe((sortState: Sort) => {
+        console.log('The sort state is:', sortState);
+        if (sortState.active) {
+          this.sortData(sortState);
+        }
+      });
+    } else {
+      console.error('MatSort is not available');
+    }
   }
 
-  private fetchStocks(type: 'overview' | 'holding') {
+  // List of items to display on navbar buttons
+  items: any = [
+    'OVERVIEW',
+    'HOLDING',
+    'PRICE',
+    'CONTRIBUTION',
+    'DIVIDEND',
+    'MOJO',
+    'RISK',
+    'LIQUIDITY',
+    'TAX',
+    'RATIOS',
+    'FINANCIALS',
+    'RETURN',
+    'RESULT',
+    'TOTAL RETURNS',
+  ];
 
+  private fetchStocks(type: 'OVERVIEW' | 'HOLDING') {
     if (this.dataCache[type]) {
-      this.updateData(type);
+      this.updateStocks(type);
       return;
     }
 
-    // this.serv.getOverviewStocks(type).subscribe({
-    //   next: (response) => {
-    //     const elements = Object.values(response.data.list);
-    //     this.dataCache[type] = elements;
-    //     this.updateData(type);
-    //     console.log("data fetched : ", elements , " from type " + type);
-    //   },
-    //   error: (err) => {
-    //     console.error('Failed to load data', err);
-    //   },
-    // });
+    this.serv.getOverviewStocks(type).subscribe({
+      next: (response) => {
+        const elements = Object.values(response.data.list);
+        this.dataCache[type] = elements;
+        this.updateStocks(type);
+        console.log('Fetched data:', elements);
+      },
+      error: (err) => {
+        console.error('Failed to load data', err);
+      },
+    });
   }
 
-  getColums(type: 'overview' | 'holding' | 'price' | 'contri'): void {
+  updateStocks(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
+    this.dataSource2.data = this.dataCache[type] || [];
+  }
+
+  getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     switch (type) {
-      case 'overview':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'techScore', 'vol', 'unrgainp', 'unrgaincontri', 'pwt', 'lval', 'techTxt', 'f_txt'];
+      case 'OVERVIEW':
+        this.displayedColumns = ['short', 'score'];
         break;
-      case 'holding':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'iprice', 'ival', 'dgain', 'lval'];
+      case 'HOLDING':
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp',
+          'iprice',
+          'ival',
+          'dgain',
+          'unrgain',
+          'lval',
+        ];
         break;
-      case 'price':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'cvol', 'dh', 'dl', 'wk52h', 'wk52l', 'ath', 'atl'];
+      case 'PRICE':
+        this.displayedColumns = ['short', 'score'];
         break;
-      case 'contri':
-        this.displayedColumns = ['short', 'score', 'latestPrice', 'mcap', 'unrgainp', 'unrgaincontri', 'pwt', 'lval'];
+      case 'CONTRIBUTION':
+        this.displayedColumns = ['short', 'score'];
         break;
     }
   }
 
-  updateData(type: 'overview' | 'holding'): void {
-    this.dataSource2.data = this.dataCache[type] || [];
-  }
+  onClick(
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'
+    // | 'DIVIDEND'
+    // | 'MOJO'
+    // | 'RISK'
+    // | 'LIQUIDITY'
+    // | 'TAX'
+    // | 'RATIOS'
+    // | 'FINANCIALS'
+    // | 'RETURN'
+    // | 'RESULT'
+    // | 'TOTAL RETURNS'
+  ): void {
+    // this.activeItem = type;
 
-  onClick(type: 'overview' | 'holding' | 'price' | 'contri'): void {
     this.TYPE = type;
     this.getColums(type);
 
-    if (type === 'price' || type === 'contri') {
-      type = 'holding';
+    if (type === 'PRICE' || type === 'CONTRIBUTION') {
+      type = 'HOLDING';
     }
 
     if (!this.dataCache[type]) {
       this.fetchStocks(type);
     } else {
-      this.updateData(type);
+      this.updateStocks(type);
     }
   }
 
@@ -103,4 +178,110 @@ export class DemoComponent implements OnInit, AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
+  private sortData(sortState: Sort) {
+    const data = this.dataSource2.data.slice();
+    if (!sortState.active || sortState.direction === '') {
+      this.dataSource2.data = data;
+      return;
+    }
+
+    const isAsc = sortState.direction === 'asc';
+
+    this.dataSource2.data = data.sort((a, b) => {
+      let valueA: number;
+      let valueB: number;
+
+      valueA = +a.dotsum[sortState.active] || 0;
+      valueB = +b.dotsum[sortState.active] || 0;
+
+      console.log(
+        `Comparing ${valueA} with ${valueB} for column ${sortState.active}`
+      );
+      return compare(valueA, valueB, isAsc);
+    });
+  }
+
+  // specially for latest price cause it has two data inside and angular material dot suppport this.
+  sortBy(property: string) {
+    const sortState: Sort = {
+      active: property,
+      direction: this.sort.direction === 'asc' ? 'desc' : 'asc',
+    };
+    this.sort.active = property;
+    this.sort.direction = sortState.direction;
+
+    this.dataSource2.data = this.dataSource2.data.sort((a, b) => {
+      const isAsc = sortState.direction === 'asc';
+      if (a[property] < b[property]) {
+        return isAsc ? -1 : 1;
+      }
+      if (a[property] > b[property]) {
+        return isAsc ? 1 : -1;
+      }
+      return 0;
+    });
+
+    this.announceSortChange(sortState);
+  }
+
+  isSortActive(column: string): boolean {
+    return this.sort?.active === column && this.sort?.direction !== '';
+  }
+
+  getSortIconClass(column: string): string {
+    if (this.sort?.active === column) {
+      return this.sort?.direction === 'asc' ? 'arrow_upward' : 'arrow_downward';
+    }
+    return '';
+  }
+
+  // get colors and bg colors
+  getColor(listedgl: string): string {
+    const value = parseFloat(listedgl);
+    if (isNaN(value)) {
+      return 'black'; // Fallback color if value is not a number
+    }
+    if (value === 0) {
+      return ''; // Neutral color for 0
+    }
+    return isNaN(value) || value < 0 ? 'red' : 'green';
+  }
+
+  getBgColor(listedgl: string): string {
+    const value = parseFloat(listedgl);
+    if (isNaN(value)) {
+      return '#e0e0e0'; // Fallback background color if value is not a number
+    }
+    if (value === 0) {
+      return ''; // Neutral background color for 0
+    }
+    return value < 0 ? '#ffcccc' : '#ccffcc'; // Colors for negative and positive values
+  }
+
+  fun(sid: number) {
+    console.log('the fun clicked', sid);
+  }
+
+  onPanelOpen(element: any) {
+    // Handle panel open event if needed
+  }
+
+  readonly panelOpenState = signal(false);
+  expandedElement: any;
+
+  togglePanel(element: any) {
+    // Toggle the panel
+    if (this.expandedElement === element) {
+      this.expandedElement = null;
+    } else {
+      this.expandedElement = element;
+    }
+  }
+
+}
+
+// Utility function to compare numbers
+function compare(a: number, b: number, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

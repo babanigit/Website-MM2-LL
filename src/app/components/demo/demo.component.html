@@ -1,216 +1,771 @@
-<nav
-  style="
-    display: flex;
-    gap: 10px;
-    border: 2px solid gray;
-    justify-content: center;
-  "
->
-  <button (click)="onClick('overview')">OVERVIEW</button>
-  <button (click)="onClick('holding')">HOLDING</button>
-  <button (click)="onClick('price')">PRICE</button>
-  <button (click)="onClick('contri')">CONTRIBUTION</button>
+<!-- buttons -->
+<div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
+  <span
+    *ngFor="let item of items"
+    [ngStyle]="{
+      'background-color': TYPE === item ? 'gainsboro' : '',
+      color: TYPE === item ? 'black' : 'white',
+      padding: '1% 1.5%',
+      'border-right': '1px solid gray',
+      cursor: 'pointer',
+      'font-size': '12px',
 
-</nav>
+    }"
+    (click)="onClick(item)"
+  >
+    {{ item }}
+  </span>
+</div>
 
+<!-- table -->
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource2" matSort (matSortChange)="announceSortChange($event)">
+  <table
+    mat-table
+    [dataSource]="dataSource2"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
 
-    <!-- SID Column -->
-    <ng-container matColumnDef="sid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> SID </th>
-      <td mat-cell *matCellDef="let element"> {{element.sid}} </td>
-    </ng-container>
-
-    <!-- Company Column -->
+<!-- holding  -->
+    <!-- short Company Column -->
     <ng-container matColumnDef="short">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
-      <td mat-cell *matCellDef="let element"> {{element.short}} </td>
-    </ng-container>
-
-    <!-- Score Column -->
-    <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <th
+        style="background-color: gainsboro"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Company
+      </th>
       <td mat-cell *matCellDef="let element">
-        <span>{{element.score}}</span>
-        <span>| score</span>
-        <span>{{element.scoreText}}</span>
+        <span
+          *ngIf="element.details"
+          (click)="togglePanel(element)"
+          style="cursor: pointer; top: 0%; left: 0%; z-index: 2"
+        >
+          arrow#
+        </span>
+
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <!-- <mat-panel-title> This is the expansion title </mat-panel-title> -->
+              <mat-panel-description>
+                {{ element.short }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- <p>This is the primary content of the panel.</p> -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
       </td>
     </ng-container>
 
-    <!-- Latest Price Column -->
-    <ng-container matColumnDef="latestPrice">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Latest Price </th>
+    <!-- score -->
+    <ng-container matColumnDef="score">
+      <th
+        style="background-color: gainsboro"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Score
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <!-- <mat-panel-title> This is the expansion title </mat-panel-title> -->
+              <mat-panel-description>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    margin: 8px;
+                    padding: 5px;
+                    border-radius: 7px;
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add shadow here */
+                  "
+                  [ngStyle]="{
+                    color: element.dotsum.f_clr
+                  }"
+                >
+                <span style="margin-right: 8px;">
+                  <strong>
+                    {{ element.dotsum.scoreText }}
+                  </strong>
+                </span>
+                <span style="margin-right: 8px;"> | score </span>
+                <span>
+                  {{ element.dotsum.score }}
+                </span>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- <p>This is the primary content of the panel.</p>
+            <p>This is the primary content of the panel.</p> -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+      </td>
+    </ng-container>
+
+    <!-- cmp latest Price -->
+    <ng-container matColumnDef="cmp">
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('cmp')"
+            [ngClass]="{ active: isSortActive('cmp') }"
+          >
+            Latest Price
+            <mat-icon [ngClass]="getSortIconClass('cmp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('chg')"
+            [ngClass]="{ active: isSortActive('chg') }"
+            style="font-size: small; color: gray"
+          >
+            Changes
+            <mat-icon [ngClass]="getSortIconClass('chg')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+
       <td
-      style="background-color: lightcoral;"
-      mat-cell *matCellDef="let element" >
-        <div>{{element.cmp}}</div>
-        <div>{{element.chg}}</div>
+        [ngStyle]="{
+          color: getColor(element.chg),
+          'background-color': getBgColor(element.chg)
+        }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                <div>
+                  <div>{{ element.cmp }}</div>
+                  <div style="color: gray">{{ element.chg }}</div>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+            <!-- <div *ngIf="element.details!">
+          <div *ngFor="let detail of element.details">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div>{{ detail.cmp }}</div>
+                <div>{{ detail.chg }}</div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          </div>
+        </div> -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
       </td>
     </ng-container>
 
-    <!-- Market Cap Column -->
-    <ng-container matColumnDef="mcap">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.mcap}}</div>
-        <div>{{element.mcapcls}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Combined Volume Column -->
-    <ng-container matColumnDef="cvol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Combined Volume </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.cvol}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Day High Column -->
-    <ng-container matColumnDef="dh">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dh}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Day Low Column -->
-    <ng-container matColumnDef="dl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dl}}</div>
-      </td>
-    </ng-container>
-
-    <!-- 52 Week High Column -->
-    <ng-container matColumnDef="wk52h">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> 52 Week High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.wk52h}}</div>
-      </td>
-    </ng-container>
-
-    <!-- 52 Week Low Column -->
-    <ng-container matColumnDef="wk52l">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> 52 Week Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.wk52l}}</div>
-      </td>
-    </ng-container>
-
-    <!-- All Time High Column -->
-    <ng-container matColumnDef="ath">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> All Time High </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.ath}}</div>
-      </td>
-    </ng-container>
-
-    <!-- All Time Low Column -->
-    <ng-container matColumnDef="atl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> All Time Low </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.atl}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Investment Price Column -->
+    <!-- iprice, iqty -->
     <ng-container matColumnDef="iprice">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Investment Price </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.iprice}}</div>
-        <div>{{element.iqty}}</div>
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('iprice')"
+            [ngClass]="{ active: isSortActive('iprice') }"
+            style="display: flex; align-items: center"
+          >
+            Inv.Price
+            <mat-icon [ngClass]="getSortIconClass('iprice')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('iqty')"
+            [ngClass]="{ active: isSortActive('iqty') }"
+            style="
+              font-size: small;
+              color: gray;
+              display: flex;
+              align-items: center;
+            "
+          >
+            Quality
+            <mat-icon [ngClass]="getSortIconClass('iqty')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            (opened)="expandedElement = element"
+            (closed)="expandedElement = null"
+            hideToggle
+            style="width: 100%; padding: 0%"
+          >
+            <mat-expansion-panel-header>
+              <div
+                style="
+                  display: grid;
+                  width: 100%;
+                  justify-content: left;
+                  text-align: left;
+                  margin-top: 5%;
+                  margin-left: 0px;
+                "
+              >
+                <div>{{ element.iprice }}</div>
+                <div style="height: 20px">{{ element.iqty }}</div>
+              </div>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+            <div
+              *ngIf="element.details && element.details.length > 0"
+              style="width: 100%; padding-right: 10px; text-align: center"
+            >
+              <div
+                *ngFor="let detail of element.details; let i = index"
+                style="
+                  margin-bottom: 10px;
+                  padding-right: 10px;
+                  margin-top: 6px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0px;
+                    text-align: left;
+                  "
+                >
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                  <div>{{ detail.iprice }}</div>
+                  <div>{{ detail.iqty }}</div>
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Details section that will be shown when the panel is expanded end... -->
+          </mat-expansion-panel>
+        </div>
       </td>
     </ng-container>
 
-    <!-- Investment Value Column -->
+    <!-- ival, idate inv value  -->
     <ng-container matColumnDef="ival">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Investment Value </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.ival}}</div>
-        <div>date</div>
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('ival')"
+            [ngClass]="{ active: isSortActive('ival') }"
+            style="display: flex; align-items: center"
+          >
+            Inv. Value
+            <mat-icon [ngClass]="getSortIconClass('ival')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('idate')"
+            [ngClass]="{ active: isSortActive('idate') }"
+            style="
+              font-size: small;
+              color: gray;
+              display: flex;
+              align-items: center;
+            "
+          >
+            Inv. Date
+            <mat-icon [ngClass]="getSortIconClass('idate')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            (opened)="expandedElement = element"
+            (closed)="expandedElement = null"
+            hideToggle
+            style="width: 100%; padding: 0%"
+          >
+            <mat-expansion-panel-header>
+              <div
+                style="
+                  display: grid;
+                  width: 100%;
+                  justify-content: left;
+                  text-align: left;
+                  margin-top: 5%;
+                  margin-left: 0px;
+                "
+              >
+                <div>{{ element.ival }}</div>
+                <div style="font-size: small; color: gray; height: 20px">
+                  {{ element.idate }}
+                </div>
+              </div>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+            <div
+              *ngIf="element.details && element.details.length > 0"
+              style="width: 100%; padding-right: 10px; text-align: center"
+            >
+              <div
+                *ngFor="let detail of element.details; let i = index"
+                style="
+                  margin-bottom: 10px;
+                  padding-right: 10px;
+                  margin-top: 6px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0px;
+                    text-align: left;
+                  "
+                >
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                  <div>{{ detail.ival }}</div>
+                  <div style="font-size: small; color: gray">
+                    {{ detail.idate }}
+                  </div>
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Details section that will be shown when the panel is expanded end... -->
+          </mat-expansion-panel>
+        </div>
       </td>
     </ng-container>
 
-    <!-- Day Gain Column -->
+    <!-- dgain, dgainp Day's Gain  -->
     <ng-container matColumnDef="dgain">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day Gain </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.dgain}}</div>
-        <div>{{element.dgainp}}</div>
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('dgain')"
+            [ngClass]="{ active: isSortActive('dgain') }"
+            style="display: flex; align-items: center"
+          >
+            Day's Gain
+            <mat-icon [ngClass]="getSortIconClass('dgain')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('dgainp')"
+            [ngClass]="{ active: isSortActive('dgainp') }"
+            style="
+              font-size: small;
+              color: gray;
+              display: flex;
+              align-items: center;
+            "
+          >
+            in%
+            <mat-icon [ngClass]="getSortIconClass('dgainp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+      <td
+        [ngStyle]="{
+          color: getColor(element.dgainp),
+          'background-color': getBgColor(element.dgainp)
+        }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <div>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            (opened)="expandedElement = element"
+            (closed)="expandedElement = null"
+            hideToggle
+            style="width: 100%; padding: 0%"
+          >
+            <mat-expansion-panel-header>
+              <div
+                style="
+                  display: grid;
+                  width: 100%;
+                  justify-content: left;
+                  text-align: left;
+                  margin-top: 5%;
+                  margin-left: 0px;
+                "
+              >
+                <div>{{ element.dgain }}</div>
+                <div style="font-size: small; color: gray; height: 20px">
+                  {{ element.dgainp }}
+                </div>
+              </div>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+            <div
+              *ngIf="element.details && element.details.length > 0"
+              style="width: 100%; padding-right: 10px; text-align: center"
+            >
+              <div
+                *ngFor="let detail of element.details; let i = index"
+                style="
+                  margin-bottom: 10px;
+                  padding-right: 10px;
+                  margin-top: 6px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0px;
+                    text-align: left;
+                  "
+                >
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                  <div>{{ detail.dgain }}</div>
+                  <div style="font-size: small; color: gray">
+                    {{ detail.dgainp }}
+                  </div>
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Details section that will be shown when the panel is expanded end... -->
+          </mat-expansion-panel>
+        </div>
       </td>
     </ng-container>
 
-    <!-- Technical Score Column -->
-    <ng-container matColumnDef="techScore">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Technical Score </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>trail</div>
-        <div>{{element.tech_score}}</div>
+    <!-- unrgain, unrgainp Day's Gain  -->
+    <ng-container matColumnDef="unrgain">
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('unrgain')"
+            [ngClass]="{ active: isSortActive('unrgain') }"
+            style="display: flex; align-items: center"
+          >
+            Unrealized Gain
+            <mat-icon [ngClass]="getSortIconClass('unrgain')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('unrgainp')"
+            [ngClass]="{ active: isSortActive('unrgainp') }"
+            style="
+              font-size: small;
+              color: gray;
+              display: flex;
+              align-items: center;
+            "
+          >
+            in%
+            <mat-icon [ngClass]="getSortIconClass('unrgainp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+      <td
+        [ngStyle]="{
+          color: getColor(element.unrgainp),
+          'background-color': getBgColor(element.unrgainp)
+        }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <div>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            (opened)="expandedElement = element"
+            (closed)="expandedElement = null"
+            hideToggle
+            style="width: 100%; padding: 0%"
+          >
+            <mat-expansion-panel-header>
+              <div
+                style="
+                  display: grid;
+                  width: 100%;
+                  justify-content: left;
+                  text-align: left;
+                  margin-top: 5%;
+                  margin-left: 0px;
+                "
+              >
+                <div>{{ element.unrgain }}</div>
+                <div style="font-size: small; color: gray; height: 20px">
+                  {{ element.unrgainp }}
+                </div>
+              </div>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+            <div
+              *ngIf="element.details && element.details.length > 0"
+              style="width: 100%; padding-right: 10px; text-align: center"
+            >
+              <div
+                *ngFor="let detail of element.details; let i = index"
+                style="
+                  margin-bottom: 10px;
+                  padding-right: 10px;
+                  margin-top: 6px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0px;
+                    text-align: left;
+                  "
+                >
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                  <div>{{ detail.unrgain }}</div>
+                  <div style="font-size: small; color: gray">
+                    {{ detail.unrgainp }}
+                  </div>
+                  <!-- Horizontal line between rows -->
+                  <hr
+                    *ngIf="i < element.details.length - 1"
+                    style="border: 1px solid black"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Details section that will be shown when the panel is expanded end... -->
+          </mat-expansion-panel>
+        </div>
       </td>
     </ng-container>
 
-    <!-- Volume Column -->
-    <ng-container matColumnDef="vol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.vol}}</div>
-        <div style="font-weight: 400; font-size: small">{{element.volperc}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Unrealized Gain Column -->
-    <ng-container matColumnDef="unrgainp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Unrealized Gain </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.unrgainp}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Contribution Column -->
-    <ng-container matColumnDef="unrgaincontri">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Contribution </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.unrgaincontri}}</div>
-      </td>
-    </ng-container>
-
-    <!-- PWT Column -->
-    <ng-container matColumnDef="pwt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> PWT </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.pwt}}</div>
-      </td>
-    </ng-container>
-
-    <!-- Latest Value Column -->
+    <!-- lval latest value -->
     <ng-container matColumnDef="lval">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Latest Value </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.lval}}</div>
+      <th
+        style="background-color: gainsboro"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Latest Value
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <!-- <mat-panel-title> This is the expansion title </mat-panel-title> -->
+              <mat-panel-description>
+                {{ element.lval }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- <p>This is the primary content of the panel.</p> -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
       </td>
     </ng-container>
 
-    <!-- Technical Text Column -->
-    <ng-container matColumnDef="techTxt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Technical Text </th>
-      <td mat-cell *matCellDef="let element" >
-        {{element.tech_txt}}
-      </td>
-    </ng-container>
 
-    <!-- Financial Trend Column -->
-    <ng-container matColumnDef="f_txt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Financial Trend </th>
-      <td mat-cell *matCellDef="let element" >
-        <div>{{element.f_txt}}</div>
-        <div>date trail</div>
-        <div>circle</div>
-      </td>
-    </ng-container>
+
+
 
     <!-- Header and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+</div>
+
+<!-- og -->
+<div class="mat-elevation-z8">
+  <mat-accordion>
+    <mat-expansion-panel
+      hideToggle
+      [expanded]="false"
+      *ngFor="let element of dataSource2.data"
+      (opened)="onPanelOpen(element)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          <ng-container>
+            <!-- <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+              <div>
+                <span
+                  (click)="sortBy('iprice')"
+                  [ngClass]="{ active: isSortActive('iprice') }"
+                >
+                  Inv.Price
+                  <mat-icon [ngClass]="getSortIconClass('iprice')"
+                    >arrow_downward</mat-icon
+                  >
+                </span>
+              </div>
+              <div>
+                <span
+                  (click)="sortBy('iqty')"
+                  [ngClass]="{ active: isSortActive('iqty') }"
+                  style="font-size: small; color: gray"
+                >
+                  Quality
+                  <mat-icon [ngClass]="getSortIconClass('iqty')"
+                    >arrow_downward</mat-icon
+                  >
+                </span>
+              </div>
+            </th> -->
+            <td mat-cell *matCellDef="let element">
+              <div>{{ element.iprice }}</div>
+              <div>{{ element.iqty }}</div>
+            </td>
+          </ng-container>
+        </mat-panel-description>
+        <mat-panel-description matColumnDef="iprice">
+          <span>{{ element.cmp }}</span>
+        </mat-panel-description>
+
+        <mat-panel-description>
+          <div>{{ element.dotsum.score }}</div>
+        </mat-panel-description>
+
+        <mat-panel-description>
+          <span> {{ element.iprice }}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div>
+        <!-- Details section that will be shown when the panel is expanded -->
+        <div *ngIf="element.details!">
+          <div *ngFor="let detail of element.details">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div>{{ detail.short }}</div>
+              </mat-panel-title>
+              <mat-panel-title>
+                <span>{{ detail.cmp }}</span>
+              </mat-panel-title>
+
+              <mat-panel-title>
+                <div>{{ detail.iprice }}</div>
+              </mat-panel-title>
+
+              <mat-panel-title>
+                <span> {{ detail.iprice }}</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- new -->
+<div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> This is the expansion title </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="panelOpenState.set(true)"
+      (closed)="panelOpenState.set(false)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> Self aware panel </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ panelOpenState() ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

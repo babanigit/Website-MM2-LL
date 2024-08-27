@@ -28,6 +28,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
+  // type
   TYPE:
     | 'OVERVIEW'
     | 'HOLDING'
@@ -65,7 +66,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // List of items to display
+  // List of items to display on navbar buttons
   items: any = [
     'OVERVIEW',
     'HOLDING',
@@ -117,10 +118,10 @@ export class TablesComponent implements OnInit, AfterViewInit {
           'score',
           'cmp',
           'iprice',
-          'ival',
-          'dgain',
-          'unrgain',
-          'lval',
+          // 'ival',
+          // 'dgain',
+          // 'unrgain',
+          // 'lval',
         ];
         break;
       case 'PRICE':
@@ -182,14 +183,8 @@ export class TablesComponent implements OnInit, AfterViewInit {
       let valueA: number;
       let valueB: number;
 
-      // Convert values to numbers
-      // if (sortState.active === 'techScore') {
-      //   valueA = +a.dotsum.tech_score || 0;
-      //   valueB = +b.dotsum.tech_score || 0;
-      // } else {
       valueA = +a.dotsum[sortState.active] || 0;
       valueB = +b.dotsum[sortState.active] || 0;
-      // }
 
       console.log(
         `Comparing ${valueA} with ${valueB} for column ${sortState.active}`
@@ -198,8 +193,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  // latest price
-  // specially for latest price cause it has two data inside
+  // specially for latest price cause it has two data inside and angular material dot suppport this.
   sortBy(property: string) {
     const sortState: Sort = {
       active: property,
@@ -233,7 +227,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     return '';
   }
 
-  // Colors
+  // get colors and bg colors
   getColor(listedgl: string): string {
     const value = parseFloat(listedgl);
     if (isNaN(value)) {
@@ -256,11 +250,9 @@ export class TablesComponent implements OnInit, AfterViewInit {
     return value < 0 ? '#ffcccc' : '#ccffcc'; // Colors for negative and positive values
   }
 
-  fun(sid:number) {
-    console.log("the fun clicked", sid)
+  fun(sid: number) {
+    console.log('the fun clicked', sid);
   }
-
-
 }
 
 // Utility function to compare numbers
