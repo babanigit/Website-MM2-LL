@@ -259,17 +259,10 @@ export class DemoComponent implements OnInit, AfterViewInit {
     return value < 0 ? '#ffcccc' : '#ccffcc'; // Colors for negative and positive values
   }
 
-  fun(sid: number) {
-    console.log('the fun clicked', sid);
-  }
 
-  onPanelOpen(element: any) {
-    // Handle panel open event if needed
-  }
-
+// mat-expansion-panel (expand element state)
   readonly panelOpenState = signal(false);
   expandedElement: any;
-
   togglePanel(element: any) {
     // Toggle the panel
     if (this.expandedElement === element) {

@@ -25,8 +25,7 @@
     matSort
     (matSortChange)="announceSortChange($event)"
   >
-
-<!-- holding  -->
+    <!-- holding  -->
     <!-- short Company Column -->
     <ng-container matColumnDef="short">
       <th
@@ -39,11 +38,22 @@
       </th>
       <td mat-cell *matCellDef="let element">
         <span
-          *ngIf="element.details"
+          *ngIf="element.details!"
           (click)="togglePanel(element)"
           style="cursor: pointer; top: 0%; left: 0%; z-index: 2"
         >
-          arrow#
+          <img
+            style="margin-left: 5px"
+            *ngIf="expandedElement !== element"
+            src="https://i.marketsmojo.com/next_ico.png"
+            alt="img_next"
+          />
+          <img
+            style="margin-left: 5px"
+            *ngIf="expandedElement === element"
+            src="https://i.marketsmojo.com/next_ico_dwn.png"
+            alt="img_down"
+          />
         </span>
 
         <!--  -->
@@ -88,29 +98,68 @@
             <mat-expansion-panel-header>
               <!-- <mat-panel-title> This is the expansion title </mat-panel-title> -->
               <mat-panel-description>
+                <!--  -->
                 <div
                   style="
+                    position: relative;
                     display: flex;
                     justify-content: center;
                     margin: 8px;
                     padding: 5px;
                     border-radius: 7px;
-                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add shadow here */
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
                   "
-                  [ngStyle]="{
-                    color: element.dotsum.f_clr
-                  }"
+                  [ngStyle]="{ color: element.dotsum.f_clr }"
                 >
-                <span style="margin-right: 8px;">
-                  <strong>
-                    {{ element.dotsum.scoreText }}
-                  </strong>
-                </span>
-                <span style="margin-right: 8px;"> | score </span>
-                <span>
-                  {{ element.dotsum.score }}
-                </span>
+                  <!-- Overlay div -->
+                  <div
+                    *ngIf="element.show_mojostock == 'yes'"
+                    style="
+                      position: absolute;
+                      top: -7px;
+                      left: 5px;
+                      right: 7px;
+                      bottom: 23px;
+                      background: red;
+                      border-radius: 7px;
+                      z-index: 1;
+                      transform: translateZ(0);
+                    "
+                  >
+                    <p
+                      style="
+                        color: white;
+                        font-size: x-small;
+                        text-align: center;
+                      "
+                      [ngStyle]="{ 'background-color': element.dotsum.v_clr }"
+                    >
+                      {{ element.product_icon_list[0].name }}
+                    </p>
+                  </div>
+
+                  <!-- Existing content -->
+                  <div
+                    style="
+                      position: relative;
+                      z-index: 2;
+                      display: flex;
+                      align-items: center;
+                    "
+                  >
+                    <span style="margin-right: 8px">
+                      <strong>
+                        {{ element.dotsum.scoreText }}
+                      </strong>
+                    </span>
+                    <span style="margin-right: 8px"> | score </span>
+                    <span>
+                      {{ element.dotsum.score }}
+                    </span>
+                  </div>
                 </div>
+
+                <!--  -->
               </mat-panel-description>
             </mat-expansion-panel-header>
 
@@ -649,10 +698,6 @@
       </td>
     </ng-container>
 
-
-
-
-
     <!-- Header and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -666,7 +711,6 @@
       hideToggle
       [expanded]="false"
       *ngFor="let element of dataSource2.data"
-      (opened)="onPanelOpen(element)"
     >
       <mat-expansion-panel-header>
         <mat-panel-description>
