@@ -1,5 +1,25 @@
 
 
+ <div> scroll navbar </div>
+ <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
+  <span
+    *ngFor="let item of items"
+    [ngStyle]="{
+      'background-color': TYPE === item ? 'gainsboro' : '',
+      color: TYPE === item ? 'black' : 'white',
+      padding: '1% 1.5%',
+      'border-right': '1px solid gray',
+      cursor: 'pointer',
+      'font-size': '12px',
+
+    }"
+  >
+  <!--     (click)="onClick(item)"
+ -->
+    {{ item }}
+  </span>
+</div>
+
 <!-- table and its buttons -->
 <app-tables />
 

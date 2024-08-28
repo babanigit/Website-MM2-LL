@@ -1,4 +1,4 @@
-<!-- buttons -->
+<!-- buttons navbar -->
 <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
   <span
     *ngFor="let item of items"
@@ -985,67 +985,58 @@
       </td>
     </ng-container>
 
-        <!-- f_txt, f_txt ,  Financial Trend -->
-        <ng-container matColumnDef="f_txt">
-          <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
-            <div>
-              <span
-                (click)="sortBy('f_txt')"
-                [ngClass]="{ active: isSortActive('f_txt') }"
-              >
-                Financial Trend
-                <mat-icon [ngClass]="getSortIconClass('f_txt')"
-                  >arrow_downward</mat-icon
-                >
-              </span>
-            </div>
-            <div>
-              <span
-
-                style="font-size: small; color: gray"
-              >
-                Result Data
-                <mat-icon [ngClass]="getSortIconClass('f.txt')"
-                  >arrow_downward</mat-icon
-                >
-              </span>
-            </div>
-          </th>
-
-          <td
-
-            mat-cell
-            *matCellDef="let element"
+    <!-- f_txt, f_txt ,  Financial Trend -->
+    <ng-container matColumnDef="f_txt">
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('f_txt')"
+            [ngClass]="{ active: isSortActive('f_txt') }"
           >
-            <!--  -->
-            <mat-accordion>
-              <mat-expansion-panel
-                [expanded]="expandedElement === element"
-                #shortPanel
-                hideToggle
-              >
-                <mat-expansion-panel-header>
-                  <mat-panel-description>
-                    <div>
-                      <div>{{ element.dotsum.f_txt }}</div>
-                      <!-- <div style="color: gray">{{ element.dotsum.volperc }}</div> -->
-                       date
-                    </div>
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
+            Financial Trend
+            <mat-icon [ngClass]="getSortIconClass('f_txt')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span style="font-size: small; color: gray">
+            Result Data
+            <mat-icon [ngClass]="getSortIconClass('f.txt')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
 
-                <!-- Details section that will be shown when the panel is expanded -->
-              </mat-expansion-panel>
-            </mat-accordion>
-            <!--  -->
-          </td>
+      <td mat-cell *matCellDef="let element">
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                <div>
+                  <div>{{ element.dotsum.f_txt }}</div>
+                  <!-- <div style="color: gray">{{ element.dotsum.volperc }}</div> -->
+                  date
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-          <td mat-footer-cell *matFooterCellDef>
-            <!-- hello -->
-          </td>
-        </ng-container>
+            <!-- Details section that will be shown when the panel is expanded -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+      </td>
 
-
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
+      </td>
+    </ng-container>
 
 
 
