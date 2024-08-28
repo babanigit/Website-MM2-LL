@@ -1,5 +1,3 @@
-
-
 <!-- buttons -->
 <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
   <span
@@ -129,7 +127,7 @@
 
                       top: -8px;
                       bottom: 25px;
-                      z-index: 1;
+                      /* z-index: 1; */
                       border-radius: 12px;
                       color: white;
                       font-size: x-small;
@@ -156,7 +154,7 @@
 
                       top: 25px;
                       bottom: -8px;
-                      z-index: 1;
+                      /* z-index: 1; */
                       border-radius: 15px;
                       color: white;
                       font-size: x-small;
@@ -270,7 +268,7 @@
 
       <td mat-footer-cell *matFooterCellDef>
         <!-- hello -->
-         {{getTotal('score')}}
+        {{ getTotal("score") }}
       </td>
     </ng-container>
 
@@ -327,16 +325,6 @@
             </mat-expansion-panel-header>
 
             <!-- Details section that will be shown when the panel is expanded -->
-            <!-- <div *ngIf="element.details!">
-          <div *ngFor="let detail of element.details">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div>{{ detail.cmp }}</div>
-                <div>{{ detail.chg }}</div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-          </div>
-        </div> -->
           </mat-expansion-panel>
         </mat-accordion>
         <!--  -->
@@ -557,7 +545,6 @@
       <td style="color: black" mat-footer-cell *matFooterCellDef>
         hello
         <!-- {{getTotal('ival')}} -->
-
       </td>
     </ng-container>
 
@@ -830,10 +817,241 @@
       </td>
     </ng-container>
 
-    <!-- Header and Row Definitions -->
+    <!-- overview -->
+    <!-- cmp, chgp ,  Price -->
+    <ng-container matColumnDef="cmp_price">
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('cmp')"
+            [ngClass]="{ active: isSortActive('cmp') }"
+          >
+            Price
+            <mat-icon [ngClass]="getSortIconClass('cmp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('chgp')"
+            [ngClass]="{ active: isSortActive('chgp') }"
+            style="font-size: small; color: gray"
+          >
+            Changes
+            <mat-icon [ngClass]="getSortIconClass('chgp')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+
+      <td
+        [ngStyle]="{
+          color: getColor(element.chgp),
+          'background-color': getBgColor(element.chgp)
+        }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                <div>
+                  <div>{{ element.cmp }}</div>
+                  <div style="color: gray">{{ element.chgp }}</div>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
+      </td>
+    </ng-container>
+
+    <!-- vol, volperc ,  Volume -->
+    <ng-container matColumnDef="vol">
+      <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+        <div>
+          <span
+            (click)="sortBy('vol')"
+            [ngClass]="{ active: isSortActive('vol') }"
+          >
+            Volume
+            <mat-icon [ngClass]="getSortIconClass('vol')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+        <div>
+          <span
+            (click)="sortBy('volperc')"
+            [ngClass]="{ active: isSortActive('volperc') }"
+            style="font-size: small; color: gray"
+          >
+            Changes
+            <mat-icon [ngClass]="getSortIconClass('volperc')"
+              >arrow_downward</mat-icon
+            >
+          </span>
+        </div>
+      </th>
+
+      <td
+        [ngStyle]="{
+          color: getColor(element.volperc),
+          'background-color': getBgColor(element.volperc)
+        }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                <div>
+                  <div>{{ element.vol }}</div>
+                  <div style="color: gray">{{ element.volperc }}</div>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Details section that will be shown when the panel is expanded -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
+      </td>
+    </ng-container>
+
+    <!-- tech_txt dotsum.tech_txt -->
+    <ng-container matColumnDef="tech_txt">
+      <th
+        style="background-color: gainsboro"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Technical
+      </th>
+      <td
+        [ngStyle]="{ color: element.dotsum.tech_clr }"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <!--  -->
+        <mat-accordion>
+          <mat-expansion-panel
+            [expanded]="expandedElement === element"
+            #shortPanel
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <!-- <mat-panel-title> This is the expansion title </mat-panel-title> -->
+              <mat-panel-description>
+                {{ element.dotsum.tech_txt }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- <p>This is the primary content of the panel.</p> -->
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- {{ footerData.short }} -->
+        <Strong> Total </Strong>
+      </td>
+    </ng-container>
+
+        <!-- f_txt, f_txt ,  Financial Trend -->
+        <ng-container matColumnDef="f_txt">
+          <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
+            <div>
+              <span
+                (click)="sortBy('f_txt')"
+                [ngClass]="{ active: isSortActive('f_txt') }"
+              >
+                Financial Trend
+                <mat-icon [ngClass]="getSortIconClass('f_txt')"
+                  >arrow_downward</mat-icon
+                >
+              </span>
+            </div>
+            <div>
+              <span
+
+                style="font-size: small; color: gray"
+              >
+                Result Data
+                <mat-icon [ngClass]="getSortIconClass('f.txt')"
+                  >arrow_downward</mat-icon
+                >
+              </span>
+            </div>
+          </th>
+
+          <td
+
+            mat-cell
+            *matCellDef="let element"
+          >
+            <!--  -->
+            <mat-accordion>
+              <mat-expansion-panel
+                [expanded]="expandedElement === element"
+                #shortPanel
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-description>
+                    <div>
+                      <div>{{ element.dotsum.f_txt }}</div>
+                      <!-- <div style="color: gray">{{ element.dotsum.volperc }}</div> -->
+                       date
+                    </div>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <!-- Details section that will be shown when the panel is expanded -->
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!--  -->
+          </td>
+
+          <td mat-footer-cell *matFooterCellDef>
+            <!-- hello -->
+          </td>
+        </ng-container>
+
+
+
+
+
+    <!-- Header, footer and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   </table>
 </div>
-

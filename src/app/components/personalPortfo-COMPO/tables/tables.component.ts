@@ -112,9 +112,9 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.serv.getOverviewStocks(type).subscribe({
       next: (response) => {
         const elements = Object.values(response.data.list);
-        this.TOTAL_DATA = Object.values(response.data.total);
-        console.log('the TOTAL_DATA is ', this.TOTAL_DATA);
-        console.log(' the ival : ', this.TOTAL_DATA.ival);
+        // this.TOTAL_DATA = Object.values(response.data!.total!);
+        // console.log('the TOTAL_DATA is ', this.TOTAL_DATA);
+        // console.log(' the ival : ', this.TOTAL_DATA.ival);
 
         this.dataCache[type] = elements;
         this.updateStocks(type);
@@ -134,7 +134,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
   getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     switch (type) {
       case 'OVERVIEW':
-        this.displayedColumns = ['short', 'score'];
+        this.displayedColumns = ['short', 'score','cmp_price', 'vol', 'unrgain', 'tech_txt','f_txt'];
         break;
       case 'HOLDING':
         this.displayedColumns = [
