@@ -8,25 +8,27 @@ import { IGetOverview } from '../../../models/overview';
   styleUrls: ['./stocker-investments.component.css'],
 })
 export class StockerInvestmentsComponent  {
-TYPE = 'OVERVIEW'
+TYPE = 'Risk'
 
    // List of items to display on navbar buttons
    items: any = [
-    'OVERVIEW',
-    'HOLDING',
-    'PRICE',
-    'CONTRIBUTION',
-    'DIVIDEND',
-    'MOJO',
-    'RISK',
-    'LIQUIDITY',
-    'TAX',
-    'RATIOS',
-    'FINANCIALS',
-    'RETURN',
-    'RESULT',
-    'TOTAL RETURNS',
+
+    'Tracker',
+    'Overall Analysis',
+    'Returns',
+    'Risk',
+    'Liquidity',
+    'Diversification',
+    'Quality',
+    'Valuation',
+    'Financial Trend',
+    'Tax',
+
   ];
 
+  onClick(str : string) {
+    this.TYPE = str;
+    console.log(this.TYPE);
+  }
 
 }
