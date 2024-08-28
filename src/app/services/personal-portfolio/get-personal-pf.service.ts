@@ -25,6 +25,8 @@ export class GetPersonalPFService {
 
     const path = this.paths[type] || this.paths.HOLDING; // default is holding
 
+    console.log("the path in getOS : " , path);
+
     return this.http.get<any>(path).pipe(
 
       // delay(1200),

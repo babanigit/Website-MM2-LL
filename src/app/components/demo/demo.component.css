@@ -80,3 +80,98 @@ span.active .mat-icon {
 .mat-expansion-panel {
   box-shadow: none !important;
 }
+
+
+
+
+/*  helloooo this is new css here */
+.mat-elevation-z8 {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-cell {
+  text-align: center;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.active-button {
+  border: 2px solid red;
+}
+
+.default-button {
+  border: 2px solid blue;
+}
+
+.expand-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-small-text, .quality-small-text, .date-small-text {
+  font-size: 12px;
+  color: gray;
+}
+
+.score-info {
+  display: flex;
+  align-items: center;
+}
+
+.score-text {
+  margin-right: 4px;
+}
+
+.panel-full-width {
+  width: 100%;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-separator {
+  margin: 2px 0;
+}
+
+.sort-icon {
+  cursor: pointer;
+}
+
+.sort-small-text {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+}
+
+.more-button {
+  background-color: #333;
+}

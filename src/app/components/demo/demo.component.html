@@ -1,3 +1,9 @@
+<!-- popup -->
+<!-- <app-popup [isVisible]="showPopup" (close)="closePopup()">
+  <h2>Popup Title</h2>
+  <p>This is the content of the popup.</p>
+</app-popup> -->
+
 <!-- buttons -->
 <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
   <span
@@ -75,6 +81,11 @@
         </mat-accordion>
         <!--  -->
       </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- {{ footerData.short }} -->
+        <Strong> Total </Strong>
+      </td>
     </ng-container>
 
     <!-- score -->
@@ -108,6 +119,7 @@
                     padding: 5px;
                     border-radius: 7px;
                     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+                    cursor: pointer;
                   "
                   [ngStyle]="{ color: element.dotsum.f_clr }"
                 >
@@ -116,25 +128,115 @@
                     *ngIf="element.show_mojostock == 'yes'"
                     style="
                       position: absolute;
-                      top: -7px;
                       left: 5px;
                       right: 7px;
-                      bottom: 23px;
-                      background: red;
-                      border-radius: 7px;
+
+                      top: -8px;
+                      bottom: 25px;
                       z-index: 1;
-                      transform: translateZ(0);
+                      border-radius: 12px;
+                      color: white;
+                      font-size: x-small;
+                      text-align: center;
                     "
+                    [ngStyle]="{
+                      'background-color': extractColor(
+                        element.product_icon_list[0].product_class
+                      )
+                    }"
                   >
-                    <p
-                      style="
-                        color: white;
-                        font-size: x-small;
-                        text-align: center;
-                      "
-                      [ngStyle]="{ 'background-color': element.dotsum.v_clr }"
-                    >
+                    <p>
                       {{ element.product_icon_list[0].name }}
+                    </p>
+                  </div>
+
+                  <!-- overlay div 2 -->
+                  <div
+                    *ngIf="element.more_button.show"
+                    style="
+                      position: absolute;
+                      left: 5px;
+                      right: 7px;
+
+                      top: 25px;
+                      bottom: -8px;
+                      z-index: 1;
+                      border-radius: 15px;
+                      color: white;
+                      font-size: x-small;
+                      text-align: center;
+                    "
+                    (click)="togglePopup()"
+                    [ngStyle]="{
+                      'background-color': extractColor(
+                        element.product_icon_list[1].product_class
+                      )
+                    }"
+                  >
+                    <!-- popup -->
+                    <app-popup [isVisible]="showPopup">
+                      <!-- Popup Content -->
+                      <div
+                        style="
+                          margin-top: 24px;
+                          color: black;
+                          display: flex;
+                          flex-direction: column;
+                          gap: 10px; /* Space between each item */
+                        "
+                      >
+                        <div
+                          *ngFor="let item of element.product_icon_list"
+                          style="
+                            display: flex;
+                            align-items: center;
+                            gap: 10px; /* Space between icon and text */
+                            padding: 10px;
+                            border: 1px solid #ccc; /* Optional border */
+                            border-radius: 8px; /* Rounded corners */
+                            background-color: #f9f9f9; /* Light background for each item */
+                          "
+                        >
+                          <span
+                            style="
+                              height: 50px;
+                              width: auto;
+                              padding: 3%;
+                              /* background-color: rebeccapurple; */
+                              color: white;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border-radius: 5px; /* Rounded corners */
+                              font-size: small;
+                              font-weight: bold; /* Optional: bold text for icon */
+                            "
+                            [ngStyle]="{
+                              'background-color': extractColor(
+                                item.product_class
+                              )
+                            }"
+                          >
+                            {{ item.name }}
+                          </span>
+                          <span
+                            style="
+                              font-size: 14px; /* Adjust font size as needed */
+                              color: black;
+                            "
+                          >
+                            {{ item.text }}
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- <button style="z-index: 1002" (click)="closePopup()">
+                        close
+                      </button> -->
+                    </app-popup>
+
+                    <p>
+                      {{ element.more_button.text }}
                     </p>
                   </div>
 
@@ -168,6 +270,10 @@
           </mat-expansion-panel>
         </mat-accordion>
         <!--  -->
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
       </td>
     </ng-container>
 
@@ -237,6 +343,10 @@
           </mat-expansion-panel>
         </mat-accordion>
         <!--  -->
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
       </td>
     </ng-container>
 
@@ -337,6 +447,10 @@
             <!-- Details section that will be shown when the panel is expanded end... -->
           </mat-expansion-panel>
         </div>
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- hello -->
       </td>
     </ng-container>
 
@@ -442,6 +556,8 @@
           </mat-expansion-panel>
         </div>
       </td>
+
+      <td style="color: black" mat-footer-cell *matFooterCellDef>hello</td>
     </ng-container>
 
     <!-- dgain, dgainp Day's Gain  -->
@@ -552,6 +668,11 @@
             <!-- Details section that will be shown when the panel is expanded end... -->
           </mat-expansion-panel>
         </div>
+      </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- {{ footerData.short }} -->
+        hello
       </td>
     </ng-container>
 
@@ -664,6 +785,11 @@
           </mat-expansion-panel>
         </div>
       </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- {{ footerData.short }} -->
+        hello
+      </td>
     </ng-container>
 
     <!-- lval latest value -->
@@ -696,120 +822,17 @@
         </mat-accordion>
         <!--  -->
       </td>
+
+      <td mat-footer-cell *matFooterCellDef>
+        <!-- {{ footerData.short }} -->
+        hello
+      </td>
     </ng-container>
 
     <!-- Header and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   </table>
 </div>
 
-<!-- og -->
-<div class="mat-elevation-z8">
-  <mat-accordion>
-    <mat-expansion-panel
-      hideToggle
-      [expanded]="false"
-      *ngFor="let element of dataSource2.data"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-description>
-          <ng-container>
-            <!-- <th style="background-color: gainsboro" mat-header-cell *matHeaderCellDef>
-              <div>
-                <span
-                  (click)="sortBy('iprice')"
-                  [ngClass]="{ active: isSortActive('iprice') }"
-                >
-                  Inv.Price
-                  <mat-icon [ngClass]="getSortIconClass('iprice')"
-                    >arrow_downward</mat-icon
-                  >
-                </span>
-              </div>
-              <div>
-                <span
-                  (click)="sortBy('iqty')"
-                  [ngClass]="{ active: isSortActive('iqty') }"
-                  style="font-size: small; color: gray"
-                >
-                  Quality
-                  <mat-icon [ngClass]="getSortIconClass('iqty')"
-                    >arrow_downward</mat-icon
-                  >
-                </span>
-              </div>
-            </th> -->
-            <td mat-cell *matCellDef="let element">
-              <div>{{ element.iprice }}</div>
-              <div>{{ element.iqty }}</div>
-            </td>
-          </ng-container>
-        </mat-panel-description>
-        <mat-panel-description matColumnDef="iprice">
-          <span>{{ element.cmp }}</span>
-        </mat-panel-description>
-
-        <mat-panel-description>
-          <div>{{ element.dotsum.score }}</div>
-        </mat-panel-description>
-
-        <mat-panel-description>
-          <span> {{ element.iprice }}</span>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <div>
-        <!-- Details section that will be shown when the panel is expanded -->
-        <div *ngIf="element.details!">
-          <div *ngFor="let detail of element.details">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div>{{ detail.short }}</div>
-              </mat-panel-title>
-              <mat-panel-title>
-                <span>{{ detail.cmp }}</span>
-              </mat-panel-title>
-
-              <mat-panel-title>
-                <div>{{ detail.iprice }}</div>
-              </mat-panel-title>
-
-              <mat-panel-title>
-                <span> {{ detail.iprice }}</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-          </div>
-        </div>
-      </div>
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>
-
-<!-- new -->
-<div>
-  <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title> This is the expansion title </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel
-      (opened)="panelOpenState.set(true)"
-      (closed)="panelOpenState.set(false)"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title> Self aware panel </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{ panelOpenState() ? "open" : "closed" }}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>

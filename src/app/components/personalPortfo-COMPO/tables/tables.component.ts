@@ -4,20 +4,37 @@ import {
   ViewChild,
   AfterViewInit,
   inject,
+  signal,
 } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import {
+  MatFooterCell,
+  MatFooterCellDef,
+  MatTableDataSource,
+  MatTableModule,
+} from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { GetPersonalPFService } from '../../../services/personal-portfolio/get-personal-pf.service';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { PopupComponent } from '../../others/popup/popup.component';
 
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
   styleUrls: ['./tables.component.css'],
   standalone: true,
-  imports: [MatSortModule, MatTableModule, CommonModule, MatIconModule],
+  imports: [
+    MatSortModule,
+    MatTableModule,
+    MatFooterCell,
+    MatFooterCellDef,
+    CommonModule,
+    MatIconModule,
+    MatExpansionModule,
+    PopupComponent,
+  ],
 })
 export class TablesComponent implements OnInit, AfterViewInit {
   private _liveAnnouncer = inject(LiveAnnouncer);
@@ -25,6 +42,8 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = [];
   dataSource2 = new MatTableDataSource<any>([]);
+
+  TOTAL_DATA: any;
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -56,7 +75,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     if (this.sort) {
       this.dataSource2.sort = this.sort;
       this.sort.sortChange.subscribe((sortState: Sort) => {
-        console.log('The sort state is:', sortState);
+        // console.log('The sort state is:', sortState);
         if (sortState.active) {
           this.sortData(sortState);
         }
@@ -89,10 +108,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this.updateStocks(type);
       return;
     }
-
+    console.log('the type is : ', type);
     this.serv.getOverviewStocks(type).subscribe({
       next: (response) => {
         const elements = Object.values(response.data.list);
+        this.TOTAL_DATA = Object.values(response.data.total);
+        console.log('the TOTAL_DATA is ', this.TOTAL_DATA);
+        console.log(' the ival : ', this.TOTAL_DATA.ival);
+
         this.dataCache[type] = elements;
         this.updateStocks(type);
         console.log('Fetched data:', elements);
@@ -105,6 +128,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   updateStocks(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     this.dataSource2.data = this.dataCache[type] || [];
+    console.log('Updated data:', this.dataSource2);
   }
 
   getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
@@ -118,10 +142,10 @@ export class TablesComponent implements OnInit, AfterViewInit {
           'score',
           'cmp',
           'iprice',
-          // 'ival',
-          // 'dgain',
-          // 'unrgain',
-          // 'lval',
+          'ival',
+          'dgain',
+          'unrgain',
+          'lval',
         ];
         break;
       case 'PRICE':
@@ -250,8 +274,63 @@ export class TablesComponent implements OnInit, AfterViewInit {
     return value < 0 ? '#ffcccc' : '#ccffcc'; // Colors for negative and positive values
   }
 
-  fun(sid: number) {
-    console.log('the fun clicked', sid);
+  // mat-expansion-panel (expand element state)
+  readonly panelOpenState = signal(false);
+  expandedElement: any;
+  togglePanel(element: any) {
+    // Toggle the panel
+    if (this.expandedElement === element) {
+      this.expandedElement = null;
+    } else {
+      this.expandedElement = element;
+    }
+  }
+
+  // score containts
+
+  // Method to extract color name from the input string
+  extractColor(input: string): string {
+    let value;
+    // Check if the input string ends with '-tag' and remove it
+    if (input.endsWith('-tag')) {
+      value = input.substring(0, input.length - 4); // Remove the last 4 characters ('-tag')
+
+      if (value === 'som') return 'green';
+      else {
+        return value;
+      }
+    }
+
+    return input; // Return the original input if '-tag' is not found
+  }
+
+  // toggle popup
+  showPopup = false;
+
+  togglePopup(): void {
+    this.showPopup = !this.showPopup;
+  }
+
+  closePopup(): void {
+    this.showPopup = false;
+  }
+
+  // trial
+  getTotal(strVal: string): number {
+    let total = 0;
+
+    for (let i = 0; i < this.dataSource2.data.length; i++) {
+      // Access the property dynamically using bracket notation
+      const value = this.dataSource2.data[i].dotsum[strVal];
+      total += Number(value); // Convert the value to a number
+    }
+
+    return total;
+  }
+
+  getFooter() {
+    console.log(this.dataSource2.data);
+    // hello = this.dataSource2.
   }
 }
 

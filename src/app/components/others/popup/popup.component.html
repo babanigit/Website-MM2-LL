@@ -1,0 +1,6 @@
+<div class="overlay" *ngIf="isVisible">
+  <div class="popup-box">
+    <button class="close-button" (click)="onClose()">×</button>
+    <ng-content></ng-content> <!-- Content will be projected here -->
+  </div>
+</div>
