@@ -1,7 +1,10 @@
+<!-- scroll to the element navbar -->
+
+<section
+>
 
 
- <div> scroll navbar </div>
- <div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
+<div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
   <span
     *ngFor="let item of items"
     [ngStyle]="{
@@ -14,12 +17,25 @@
     }"
     (click)="onClick(item)"
   >
-  <!--     (click)="onClick(item)"
- -->
     {{ item }}
   </span>
 </div>
 
 <!-- table and its buttons -->
-<app-tables />
+<div
+style="
+padding: 1%;
+"
+id="element1">
+  <app-tables />
+</div>
 
+<!-- Add IDs to the sections -->
+<div id="element2">Element 2</div>
+
+
+<div id="element3">Element 3</div>
+
+<div id="element4">Element 4</div>
+
+</section>
