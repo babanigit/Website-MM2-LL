@@ -126,12 +126,16 @@ export class TablesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  updateStocks(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
+  updateStocks(
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
+  ): void {
     this.dataSource2.data = this.dataCache[type] || [];
     // console.log('Updated data:', this.dataSource2);
   }
 
-  getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
+  getColums(
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
+  ): void {
     switch (type) {
       case 'OVERVIEW':
         this.displayedColumns = [
@@ -183,12 +187,25 @@ export class TablesComponent implements OnInit, AfterViewInit {
           'lval',
         ];
         break;
+      case 'DIVIDEND':
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp',
+          // 'mcap',
+          'div',
+          'unrgain',
+          // 'unrgaincontri',
+          // 'pwt',
+          'tret',
+          'lval',
+        ];
+        break;
     }
   }
 
   onClick(
-    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'
-    // | 'DIVIDEND'
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
     // | 'MOJO'
     // | 'RISK'
     // | 'LIQUIDITY'
@@ -204,7 +221,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.TYPE = type;
     this.getColums(type);
 
-    if (type === 'PRICE' || type === 'CONTRIBUTION') {
+    if (type === 'PRICE' || type === 'CONTRIBUTION' || type === 'DIVIDEND') {
       type = 'HOLDING';
     }
 
