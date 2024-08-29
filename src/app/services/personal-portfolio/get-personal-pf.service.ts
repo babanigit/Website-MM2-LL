@@ -9,19 +9,17 @@ import { catchError } from 'rxjs';
 export class GetPersonalPFService {
 
   private readonly paths = {
-    OVERVIEW: 'assets/getOverview.json',
-    HOLDING: 'assets/getHolding.json',
-    // month: 'assets/graphDataMonth.json',
-    // YTD: 'assets/graphDataYTD.json',
-    // year: 'assets/graphDataYear.json',
-    // threeYears: 'assets/graphData3Years.json',
+    OVERVIEW: 'assets/pp/getOverview.json',
+    HOLDING: 'assets/pp/getHolding.json',
+    RISK: 'assets/pp/getRisk.json'
+
   };
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getOverviewStocks(type: 'OVERVIEW' | 'HOLDING') {
+  getOverviewStocks(type: 'OVERVIEW' | 'HOLDING'|'RISK') {
 
     const path = this.paths[type] || this.paths.HOLDING; // default is holding
 

@@ -103,19 +103,22 @@ export class TablesComponent implements OnInit, AfterViewInit {
     'TOTAL RETURNS',
   ];
 
-  private fetchStocks(type: 'OVERVIEW' | 'HOLDING') {
+  private fetchStocks(type: 'OVERVIEW' | 'HOLDING' | 'RISK') {
     if (this.dataCache[type]) {
       this.updateStocks(type);
       return;
     }
+
     console.log('the type is : ', type);
     this.serv.getOverviewStocks(type).subscribe({
       next: (response) => {
-        const elements = Object.values(response.data.list);
-        // this.TOTAL_DATA = Object.values(response.data!.total!);
-        // console.log('the TOTAL_DATA is ', this.TOTAL_DATA);
-        // console.log(' the ival : ', this.TOTAL_DATA.ival);
 
+        let elements
+        if(type ==='RISK'){
+          elements = Object.values(response.data);
+        }else{
+          elements = Object.values(response.data.list);
+        }
         this.dataCache[type] = elements;
         this.updateStocks(type);
         // console.log('Fetched data:', elements);
@@ -127,14 +130,21 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   updateStocks(
-    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
+    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND' |'RISK'
   ): void {
     this.dataSource2.data = this.dataCache[type] || [];
     // console.log('Updated data:', this.dataSource2);
   }
 
   getColums(
-    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
+    type:
+      | 'OVERVIEW'
+      | 'HOLDING'
+      | 'PRICE'
+      | 'CONTRIBUTION'
+      | 'DIVIDEND'
+      | 'MOJO'
+      | 'RISK'
   ): void {
     switch (type) {
       case 'OVERVIEW':
@@ -192,22 +202,48 @@ export class TablesComponent implements OnInit, AfterViewInit {
           'short',
           'score',
           'cmp',
-          // 'mcap',
           'div',
           'unrgain',
-          // 'unrgaincontri',
-          // 'pwt',
           'tret',
           'lval',
         ];
         break;
+      case 'MOJO':
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp',
+          'q_txt',
+          'v_txt',
+          'unrgain',
+          'f_txt',
+          'tech_txt',
+          'pwt',
+          'lval',
+        ];
+        break;
+        case 'RISK':
+          this.displayedColumns = [
+            'short',
+            'score',
+            'cmp',
+            'mcap',
+
+
+          ];
+          break;
     }
   }
 
   onClick(
-    type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION' | 'DIVIDEND'
-    // | 'MOJO'
-    // | 'RISK'
+    type:
+      | 'OVERVIEW'
+      | 'HOLDING'
+      | 'PRICE'
+      | 'CONTRIBUTION'
+      | 'DIVIDEND'
+      | 'MOJO'
+    | 'RISK'
     // | 'LIQUIDITY'
     // | 'TAX'
     // | 'RATIOS'
@@ -221,7 +257,12 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.TYPE = type;
     this.getColums(type);
 
-    if (type === 'PRICE' || type === 'CONTRIBUTION' || type === 'DIVIDEND') {
+    if (
+      type === 'PRICE' ||
+      type === 'CONTRIBUTION' ||
+      type === 'DIVIDEND' ||
+      type === 'MOJO'
+    ) {
       type = 'HOLDING';
     }
 
