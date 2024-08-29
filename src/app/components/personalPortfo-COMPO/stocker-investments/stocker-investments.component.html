@@ -1,41 +1,45 @@
 <!-- scroll to the element navbar -->
 
-<section
->
+<section style="background-color: rgb(33, 44, 33)">
 
 
-<div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
-  <span
-    *ngFor="let item of items"
-    [ngStyle]="{
-      'background-color': TYPE === item ? 'gainsboro' : '',
+  <!-- overview ,holding, price, etc... -->
+  <nav
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      /* background-color: rgba(64, 64, 64, 0.5); */
+    "
+  >
+    <span
+
+      *ngFor="let item of items"
+      [ngStyle]="{
+      'background-color': TYPE === item ? 'rgba(220,220,220)' : 'rgba(64, 64, 64, 0.4)',
       color: TYPE === item ? 'black' : 'white',
       padding: '1% 1.5%',
-      'border-right': '1px solid gray',
       cursor: 'pointer',
       'font-size': '12px',
     }"
-    (click)="onClick(item)"
-  >
-    {{ item }}
-  </span>
-</div>
+      (click)="onClick(item)"
+    >
+      {{ item }}
+    </span>
+  </nav>
 
-<!-- table and its buttons -->
-<div
-style="
-padding: 1%;
-"
-id="element1">
-  <app-tables />
-</div>
+  <!-- table and its buttons -->
+  <div style="padding: 0.5%" id="element1">
+    <div>
+      <app-tables />
+    </div>
+  </div>
 
-<!-- Add IDs to the sections -->
-<div id="element2">Element 2</div>
+  <!-- Add IDs to the sections -->
+  <div id="element2">Element 2</div>
 
+  <div id="element3">Element 3</div>
 
-<div id="element3">Element 3</div>
-
-<div id="element4">Element 4</div>
+  <div id="element4">Element 4</div>
 
 </section>

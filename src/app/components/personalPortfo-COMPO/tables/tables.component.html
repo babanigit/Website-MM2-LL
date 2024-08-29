@@ -1,5 +1,5 @@
 <!-- buttons navbar -->
-<div style="display: flex; flex-wrap: wrap; background-color: rgb(10, 10, 65)">
+<div style="display: flex; flex-wrap: wrap; background-color: rgba(64, 64, 64, 0.5); ">
   <span
     *ngFor="let item of items"
     [ngStyle]="{
@@ -18,7 +18,9 @@
 </div>
 
 <!-- table -->
-<div class="mat-elevation-z8">
+<div
+style="background-color: white;"
+class="mat-elevation-z8">
   <table
     mat-table
     [dataSource]="dataSource2"
@@ -1037,8 +1039,6 @@
         <!-- hello -->
       </td>
     </ng-container>
-
-
 
     <!-- Header, footer and Row Definitions -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

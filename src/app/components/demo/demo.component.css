@@ -1,177 +1,50 @@
+swiper-container {
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
 
-/* Ensure that the span containing text and icons is a flex container */
-th span {
+swiper-slide {
   display: flex;
-  align-items: center; /* Center items vertically */
-  gap: 8px; /* Space between text and icon */
-  background-color: gainsboro;
-}
-
-th {
-  border: 1px solid gray;
-  background-color: gainsboro;
-}
-
-td {
-  border: 1px solid gray;
-  padding: 0%;
-}
-
-
-/* Base style for the arrow */
-.mat-icon {
-  font-size: 16px; /* Decrease size of the arrow */
-  font-size: 16px; /* Decrease size of the arrow */
-  font-weight: bold; /* Increase thickness of the arrow */  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-}
-
-/* Make the arrow visible when its parent span is hovered */
-span:hover .mat-icon {
-  opacity: 1; /* Show on hover */
-  color: gray; /* Gray color on hover */
-}
-
-/* Make the arrow black when it is active (clicked) */
-span.active .mat-icon {
-  opacity: 1; /* Ensure it is visible when active */
-  color: black; /* Black color when active */
-}
-
-/* Arrow pointing up */
-.arrow_upward {
-  display: inline-block;
-  transform: scaleY(1); /* Default orientation */
-  transition: transform 0.3s ease; /* Smooth flipping animation */
-}
-
-/* Arrow pointing down */
-.arrow_downward {
-  display: inline-block;
-  transform: scaleY(-1); /* Flip the arrow vertically */
-  transition: transform 0.3s ease; /* Smooth flipping animation */
-}
-
-/* active */
-.active {
-  color: black; /* Optional: Change text color for better contrast */
-  background-color: whitesmoke;
-}
-
-
-/* prompt3 */
-
-/* Remove the default shadow */
-.mat-expansion-panel {
-  box-shadow: none !important;
-}
-
-/* Hide the toggle icon if the 'hide-toggle' class is applied */
-.mat-expansion-panel.hide-toggle .mat-expansion-panel-header::after {
-  display: none; /* Hide the default toggle icon */
-}
-
-/* Optional: Adjust spacing between panels */
-.mat-expansion-panel + .mat-expansion-panel {
-  margin-top: 0;
-}
-
-/* Optional: Remove panel shadow if needed */
-.mat-expansion-panel {
-  box-shadow: none !important;
-}
-
-
-
-
-/*  helloooo this is new css here */
-.mat-elevation-z8 {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.header-cell {
-  text-align: center;
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.active-button {
-  border: 2px solid red;
-}
-
-.default-button {
-  border: 2px solid blue;
-}
-
-.expand-icon {
-  cursor: pointer;
-  display: inline-block;
-}
-
-.icon {
-  height: 16px;
-  width: 16px;
-}
-
-.price-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.price-small-text, .quality-small-text, .date-small-text {
-  font-size: 12px;
-  color: gray;
-}
-
-.score-info {
-  display: flex;
+  justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-.score-text {
-  margin-right: 4px;
-}
-
-.panel-full-width {
+swiper-slide img {
   width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Adjust the image to fit the container */
 }
 
-.details-container {
-  display: flex;
-  flex-direction: column;
+
+.slide-content {
+  width: 400px;
+  height: 400px; /* Full height of the slide */
+  background-color: #eee; /* Default color, will be overridden by ngStyle */
 }
 
-.detail-item {
-  display: flex;
-  justify-content: space-between;
+
+.slide-1 {
+  width: 300px; /* Custom width for the first slide */
 }
 
-.detail-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.slide-2 {
+  width: 400px; /* Custom width for the second slide */
 }
 
-.detail-separator {
-  margin: 2px 0;
+.slide-3 {
+  width: 500px; /* Custom width for the third slide */
 }
 
-.sort-icon {
-  cursor: pointer;
+.slide-4 {
+  width: 350px; /* Custom width for the fourth slide */
 }
 
-.sort-small-text {
-  font-size: 12px;
-  cursor: pointer;
+.slide-5 {
+  width: 450px; /* Custom width for the fifth slide */
 }
 
-.popup-overlay {
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  color: white;
-}
-
-.more-button {
-  background-color: #333;
+.slide-6 {
+  width: 550px; /* Custom width for the sixth slide */
 }

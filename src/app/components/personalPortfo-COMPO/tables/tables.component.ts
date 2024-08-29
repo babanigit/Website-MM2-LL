@@ -118,7 +118,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
         this.dataCache[type] = elements;
         this.updateStocks(type);
-        console.log('Fetched data:', elements);
+        // console.log('Fetched data:', elements);
       },
       error: (err) => {
         console.error('Failed to load data', err);
@@ -128,7 +128,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   updateStocks(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     this.dataSource2.data = this.dataCache[type] || [];
-    console.log('Updated data:', this.dataSource2);
+    // console.log('Updated data:', this.dataSource2);
   }
 
   getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
