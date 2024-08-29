@@ -1,7 +1,6 @@
 swiper-container {
   width: auto;
   height: auto;
-  padding: 10px;
 }
 
 swiper-slide {
@@ -12,39 +11,12 @@ swiper-slide {
 }
 
 swiper-slide img {
-  width: 100%;
+  width: auto;
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Adjust the image to fit the container */
 }
 
-
 .slide-content {
-  width: 400px;
-  height: 400px; /* Full height of the slide */
-  background-color: #eee; /* Default color, will be overridden by ngStyle */
-}
-
-
-.slide-1 {
-  width: 300px; /* Custom width for the first slide */
-}
-
-.slide-2 {
-  width: 400px; /* Custom width for the second slide */
-}
-
-.slide-3 {
-  width: 500px; /* Custom width for the third slide */
-}
-
-.slide-4 {
-  width: 350px; /* Custom width for the fourth slide */
-}
-
-.slide-5 {
-  width: 450px; /* Custom width for the fifth slide */
-}
-
-.slide-6 {
-  width: 550px; /* Custom width for the sixth slide */
+  width: 100%;
+  height: 450px; /* Full height of the slide */
 }

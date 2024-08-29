@@ -8,8 +8,6 @@ import {
   CUSTOM_ELEMENTS_SCHEMA
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import {SwiperModule} from 'swiper/angular';
-
 
 
 @Component({
@@ -23,16 +21,9 @@ import { CommonModule } from '@angular/common';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // To prevent error when using Angular Material's components in a custom element
 })
-export class DemoComponent {
+export class DemoComponent implements AfterViewInit {
 
-  // Method to generate a random hex color
-  getRandomColor(): string {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+  ngAfterViewInit() {
+
   }
-
 }
