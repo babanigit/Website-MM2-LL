@@ -134,7 +134,16 @@ export class TablesComponent implements OnInit, AfterViewInit {
   getColums(type: 'OVERVIEW' | 'HOLDING' | 'PRICE' | 'CONTRIBUTION'): void {
     switch (type) {
       case 'OVERVIEW':
-        this.displayedColumns = ['short', 'score','cmp_price', 'vol', 'unrgain', 'tech_txt','f_txt'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp_price',
+          'vol',
+          'unrgain',
+          'tech_txt',
+          'f_txt',
+          'tusk',
+        ];
         break;
       case 'HOLDING':
         this.displayedColumns = [
@@ -149,10 +158,30 @@ export class TablesComponent implements OnInit, AfterViewInit {
         ];
         break;
       case 'PRICE':
-        this.displayedColumns = ['short', 'score'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp',
+          'cvol',
+          'dh',
+          'dl',
+          'wk52h',
+          'wk52l',
+          'ath',
+          'atl',
+        ];
         break;
       case 'CONTRIBUTION':
-        this.displayedColumns = ['short', 'score'];
+        this.displayedColumns = [
+          'short',
+          'score',
+          'cmp',
+          'mcap',
+          'unrgain',
+          'unrgaincontri',
+          'pwt',
+          'lval',
+        ];
         break;
     }
   }
