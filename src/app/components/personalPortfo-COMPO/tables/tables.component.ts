@@ -113,12 +113,13 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.serv.getOverviewStocks(type).subscribe({
       next: (response) => {
 
-        let elements
+        let elements;
         if(type ==='RISK'){
           elements = Object.values(response.data);
         }else{
           elements = Object.values(response.data.list);
         }
+
         this.dataCache[type] = elements;
         this.updateStocks(type);
         // console.log('Fetched data:', elements);

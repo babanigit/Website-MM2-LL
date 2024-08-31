@@ -1,0 +1,97 @@
+<!-- scroll to the element navbar -->
+
+<section style="background-color: rgb(33, 44, 33)">
+  <!-- overview ,holding, price, etc... -->
+  <nav
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      /* background-color: rgba(64, 64, 64, 0.5); */
+    "
+  >
+    <span
+      *ngFor="let item of items"
+      [ngStyle]="{
+      'background-color': TYPE === item ? 'rgba(220,220,220)' : 'rgba(64, 64, 64, 0.4)',
+      color: TYPE === item ? 'black' : 'white',
+      padding: '1% 1.5%',
+      cursor: 'pointer',
+      'font-size': '12px',
+    }"
+      (click)="onClick(item)"
+    >
+      {{ item }}
+    </span>
+  </nav>
+
+  <!-- table and its buttons -->
+  <div style="padding: 0.5%" id="element1">
+    <div>
+      <app-tables />
+    </div>
+  </div>
+
+  <!-- Add IDs to the sections -->
+  <div id="element2">
+    <p class="heading">How am I doing Today</p>
+    <app-demo />
+  </div>
+
+  <div id="element3">
+    <p class="heading">How am I doing Overall</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element4">
+    <p class="heading">Return Analysis</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element5">
+    <p class="heading">Risk Analysis</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element6">
+    <p class="heading">Liquidity Analysis</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element7">
+    <p class="heading">Diversification Analysis</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element8">
+    <p class="heading">Quality</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element9">
+    <p class="heading">Valuation</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element10">
+    <p class="heading">Financial Trend</p>
+
+    <app-demo />
+  </div>
+
+  <div id="element11">
+    <p class="heading">Tax Analysis</p>
+
+    <app-demo />
+  </div>
+</section>
+
+<!-- footer -->
+<!-- <app-ipo-footer /> -->
